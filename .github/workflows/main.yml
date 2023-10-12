@@ -23,8 +23,8 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: docker://blang/latex:ubuntu
+      - uses: actions/checkout@v3
+      - uses: docker://blang/latex:ctanfull
         with:
           args: latexmk -pdf -jobname=full -outdir=./build -cd ./src/main.tex
       - uses: actions/checkout@master
