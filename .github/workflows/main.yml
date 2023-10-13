@@ -20,7 +20,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build_latex:
+  build_deploy_latex:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,26 +32,12 @@ jobs:
           args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=full -outdir=../build ./src/main.tex
       - name: Copy output
         run: |
-          ls
           cp ./build/full.pdf ./pages/analysis_3_full.pdf
-          cd pages
-          ls
-
-  deploy:
-    needs: build_latex
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
           path: './pages'
       - name: Deploy to GitHub Pages
         id: deployment
