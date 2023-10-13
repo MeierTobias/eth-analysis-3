@@ -1,0 +1,14 @@
+name: Build LaTex summary to GitHub-Pages
+
+on:
+  push:
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build latex pdfs
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=full -outdir=../build ./src/main.tex
