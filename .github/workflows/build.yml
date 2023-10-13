@@ -1,4 +1,4 @@
-name: Build LaTex summary to GitHub-Pages
+name: Build LaTex summary
 
 on:
   push:
