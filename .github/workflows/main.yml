@@ -27,7 +27,6 @@ jobs:
       - uses: docker://texlive/texlive:latest
         with:
           args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=full -outdir=../build ./src/main.tex
-      - uses: actions/checkout@master
       - name: Copy output
         run: |
           ls
