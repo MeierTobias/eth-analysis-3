@@ -1,10 +1,6 @@
 name: Build LaTex summary
 
-on:
-  push:
-    branches:
-      - '**'
-      - '!main'
+on: [pull_request]
 
 jobs:
   build_latex:
