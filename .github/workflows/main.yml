@@ -21,17 +21,17 @@ concurrency:
 
 jobs:
   build_latex:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: docker://blang/latex:ubuntu
+      - uses: actions/checkout@v3
+      - uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -jobname=full -outdir=./build -cd ./src/main.tex
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=full -outdir=../build ./src/main.tex
       - uses: actions/checkout@master
       - name: Copy output
         run: |
           ls
-          cp ./src/full.pdf ./pages/analysis_3_full.pdf
+          cp ./build/full.pdf ./pages/analysis_3_full.pdf
 
   deploy:
     needs: build_latex

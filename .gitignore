@@ -1,5 +1,5 @@
 # ignore vs-code settings
-.vscode/settings.json
+.vscode/
 
 # ignore the latex build
 build/
