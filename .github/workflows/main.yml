@@ -31,6 +31,8 @@ jobs:
         run: |
           ls
           cp ./build/full.pdf ./pages/analysis_3_full.pdf
+          cd pages
+          ls
 
   deploy:
     needs: build_latex
