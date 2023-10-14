@@ -1,5 +1,5 @@
 % document setup
-\usepackage[margin=7mm,landscape]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
+\usepackage[left=7mm,right=7mm,top=15mm,bottom=7mm,landscape]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
 \usepackage{multicol,multirow}
 \usepackage[utf8]{inputenc} % not strictly necessary, but sets utf8
 
@@ -31,8 +31,25 @@
 \usepackage{enumitem}
 
 % multiple line comments and testing text
-\usepackage{verbatim} % \begin{comment} \end{comment} 
+\usepackage{comment} % \begin{comment} \end{comment} 
 \usepackage{blindtext} % inserts lorem ipsum like text
 
 % hyperlinks (has to be after titlesec, else we get errors
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+% Example section environment
+\newenvironment{examplesection}[1][]
+    {
+        \subsubsection{#1}
+        \color{blue}
+    }
+    {
+    }
+%\excludecomment{examplesection}
+
+% define header style
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\ihead{Analysis III - \today}
+\chead{\pagemark}
+\ohead{\url{https://github.com/MeierTobias/eth-analysis-3}}
