@@ -7,7 +7,7 @@
 \input{headers/layout_formating}
 \input{headers/code_header}
 \input{headers/math_header}
-\input{flags}
+\input{headers/flags}
 % -------------------------------------------
 %
 \begin{document}
@@ -18,38 +18,13 @@
     \vspace{0.1cm}
     \large{HS23 ETHZ\par}
     \vspace{0.3cm}
-\end{center}
-Dieses PDF, der Quellcode, die Autoren sowie der Disclaimer können dem GitHub Repository \url{https://github.com/MeierTobias/eth-analysis-3} entnommen werden.
+    \normalsize{Juri Pfammater, Daniel Schweizer, Tobias Meier, Benno Kaeslin, Linard Furck, Sandro Christen, Markus Fuchs, Andre Jauch}
+    \vspace{0.3cm}
+\end{center}    
+Dieses PDF, der Quellcode sowie der Disclaimer können dem GitHub Repository \url{https://github.com/MeierTobias/eth-analysis-3} entnommen werden.
 \vspace{0.2cm}
-%
-\section{Laplace Transformation}
-\subsection{Definition}
-Sei $f$:$[0,\infty] \rightarrow \mathbb{R}, t \rightarrow f(t)$:
 
-\begin{equation*}
-    \boxed{
-    f(t)\:\laplace\:F(s)=\mathcal{L}[f(t)](s)=\int_{0}^{\infty}e^{-st}f(t)\,dt 
-    }
-\end{equation*}
-Inverse Laplace Transformation:
-\begin{equation*}
-    F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
-\end{equation*}
-
-\subsection{Linearität}
-Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
-\begin{equation*}
-    \mathcal{L}[a*f(t)+b*g(t)] = a*\mathcal{L}[f(t)]+b*\mathcal{L}[g(t)]
-\end{equation*}
-
-\begin{examplesection}[Beispiele]
-    Sei $f(t)=2t+e^t$, dann ist
-    \begin{equation*}
-        F(s)=\mathcal{L}[f(t)]=\mathcal{L}[2t+e^t]=2*\mathcal{L}[t] + \mathcal{L}[e^t]=\frac{2}{s^2}+\frac{1}{s-1}
-    \end{equation*}
-    \hrule{}
-\end{examplesection}
-
+\input{sections/LaplaceTransformation.tex}
 
 % a model columnbreak
 \vfill\null % prevents the columns content from using the full height

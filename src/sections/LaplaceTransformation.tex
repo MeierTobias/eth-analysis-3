@@ -1,0 +1,27 @@
+\section{Laplace Transformation}
+\subsection{Definition}
+Sei $f$:$[0,\infty] \rightarrow \mathbb{R}, t \rightarrow f(t)$:
+
+\begin{equation*}
+    \boxed{
+    f(t)\:\laplace\:F(s)=\mathcal{L}[f(t)](s)=\int_{0}^{\infty}e^{-st}f(t)\,dt 
+    }
+\end{equation*}
+Inverse Laplace Transformation:
+\begin{equation*}
+    F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
+\end{equation*}
+
+\subsection{Linearität}
+Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
+\begin{equation*}
+    \mathcal{L}[a*f(t)+b*g(t)] = a*\mathcal{L}[f(t)]+b*\mathcal{L}[g(t)]
+\end{equation*}
+
+\begin{examplesection}[Beispiele]
+    Sei $f(t)=2t+e^t$, dann ist
+    \begin{equation*}
+        F(s)=\mathcal{L}[f(t)]=\mathcal{L}[2t+e^t]=2*\mathcal{L}[t] + \mathcal{L}[e^t]=\frac{2}{s^2}+\frac{1}{s-1}
+    \end{equation*}
+    \hrule{}
+\end{examplesection}
