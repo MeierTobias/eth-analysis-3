@@ -7,149 +7,55 @@
 \input{headers/layout_formating}
 \input{headers/code_header}
 \input{headers/math_header}
+\input{flags}
 % -------------------------------------------
-\title{Template}
-\subtitle{HS21 ETHZ}
-\author{}
-\date{\today}
 %
 \begin{document}
 \begin{multicols*}{3}
 %
-\maketitle
+\begin{center}
+    \huge{Analysis III \par}
+    \vspace{0.1cm}
+    \large{HS23 ETHZ\par}
+    \vspace{0.3cm}
+\end{center}
+Dieses PDF, der Quellcode, die Ersteller sowie der Disclaimer können dem GitHub Repository \url{https://github.com/MeierTobias/eth-analysis-3} entnommen werden.
+\vspace{0.2cm}
 %
-\section{Section Title}
-you can define a label like this \label{sec:start}
-\subsection{subsection title} \label{sec:second}
-you can define referencess to labels like this: \ref{sec:start}, \ref{sec:second}
-\subsubsection{subsubsection title}
-this is just normal text
+\section{Laplace Transformation}
+\subsection{Definition}
+Sei $f$:$[0,\infty] \rightarrow \mathbb{R}, t \rightarrow f(t)$:
 
-leave an empty line in the source to make a new paragraph
-or $\backslash\backslash$ \\
-or a $\backslash$newline command for a manual linebreak\newline
-however, do not make a manual newline at the end of a paragraph, as this generates hbox underflow badness \\
+\begin{equation*}
+    \boxed{
+    f(t)\:\laplace\:F(s)=\mathcal{L}[f(t)](s)=\int_{0}^{\infty}e^{-st}f(t)\,dt 
+    }
+\end{equation*}
+Inverse Laplace Transformation:
+\begin{equation*}
+    F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
+\end{equation*}
 
-\text{this is text without automatic linebreak ----------------------------}\\
-\text{if to long, text$\{\dots\}$ can generate overfull badness}
+\subsection{Linearität}
+Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
+\begin{equation*}
+    \mathcal{L}[a*f(t)+b*g(t)] = a*\mathcal{L}[f(t)]+b*\mathcal{L}[g(t)]
+\end{equation*}
 
-\textbf{this is bold text}
+\begin{examplesection}[Beispiele]
+    Sei $f(t)=2t+e^t$, dann ist
+    \begin{equation*}
+        F(s)=\mathcal{L}[f(t)]=\mathcal{L}[2t+e^t]=2*\mathcal{L}[t] + \mathcal{L}[e^t]=\frac{2}{s^2}+\frac{1}{s-1}
+    \end{equation*}
+    \hrule{}
+\end{examplesection}
 
-\textit{this is italic text}
-
-\textsc{and this text is in all caps}
 
 % a model columnbreak
 \vfill\null % prevents the columns content from using the full height
 \columnbreak
 %
-\section{Picture Template}
-\includegraphics[width=\columnwidth]{images/test.jpeg}
-%
-\section{Math Templates}
-\subsection{example}
-\begin{example}
-    \textbf{Beispiele}
-	\begin{itemize}
-		\item $\Omega = \left\{\frac{1}{n}\mid n\in \mathbb{N}\right\}$\\[3pt]
-		$sup(\Omega) = 1 \hspace{1cm} inf(\Omega) = 0$
-		\item$[a, b]$, $[a, b)$, $(a, b]$ und $(a, b)$ mit $a<b$\\
-	    a ist jeweils das Infimum und b das Supremum
-	\end{itemize}
-\end{example}
-%
-\subsection{annotation}
-\begin{annotation}{Zu zeigen:}
-	\item[i)] $a_n \ge$ 0
-	\item[ii)] $\lim_{n\rightarrow \infty} a_n$ =0
-	\item[iii)] $a_{n+1} - a_n \le$ 0 oder $\frac{a_{n+1}}{a_n} \le $ 1
-\end{annotation}
-%
-\subsection{equation numbered}
-\begin{equation}
-Q=\lim_{n\rightarrow \infty} \left \vert\frac{a_{n+1}}{a_n}\right \vert \hspace{20pt} \sum_{n=0}^{\infty}a_n
-	\begin{cases}
-		\text{divergiert} \hspace{5pt} &Q>1\\
-		\text{konvergiert absolut} &Q<1\\
-		\text{keine Aussage} &Q=1
-	\end{cases}
-\end{equation}
-%
-\subsubsection{equation unnumbered}
-\begin{equation*}
-Q=\lim_{n\rightarrow \infty} \left \vert\frac{a_{n+1}}{a_n}\right \vert \hspace{20pt} \sum_{n=0}^{\infty}a_n
-	\begin{cases}
-		\text{divergiert} \hspace{5pt} &Q>1\\
-		\text{konvergiert absolut} &Q<1\\
-		\text{keine Aussage} &Q=1......
-	\end{cases}
-\end{equation*}
-equation can also easily generate overfull badness
-%
-\vfill\null % prevents the columns content from using the full height
-\columnbreak
-\section{Code Template }
-\subsection{tiny c++ code from source text, made to look approximately like codeexpert}
-\begin{lstlisting}[
-    style= codeexpert,
-    basicstyle=\tiny\color{ce_white}\ttfamily\linespread{0.8},
-    ]
-//
-#include <iostream>
-int main(){
-    std::cout << "Hello World" << std::endl;
-    for (int i = 0; i<10; ++i){
-        if(!(i%2)) std::cout << i << " is even" << '\n';
-    }
-}
-    /* this is a comment */
-    // this is also a comment
-\end{lstlisting}
-%
-\subsection{code in normal text size}
-\begin{lstlisting}[style = codeexpert]
-// code
-std::cout << "hello" << '\n';
-\end{lstlisting}
-%
-\subsection{code in Huge text size} 
-\begin{lstlisting}[
-    style=codeexpert,
-    basicstyle=\Huge\ttfamily\color{ce_white},
-    ]
-// code
-\end{lstlisting}
-%
-\subsection{code from file}
-\lstinputlisting[
-    style = codeexpert,
-    basicstyle=\tiny\color{ce_white}\ttfamily\linespread{0.8},
-    ]
-        {code_snippets/hello_world.cpp}
-%
-\subsection{code with description}
-\lstinputlisting[
-    style = codeexpert,
-    basicstyle=\tiny\color{ce_white}\ttfamily\linespread{0.8},
-    caption={Hello World program (hello\_world.cpp)}, 
-    label=hello_world,
-    ]
-        {code_snippets/hello_world.cpp}
- %   
-\subsection{code in java, without the CodeExpert style template}
-\begin{lstlisting}[
-    language = java,
-    basicstyle=\ttfamily,
-    ]
-public class HelloWorld 
-{
-    public static void main (String[] args)
-    {
-        // prints Hello World!
-        System.out.println("Hello World!");
-    }    
-}
-\end{lstlisting}
+
 %  
 \end{multicols*}
 %

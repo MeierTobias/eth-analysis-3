@@ -31,10 +31,19 @@ jobs:
       - name: build latex pdfs
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=full -outdir=../build ./src/main.tex
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full -outdir=../build ./src/main.tex
+      - name: change flags
+        run: sed 's/^.\{1\}//g' -i src/flags.tex
+      - name: build without examples
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III -outdir=../build ./src/main.tex
+      - name: reset flags
+        run: sed 's/^/%/' -i src/flags.tex
       - name: Copy output
         run: |
-          cp ./build/full.pdf ./pages/analysis_3_full.pdf
+          cp ./build/analysis_III_full.pdf ./pages/analysis_III_full.pdf
+          cp ./build/analysis_III.pdf ./pages/analysis_III.pdf
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
