@@ -42,3 +42,54 @@ Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
 \begin{equation*}
     e^{at}*f(t)\:\laplace\:F(s-a)
 \end{equation*}
+
+\subsection{t-shifting, Heaviside function}
+\subsection{Dirac delta function}
+\subsection{LT von Ableitungen}
+\subsection{LT von Integralen}
+\subsection{Convolution (Faltung)}
+\subsection{Ableitung der LT}
+\subsection{Integral der LT}
+\subsection{Lösen von ODEs mit der LT}
+\subsection{Laplace-Transformationstabelle}
+\begin{align*}
+    f(t)\;&\laplace\; F(s) \\
+    e^{at}f(t)\;&\laplace\; F(s-a) \\
+    u(t-a)\;&\laplace\; \frac{e-as}s \\
+    f(t-a)u(t-a)\;&\laplace\; e^{-as}F(s) \\
+    \delta(t)\;&\laplace\; \\
+    \delta(t-t_{0})\;&\laplace\; e^{-st_{0}} \\
+    \frac{d^{n}}{dt^{n}}\delta(t)\;&\laplace\; s^{n}  \\
+    t^{n}f(t)\;&\laplace\; (-1)^n\frac{d^nF(s)}{ds^n}  \\
+    f^{\prime}\left(t\right)\;&\laplace\; \begin{aligned}sF(s)-f(0)\end{aligned}  \\
+    f^{n}(t)\;&\laplace\; s^nF(s)-s^{n-1}f(0)-...-f^{n-1}(0)  \\
+    f*g(t)\;&\laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}  \\
+    t^{n}(n=0,1,2,[USD3P])\;&\laplace\; \frac{n!}{s^{n+1}}  \\
+    sin(kt)\;&\laplace\; \frac k{s^2+k^2}  \\
+    sin^{2}(kt)\;&\laplace\; \frac{2k^2}{s(s^2+4k^2)}  \\
+    cos(kt)\;&\laplace\; \frac s{s^2+k^2}  \\
+    cos^{2}(kt)\;&\laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}  \\
+    e^{at}\;&\laplace\; \frac1{s-a}  \\
+    ln(at)\;&\laplace\; -\frac1s\left(ln\left(\frac sa\right)+\gamma\right)  \\
+    sinh(kt)\;&\laplace\; \frac k{s^2-k^2} \\
+    te^{at}\;&\laplace\; \frac1{(s-a)^2}  \\
+    t^{n}e^{at}\;&\laplace\; \frac{n!}{(s-a)^{n+}}  \\
+    -tf(t)\;&\laplace\; F^{\prime}(s)  \\
+    t^{2}f(t)\;&\laplace\; F^{\prime\prime}(s)  \\
+    \begin{aligned}(-t)^nf(t)\end{aligned}\;&\laplace\; F^{(n)}(s)  \\
+    \overset{t}{\operatorname*{\int}}f(u)du\;&\laplace\; \frac{1}{s}F(s)  \\
+    \intop_{0}^{t}\frac{(t-q)^{n-1}f(q)}{(n-1)!}dq,n\leq1\;&\laplace\; \frac1{s^n}F(s),n\geq1  \\
+    \frac{1}{t}f(t)\;&\laplace\; \overset{\infty}{\operatorname*{\int}}F(u)du  \\
+    1-e^{-at}\;&\laplace\; \frac a{s(s+a)}  \\
+    e^{at}sin(kt)\;&\laplace\; \frac k{(s-a)^2+k^2}  \\
+    e^{at}cos(kt)\;&\laplace\; \frac{s-a}{(s-a)^2+k^2}  \\
+    e^{at}sinh(kt)\;&\laplace\; \frac k{(s-a)^2-k^2}  \\
+    e^{at}cosh(kt)\;&\laplace\; \frac{(s-a)}{(s-a)^2-k^2}  \\
+    tsin(kt)\;&\laplace\; \frac{2ks}{(s^2+k^2)^2}  \\
+    tcos(kt)\;&\laplace\; \frac{s^2-k^2}{(s^2+k^2)^2}  \\
+    tsin(t)cos(t)\;&\laplace\; \frac{2s}{(s^2+4)^2}  \\
+    tsinh(kt)\;&\laplace\; \frac{2ks}{(s^2-k^2)^2}  \\
+    tcosh(kt)\;&\laplace\; \frac{s^2-k^2}{(s^2-k^2)^2}  \\
+    sin(at)\cdot f(t)\;&\laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia)  \\
+    cos(at)\cdot f(t)\;&\laplace\; \begin{aligned}\frac{1}{2}\cdot(F(s-ia)+F(s+ia))\end{aligned} 
+\end{align*}
