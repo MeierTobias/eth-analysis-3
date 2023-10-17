@@ -24,4 +24,21 @@ Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
         F(s)=\mathcal{L}[f(t)]=\mathcal{L}[2t+e^t]=2*\mathcal{L}[t] + \mathcal{L}[e^t]=\frac{2}{s^2}+\frac{1}{s-1}
     \end{equation*}
     \hrule{}
+    Sei $F(s)=\frac{4}{s^5}$
+    \begin{equation*}
+        f(t)=\mathcal{L}^{-1}[F(s)]=\mathcal{L}^{-1}\left[\frac{24}{s^5}\cdot\frac16\right]=\frac16\mathcal{L}^{-1}\left[\frac{24}{s^5}\right]=\frac16t^4
+    \end{equation*}
+    \hrule{}
+    Sei $F(s)=\frac{a}{bs+c}; a,b,c \in \mathbb{R}$
+    \begin{equation*}
+        F(s)=\frac{a}{bs+c}=\frac{\frac{a}{b}}{s+c/b}=\frac{\frac{a}{b}}{s-(-\frac{c}{b})}
+    \end{equation*}
+    \begin{equation*}
+        f(t)=\mathcal{L}^{-1}[F(s)]=\frac{a}{b}\mathcal{L}^{-1}\left[\frac{1}{s-(-\frac{c}{b})}\right]=\frac{a}{b}e^{-\frac{c}{b}t}
+    \end{equation*}
 \end{examplesection}
+
+\subsection{s-shifting (Verschiebung im Bildbereich)}
+\begin{equation*}
+    e^{at}*f(t)\:\laplace\:F(s-a)
+\end{equation*}
