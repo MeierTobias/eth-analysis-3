@@ -67,14 +67,8 @@ Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
     f^{n}(t)                        \;&\laplace\; s^nF(s)-s^{n-1}f(0)-...-f^{n-1}(0)  \\
     f(t)*g(t)                       \;&\laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}  \\
     t^{n}(n=0,1,2,\dots)            \;&\laplace\; \frac{n!}{s^{n+1}}  \\
-    sin(kt)                         \;&\laplace\; \frac{k}{s^2+k^2}  \\
-    sin^{2}(kt)                     \;&\laplace\; \frac{2k^2}{s(s^2+4k^2)}  \\
-    cos(kt)                         \;&\laplace\; \frac{s}{s^2+k^2}  \\
-    cos^{2}(kt)                     \;&\laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}  \\
     e^{at}                          \;&\laplace\; \frac{1}{s-a}  \\
-    ln(at)                          \;&\laplace\; -\frac{1}{s}\left(ln\left(\frac sa\right)+\gamma\right)  \\
-    sinh(kt)                        \;&\laplace\; \frac{k}{s^2-k^2} \\
-    cosh(kt)                        \;&\laplace\; \frac{s}{s^2-k^2} \\
+    ln(at)                          \;&\laplace\; -\frac{1}{s}\left(ln\left(\frac sa\right)+\gamma\right)  \\ 
     \frac{e^{at}-e^{bt}}{a-b}       \;&\laplace\; \frac{1}{(s-a)(s-b)} \\
     \frac{ae^{at}-be^{at}}{a-b}     \;&\laplace\; \frac{s}{(s-a)(s-b)} \\
     te^{at}                         \;&\laplace\; \frac{1}{(s-a)^2}  \\
@@ -86,15 +80,21 @@ Für $a,b \in \mathbb{R}$ und Funktionen $f(t),g(t)$ gilt:
     \int_{0}^{t}\frac{(t-q)^{n-1}f(q)}{(n-1)!}dq,n \leq 1 \;&\laplace\; \frac{1}{s^n}F(s),n \geq 1  \\
     \frac{1}{t}f(t)                 \;&\laplace\; \int_{s}^{\infty}F(u)du  \\
     1-e^{-at}                       \;&\laplace\; \frac{a}{s(s+a)}  \\
+    sin(kt)                         \;&\laplace\; \frac{k}{s^2+k^2}  \\
+    sin^{2}(kt)                     \;&\laplace\; \frac{2k^2}{s(s^2+4k^2)}  \\
+    cos(kt)                         \;&\laplace\; \frac{s}{s^2+k^2}  \\
+    cos^{2}(kt)                     \;&\laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}  \\
+    sinh(kt)                        \;&\laplace\; \frac{k}{s^2-k^2} \\
+    cosh(kt)                        \;&\laplace\; \frac{s}{s^2-k^2} \\
     e^{at}sin(kt)                   \;&\laplace\; \frac{k}{(s-a)^2+k^2}  \\
     e^{at}cos(kt)                   \;&\laplace\; \frac{s-a}{(s-a)^2+k^2}  \\
     e^{at}sinh(kt)                  \;&\laplace\; \frac{k}{(s-a)^2-k^2}  \\
     e^{at}cosh(kt)                  \;&\laplace\; \frac{(s-a)}{(s-a)^2-k^2}  \\
-    tsin(kt)                        \;&\laplace\; \frac{2ks}{(s^2+k^2)^2}  \\
-    tcos(kt)                        \;&\laplace\; \frac{s^2-k^2}{(s^2+k^2)^2}  \\
-    tsin(t)cos(t)                   \;&\laplace\; \frac{2s}{(s^2+4)^2}  \\
-    tsinh(kt)                       \;&\laplace\; \frac{2ks}{(s^2-k^2)^2}  \\
-    tcosh(kt)                       \;&\laplace\; \frac{s^2-k^2}{(s^2-k^2)^2}  \\
+    t\cdot sin(kt)                        \;&\laplace\; \frac{2ks}{(s^2+k^2)^2}  \\
+    t\cdot cos(kt)                        \;&\laplace\; \frac{s^2-k^2}{(s^2+k^2)^2}  \\
+    t\cdot sin(t)cos(t)                   \;&\laplace\; \frac{2s}{(s^2+4)^2}  \\
+    t\cdot sinh(kt)                       \;&\laplace\; \frac{2ks}{(s^2-k^2)^2}  \\
+    t\cdot cosh(kt)                       \;&\laplace\; \frac{s^2-k^2}{(s^2-k^2)^2}  \\
     sin(at)\cdot f(t)               \;&\laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia)) \\
     cos(at)\cdot f(t)               \;&\laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia)) \\
     sinh(at)\cdot f(t)              \;&\laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a)) \\
