@@ -189,9 +189,10 @@ For n = 1, n=2 and n=3
 \end{tabular}
 
 \subsection{t-shifting}
-\begin{equation*}
-    u(t-a)f(t-a) \:\laplace\: e^{-as}F(s)
-\end{equation*}
+\begin{align*}
+    f(t-a)u(t-a) &\:\laplace\: e^{-as}F(s)\\
+    f(t)u(t-a) &\:\laplace\: e^{-as}Ff(t+a)
+\end{align*}
 
 \subsection{Integration}
 Let $f$ be a piecewise continuous function for $t\geq0$
@@ -252,7 +253,7 @@ Properties: Let $f,g$ and $h$ be functions.
 \subsection{Differentiation of transforms}
 Let $f$ be a piecewise continuous function that satisfies the growth condition. Then
 \begin{equation*}
-    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{t f(t)}
+    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{L}[t f(t)]
 \end{equation*}
 \begin{equation*}
     \mathcal{L}^{-1}[F'(s)] = -tf(t)
