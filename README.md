@@ -33,6 +33,10 @@ If you use the [LaTeX Workshop extension](vscode:extension/James-Yu.latex-worksh
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
 
+## Acknowledgements
+
+Thanks to *S.* for creating this wonderful AMIV/ETHZ summaries LaTeX template which can be downloaded [here](https://de.overleaf.com/latex/templates/amiv-slash-ethz-summaries-template-landscape/trggddjtjhqr).
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
