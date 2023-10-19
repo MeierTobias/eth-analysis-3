@@ -250,16 +250,16 @@ The Laplace transform is given by
 
 \subsection{Convolution}
 \begin{equation*}
-    f*g(t):=\int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
+    f*g(t):=\int_{0}^{t}f(\tau)g(t-\tau)d\tau
 \end{equation*}
 Properties: Let $f,g$ and $h$ be functions.
 \begin{align*}
-    f*g =& g*f \\
-    f*(g+h) =& f*g+f*h \\
-    f*(g*h) =& (f*g)*h \\
-    f*0 =& 0*f=0 \\
-    f*1 \ne& f \\
-    f*f \;&\text{is not always non-negative}
+    f*g =&\ g*f \\
+    f*(g+h) =&\ f*g+f*h \\
+    f*(g*h) =&\ (f*g)*h \\
+    f*0 =&\ 0*f=0 \\
+    f*1 \ne&\ f \\
+    f*f \;&\ \text{is not always non-negative}
 \end{align*}
 \begin{equation*}
     f(t)*g(t) \:\laplace\: F(s)\cdot G(s)

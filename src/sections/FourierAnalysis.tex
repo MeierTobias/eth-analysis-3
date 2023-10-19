@@ -1,1 +1,214 @@
 \section{Fourier Analysis}
+
+\subsection{Periodicity}
+A function $f(x)$ is called periodic if it is defined for “most” $x \in \mathbb{R} $ and if there is a positive real number $p \in R, p > 0$ such that $f(x) = f(x+p)$ for all $x$.
+\begin{align*}
+    f(t+p)=f(t),\quad &p>0\\
+    \sin\biggl( \underbrace{\frac{2\pi}{L}}_{\frac{2\pi}{p}}nt \biggr) &\rightarrow p=L \\
+\end{align*}
+
+\subsection{Trigonometric Properties}
+\begin{align*}
+    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\cos\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0\\2&Ln=m=0.\end{cases}\\
+    \int_{-L}^L\sin\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0.\end{cases}\\
+    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=0,\text{ for every }n,m.
+\end{align*}
+
+\subsection{Fourier Series}
+For the Fourier series to exist and for it to converge to $f(t)$, $f(t)$ has to be defined and $2L$-periodic on $[-L,L]$. 
+For every discontinouity, the \textbf{Dirichlet Theorem} has to hold. $a_0,a_n,b_b\in \mathbb{R}$
+\begin{align*}
+    f(x)&=a_0+\sum_{n=1}^\infty\left(a_n\cos\left(\frac{n\pi}Lx\right)+b_n\sin\left(\frac{n\pi}Lx\right)\right) \\ \\
+    a_{0} &=\frac{1}{2L}\int_{-L}^{L}f(x)dx  \\ \\
+    a_{m} &=\frac{1}{L}\int_{-L}^{L}f(x)\cos\left(\frac{m\pi}{L}x\right)dx,\text{ if }m>0 \\ \\
+    b_{m}&=\frac{1}{L}\int_{-L}^{L}f(x)\sin\left(\frac{m\pi}{L}x\right)dx,\text{ if }m>0
+\end{align*}
+\subsubsection{Dirichlet Theorem - Convergenve}
+For discontinouities $f(x^-)\neq f(x^+)$ the fourier series converges to:
+\begin{align*}
+    F(x_0)&=\frac12(f(x_0^-)+f(x_0^+))
+\end{align*}
+
+\subsubsection{Even FS}
+Functions are even if $f(x)=f(-x)$ and due to symmetry:
+\begin{align*}
+    \int_{-L}^Lg(x)dx=2\int_0^Lg(x)dx
+\end{align*}
+\textbf{Fourier series} for even functions:
+\begin{align*}
+    f(x)&=a_0+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi}{L}x\right) \\ \\
+    a_{0} &=\frac{1}{L}\int_{0}^{L}f(x)dx  \\
+    a_{n} &=\frac2L\int_0^Lf(x)\cos\left(\frac{n\pi}Lx\right)dx \\
+    b_{n} &=0
+\end{align*}
+\begin{align*}
+    f(a\cdot x)=\frac1a\intop_0^\infty A(\frac\omega a)\cdot cos(\omega x)d\omega 
+\end{align*}
+\subsubsection{Odd FS}
+Functions are odd if $f(x)=-f(-x)$ and due to symmetry:
+\begin{align*}
+    \int_{-L}^Lg(x)dx=0
+\end{align*}
+\textbf{Fourier series} for odd functions:
+\begin{align*}
+    f(x)&=\sum_{n=1}^\infty b_n\sin\left(\frac{n\pi}Lx\right) \\ \\
+    a_0 &= a_n = 0\\
+    b_n&=\dfrac{2}{L}\int_0^Lf(x)\sin\left(\dfrac{n\pi}{L}x\right)dx
+\end{align*}
+
+\subsubsection{Expansion of FS}
+If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\ 
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Copy-paste} exp.\\   
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth,
+            unit vector ratio={3 1},
+            axis x line=left,
+            axis y line=middle,
+            xmin=-2.5,
+            xmax=2.5,
+            ymin=0,
+            ymax=2,
+            %xlabel={$t$},
+            %ylabel={$u(t-a)$},
+            xtick={0},
+            ytick={1},
+            extra x ticks={-2, 2},
+            extra x tick labels={$-L$,$L$},
+            mark=none,
+        ]
+            \addplot [blue, very thick] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (0,1)
+                (1,1)
+            };
+            \addplot [blue, very thick] 
+            coordinates {
+                (1,0.05)
+                (2,0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (-2,1)
+                (-1,1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                (-1,0.05)
+                (0,0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot[fill=white,only marks,mark=*] coordinates{(1,0)(1,1)(0,1)(2,0)(-2,1)(-1,1)(-1,0)(0,0)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Even} expansion\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth,
+            unit vector ratio={3 1},
+            axis x line=left,
+            axis y line=middle,
+            xmin=-2.5,
+            xmax=2.5,
+            ymin=0,
+            ymax=2,
+            %xlabel={$t$},
+            %ylabel={$u(t-a)$},
+            xtick={0},
+            ytick={1},
+            extra x ticks={-2, 2},
+            extra x tick labels={$-L$,$L$},
+            mark=none,
+        ]
+            \addplot [blue, very thick] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (0,1)
+                (1,1)
+            };
+            \addplot [blue, very thick] 
+            coordinates {
+                (1,0.05)
+                (2,0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (-1,1)
+                (0,1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                (-2,0.05)
+                (-1,0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot[fill=white,only marks,mark=*] coordinates{(1,0)(1,1)(0,1)(2,0)(-2,0)(-1,1)(-1,0)(0,0)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Odd} expansion\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth,
+            unit vector ratio={3 1},
+            axis x line=center,
+            axis y line=center,
+            xmin=-2.5,
+            xmax=2.5,
+            ymin=-2,
+            ymax=2,
+            %xlabel={$t$},
+            %ylabel={$u(t-a)$},
+            xtick={0},
+            ytick={1},
+            extra x ticks={-2,2},
+            extra x tick labels={$-L$,$L$},
+            mark=none,
+        ]
+            \addplot [blue, very thick] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (0,1)
+                (1,1)
+            };
+            \addplot [blue, very thick] 
+            coordinates {
+                (1,0.05)
+                (2,0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                %(\pgfkeysvalueof{/pgfplots/xmin},0)
+                (-1,-1)
+                (0,-1)
+            };
+            \addplot [blue, very thick, dotted] 
+            coordinates {
+                (-2,-0.05)
+                (-1,-0.05)
+                %(\pgfkeysvalueof{/pgfplots/xmax},1)
+            };
+            \addplot[fill=white,only marks,mark=*] coordinates{(1,0)(1,1)(0,1)(2,0)(-2,0)(-1,-1)(-1,0)(0,-1)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+
+\subsection{Complex Fourier Series}
+
+\subsubsection{Minimum Square Error}
+
+\subsubsection{Even CFS}
+
+\subsubsection{Odd CFS}
+
+
