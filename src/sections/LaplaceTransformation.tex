@@ -9,7 +9,7 @@ Let $f:\mathbb{R}_{\geq 0} \rightarrow \mathbb{R}$ be a function.
 Inverse Laplace transform:
 \begin{equation*}
     F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
-\end{equation*}
+\end{equation*} 
 
 \subsection{Linearity}
 Let $f$ and $g$ be functions for which the Laplace transform exists. Then for all $a,b \in \mathbb{R}$
@@ -57,6 +57,15 @@ For n = 1, n=2 and n=3
     \mathcal{L}[f''](s)&=s^2\mathcal{L}[f](s)-sf(0)-f'(0) \\
     \mathcal{L}[f'''](s)&=s^3\mathcal{L}[f](s)-s^2f(0)-sf'(0)-f''(0)
 \end{align*}
+
+\subsection{Differentiation of transforms}
+Let $f$ be a piecewise continuous function that satisfies the growth condition. Then
+\begin{equation*}
+    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{L}[t f(t)]
+\end{equation*}
+\begin{equation*}
+    \mathcal{L}^{-1}[F'(s)] = -tf(t)
+\end{equation*}
 
 \subsection{Heaviside function}
 \begin{tabular}{ m{5cm}  m{3.4cm} }
@@ -189,14 +198,21 @@ For n = 1, n=2 and n=3
 \end{tabular}
 
 \subsection{t-shifting}
-\begin{equation*}
-    u(t-a)f(t-a) \:\laplace\: e^{-as}F(s)
-\end{equation*}
+\begin{align*}
+    f(t-a)u(t-a) &\:\laplace\: e^{-as}F(s)\\
+    f(t)u(t-a) &\:\laplace\: e^{-as}Ff(t+a)
+\end{align*}
 
 \subsection{Integration}
 Let $f$ be a piecewise continuous function for $t\geq0$
 \begin{equation*}
     \int_{0}^{t}f(x)dx \:\laplace\: \frac{1}{s}F(s)
+\end{equation*}
+
+\subsection{Integration of transforms}
+If the $\lim_{t\to 0^+}\frac{f(t)}{t}$ exists, then
+\begin{equation*}
+    \int_{s}^{\infty}\mathcal{L}[f](s^{\prime})\mathrm{~}ds^{\prime}=\mathcal{L}\left[\frac{f(t)}t\right](s)
 \end{equation*}
 
 \subsection{Dirac's delta function}
@@ -228,40 +244,25 @@ Let $f(t)$ be a differentiable function with continuous derivative and with zero
 \end{equation*}
 The Laplace transform is given by
 \begin{align*}
-    \mathcal{L}[\delta(t)] &= 1 \\
-    \mathcal{L}[\delta(t-a)] &= e^{-as}
+    \delta(t) &\;\laplace\; 1 \\
+    \delta(t-a) &\;\laplace\; e^{-as}
 \end{align*}
 
 \subsection{Convolution}
 \begin{equation*}
-    f*g(t):=\int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
+    f*g(t):=\int_{0}^{t}f(\tau)g(t-\tau)d\tau
 \end{equation*}
 Properties: Let $f,g$ and $h$ be functions.
 \begin{align*}
-    f*g =& g*f \\
-    f*(g+h) =& f*g+f*h \\
-    f*(g*h) =& (f*g)*h \\
-    f*0 =& 0*f=0 \\
-    f*1 \ne& f \\
-    f*f \;&\text{is not always non-negative}
+    f*g =&\ g*f \\
+    f*(g+h) =&\ f*g+f*h \\
+    f*(g*h) =&\ (f*g)*h \\
+    f*0 =&\ 0*f=0 \\
+    f*1 \ne&\ f \\
+    f*f \;&\ \text{is not always non-negative}
 \end{align*}
 \begin{equation*}
     f(t)*g(t) \:\laplace\: F(s)\cdot G(s)
-\end{equation*}
-
-\subsection{Differentiation of transforms}
-Let $f$ be a piecewise continuous function that satisfies the growth condition. Then
-\begin{equation*}
-    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{t f(t)}
-\end{equation*}
-\begin{equation*}
-    \mathcal{L}^{-1}[F'(s)] = -tf(t)
-\end{equation*}
-
-\subsection{Integration of transforms}
-If the $\lim_{t\to 0^+}\frac{f(t)}{t}$ exists, then
-\begin{equation*}
-    \int_{s}^{\infty}\mathcal{L}[f](s^{\prime})\mathrm{~}ds^{\prime}=\mathcal{L}\left[\frac{f(t)}t\right](s)
 \end{equation*}
 
 \subsection{Solving initial value problems}
