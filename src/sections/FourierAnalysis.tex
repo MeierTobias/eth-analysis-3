@@ -58,12 +58,12 @@ Functions are odd if $f(x)=-f(-x)$ and due to symmetry:
 
 \subsubsection{Expansion of FS}
 If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\ 
-\begin{minipage}[t]{0.19\textwidth}
+\begin{minipage}[t]{0.18\textwidth}
     \textbf{Copy-paste} exp.\\   
     \begin{tikzpicture}
         \begin{axis}[
             width=\linewidth,
-            unit vector ratio={3 1},
+            unit vector ratio={3 1.2},
             axis x line=left,
             axis y line=middle,
             xmin=-2.5,
@@ -106,12 +106,12 @@ If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
         \end{axis}
     \end{tikzpicture}
 \end{minipage}
-\begin{minipage}[t]{0.19\textwidth}
+\begin{minipage}[t]{0.18\textwidth}
     \textbf{Even} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
             width=\linewidth,
-            unit vector ratio={3 1},
+            unit vector ratio={3 1.2},
             axis x line=left,
             axis y line=middle,
             xmin=-2.5,
@@ -154,12 +154,12 @@ If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
         \end{axis}
     \end{tikzpicture}
 \end{minipage}
-\begin{minipage}[t]{0.19\textwidth}
+\begin{minipage}[t]{0.18\textwidth}
     \textbf{Odd} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
             width=\linewidth,
-            unit vector ratio={3 1},
+            unit vector ratio={3 1.2},
             axis x line=center,
             axis y line=center,
             xmin=-2.5,
@@ -204,11 +204,30 @@ If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
 \end{minipage}
 
 \subsection{Complex Fourier Series}
+ If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
+ \begin{align*}
+    f(x)&=c_0+\sum_{\overset{n=-\infty}{n\neq0}}^\infty c_n\cdot e^{\frac{i\pi n}Lx}
+ \end{align*}
+ \begin{align*}
+    c_0=\frac1{2L}\int_{-L}^Lf(x)dx\quad\mid \quad&c_n=\frac1{2L}\int_{-L}^Lf(x)\cdot e^{-\frac{i\pi n}Lx}
+\end{align*}
+Conversion from and to \textbf{real FS}:\\
+\begin{tabular}[h]{c|c|c}
+    \multicolumn{2}{c}{$a_0=c_0$}                                   &$e^{\pm ix}=\cos(x)\pm i\cdot \sin(x)$\\
+    $a_n=c_n+c_{-2}$                &$c_n = \frac{1}{1}(a_n-ib_n)$  &$e^{ix}-e^{-ix}=2i\sin(x)$\\
+    $b_n=i(c_n-c_{-n})$             &$c_{-n}=\overline{c_n}$        &$e^{ix}+e^{-ix}=2\cos(x)$
+\end{tabular}
 
 \subsubsection{Minimum Square Error}
+The MSE of a trigonometric polynomial of degree $N$ that best approximates a function $f(t)$ on the interval $[-\pi,\pi]$ is: 
 
-\subsubsection{Even CFS}
+\begin{align*}
+    E^*=\intop_{-\pi}^\pi f^2(x)dx-\pi\left(2a_0^2+\sum_{n=1}^N(a_n^2+b_n^2)\right)
+\end{align*}
 
-\subsubsection{Odd CFS}
-
-
+\subsection{Fourier Integral}
+\subsection{Absolute Integrable}
+\subsubsection{Odd FI}
+\subsubsection{Even FI}
+\subsection{Fourier Transformation}
+\subsubsection{Inverse FT}
