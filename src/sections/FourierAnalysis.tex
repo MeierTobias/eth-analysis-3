@@ -278,18 +278,18 @@ More properties:
 \begin{align*}
     u_t&\;\laplace\;\frac\partial{\partial t}\hat{u}(\omega,t) \\
     t^2u_x&\;\laplace\; t^2\mathcal{F}\left(u_x\right) \\
-    x\cdot y(x)(\omega)&\;\laplace\;i\mathcal{F}(y^{\prime}(x))(\omega) \\
+    x\cdot y(x)&\;\laplace\;iw\mathcal{F}(y^{\prime}(x))(\omega) \\
     x(t-t_0)&\;\laplace\; e^{-2\pi ift_0}\widehat{x}(f)\\
     e^{2\pi if_0t}x(t) &\;\laplace\; \widehat{x}(f-f_0)
 \end{align*}
 
 \subsubsection{Known Transforms}
 \begin{align*}
-    e^{-ax^2}&\;\laplace\;\frac1{\sqrt{2a}}e^{-w^2/4a}\\
+    e^{-ax^2}&\;\laplace\;\frac1{\sqrt{2a}}e^{\frac{-w^2}{4a}}\\
     xe^{-ax^2}&\;\laplace\;\frac{i\omega}{(2a)^{3/2}}e^{-\frac{\omega^2}{4a}}\\
     \frac x{(2b)^{3/2}}e^{-\frac{x^2}{4b}}&\;\laplace\;i\omega e^{-b\omega^2}
 \end{align*}
-\subsubsection{How to choose}
+\subsubsection{How to Choose}
 
 \begin{tabular}[h]{p{0.4\linewidth}|p{0.09\linewidth}|p{0.09\linewidth}|p{0.04\linewidth}|p{0.04\linewidth}|p{0.05\linewidth}}
     Property & FS $\mathbb{R}$&FS $\mathbb{C}$& FI & FT & LT\\
