@@ -29,6 +29,18 @@ If you want to use your own native installed LaTeX compiler we recommend to use 
 If you use the [LaTeX Workshop extension](vscode:extension/James-Yu.latex-workshop) you can add the following line to your `.vscode/settings.json` file to specify the output directory :  
 `"latex-workshop.latex.outDir": "../build",`
 
+Additionally, if you want to remove unneccessary build files add 
+```yaml
+"latex-workshop.latex.clean.fileTypes" : [ "*.aux", "*.fls", "*.synctex.gz", "*.out", "*.log", "*.fdb_latexmk" ],
+"latex-workshop.latex.autoClean.run": "onBuilt",
+"latex-workshop.latex.clean.method": "glob",
+
+// if using subfolder
+"latex-workshop.latex.outDir": "../build",
+"latex-workshop.latex.clean.subfolder.enabled": true,
+```
+to `.vscode/settings.json`
+
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.

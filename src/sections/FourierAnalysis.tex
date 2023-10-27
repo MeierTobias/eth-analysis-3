@@ -213,21 +213,94 @@ If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
 \end{align*}
 Conversion from and to \textbf{real FS}:\\
 \begin{tabular}[h]{c|c|c}
-    \multicolumn{2}{c}{$a_0=c_0$}                                   &$e^{\pm ix}=\cos(x)\pm i\cdot \sin(x)$\\
-    $a_n=c_n+c_{-2}$                &$c_n = \frac{1}{1}(a_n-ib_n)$  &$e^{ix}-e^{-ix}=2i\sin(x)$\\
-    $b_n=i(c_n-c_{-n})$             &$c_{-n}=\overline{c_n}$        &$e^{ix}+e^{-ix}=2\cos(x)$
+    \multicolumn{2}{c}{$a_0=c_0$}                                   &$e^{\pm ix}=\cos x\pm i\sin x$\\
+    $a_n=c_n+c_{-2}$                &$c_n = \frac{1}{2}(a_n-ib_n)$  &$e^{ix}-e^{-ix}=2i\sin x$\\
+    $b_n=i(c_n-\overline{c_n})$             &$c_{-n}=\overline{c_n}$        &$e^{ix}+e^{-ix}=2\cos x$
 \end{tabular}
-
+ 
 \subsubsection{Minimum Square Error}
 The MSE of a trigonometric polynomial of degree $N$ that best approximates a function $f(t)$ on the interval $[-\pi,\pi]$ is: 
-
+ 
 \begin{align*}
     E^*=\intop_{-\pi}^\pi f^2(x)dx-\pi\left(2a_0^2+\sum_{n=1}^N(a_n^2+b_n^2)\right)
 \end{align*}
 
-\subsection{Fourier Integral}
 \subsection{Absolute Integrable}
-\subsubsection{Odd FI}
+$f(t)$ is absolutely integrable if:
+\begin{align*}
+    \int_{-\infty}^{\infty}\left|f(x)\right|dx<\infty ,\quad f\in L_1
+\end{align*}
+\subsection{Fourier Integral}
+The \textbf{Fourier Integral} is defined if $f$ is piecewise linear, has left/right derivatives at 
+discontinouities and is absolutely Integrable:
+\begin{align*}
+    f(t)&=\int_0^\infty[A(w)\cos(wx)+B(w)\sin(wx)]dw\\\\
+    A(w)&=\frac1\pi\int_{-\infty}^{\infty}f(v)\cos(wv)dv\\
+    B(w)&=\frac1\pi\int_{-\infty}^{\infty}f(v)\sin(wv)dv
+\end{align*}
+
 \subsubsection{Even FI}
+If $f(t)$ is even, i.e. $f(t)=f(-t)$, the FI simplyfies to:
+\begin{align*}
+    f(x)&=\int_0^\infty A(w)\cos(wx)dw\\\\
+    A(w)&=\frac2\pi\int_0^\infty f(v)\cos(wv)dv\\
+    B(w)&=0
+\end{align*}
+\subsubsection{Odd FI}
+If $f(t)$ is odd, i.e. $f(t)=-f(-t)$, the FI simplyfies to:
+\begin{align*}
+    f(x)&=\int_0^\infty B(w)\sin(wx)dw\\\\
+    A(w)&=0\\
+    B(w)&=\frac2\pi\int_0^\infty f(v)\sin(wv)dv
+\end{align*}
+
 \subsection{Fourier Transformation}
-\subsubsection{Inverse FT}
+If $f$ is absolutely integrable (non-periodic), and piecewise continous on finite integrals, 
+then the \textbf{Fourier Transform} and its inverse exists:
+\begin{align*}
+    \mathcal{F}(f)(w)=\widehat{f}(w)&:=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(v)e^{-iwv}dv\\\\
+    \mathcal{F}^{-1}(\widehat{f})(x)=f(x)&:=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\widehat{f}(w)e^{iwx}dw\\
+\end{align*}
+\subsubsection{Properties of FT}
+
+
+\begin{tabular}[h]{p{0.25\linewidth} p{0.74\linewidth}}
+    1. Linearity & $\mathcal{F}(\alpha f+\beta g)=\alpha\mathcal{F}(f)+\beta\mathcal{F}(g)$\\
+    &\\
+    &\\
+    \multicolumn{2}{p{0.9\linewidth}}{If $f$ is continous on $\mathbb{R}$, $\lim_{|x|\to\infty}f(x)=0$ and $f'\in L_1$:}\\
+    2. Derivative & $f^{\prime}(x)\;\laplace\;iw\widehat{f}(w)$\\
+    &\\
+    \multicolumn{2}{p{0.9\linewidth}}{If $f,g$ are piecewise linear, bounded and $\in L_1$:}\\
+    3. Convolution & $f*g\;\laplace\;\sqrt{2\pi}\widehat{f}\;\widehat{g}$\\
+\end{tabular}\vspace*{8pt}\\
+More properties:
+\begin{align*}
+    u_t&\;\laplace\;\frac\partial{\partial t}\hat{u}(\omega,t) \\
+    t^2u_x&\;\laplace\; t^2\mathcal{F}\left(u_x\right) \\
+    x\cdot y(x)(\omega)&\;\laplace\;i\mathcal{F}(y^{\prime}(x))(\omega) \\
+    x(t-t_0)&\;\laplace\; e^{-2\pi ift_0}\widehat{x}(f)\\
+    e^{2\pi if_0t}x(t) &\;\laplace\; \widehat{x}(f-f_0)
+\end{align*}
+
+\subsubsection{Known Transforms}
+\begin{align*}
+    e^{-ax^2}&\;\laplace\;\frac1{\sqrt{2a}}e^{-w^2/4a}\\
+    xe^{-ax^2}&\;\laplace\;\frac{i\omega}{(2a)^{3/2}}e^{-\frac{\omega^2}{4a}}\\
+    \frac x{(2b)^{3/2}}e^{-\frac{x^2}{4b}}&\;\laplace\;i\omega e^{-b\omega^2}
+\end{align*}
+\subsubsection{How to choose}
+
+\begin{tabular}[h]{p{0.4\linewidth}|p{0.09\linewidth}|p{0.09\linewidth}|p{0.04\linewidth}|p{0.04\linewidth}|p{0.05\linewidth}}
+    Property & FS $\mathbb{R}$&FS $\mathbb{C}$& FI & FT & LT\\
+    \hline
+    Periodic & \checkmark & \checkmark & x & x & x\\
+    $L_1$ & \checkmark & \checkmark & \checkmark & \checkmark& x\\
+    Piecewise cont. &\checkmark & \checkmark & \checkmark&&\\
+    Left/right deriv. at disc. & \checkmark & \checkmark & \checkmark &&\\
+    \hline
+    \hline
+    Advantage &&&&&\\
+    Complex eigenfunctions & x& \checkmark & x & \checkmark& \checkmark\\
+    Odd / Even distinction &\checkmark & x & \checkmark & x & x\\
+\end{tabular}
