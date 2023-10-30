@@ -45,6 +45,12 @@ Moreover
 \begin{equation*}
     e^{at}\cdot f(t)\:\laplace\:F(s-a)
 \end{equation*}
+\begin{examplesection}[Example]
+    Let $f(t)=e^{2t}\cdot cos(\omega t)$ $\Rightarrow a=2$ (s-shifting)
+	\begin{equation*}
+        \mathcal{L}[cos(\omega t)]=\frac{s}{s^2+\omega ^2}\Rightarrow \mathcal{L}[f(t)]=\frac{s-2}{(s-2)^2+\omega ^2}
+    \end{equation*}
+\end{examplesection}
 
 \subsection{Differentiation}
 Let $f, f', \dots, f^{(n-1)}$ be continuous functions for all $t \geq 0$. Assume that $f^{(n)}$ is piecewise continuous on every finite subinterval in $[0;1)$. Then
@@ -57,6 +63,16 @@ For n = 1, n=2 and n=3
     \mathcal{L}[f''](s)&=s^2\mathcal{L}[f](s)-sf(0)-f'(0) \\
     \mathcal{L}[f'''](s)&=s^3\mathcal{L}[f](s)-s^2f(0)-sf'(0)-f''(0)
 \end{align*}
+\begin{examplesection}[Example]
+    Give the ODE $y''-y'+y=0,\;y(0)=0,\;y'(0)=1$
+    \begin{align*}
+        \mathcal{L}[y''-y'+y]&\:=\:\mathcal{L}[0] \Leftrightarrow \\
+        \mathcal{L}[y'']-\mathcal{L}[y']+\mathcal{L}[y]&\:=\:\mathcal{L}[0] \Leftrightarrow \\
+        s^2Y -\underbrace{sy(0)}_{=0}-\underbrace{y'(0)}_{=1}-(sY-\underbrace{y(0)}_{=0})+Y&\:=\:0 \Leftrightarrow \\
+        Y=\frac{1}{s^2-s+1}=\frac{1}{(s-\frac{1}{2})^2+\frac{3}{4}}=\sqrt{\frac{4}{3}}&\frac{\sqrt{\frac{3}{4}}}{(s-\frac{1}{2})^2+(\sqrt{\frac{3}{4}})^2} \Leftrightarrow \\
+        Y\;\Laplace\;y=\sqrt{\frac{4}{3}}e^{\frac{1}{2}t}sin\left(\sqrt{\frac{3}{4}t}\right)
+    \end{align*}
+\end{examplesection}
 
 \subsection{Differentiation of transforms}
 Let $f$ be a piecewise continuous function that satisfies the growth condition. Then
@@ -200,8 +216,22 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
 \subsection{t-shifting}
 \begin{align*}
     f(t-a)u(t-a) &\:\laplace\: e^{-as}F(s)\\
-    f(t)u(t-a) &\:\laplace\: e^{-as}Ff(t+a)
+    f(t)u(t-a) &\:\laplace\: e^{-as}\mathcal{L}[f(t+a)]
 \end{align*}
+\begin{examplesection}[Example]
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    Let $f(t)=t^2$ and now shift it by $a$ : $f(t-a)=(t-a)^2$
+    \begin{equation*}
+       \mathcal{L}[f]=e^{-as}\frac{2}{s^3}
+    \end{equation*}
+    \hrule{}
+    Given 
+    \begin{align*}
+        F(s)&=\frac{e^{-2s}}{s^4}=\frac{1}{6}e^{-2s}\underbrace{\frac{3\!}{s^4}}_{=\mathcal{L}[t^3]} \\
+        \mathcal{L}^{-1}[F]&= \frac{1}{6}(t-2)^3u(t-2)=\begin{cases}\frac{1}{6}(t-2)^3& t>2\\ 0& t<2\end{cases}
+    \end{align*}
+\end{examplesection}
 
 \subsection{Integration}
 Let $f$ be a piecewise continuous function for $t\geq0$
@@ -266,6 +296,24 @@ Properties: Let $f,g$ and $h$ be functions.
 \end{equation*}
 
 \subsection{Solving initial value problems}
+\begin{enumerate}
+    \item Transform the ODE to the s-domain ($\mathcal{L}[y]=Y$)\\
+    $\Rightarrow$ Insert initial conditions\\
+    $\quad\qquad y''+ay'+by=r(t)$\\
+    $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
+    \item Solve the equation for $Y$ \\
+    $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
+    \item Transform the equation back to the time-domain $y=\mathcal{L}^{-1}[Y]$
+\end{enumerate}
+Special case:\\
+If the initial values are given like this $y(a),y'(a),\dots$:
+\begin{enumerate}[label=\alph*]
+    \item Substitute: $t=\tilde{t}+a$
+    \item $y''+ay'+by=r(t) \Rightarrow \tilde{y}''+a\tilde{y}'+b\tilde{y}=r(\tilde{t}+a)$\\
+    $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),...$
+    \item Solve the ODE as described above $\Rightarrow \tilde{Y} \rightarrow \tilde{y}(\tilde{t})$
+    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$ 
+\end{enumerate}
 
 \subsection{Laplace transform table}
 \begin{align*}
