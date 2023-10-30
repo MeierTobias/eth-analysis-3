@@ -265,7 +265,7 @@ then the \textbf{Fourier Transform} and its inverse exists:
 
 
 \begin{tabular}[h]{p{0.25\linewidth} p{0.74\linewidth}}
-    1. Linearity & $\mathcal{F}(\alpha f+\beta g)=\alpha\mathcal{F}(f)+\beta\mathcal{F}(g)$\\
+    1. Linearity & $\alpha f+\beta g\;\laplace\;\alpha\widehat{f}+\beta\widehat{g}$\\
     &\\
     &\\
     \multicolumn{2}{p{0.9\linewidth}}{If $f$ is continous on $\mathbb{R}$, $\lim_{|x|\to\infty}f(x)=0$ and $f'\in L_1$:}\\
@@ -277,9 +277,9 @@ then the \textbf{Fourier Transform} and its inverse exists:
 More properties:
 \begin{align*}
     u_t&\;\laplace\;\frac\partial{\partial t}\hat{u}(\omega,t) \\
-    t^2u_x&\;\laplace\; t^2\mathcal{F}\left(u_x\right) \\
-    x\cdot y(x)&\;\laplace\;iw\mathcal{F}(y^{\prime}(x))(\omega) \\
-    x(t-t_0)&\;\laplace\; e^{-2\pi ift_0}\widehat{x}(f)\\
+    t^2u_x&\;\laplace\; t^2\;\widehat{u_x} \\
+    x^k\cdot f(x)&\;\laplace\;i^k \frac{\partial^k}{\partial w^k}\widehat{f} \\
+    x(t-t_0)&\;\laplace\; e^{-2\pi ift_0}\;\widehat{x}(f)\\
     e^{2\pi if_0t}x(t) &\;\laplace\; \widehat{x}(f-f_0)
 \end{align*}
 
