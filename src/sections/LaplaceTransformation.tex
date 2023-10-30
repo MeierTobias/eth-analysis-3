@@ -296,6 +296,24 @@ Properties: Let $f,g$ and $h$ be functions.
 \end{equation*}
 
 \subsection{Solving initial value problems}
+\begin{enumerate}
+    \item Transform the ODE to the s-domain ($\mathcal{L}[y]=Y$)\\
+    $\Rightarrow$ Insert initial conditions\\
+    $\quad\qquad y''+ay'+by=r(t)$\\
+    $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
+    \item Solve the equation for $Y$ \\
+    $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
+    \item Transform the equation back to the time-domain $y=\mathcal{L}^{-1}[Y]$
+\end{enumerate}
+Special case:\\
+If the initial values are given like this $y(a),y'(a),\dots$:
+\begin{enumerate}[label=\alph*]
+    \item Substitute: $t=\tilde{t}+a$
+    \item $y''+ay'+by=r(t) \Rightarrow \tilde{y}''+a\tilde{y}'+b\tilde{y}=r(\tilde{t}+a)$\\
+    $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),...$
+    \item Solve the ODE as described above $\Rightarrow \tilde{Y} \rightarrow \tilde{y}(\tilde{t})$
+    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$ 
+\end{enumerate}
 
 \subsection{Laplace transform table}
 \begin{align*}
