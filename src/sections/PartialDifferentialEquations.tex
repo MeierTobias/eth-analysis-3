@@ -179,4 +179,32 @@ To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting sub
 subsequently, $v(x,t)$ has homogeneous BC.
 %
 %
+\begin{examplesection}[Example]
+For the given Problem
+\[ u_{tt}=c^2u_{xx}\]
+we make the Ansatz
+\[u(x,t)=F(x)G(t)\]
+Plugging this into the given PDE and rearranging delivers
+\[u_{tt}=F\ddot{G};\qquad u_{xx}=F''G \quad \rightarrow F\ddot{G}=c^2F''G\]
+\[\frac{\ddot{G}}{c^2G}=\frac{F''}{F}=k\;\; ;\qquad\quad\begin{cases} F''=kF\\
+\ddot{G}=c^2kG
+\end{cases}\]
+as $k$ must be constant. This rearrangement is the purpose of our Ansatz and delivers two ODEs to solve instead of one PDE.
+Inserting the boundary conditions into $F''=kF$ and using a harmonic Ansatz delivers a set of solutions for the BVP of the form
+\[F_n (x)=\sin{\left( \frac{n \pi}{L} x \right) }, \sqrt{-k}=\frac{n \pi}{L}\]
+which satisfy the BVP for negative values of k ($k \ge 0$ yields the $F=0$ solution which is not interesting).\\
+Inserting these values of $k$ into $\ddot{G}=c^2kG$ and using a harmonic Ansatz again delivers a family of solutions
+\[G_n (t) =  B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)}\]
+where 
+\[ \lambda_{n} = \frac{c n \pi}{L} \] 
+Inserting $F_n$ and $G_n$ into $u(x,t)=F(x)G(t)$ we obtain a family of solutions for our initial problem of the form
+\[u_n (x, t) = (B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)})\sin{\left( \frac{n \pi}{L} x \right) } \]
+where $u_n (x, t)$ are called Eigenfunctions and $\lambda_n$ the spectrum.\\
+Using fourier series we can generate a general solution for all $n$ of the form
+\[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
+    B_n cos(\lambda _n t)+B_n^* sin(\lambda_n t)
+    \end{pmatrix} sin\left(\frac{n \pi}{L}x \right) \]
+which does not satisfy the IVP in genearal.\\
+To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain \ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain \ref*{eq:formel4}.
+\end{examplesection}
 \subsection{1D Wave Equation - d'Alambert}
