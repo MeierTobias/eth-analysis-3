@@ -1,1 +1,154 @@
 \section{Partial Differential Equations}
+%
+%
+%
+\subsection{Introduction and Definitions}
+%
+%
+\subsubsection{Definition and Nomenclature}
+A partial differential equation (PDE) is an equation involving an \textbf{unknown function} (in contrast to ODEs only one) and some of its \textbf{partial derivatives}.
+\begin{enumerate}
+    \item A PDE is called \textbf{linear} if it is linear in the unknown function u and its derivatives.
+    \item A linear PDE is called \textbf{homogeneous} if each of its terms contains either the function or one of its derivatives.
+    \item The \textbf{order} of a PDE is the order of the highest derivative in the PDE.
+\end{enumerate}
+%
+%
+\subsubsection{Basic Types of PDEs}
+\begin{itemize}
+    \item 1-dimensional Wave Equation:
+    \[\frac{\partial ^2 u}{\partial t^2} = c^2\frac{\partial u}{\partial x^2}\]
+    (\textit{linear, 2nd order, homogeneous, hyperbolic})
+    \item 1-dimensional Heat Equation:
+    \[\frac{\partial u}{\partial t} = c^2 \frac{\partial ^2 u}{\partial x^2}\]
+    (\textit{linear, 2nd order, homogeneous, parabolic})
+    \item 2-dimensional Laplace Equation:
+    \[\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}=0\]
+    (\textit{linear, 2nd order, homogeneous, elliptic})
+    \item 2-dimensional Poisson Equation:
+    \[\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=f(x,y)\]
+    (\textit{linear, 2nd order, inhomogeneous, elliptic})
+    \item 2-dimensional Wave Equation:
+    \[\frac{\partial^2u}{\partial t^2}=c^2 \begin{pmatrix}
+    \frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}
+    \end{pmatrix}\]
+    (\textit{linear, 2nd order, homogeneous, hyperbolic})
+    \item 2-dimensional Heat Equation
+    \[\frac{\partial u}{\partial t}=c^2 \begin{pmatrix}
+    \frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}
+    \end{pmatrix}\]
+    (\textit{linear, 2nd order, homogeneous, parabolic})
+    \item 3-dimensional Laplace Equation
+    \[\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}+\frac{\partial ^2 u}{\partial z^2}=0\]
+    (\textit{linear, 2nd order, homogeneous, elliptic})
+\end{itemize}
+%
+%
+\subsubsection{Classification of 2nd Order Linear PDE}
+\textbf{General Form of 2nd Order Linear PDE}\\
+A 2nd order linear PDE can be written in the form
+\[ Au_{xx}+2Bu_{xy}+Cu_{yy}=F(x,y,u,u_x,u_y)\]
+%
+\subsubsection*{Classification by Discriminant}
+A 2nd order linear PDE has the discriminant $AC-B^2$ and is called
+\begin{enumerate}
+    \item \textbf{hyperbolic} (wave), if $AC-B^2<0$
+    \item \textbf{parabolic} (heat), if $AC-B^2=0$
+    \item \textbf{elliptic} (laplace), if $AC-B^2>0$
+\end{enumerate}
+\vspace{5pt}
+Remarks:
+\begin{itemize}
+    \item Classification is independent of the PDEs dimension\vspace{5pt}
+    \item The type of a PDE depends only on the terms of second order: \textbf{Poisson} equations are also \textbf{elliptic}.
+\end{itemize}
+%
+%
+\subsubsection{Solutions of PDEs}
+\begin{itemize}
+    \item Many functions of a certain form can satisfy the PDE
+    \item Uniqueness of solutions is achieved by \textbf{boundary} conditions and \textbf{initial} conditions
+\end{itemize}
+\vspace{5pt}
+\textbf{Superposition Principle}\\
+If $u_{1}$ and $u_{2}$ are solutions of a \textbf{homogeneous} (linearity is not enough) PDE, then $\alpha u_{1} + \beta u_{2}$ is also a solution of the same PDE $\forall \alpha , \beta \in \mathbb{R}$
+%
+%
+%
+\subsection{Fourier Series Solution of 1D Wave Equation}
+For a \textbf{homogeneous} 1D wave equation on $x\in[0,L]$
+\[ u_{tt}=c^2u_{xx}\]
+with initial conditions and boundary conditions
+\[ \begin{cases} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}\]
+a general solution of the following form can be found:
+\begin{equation}
+    u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
+B_n cos(\lambda _n t)+B_n^* sin(\lambda_n t)
+\end{pmatrix}sin\left(\frac{n \pi}{L}x \right)\label{eq:formel1}\vspace{-2pt}
+\end{equation} 
+%
+%
+\subsubsection{Parameters}
+\begin{equation}
+\lambda_n=\frac{c\; n\; \pi}{L} \label{eq:formel2}\vspace{-2pt} 
+\end{equation}
+\begin{equation} B_n=\frac{2}{L}\int\limits_0^L f(x)sin(\frac{n\;\pi}{L}x)dx \label{eq:formel3}\vspace{-2pt}
+\end{equation}
+\begin{equation} B_n^*=\frac{2}{L\lambda_n} \int\limits_0^L g(x) sin(\frac{n\;\pi}{L}x)dx \label{eq:formel4}\vspace{-2pt}
+\end{equation}
+%
+%
+\subsubsection{Simplification of Solution}
+If $f(x)$ is given in the form
+\begin{equation}f(x)=\sum\limits_{n=1}^{\infty} B_n sin(\frac{n\;\pi}{L}x) \label{eq:formel5}\vspace{-2pt}
+\end{equation}
+or $g(x)$ is given in the form
+\begin{equation} g(x)=\sum\limits_{n=1}^{\infty} B_n^* \lambda_n sin(\frac{n\;\pi}{L}x) \label{eq:formel6}\vspace{-2pt}
+\end{equation}
+the corresponding coefficients $B_n$ and $B_n^*$ can be seen directly.
+%
+%
+\subsubsection{Summary of Derivation}
+For the given Problem
+\[ u_{tt}=c^2u_{xx}\]
+we make the Ansatz
+\[u(x,t)=F(x)G(t)\]
+Plugging this into the given PDE and rearranging delivers
+\[u_{tt}=F\ddot{G};\qquad u_{xx}=F''G \quad \rightarrow F\ddot{G}=c^2F''G\]
+\[\frac{\ddot{G}}{c^2G}=\frac{F''}{F}=k\;\; ;\qquad\quad\begin{cases} F''=kF\\
+\ddot{G}=c^2kG
+\end{cases}\]
+as $k$ must be constant. This rearrangement is the purpose of our Ansatz and delivers two ODEs to solve instead of one PDE.
+Inserting the boundary conditions into $F''=kF$ and using a harmonic Ansatz delivers a set of solutions for the BVP of the form
+\[F_n (x)=\sin{\left( \frac{n \pi}{L} x \right) }, \sqrt{-k}=\frac{n \pi}{L}\]
+which satisfy the BVP for negative values of k ($k \ge 0$ yields the $F=0$ solution which is not interesting).\\
+Inserting these values of $k$ into $\ddot{G}=c^2kG$ and using a harmonic Ansatz again delivers a family of solutions
+\[G_n (t) =  B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)}\]
+where 
+\[ \lambda_{n} = \frac{c n \pi}{L} \] 
+Inserting $F_n$ and $G_n$ into $u(x,t)=F(x)G(t)$ we obtain a family of solutions for our initial problem of the form
+\[u_n (x, t) = (B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)})\sin{\left( \frac{n \pi}{L} x \right) } \]
+where $u_n (x, t)$ are called Eigenfunctions and $\lambda_n$ the spectrum.\\
+Using fourier series we can generate a general solution for all $n$ of the form
+\[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
+    B_n cos(\lambda _n t)+B_n^* sin(\lambda_n t)
+    \end{pmatrix} sin\left(\frac{n \pi}{L}x \right) \]
+which does not satisfy the IVP in genearal.\\
+To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain \ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain \ref*{eq:formel4}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
