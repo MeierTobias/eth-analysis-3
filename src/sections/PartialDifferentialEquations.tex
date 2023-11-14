@@ -5,7 +5,7 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
 \begin{enumerate}
     \item A PDE is called \textbf{linear} if it is linear in the unknown function u and its derivatives.
     \item A linear PDE is called \textbf{homogeneous} if each of its terms contains either the function or one of its derivatives.
-    \item The \textbf{order} of a PDE is the order of the highest derivative in the PDE.
+    \item The \textbf{order} of a PDE is the order of the highest derivative in the PDE.\@
 \end{enumerate}
 %
 %
@@ -33,12 +33,12 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
     (\textit{linear, 2nd order, inhomogeneous, elliptic})
     \item 2-dimensional Wave Equation:
     \begin{equation}
-        \frac{\partial^2u}{\partial t^2}=c^2 \Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+        \frac{\partial^2u}{\partial t^2}=c^2 \Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigl)=c^2\nabla^2 u
     \end{equation}
     (\textit{linear, 2nd order, homogeneous, hyperbolic})
     \item 2-dimensional Heat Equation
     \begin{equation}
-        \frac{\partial u}{\partial t}=c^2\Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+        \frac{\partial u}{\partial t}=c^2\Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigl)=c^2\nabla^2 u
     \end{equation}
     (\textit{linear, 2nd order, homogeneous, parabolic})
     \item 3-dimensional Laplace Equation
@@ -142,11 +142,11 @@ $F(x)$ and $G(t)$ can be found:
 %
 \subsubsection{(iii) Specific Solution}
 In general, the specific solution can be found by combining the boundary conditions BC 
-with the general solution found in (ii).\\\\
+with the general solution found in (ii).\\\hbox{}\\
 If $\mathbf{u(0,t)=u(L,t)= 0}$ the \textbf{general solution} Ansatz:
 \begin{equation*}
     u(x,t)=\sum\limits_{n=1}^{\infty}
-    \Bigr( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigr) \sin 
+    \Bigr( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigl) \sin 
     \left(\frac{n \pi}{L}x \right)
 \end{equation*}\\
 can be used, and the \textbf{specific solution} by \textbf{FS} is given by:
@@ -176,7 +176,7 @@ To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting sub
         v_t(x,0)=u_t(x,0)
     \end{cases}
 \end{align*}
-subsequently, $v(x,t)$ has homogeneous BC.
+subsequently, $v(x,t)$ has homogeneous BC.\@
 %
 %
 \begin{examplesection}[Example]
@@ -208,3 +208,4 @@ which does not satisfy the IVP in genearal.\\
 To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain \ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain \ref*{eq:formel4}.
 \end{examplesection}
 \subsection{1D Wave Equation - d'Alambert}
+
