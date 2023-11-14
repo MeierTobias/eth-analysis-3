@@ -41,6 +41,9 @@ Additionally, if you want to remove unneccessary build files add
 ```
 to `.vscode/settings.json`
 
+## Specialties when using macOS
+This repository is configured for Git [LFS](https://git-lfs.com/) (Large File Storage). If you don't already have it installed run `brew install git-lfs` or check the linked website to install it.
+
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
