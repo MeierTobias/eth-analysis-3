@@ -1,5 +1,5 @@
 \section{Partial Differential Equations}
-%
+
 \subsection{Definition}
 A partial differential equation (PDE) is an equation involving an \textbf{unknown function} (in contrast to ODEs only one) and some of its \textbf{partial derivatives}.
 \begin{enumerate}
@@ -7,48 +7,46 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
     \item A linear PDE is called \textbf{homogeneous} if each of its terms contains either the function or one of its derivatives.
     \item The \textbf{order} of a PDE is the order of the highest derivative in the PDE.
 \end{enumerate}
-%
-%
+
 \subsubsection{Basic Types of PDEs}
 \begin{itemize}
     \item 1-dimensional Wave Equation:
-          \begin{equation}
+          \begin{equation*}
               \frac{\partial ^2 u}{\partial t^2} = c^2\frac{\partial u}{\partial x^2}
-          \end{equation}
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, hyperbolic})
     \item 1-dimensional Heat Equation:
-          \begin{equation}
+          \begin{equation*}
               \frac{\partial u}{\partial t} = c^2 \frac{\partial ^2 u}{\partial x^2}
-          \end{equation}
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, parabolic})
     \item 2-dimensional Laplace Equation:
-          \begin{equation}
+          \begin{equation*}
               \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}=0
-          \end{equation}
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, elliptic})
     \item 2-dimensional Poisson Equation:
-          \begin{equation}
+          \begin{equation*}
               \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=f(x,y)
-          \end{equation}
+          \end{equation*}
           (\textit{linear, 2nd order, inhomogeneous, elliptic})
     \item 2-dimensional Wave Equation:
-          \begin{equation}
-              \frac{\partial^2u}{\partial t^2}=c^2 \Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
-          \end{equation}
+          \begin{equation*}
+              \frac{\partial^2u}{\partial t^2}=c^2 \Bigl(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, hyperbolic})
     \item 2-dimensional Heat Equation
-          \begin{equation}
-              \frac{\partial u}{\partial t}=c^2\Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
-          \end{equation}
+          \begin{equation*}
+              \frac{\partial u}{\partial t}=c^2\Bigl(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, parabolic})
     \item 3-dimensional Laplace Equation
-          \begin{equation}
+          \begin{equation*}
               \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}+\frac{\partial ^2 u}{\partial z^2}=0
-          \end{equation}
+          \end{equation*}
           (\textit{linear, 2nd order, homogeneous, elliptic})
 \end{itemize}
-%
-%
+
 \subsubsection{Solutions of linear PDEs}
 \begin{itemize}
     \item Many functions of a certain form can satisfy the PDE
@@ -57,14 +55,14 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
 \vspace{5pt}
 \textbf{Superposition Principle}\\
 If $u_{1}$ and $u_{2}$ are solutions of a \textbf{homogeneous} (linearity is not enough) PDE, then $\alpha u_{1} + \beta u_{2}$ is also a solution of the same PDE $\forall \alpha , \beta \in \mathbb{R}$
-%
-%
-%
+
 \subsection{2nd Order Linear PDEs}
 \subsubsection{General Form of 2nd Order Linear PDE}
 A 2nd order linear PDE can be written in the form
-\begin{equation} Au_{xx}+2Bu_{xy}+Cu_{yy}=F(x,y,u,u_x,u_y)\end{equation}
-%
+\begin{equation*}
+    Au_{xx}+2Bu_{xy}+Cu_{yy}=F(x,y,u,u_x,u_y)
+\end{equation*}
+
 \subsubsection{Classification by Discriminant}
 A 2nd order linear PDE has the discriminant $AC-B^2$ and is called
 \begin{enumerate}
@@ -78,9 +76,7 @@ Remarks:
     \item Classification is independent of the PDEs dimension\vspace{5pt}
     \item The type of a PDE depends only on the terms of second order: \textbf{Poisson} equations are also \textbf{elliptic}.
 \end{itemize}
-%
-%
-%
+
 \subsection{1D Wave Equation - Fourier Series}
 To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0,L]$ with \textbf{initial} and
 \textbf{boundary} conditions:
@@ -99,8 +95,6 @@ three steps have to be taken:
     \item[(ii)] Finding the general solution
     \item[(iii)] Finding one solution satisfying IC \& BC
 \end{itemize}
-%
-%
 
 \subsubsection{(i) Separation of Variables}
 \begin{align*}
@@ -112,8 +106,7 @@ three steps have to be taken:
         \ddot{G}=c^2kG
     \end{cases}
 \end{align*}
-%
-%
+
 \subsubsection{(ii) General Solution}
 By inserting the initial conditions into the separated equation
 \begin{equation*}
@@ -138,11 +131,11 @@ $F(x)$ and $G(t)$ can be found:
         B_1t+B_2                                  & \;\,k=0
     \end{cases}
 \end{align*}
-%
-%
+
 \subsubsection{(iii) Specific Solution}
 In general, the specific solution can be found by combining the boundary conditions BC
-with the general solution found in (ii).\\\\
+with the general solution found in (ii).
+
 If $\mathbf{u(0,t)=u(L,t)= 0}$ the \textbf{general solution} Ansatz:
 \begin{equation*}
     u(x,t)=\sum\limits_{n=1}^{\infty}
@@ -162,8 +155,7 @@ can be used, and the \textbf{specific solution} by \textbf{FS} is given by:
     \item If $f(x),g(x)$ can be written in terms of $\sin(\frac{n\;\pi}{L}x)$, $B_n, B_n^*$
           can be calculated directly
 \end{itemize}
-%
-%
+
 \subsubsection{Inhomogeneous Boundary Conditions}
 To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting substitution can be used:
 \begin{align*}
@@ -176,9 +168,8 @@ To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting sub
            v_t(x,0)=u_t(x,0)
        \end{cases}
 \end{align*}
-subsequently, $v(x,t)$ has homogeneous BC. 
-%
-%
+subsequently, $v(x,t)$ has homogeneous BC.
+
 \begin{examplesection}[Example]
     For the given Problem
     \[ u_{tt}=c^2u_{xx}\]
@@ -204,7 +195,7 @@ subsequently, $v(x,t)$ has homogeneous BC.
     \[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
             B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)
         \end{pmatrix} \sin\left(\frac{n \pi}{L}x \right) \]
-    which does not satisfy the IVP in genearal.\\
-    To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain \ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain \ref*{eq:formel4}.
+    which does not satisfy the IVP in general.\\
+    To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain~\ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain~\ref*{eq:formel4}.
 \end{examplesection}
 \subsection{1D Wave Equation - d'Alambert}

@@ -50,7 +50,7 @@ To enable the LaTeX checker ChkTeX:
 
 ```json
 "latex-workshop.linting.chktex.enabled": true, 
-"latex-workshop.linting.chktex.exec.args": ["-wall","-n8","-n21","-n22","-n30","-n46","-e16","-q"],
+"latex-workshop.linting.chktex.exec.args": ["-wall","-n8","-n13","-n21","-n22","-n30","-n46","-e16","-q"],
 ```
 
 To get more information about the different warnings search for your warning code in the ChkTeX [documentation](https://mirror.init7.net/ctan/support/chktex/ChkTeX.pdf). If you want to disable a checker warning on a specific line you can add `% chktex ##` to the end of the line with the warning number you want to suppress.
