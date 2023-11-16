@@ -83,16 +83,16 @@ To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0
 \begin{equation*}
     \begin{cases}
         u_{tt}=c^2u_{xx} & \text{PDE} \\
-        u(0,t)=u_0       & \text{IC}  \\
-        u(L,t)=u_L       & \text{IC}  \\
-        u(x,0)=f(x)      & \text{BC}  \\
-        u_t(x,0)=g(x)    & \text{BC}
+        u(0,t)=u_0       & \text{BC}  \\
+        u(L,t)=u_L       & \text{BC}  \\
+        u(x,0)=f(x)      & \text{IC}  \\
+        u_t(x,0)=g(x)    & \text{IC}
     \end{cases}
 \end{equation*}\\
 three steps have to be taken:
 \begin{itemize}
     \item[(i)] Separation of variables
-    \item[(ii)] Finding the general solution
+    \item[(ii)] Finding the ``many'' solution
     \item[(iii)] Finding one solution satisfying IC \& BC
 \end{itemize}
 
@@ -106,46 +106,46 @@ three steps have to be taken:
         \ddot{G}=c^2kG
     \end{cases}
 \end{align*}
-
-\subsubsection{(ii) General Solution}
-By inserting the initial conditions into the separated equation
-\begin{equation*}
-    \frac{F^{\prime\prime}(x)}{F(x)}=\frac{\ddot{G}(t)}{G(t)}=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
-    \begin{cases} 
-        F''=kF\\
-        \ddot{G}=c^2kG
-    \end{cases}
-\end{equation*}
 \begin{align*}
     u(0,t) & =F(0)G(t)=u_0\mathrm{~}\forall t\geq0\quad\Rightarrow & \mathbf{F(0)}=\mathbf{u_0} \\
     u(L,t) & =F(L)G(t)=u_L\mathrm{~}\forall t\geq0\quad\Rightarrow & \mathbf{F(L)}=\mathbf{u_L}
 \end{align*}
-By applying the \textbf{IC} to $F''(x)=kF(x)$, $F(x)$ can be found:
+
+\subsubsection{(ii) ``Many'' Solution}
+By applying the boundary conditions \textbf{BC}
 \begin{align*}
-    F(x)=&
-    \begin{cases}
-        A_1e^{\sqrt{k}x}+A_2e^{-\sqrt{k}x}&k>0\\
-        A_1\cos(\sqrt{|k|}x)+A_2\sin(\sqrt{|k|}x)&k<0\\
-        A_1x+A_2&k=0\\
-    \end{cases}\\
+    \mathbf{F(0)}&=\mathbf{u_0}\\
+    \mathbf{F(L)}&=\mathbf{u_L}
 \end{align*}
-Since $k$ is constant for both $F,G$, $G(t)$ can be obtained by:
+into the separated equation
+\begin{equation*}
+    F''=kF \\
+\end{equation*}
+$F(x)$ can be found:
 \begin{align*}
-    G(t)=&
+    F(x)= &
+    \begin{cases}
+        A_1e^{\sqrt{k}x}+A_2e^{-\sqrt{k}x}        & k>0 \\
+        A_1\cos(\sqrt{-k}x)+A_2\sin(\sqrt{-k}x) & k<0 \\
+        A_1x+A_2                                  & k=0 \\
+    \end{cases} \\
+\end{align*}
+Since $k$ is constant for both $F,G$, $G(t)$ satisfying $\ddot{G}=c^2kG$ can be obtained by:
+\begin{align*}
+    G(t)= &
     \begin{cases}
         B_1e^{\sqrt{k}t}+B_2e^{-\sqrt{k}t}        & \;\,k>0 \\
-        B_1\cos(\sqrt{|k|}t)+B_2\sin(\sqrt{|k|}t) & \;\,k<0 \\
+        B_1\cos(\sqrt{-k}t)+B_2\sin(\sqrt{-k}t) & \;\,k<0 \\
         B_1t+B_2                                  & \;\,k=0
     \end{cases}
 \end{align*}
 
 \subsubsection{(iii) Specific Solution}
-In general, the specific solution can be found by combining the boundary conditions \textbf{BC} 
+In general, the specific solution can be found by combining the initial conditions \textbf{IC}
 with the general solution found in (ii).\\\hbox{}\\
 If $\mathbf{u(0,t)=u(L,t)= 0}$ the \textbf{general solution} Ansatz:
 \begin{equation*}
     u(x,t)=\sum\limits_{n=1}^{\infty}
-    \Bigr( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigl) \sin 
     \Bigl( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigr) \sin
     \left(\frac{n \pi}{L}x \right)
 \end{equation*}\\

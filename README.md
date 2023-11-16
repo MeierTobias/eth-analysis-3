@@ -58,6 +58,8 @@ To get more information about the different warnings search for your warning cod
 ## Specialties when using macOS
 This repository is configured for Git [LFS](https://git-lfs.com/) (Large File Storage). If you don't already have it installed run `brew install git-lfs` or check the linked website to install it.
 
+To use the formatter by LaTeX Workshop install `brew install latexindent`.
+
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
