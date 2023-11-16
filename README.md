@@ -26,11 +26,17 @@ If you want a hassle-free way to work with our LaTeX project, we recommend using
 
 If you want to use your own native installed LaTeX compiler we recommend to use [TeXLive](https://www.tug.org/texlive/) which integrates well within visual studio code.
 
-If you use the [LaTeX Workshop extension](vscode:extension/James-Yu.latex-workshop) you can add the following line to your `.vscode/settings.json` file to specify the output directory :  
-`"latex-workshop.latex.outDir": "../build",`
+If you use the [LaTeX Workshop extension](vscode:extension/James-Yu.latex-workshop) you can add the following lines to your `.vscode/settings.json` file to configure the system:
 
-Additionally, if you want to remove unneccessary build files add 
-```yaml
+Specify an output directory:
+
+```json
+"latex-workshop.latex.outDir": "../build",
+```
+
+Remove unnecessary build files:
+
+```json
 "latex-workshop.latex.clean.fileTypes" : [ "*.aux", "*.fls", "*.synctex.gz", "*.out", "*.log", "*.fdb_latexmk" ],
 "latex-workshop.latex.autoClean.run": "onBuilt",
 "latex-workshop.latex.clean.method": "glob",
@@ -39,7 +45,15 @@ Additionally, if you want to remove unneccessary build files add
 "latex-workshop.latex.outDir": "../build",
 "latex-workshop.latex.clean.subfolder.enabled": true,
 ```
-to `.vscode/settings.json`
+
+To enable the LaTeX checker ChkTeX:
+
+```json
+"latex-workshop.linting.chktex.enabled": true, 
+"latex-workshop.linting.chktex.exec.args": ["-wall","-n8","-n13","-n21","-n22","-n30","-n46","-e16","-q"],
+```
+
+To get more information about the different warnings search for your warning code in the ChkTeX [documentation](https://mirror.init7.net/ctan/support/chktex/ChkTeX.pdf). If you want to disable a checker warning on a specific line you can add `% chktex ##` to the end of the line with the warning number you want to suppress.
 
 ## Specialties when using macOS
 This repository is configured for Git [LFS](https://git-lfs.com/) (Large File Storage). If you don't already have it installed run `brew install git-lfs` or check the linked website to install it.
