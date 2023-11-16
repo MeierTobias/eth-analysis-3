@@ -1,5 +1,5 @@
 \section{Partial Differential Equations}
-%
+
 \subsection{Definition}
 A partial differential equation (PDE) is an equation involving an \textbf{unknown function} (in contrast to ODEs only one) and some of its \textbf{partial derivatives}.
 \begin{enumerate}
@@ -7,48 +7,46 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
     \item A linear PDE is called \textbf{homogeneous} if each of its terms contains either the function or one of its derivatives.
     \item The \textbf{order} of a PDE is the order of the highest derivative in the PDE.
 \end{enumerate}
-%
-%
+
 \subsubsection{Basic Types of PDEs}
 \begin{itemize}
     \item 1-dimensional Wave Equation:
-    \begin{equation}
-        \frac{\partial ^2 u}{\partial t^2} = c^2\frac{\partial u}{\partial x^2}
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, hyperbolic})
+          \begin{equation*}
+              \frac{\partial ^2 u}{\partial t^2} = c^2\frac{\partial u}{\partial x^2}
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, hyperbolic})
     \item 1-dimensional Heat Equation:
-    \begin{equation}
-        \frac{\partial u}{\partial t} = c^2 \frac{\partial ^2 u}{\partial x^2}
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, parabolic})
+          \begin{equation*}
+              \frac{\partial u}{\partial t} = c^2 \frac{\partial ^2 u}{\partial x^2}
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, parabolic})
     \item 2-dimensional Laplace Equation:
-    \begin{equation}
-        \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}=0
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, elliptic})
+          \begin{equation*}
+              \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}=0
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, elliptic})
     \item 2-dimensional Poisson Equation:
-    \begin{equation}
-        \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=f(x,y)
-    \end{equation}
-    (\textit{linear, 2nd order, inhomogeneous, elliptic})
+          \begin{equation*}
+              \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=f(x,y)
+          \end{equation*}
+          (\textit{linear, 2nd order, inhomogeneous, elliptic})
     \item 2-dimensional Wave Equation:
-    \begin{equation}
-        \frac{\partial^2u}{\partial t^2}=c^2 \Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, hyperbolic})
+          \begin{equation*}
+              \frac{\partial^2u}{\partial t^2}=c^2 \Bigl(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, hyperbolic})
     \item 2-dimensional Heat Equation
-    \begin{equation}
-        \frac{\partial u}{\partial t}=c^2\Bigr(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, parabolic})
+          \begin{equation*}
+              \frac{\partial u}{\partial t}=c^2\Bigl(\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}\Bigr)=c^2\nabla^2 u
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, parabolic})
     \item 3-dimensional Laplace Equation
-    \begin{equation}
-        \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}+\frac{\partial ^2 u}{\partial z^2}=0
-    \end{equation}
-    (\textit{linear, 2nd order, homogeneous, elliptic})
+          \begin{equation*}
+              \nabla^2 u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial ^2 u}{\partial y^2}+\frac{\partial ^2 u}{\partial z^2}=0
+          \end{equation*}
+          (\textit{linear, 2nd order, homogeneous, elliptic})
 \end{itemize}
-%
-%
+
 \subsubsection{Solutions of linear PDEs}
 \begin{itemize}
     \item Many functions of a certain form can satisfy the PDE
@@ -57,14 +55,14 @@ A partial differential equation (PDE) is an equation involving an \textbf{unknow
 \vspace{5pt}
 \textbf{Superposition Principle}\\
 If $u_{1}$ and $u_{2}$ are solutions of a \textbf{homogeneous} (linearity is not enough) PDE, then $\alpha u_{1} + \beta u_{2}$ is also a solution of the same PDE $\forall \alpha , \beta \in \mathbb{R}$
-%
-%
-%
+
 \subsection{2nd Order Linear PDEs}
 \subsubsection{General Form of 2nd Order Linear PDE}
 A 2nd order linear PDE can be written in the form
-\begin{equation} Au_{xx}+2Bu_{xy}+Cu_{yy}=F(x,y,u,u_x,u_y)\end{equation}
-%
+\begin{equation*}
+    Au_{xx}+2Bu_{xy}+Cu_{yy}=F(x,y,u,u_x,u_y)
+\end{equation*}
+
 \subsubsection{Classification by Discriminant}
 A 2nd order linear PDE has the discriminant $AC-B^2$ and is called
 \begin{enumerate}
@@ -78,19 +76,17 @@ Remarks:
     \item Classification is independent of the PDEs dimension\vspace{5pt}
     \item The type of a PDE depends only on the terms of second order: \textbf{Poisson} equations are also \textbf{elliptic}.
 \end{itemize}
-%
-%
-%
+
 \subsection{1D Wave Equation - Fourier Series}
-To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0,L]$ with \textbf{initial} and 
+To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0,L]$ with \textbf{initial} and
 \textbf{boundary} conditions:
 \begin{equation*}
-    \begin{cases} 
-        u_{tt}=c^2u_{xx} & \text{PDE}\\
-        u(0,t)=u_0 & \text{IC}\\ 
-        u(L,t)=u_L & \text{IC}\\ 
-        u(x,0)=f(x)& \text{BC}\\ 
-        u_t(x,0)=g(x)& \text{BC}
+    \begin{cases}
+        u_{tt}=c^2u_{xx} & \text{PDE} \\
+        u(0,t)=u_0       & \text{IC}  \\
+        u(L,t)=u_L       & \text{IC}  \\
+        u(x,0)=f(x)      & \text{BC}  \\
+        u_t(x,0)=g(x)    & \text{BC}
     \end{cases}
 \end{equation*}\\
 three steps have to be taken:
@@ -99,112 +95,107 @@ three steps have to be taken:
     \item[(ii)] Finding the general solution
     \item[(iii)] Finding one solution satisfying IC \& BC
 \end{itemize}
-%
-%
 
 \subsubsection{(i) Separation of Variables}
 \begin{align*}
-    u(x,t)&=F(x)G(t)\\
-    \underbrace{F\ddot{G}}_{u_{tt}}&=c^2\underbrace{F''G}_{u_{xx}}\\
-    \frac{\ddot{G}}{c^2G}&=\frac{F''}{F}=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
-    \begin{cases} 
-        F''=kF\\
+    u(x,t)                          & =F(x)G(t)                                               \\
+    \underbrace{F\ddot{G}}_{u_{tt}} & =c^2\underbrace{F''G}_{u_{xx}}                          \\
+    \frac{\ddot{G}}{c^2G}           & =\frac{F''}{F}=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
+    \begin{cases}
+        F''=kF \\
         \ddot{G}=c^2kG
     \end{cases}
 \end{align*}
-%
-%
+
 \subsubsection{(ii) General Solution}
 By inserting the initial conditions into the separated equation
 \begin{equation*}
-    \frac{F^{\prime\prime}(x)}{F(x)}=\frac{\ddot{G}(t)}{G(t)}=k
+    \frac{F^{\prime\prime}(x)}{F(x)}=\frac{\ddot{G}(t)}{c^2 G(t)}=k
 \end{equation*}
 \begin{align*}
-    u(0,t)&=F(0)G(t)=u_0\mathrm{~}\forall t\geq0\quad\Rightarrow&\mathbf{F(0)}=\mathbf{u_0}\\
-    u(L,t)&=F(L)G(t)=u_L\mathrm{~}\forall t\geq0\quad\Rightarrow&\mathbf{F(L)}=\mathbf{u_L}
+    u(0,t) & =F(0)G(t)=u_0\mathrm{~}\forall t\geq0\quad\Rightarrow & \mathbf{F(0)}=\mathbf{u_0} \\
+    u(L,t) & =F(L)G(t)=u_L\mathrm{~}\forall t\geq0\quad\Rightarrow & \mathbf{F(L)}=\mathbf{u_L}
 \end{align*}
 $F(x)$ and $G(t)$ can be found:
 \begin{align*}
-    \mathrm{F(x)}=&
+    \mathrm{F(x)}= &
     \begin{cases}
-        A_1e^{\sqrt{k}x}+A_2e^{-\sqrt{k}x}&k>0\\
-        A_1\cos(\sqrt{|k|}x)+A_2\sin(\sqrt{|k|}x)&k<0\\
-        A_1x+A_2&k=0\\
-    \end{cases}\\
-    \mathrm{G(t)}=&
+        A_1e^{\sqrt{k}x}+A_2e^{-\sqrt{k}x}        & k>0 \\
+        A_1\cos(\sqrt{|k|}x)+A_2\sin(\sqrt{|k|}x) & k<0 \\
+        A_1x+A_2                                  & k=0 \\
+    \end{cases} \\
+    \mathrm{G(t)}= &
     \begin{cases}
-        B_1e^{\sqrt{k}t}+B_2e^{-\sqrt{k}t}&\;\,k>0\\
-        B_1\cos(\sqrt{|k|}t)+B_2\sin(\sqrt{|k|}t)&\;\,k<0\\
-        B_1t+B_2&\;\,k=0
+        B_1e^{\sqrt{k}t}+B_2e^{-\sqrt{k}t}        & \;\,k>0 \\
+        B_1\cos(\sqrt{|k|}t)+B_2\sin(\sqrt{|k|}t) & \;\,k<0 \\
+        B_1t+B_2                                  & \;\,k=0
     \end{cases}
 \end{align*}
-%
-%
+
 \subsubsection{(iii) Specific Solution}
-In general, the specific solution can be found by combining the boundary conditions BC 
-with the general solution found in (ii).\\\\
+In general, the specific solution can be found by combining the boundary conditions BC
+with the general solution found in (ii).
+
 If $\mathbf{u(0,t)=u(L,t)= 0}$ the \textbf{general solution} Ansatz:
 \begin{equation*}
     u(x,t)=\sum\limits_{n=1}^{\infty}
-    \Bigr( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigr) \sin 
+    \Bigl( B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)\Bigr) \sin
     \left(\frac{n \pi}{L}x \right)
 \end{equation*}\\
 can be used, and the \textbf{specific solution} by \textbf{FS} is given by:
 \begin{align*}
-    \lambda_n&=\frac{c\; n\; \pi}{L}\\
-    B_n&=\frac{2}{L}\int\limits_0^L f(x)\sin(\frac{n\;\pi}{L}x)dx\\
-    B_n^*&=\frac{2}{L\lambda_n} \int\limits_0^L g(x) \sin(\frac{n\;\pi}{L}x)dx\\\\
-    f(x)&=\sum\limits_{n=1}^{\infty} B_n \sin(\frac{n\;\pi}{L}x)\\
-    g(x)&=\sum\limits_{n=1}^{\infty} B_n^* \lambda_n \sin(\frac{n\;\pi}{L}x)\\
+    \lambda_n & =\frac{c\; n\; \pi}{L}                                               \\
+    B_n       & =\frac{2}{L}\int\limits_0^L f(x)\sin(\frac{n\;\pi}{L}x)dx            \\
+    B_n^*     & =\frac{2}{L\lambda_n} \int\limits_0^L g(x) \sin(\frac{n\;\pi}{L}x)dx \\\\
+    f(x)      & =\sum\limits_{n=1}^{\infty} B_n \sin(\frac{n\;\pi}{L}x)              \\
+    g(x)      & =\sum\limits_{n=1}^{\infty} B_n^* \lambda_n \sin(\frac{n\;\pi}{L}x)  \\
 \end{align*}
 \text{Useful tricks:}
 \begin{itemize}
-    \item If $f(x),g(x)$ can be written in terms of $\sin(\frac{n\;\pi}{L}x)$, $B_n, B_n^*$ 
-    can be calculated directly
+    \item If $f(x),g(x)$ can be written in terms of $\sin(\frac{n\;\pi}{L}x)$, $B_n, B_n^*$
+          can be calculated directly
 \end{itemize}
-%
-%
+
 \subsubsection{Inhomogeneous Boundary Conditions}
 To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting substitution can be used:
 \begin{align*}
-    &v(x,t):= u(x,t) -w(x)\\
-    &\begin{cases}
-        v_{tt}=c^2v_{xx}-w_x\\
-        v(0,t)=u(0,t)-w(0)=0\\
-        v(L,t)=u(L,t)-w(L)=0\\
-        v(x,0)=u(x,0)-w(x)\\
-        v_t(x,0)=u_t(x,0)
-    \end{cases}
+     & v(x,t):= u(x,t) -w(x) \\
+     & \begin{cases}
+           v_{tt}=c^2v_{xx}-w_x \\
+           v(0,t)=u(0,t)-w(0)=0 \\
+           v(L,t)=u(L,t)-w(L)=0 \\
+           v(x,0)=u(x,0)-w(x)   \\
+           v_t(x,0)=u_t(x,0)
+       \end{cases}
 \end{align*}
 subsequently, $v(x,t)$ has homogeneous BC.
-%
-%
+
 \begin{examplesection}[Example]
-For the given Problem
-\[ u_{tt}=c^2u_{xx}\]
-we make the Ansatz
-\[u(x,t)=F(x)G(t)\]
-Plugging this into the given PDE and rearranging delivers
-\[u_{tt}=F\ddot{G};\qquad u_{xx}=F''G \quad \rightarrow F\ddot{G}=c^2F''G\]
-\[\frac{\ddot{G}}{c^2G}=\frac{F''}{F}=k\;\; ;\qquad\quad\begin{cases} F''=kF\\
-\ddot{G}=c^2kG
-\end{cases}\]
-as $k$ must be constant. This rearrangement is the purpose of our Ansatz and delivers two ODEs to solve instead of one PDE.
-Inserting the boundary conditions into $F''=kF$ and using a harmonic Ansatz delivers a set of solutions for the BVP of the form
-\[F_n (x)=\sin{\left( \frac{n \pi}{L} x \right) }, \sqrt{-k}=\frac{n \pi}{L}\]
-which satisfy the BVP for negative values of k ($k \ge 0$ yields the $F=0$ solution which is not interesting).\\
-Inserting these values of $k$ into $\ddot{G}=c^2kG$ and using a harmonic Ansatz again delivers a family of solutions
-\[G_n (t) =  B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)}\]
-where 
-\[ \lambda_{n} = \frac{c n \pi}{L} \] 
-Inserting $F_n$ and $G_n$ into $u(x,t)=F(x)G(t)$ we obtain a family of solutions for our initial problem of the form
-\[u_n (x, t) = (B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)})\sin{\left( \frac{n \pi}{L} x \right) } \]
-where $u_n (x, t)$ are called Eigenfunctions and $\lambda_n$ the spectrum.\\
-Using fourier series we can generate a general solution for all $n$ of the form
-\[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
-    B_n cos(\lambda _n t)+B_n^* sin(\lambda_n t)
-    \end{pmatrix} sin\left(\frac{n \pi}{L}x \right) \]
-which does not satisfy the IVP in genearal.\\
-To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain \ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain \ref*{eq:formel4}.
+    For the given Problem
+    \[ u_{tt}=c^2u_{xx}\]
+    we make the Ansatz
+    \[u(x,t)=F(x)G(t)\]
+    Plugging this into the given PDE and rearranging delivers
+    \[u_{tt}=F\ddot{G};\qquad u_{xx}=F''G \quad \rightarrow F\ddot{G}=c^2F''G\]
+    \[\frac{\ddot{G}}{c^2G}=\frac{F''}{F}=k\;\; ;\qquad\quad\begin{cases} F''=kF \\
+            \ddot{G}=c^2kG
+        \end{cases}\]
+    as $k$ must be constant. This rearrangement is the purpose of our Ansatz and delivers two ODEs to solve instead of one PDE.
+    Inserting the boundary conditions into $F''=kF$ and using a harmonic Ansatz delivers a set of solutions for the BVP of the form
+    \[F_n (x)=\sin{\left( \frac{n \pi}{L} x \right) }, \sqrt{-k}=\frac{n \pi}{L}\]
+    which satisfy the BVP for negative values of k ($k \ge 0$ yields the $F=0$ solution which is not interesting).\\
+    Inserting these values of $k$ into $\ddot{G}=c^2kG$ and using a harmonic Ansatz again delivers a family of solutions
+    \[G_n (t) =  B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)}\]
+    where
+    \[ \lambda_{n} = \frac{c n \pi}{L} \]
+    Inserting $F_n$ and $G_n$ into $u(x,t)=F(x)G(t)$ we obtain a family of solutions for our initial problem of the form
+    \[u_n (x, t) = (B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)})\sin{\left( \frac{n \pi}{L} x \right) } \]
+    where $u_n (x, t)$ are called Eigenfunctions and $\lambda_n$ the spectrum.\\
+    Using fourier series we can generate a general solution for all $n$ of the form
+    \[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
+            B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)
+        \end{pmatrix} \sin\left(\frac{n \pi}{L}x \right) \]
+    which does not satisfy the IVP in general.\\
+    To satisfy the IVP we insert the initial value conditions and from $u(x,0)=f(x)$ we obtain~\ref*{eq:formel3} and from $u'(x,0)=g(x)$ we obtain~\ref*{eq:formel4}.
 \end{examplesection}
 \subsection{1D Wave Equation - d'Alambert}

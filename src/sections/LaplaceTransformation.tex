@@ -3,13 +3,13 @@
 Let $f:\mathbb{R}_{\geq 0} \rightarrow \mathbb{R}$ be a function.
 \begin{equation*}
     \boxed{
-    f(t)\:\laplace\:F(s)=\mathcal{L}[f(t)](s):=\int_{0}^{\infty}e^{-st}f(t)\,dt 
+    f(t)\:\laplace\:F(s)=\mathcal{L}[f(t)](s):=\int_{0}^{\infty}e^{-st}f(t)\,dt
     }
 \end{equation*}
 Inverse Laplace transform:
 \begin{equation*}
     F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
-\end{equation*} 
+\end{equation*}
 
 \subsection{Linearity}
 Let $f$ and $g$ be functions for which the Laplace transform exists. Then for all $a,b \in \mathbb{R}$
@@ -46,31 +46,31 @@ Moreover
     e^{at}\cdot f(t)\:\laplace\:F(s-a)
 \end{equation*}
 \begin{examplesection}[Example]
-    Let $f(t)=e^{2t}\cdot cos(\omega t)$ $\Rightarrow a=2$ (s-shifting)
-	\begin{equation*}
-        \mathcal{L}[cos(\omega t)]=\frac{s}{s^2+\omega ^2}\Rightarrow \mathcal{L}[f(t)]=\frac{s-2}{(s-2)^2+\omega ^2}
+    Let $f(t)=e^{2t}\cdot \cos(\omega t)$ $\Rightarrow a=2$ (s-shifting)
+    \begin{equation*}
+        \mathcal{L}[\cos(\omega t)]=\frac{s}{s^2+\omega ^2}\Rightarrow \mathcal{L}[f(t)]=\frac{s-2}{{(s-2)}^2+\omega ^2}
     \end{equation*}
 \end{examplesection}
 
 \subsection{Differentiation}
-Let $f, f', \dots, f^{(n-1)}$ be continuous functions for all $t \geq 0$. Assume that $f^{(n)}$ is piecewise continuous on every finite subinterval in $[0;1)$. Then
+Let $f, f', \dots, f^{(n-1)}$ be continuous functions for all $t \geq 0$. Assume that $f^{(n)}$ is piecewise continuous on every finite subinterval in $[0;1)$. Then % chktex 9
 \begin{equation*}
     \mathcal{L}[f^{(n)}](s)=s^n\mathcal{L}[f](s)-\sum_{j=0}^{n-1}s^{n-1-j}f^{(j)}(0),\text{ for every }n\geq1
 \end{equation*}
 For n = 1, n=2 and n=3
 \begin{align*}
-    \mathcal{L}[f'](s)&=s\mathcal{L}[f](s)-f(0) \\
-    \mathcal{L}[f''](s)&=s^2\mathcal{L}[f](s)-sf(0)-f'(0) \\
-    \mathcal{L}[f'''](s)&=s^3\mathcal{L}[f](s)-s^2f(0)-sf'(0)-f''(0)
+    \mathcal{L}[f'](s)   & =s\mathcal{L}[f](s)-f(0)                    \\
+    \mathcal{L}[f''](s)  & =s^2\mathcal{L}[f](s)-sf(0)-f'(0)           \\
+    \mathcal{L}[f'''](s) & =s^3\mathcal{L}[f](s)-s^2f(0)-sf'(0)-f''(0) % chktex 23
 \end{align*}
 \begin{examplesection}[Example]
     Give the ODE $y''-y'+y=0,\;y(0)=0,\;y'(0)=1$
     \begin{align*}
-        \mathcal{L}[y''-y'+y]&\:=\:\mathcal{L}[0] \Leftrightarrow \\
-        \mathcal{L}[y'']-\mathcal{L}[y']+\mathcal{L}[y]&\:=\:\mathcal{L}[0] \Leftrightarrow \\
-        s^2Y -\underbrace{sy(0)}_{=0}-\underbrace{y'(0)}_{=1}-(sY-\underbrace{y(0)}_{=0})+Y&\:=\:0 \Leftrightarrow \\
-        Y=\frac{1}{s^2-s+1}=\frac{1}{(s-\frac{1}{2})^2+\frac{3}{4}}=\sqrt{\frac{4}{3}}&\frac{\sqrt{\frac{3}{4}}}{(s-\frac{1}{2})^2+(\sqrt{\frac{3}{4}})^2} \Leftrightarrow \\
-        Y\;\Laplace\;y=\sqrt{\frac{4}{3}}e^{\frac{1}{2}t}sin\left(\sqrt{\frac{3}{4}t}\right)
+        \mathcal{L}[y''-y'+y]                                                               & \:=\:\mathcal{L}[0] \Leftrightarrow                                                     \\
+        \mathcal{L}[y'']-\mathcal{L}[y']+\mathcal{L}[y]                                     & \:=\:\mathcal{L}[0] \Leftrightarrow                                                     \\
+        s^2Y -\underbrace{sy(0)}_{=0}-\underbrace{y'(0)}_{=1}-(sY-\underbrace{y(0)}_{=0})+Y & \:=\:0 \Leftrightarrow                                                                  \\
+        Y=\frac{1}{s^2-s+1}=\frac{1}{{(s-\frac{1}{2})}^2+\frac{3}{4}}=\sqrt{\frac{4}{3}}    & \frac{\sqrt{\frac{3}{4}}}{{(s-\frac{1}{2})}^2+{(\sqrt{\frac{3}{4}})}^2} \Leftrightarrow \\
+        Y\;\Laplace\;y=\sqrt{\frac{4}{3}}e^{\frac{1}{2}t}\sin\left(\sqrt{\frac{3}{4}t}\right)
     \end{align*}
 \end{examplesection}
 
@@ -88,37 +88,37 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
     \begin{equation*}
         u(t):=
         \begin{cases}
-            1&\text{if}\;t>0 \\
-            0&\text{if}\;t<0
+            1 & \text{if}\;t>0 \\
+            0 & \text{if}\;t<0
         \end{cases}
     \end{equation*}
-    &  
+     &
     \begin{tikzpicture}
         \begin{axis}[
-            width=\linewidth,
-            unit vector ratio={1 1},
-            axis x line=left,
-            axis y line=middle,
-            xmin=-1.5,
-            xmax=1.5,
-            ymin=0,
-            ymax=2,
-            xlabel={$t$},
-            ylabel={$u(t)$},
-            xtick={0},
-            ytick={1},
-            mark=none,
-        ]
-            \addplot [blue, very thick] 
+                width=\linewidth,
+                unit vector ratio={1 1},
+                axis x line=left,
+                axis y line=middle,
+                xmin=-1.5,
+                xmax=1.5,
+                ymin=0,
+                ymax=2,
+                xlabel={$t$},
+                ylabel={$u(t)$},
+                xtick={0},
+                ytick={1},
+                mark=none,
+            ]
+            \addplot [blue, very thick]
             coordinates {
-                (\pgfkeysvalueof{/pgfplots/xmin},0)
-                (0,0)
-            };
-            \addplot [blue, very thick] 
+                    (\pgfkeysvalueof{/pgfplots/xmin},0)
+                    (0,0)
+                };
+            \addplot [blue, very thick]
             coordinates {
-                (0,1)
-                (\pgfkeysvalueof{/pgfplots/xmax},1)
-            };
+                    (0,1)
+                    (\pgfkeysvalueof{/pgfplots/xmax},1)
+                };
             \addplot[fill=white,only marks,mark=*] coordinates{(0,0)(0,1)};
         \end{axis}
     \end{tikzpicture}
@@ -126,39 +126,39 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
     \begin{equation*}
         u(t-a):=
         \begin{cases}
-            1&\text{if}\;t>a \\
-            0&\text{if}\;t<a
+            1 & \text{if}\;t>a \\
+            0 & \text{if}\;t<a
         \end{cases}
     \end{equation*}
-    &
+     &
     \begin{tikzpicture}
         \begin{axis}[
-            width=\linewidth,
-            unit vector ratio={1 1},
-            axis x line=left,
-            axis y line=middle,
-            xmin=-0.5,
-            xmax=2.5,
-            ymin=0,
-            ymax=2,
-            xlabel={$t$},
-            ylabel={$u(t-a)$},
-            xtick={0},
-            ytick={1},
-            extra x ticks={1},
-            extra x tick labels={$a$},
-            mark=none,
-        ]
-            \addplot [blue, very thick] 
+                width=\linewidth,
+                unit vector ratio={1 1},
+                axis x line=left,
+                axis y line=middle,
+                xmin=-0.5,
+                xmax=2.5,
+                ymin=0,
+                ymax=2,
+                xlabel={$t$},
+                ylabel={$u(t-a)$},
+                xtick={0},
+                ytick={1},
+                extra x ticks={1},
+                extra x tick labels={$a$},
+                mark=none,
+            ]
+            \addplot [blue, very thick]
             coordinates {
-                (\pgfkeysvalueof{/pgfplots/xmin},0)
-                (1,0)
-            };
-            \addplot [blue, very thick] 
+                    (\pgfkeysvalueof{/pgfplots/xmin},0)
+                    (1,0)
+                };
+            \addplot [blue, very thick]
             coordinates {
-                (1,1)
-                (\pgfkeysvalueof{/pgfplots/xmax},1)
-            };
+                    (1,1)
+                    (\pgfkeysvalueof{/pgfplots/xmax},1)
+                };
             \addplot[fill=white,only marks,mark=*] coordinates{(1,0)(1,1)};
         \end{axis}
     \end{tikzpicture}
@@ -166,47 +166,47 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
     \begin{equation*}
         f(t):=
         \begin{cases}
-            1&a<t<b \\
-            0&\text{else}
+            1 & a<t<b       \\
+            0 & \text{else}
         \end{cases}
     \end{equation*}
     \begin{equation*}
         f(t)=u(t-a)-u(t-b)
     \end{equation*}
-    &
+     &
     \begin{tikzpicture}
         \begin{axis}[
-            width=\linewidth,
-            unit vector ratio={1 1},
-            axis x line=left,
-            axis y line=middle,
-            xmin=-0.5,
-            xmax=2.5,
-            ymin=0,
-            ymax=2,
-            xlabel={$t$},
-            ylabel={$f(t)$},
-            xtick={0},
-            ytick={1},
-            extra x ticks={0.7, 1.8},
-            extra x tick labels={$a$, $b$},
-            mark=none,
-        ]
-            \addplot [blue, very thick] 
+                width=\linewidth,
+                unit vector ratio={1 1},
+                axis x line=left,
+                axis y line=middle,
+                xmin=-0.5,
+                xmax=2.5,
+                ymin=0,
+                ymax=2,
+                xlabel={$t$},
+                ylabel={$f(t)$},
+                xtick={0},
+                ytick={1},
+                extra x ticks={0.7, 1.8},
+                extra x tick labels={$a$, $b$},
+                mark=none,
+            ]
+            \addplot [blue, very thick]
             coordinates {
-                (\pgfkeysvalueof{/pgfplots/xmin},0)
-                (0.7,0)
-            };
-            \addplot [blue, very thick] 
+                    (\pgfkeysvalueof{/pgfplots/xmin},0)
+                    (0.7,0)
+                };
+            \addplot [blue, very thick]
             coordinates {
-                (0.7,1)
-                (1.8,1)
-            };
-            \addplot [blue, very thick] 
+                    (0.7,1)
+                    (1.8,1)
+                };
+            \addplot [blue, very thick]
             coordinates {
-                (1.8,0)
-                (\pgfkeysvalueof{/pgfplots/xmax},0)
-            };
+                    (1.8,0)
+                    (\pgfkeysvalueof{/pgfplots/xmax},0)
+                };
             \addplot[fill=white,only marks,mark=*] coordinates{(0.7,0)(0.7,1)(1.8,1)(1.8,0)};
         \end{axis}
     \end{tikzpicture}
@@ -215,21 +215,21 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
 
 \subsection{t-shifting}
 \begin{align*}
-    f(t-a)u(t-a) &\:\laplace\: e^{-as}F(s)\\
-    f(t)u(t-a) &\:\laplace\: e^{-as}\mathcal{L}[f(t+a)]
+    f(t-a)u(t-a) & \:\laplace\: e^{-as}F(s)                \\
+    f(t)u(t-a)   & \:\laplace\: e^{-as}\mathcal{L}[f(t+a)]
 \end{align*}
 \begin{examplesection}[Example]
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
-    Let $f(t)=t^2$ and now shift it by $a$ : $f(t-a)=(t-a)^2$
+    Let $f(t)=t^2$ and now shift it by $a$: $f(t-a)={(t-a)}^2$
     \begin{equation*}
-       \mathcal{L}[f]=e^{-as}\frac{2}{s^3}
+        \mathcal{L}[f]=e^{-as}\frac{2}{s^3}
     \end{equation*}
     \hrule{}
-    Given 
+    Given
     \begin{align*}
-        F(s)&=\frac{e^{-2s}}{s^4}=\frac{1}{6}e^{-2s}\underbrace{\frac{3\!}{s^4}}_{=\mathcal{L}[t^3]} \\
-        \mathcal{L}^{-1}[F]&= \frac{1}{6}(t-2)^3u(t-2)=\begin{cases}\frac{1}{6}(t-2)^3& t>2\\ 0& t<2\end{cases}
+        F(s)                & =\frac{e^{-2s}}{s^4}=\frac{1}{6}e^{-2s}\underbrace{\frac{3\!}{s^4}}_{=\mathcal{L}[t^3]} \\
+        \mathcal{L}^{-1}[F] & = \frac{1}{6}{(t-2)}^3u(t-2)=\begin{cases}\frac{1}{6}{(t-2)}^3& t>2\\ 0& t<2\end{cases}
     \end{align*}
 \end{examplesection}
 
@@ -248,10 +248,10 @@ If the $\lim_{t\to 0^+}\frac{f(t)}{t}$ exists, then
 \subsection{Dirac's delta function}
 The \textit{Dirac delta} is the limit
 \begin{equation*}
-    \delta(t-a):=\lim_{h\to0}\delta_h(t-a)"="
+    \delta(t-a):=\lim_{h\to0}\delta_h(t-a)''=''
     \begin{cases}
-        \infty&t=a\\
-        0&t\ne a
+        \infty & t=a    \\
+        0      & t\ne a
     \end{cases}
 \end{equation*}
 and
@@ -274,8 +274,8 @@ Let $f(t)$ be a differentiable function with continuous derivative and with zero
 \end{equation*}
 The Laplace transform is given by
 \begin{align*}
-    \delta(t) &\;\laplace\; 1 \\
-    \delta(t-a) &\;\laplace\; e^{-as}
+    \delta(t)   & \;\laplace\; 1       \\
+    \delta(t-a) & \;\laplace\; e^{-as}
 \end{align*}
 
 \subsection{Convolution}
@@ -284,12 +284,12 @@ The Laplace transform is given by
 \end{equation*}
 Properties: Let $f,g$ and $h$ be functions.
 \begin{align*}
-    f*g =&\ g*f \\
-    f*(g+h) =&\ f*g+f*h \\
-    f*(g*h) =&\ (f*g)*h \\
-    f*0 =&\ 0*f=0 \\
-    f*1 \ne&\ f \\
-    f*f \;&\ \text{is not always non-negative}
+    f*g =     & \ g*f                               \\
+    f*(g+h) = & \ f*g+f*h                           \\
+    f*(g*h) = & \ (f*g)*h                           \\
+    f*0 =     & \ 0*f=0                             \\
+    f*1 \ne   & \ f                                 \\
+    f*f \;    & \ \text{is not always non-negative}
 \end{align*}
 \begin{equation*}
     f(t)*g(t) \:\laplace\: F(s)\cdot G(s)
@@ -298,11 +298,11 @@ Properties: Let $f,g$ and $h$ be functions.
 \subsection{Solving initial value problems}
 \begin{enumerate}
     \item Transform the ODE to the s-domain ($\mathcal{L}[y]=Y$)\\
-    $\Rightarrow$ Insert initial conditions\\
-    $\quad\qquad y''+ay'+by=r(t)$\\
-    $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
+          $\Rightarrow$ Insert initial conditions\\
+          $\quad\qquad y''+ay'+by=r(t)$\\
+          $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
     \item Solve the equation for $Y$ \\
-    $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
+          $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
     \item Transform the equation back to the time-domain $y=\mathcal{L}^{-1}[Y]$
 \end{enumerate}
 Special case:\\
@@ -310,58 +310,58 @@ If the initial values are given like this $y(a),y'(a),\dots$:
 \begin{enumerate}[label=\alph*]
     \item Substitute: $t=\tilde{t}+a$
     \item $y''+ay'+by=r(t) \Rightarrow \tilde{y}''+a\tilde{y}'+b\tilde{y}=r(\tilde{t}+a)$\\
-    $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),...$
+          $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),\dots$
     \item Solve the ODE as described above $\Rightarrow \tilde{Y} \rightarrow \tilde{y}(\tilde{t})$
-    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$ 
+    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$
 \end{enumerate}
 
 \subsection{Laplace transform table}
 \begin{align*}
-    f(t)                            \;&\laplace\; F(s) \\
-    1                               \;&\laplace\; \frac{1}{s} \\
-    t^{n}                           \;&\laplace\; \frac{n!}{s^{n+1}} \; with \; n \in \mathbb{N}_0 \\
-    e^{at}                          \;&\laplace\; \frac{1}{s-a}  \\
-    e^{at}f(t)                      \;&\laplace\; F(s-a) \\
-    u(t-a)                          \;&\laplace\; \frac{1}{s}e^{-as} \\
-    f(t-a)u(t-a)                    \;&\laplace\; e^{-as}F(s) \\
-    \delta(t)                       \;&\laplace\; 1\\
-    \delta(t-t_{0})                 \;&\laplace\; e^{-st_{0}} \\
-    \frac{d^{n}}{dt^{n}}\delta(t)   \;&\laplace\; s^{n}  \\
-    t^{n}f(t)                       \;&\laplace\; (-1)^n \frac{d^nF(s)}{ds^n}  \\
-    f^{\prime}\left(t\right)        \;&\laplace\; \begin{aligned}sF(s)-f(0)\end{aligned}  \\
-    f^{n}(t)                        \; \laplace\; s^nF(s)&-s^{n-1}f(0)-...-f^{n-1}(0)  \\
-    f(t)*g(t)                       \;&\laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}  \\
-    ln(at)                          \;&\laplace\; -\frac{1}{s}\left(ln\left(\frac sa\right)+\gamma\right)  \\ 
-    \frac{e^{at}-e^{bt}}{a-b}       \;&\laplace\; \frac{1}{(s-a)(s-b)} \\
-    \frac{ae^{at}-be^{at}}{a-b}     \;&\laplace\; \frac{s}{(s-a)(s-b)} \\
-    te^{at}                         \;&\laplace\; \frac{1}{(s-a)^2}  \\
-    t^{n}e^{at}                     \;&\laplace\; \frac{n!}{(s-a)^{n+1}}  \\
-    -tf(t)                          \;&\laplace\; F^{\prime}(s)  \\
-    t^{2}f(t)                       \;&\laplace\; F^{\prime\prime}(s)  \\
-    (-t)^n f(t)                     \;&\laplace\; F^{(n)}(s)  \\
-    \int_{0}^{t}f(u)du              \;&\laplace\; \frac{1}{s}F(s)  \\
-    \int_{0}^{t}\frac{(t-q)^{n-1}f(q)}{(n-1)!}dq,&n \leq 1 \;\laplace\; \frac{1}{s^n}F(s),n \geq 1  \\
-    \frac{1}{t}f(t)                 \;&\laplace\; \int_{s}^{\infty}F(u)du  \\
-    1-e^{-at}                       \;&\laplace\; \frac{a}{s(s+a)}  \\
-    sin(kt)                         \;&\laplace\; \frac{k}{s^2+k^2}  \\
-    cos(kt)                         \;&\laplace\; \frac{s}{s^2+k^2}  \\
-    sin^{2}(kt)                     \;&\laplace\; \frac{2k^2}{s(s^2+4k^2)}  \\
-    cos^{2}(kt)                     \;&\laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}  \\
-    sinh(kt)                        \;&\laplace\; \frac{k}{s^2-k^2} \\
-    cosh(kt)                        \;&\laplace\; \frac{s}{s^2-k^2} \\
-    e^{at}sin(kt)                   \;&\laplace\; \frac{k}{(s-a)^2+k^2}  \\
-    e^{at}cos(kt)                   \;&\laplace\; \frac{s-a}{(s-a)^2+k^2}  \\
-    e^{at}sinh(kt)                  \;&\laplace\; \frac{k}{(s-a)^2-k^2}  \\
-    e^{at}cosh(kt)                  \;&\laplace\; \frac{(s-a)}{(s-a)^2-k^2}  \\
-    t\cdot sin(kt)                        \;&\laplace\; \frac{2ks}{(s^2+k^2)^2}  \\
-    t\cdot cos(kt)                        \;&\laplace\; \frac{s^2-k^2}{(s^2+k^2)^2}  \\
-    t\cdot sin(t)cos(t)                   \;&\laplace\; \frac{2s}{(s^2+4)^2}  \\
-    t\cdot sinh(kt)                       \;&\laplace\; \frac{2ks}{(s^2-k^2)^2}  \\
-    t\cdot cosh(kt)                       \;&\laplace\; \frac{s^2-k^2}{(s^2-k^2)^2}  \\
-    sin(at)\cdot f(t)               \;&\laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia)) \\
-    cos(at)\cdot f(t)               \;&\laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia)) \\
-    sinh(at)\cdot f(t)              \;&\laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a)) \\
-    cosh(at)\cdot f(t)              \;&\laplace\; \frac{1}{2}\cdot(F(s-a)+F(s+a)) \\
-    \frac{1}{\sqrt{\pi t}e^{\frac{-a^2}{4t}}} \;&\laplace\; \frac{e^{-a\sqrt{s}}}{\sqrt{s}} \\
-    \frac{a}{2\sqrt{\pi t^3}}e^{\frac{-a^2}{4t}} \;&\laplace\; e^{-a\sqrt{s}}
+    f(t)                            \;                      & \laplace\; F(s)                                                     \\
+    1                               \;                      & \laplace\; \frac{1}{s}                                              \\
+    t^{n}                           \;                      & \laplace\; \frac{n!}{s^{n+1}} \; with \; n \in \mathbb{N}_0         \\
+    e^{at}                          \;                      & \laplace\; \frac{1}{s-a}                                            \\
+    e^{at}f(t)                      \;                      & \laplace\; F(s-a)                                                   \\
+    u(t-a)                          \;                      & \laplace\; \frac{1}{s}e^{-as}                                       \\
+    f(t-a)u(t-a)                    \;                      & \laplace\; e^{-as}F(s)                                              \\
+    \delta(t)                       \;                      & \laplace\; 1                                                        \\
+    \delta(t-t_{0})                 \;                      & \laplace\; e^{-st_{0}}                                              \\
+    \frac{d^{n}}{dt^{n}}\delta(t)   \;                      & \laplace\; s^{n}                                                    \\
+    t^{n}f(t)                       \;                      & \laplace\; {(-1)}^n \frac{d^{n}F(s)}{ds^n}                          \\
+    f^{\prime}\left(t\right)        \;                      & \laplace\; \begin{aligned}sF(s)-f(0)\end{aligned}                   \\
+    f^{n}(t)                        \; \laplace\; s^{n}F(s) & -s^{n-1}f(0)-\cdots-f^{n-1}(0)                                      \\
+    f(t)*g(t)                       \;                      & \laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}               \\
+    \ln(at)                         \;                      & \laplace\; -\frac{1}{s}\left(\ln\left(\frac sa\right)+\gamma\right) \\
+    \frac{e^{at}-e^{bt}}{a-b}       \;                      & \laplace\; \frac{1}{(s-a)(s-b)}                                     \\
+    \frac{ae^{at}-be^{at}}{a-b}     \;                      & \laplace\; \frac{s}{(s-a)(s-b)}                                     \\
+    te^{at}                         \;                      & \laplace\; \frac{1}{{(s-a)}^2}                                        \\
+    t^{n}e^{at}                     \;                      & \laplace\; \frac{n!}{{(s-a)}^{n+1}}                                 \\
+    -tf(t)                          \;                      & \laplace\; F^{\prime}(s)                                            \\
+    t^{2}f(t)                       \;                      & \laplace\; F^{\prime\prime}(s)                                      \\
+    {(-t)}^n f(t)                   \;                      & \laplace\; F^{(n)}(s)                                               \\
+    \int_{0}^{t}f(u)du              \;                      & \laplace\; \frac{1}{s}F(s)                                          \\
+    \int_{0}^{t}\frac{{(t-q)}^{n-1}f(q)}{(n-1)!}dq,         & n \leq 1 \;\laplace\; \frac{1}{s^n}F(s),n \geq 1                    \\
+    \frac{1}{t}f(t)                 \;                      & \laplace\; \int_{s}^{\infty}F(u)du                                  \\
+    1-e^{-at}                       \;                      & \laplace\; \frac{a}{s(s+a)}                                         \\
+    \sin(kt)                        \;                      & \laplace\; \frac{k}{s^2+k^2}                                        \\
+    \cos(kt)                        \;                      & \laplace\; \frac{s}{s^2+k^2}                                        \\
+    \sin^{2}(kt)                    \;                      & \laplace\; \frac{2k^2}{s(s^2+4k^2)}                                 \\
+    \cos^{2}(kt)                    \;                      & \laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}                             \\
+    \sinh(kt)                       \;                      & \laplace\; \frac{k}{s^2-k^2}                                        \\
+    \cosh(kt)                       \;                      & \laplace\; \frac{s}{s^2-k^2}                                        \\
+    e^{at}\sin(kt)                  \;                      & \laplace\; \frac{k}{{(s-a)}^2+k^2}                                    \\
+    e^{at}\cos(kt)                  \;                      & \laplace\; \frac{s-a}{{(s-a)}^2+k^2}                                  \\
+    e^{at}\sinh(kt)                 \;                      & \laplace\; \frac{k}{{(s-a)}^2-k^2}                                    \\
+    e^{at}\cosh(kt)                 \;                      & \laplace\; \frac{{(s-a)}}{{(s-a)}^2-k^2}                                \\
+    t\cdot \sin(kt)                 \;                      & \laplace\; \frac{2ks}{{(s^2+k^2)}^2}                                  \\
+    t\cdot \cos(kt)                 \;                      & \laplace\; \frac{s^2-k^2}{{(s^2+k^2)}^2}                              \\
+    t\cdot \sin(t)\cos(t)           \;                      & \laplace\; \frac{2s}{{(s^2+4)}^2}                                     \\
+    t\cdot \sinh(kt)                \;                      & \laplace\; \frac{2ks}{{(s^2-k^2)}^2}                                  \\
+    t\cdot \cosh(kt)                \;                      & \laplace\; \frac{s^2-k^2}{{(s^2-k^2)}^2}                              \\
+    \sin(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia))                       \\
+    \cos(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia))                        \\
+    \sinh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a))                          \\
+    \cosh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)+F(s+a))                          \\
+    \frac{1}{\sqrt{\pi t}e^{\frac{-a^2}{4t}}} \;            & \laplace\; \frac{e^{-a\sqrt{s}}}{\sqrt{s}}                          \\
+    \frac{a}{2\sqrt{\pi t^3}}e^{\frac{-a^2}{4t}} \;         & \laplace\; e^{-a\sqrt{s}}
 \end{align*}
