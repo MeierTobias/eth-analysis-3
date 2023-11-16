@@ -106,7 +106,7 @@ three steps have to be taken:
 \begin{align*}
     u(x,t)&=F(x)G(t)\\
     \underbrace{F\ddot{G}}_{u_{tt}}&=c^2\underbrace{F''G}_{u_{xx}}\\
-    \frac{\ddot{G}}{c^2G}&=\frac{F''}{F}=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
+    \frac{F''}{F}=\frac{\ddot{G}}{c^2G}&=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
     \begin{cases} 
         F''=kF\\
         \ddot{G}=c^2kG
@@ -117,21 +117,28 @@ three steps have to be taken:
 \subsubsection{(ii) General Solution}
 By inserting the initial conditions into the separated equation
 \begin{equation*}
-    \frac{F^{\prime\prime}(x)}{F(x)}=\frac{\ddot{G}(t)}{G(t)}=k
+    \frac{F^{\prime\prime}(x)}{F(x)}=\frac{\ddot{G}(t)}{G(t)}=k\hspace*{10pt}\Rightarrow\hspace*{10pt}
+    \begin{cases} 
+        F''=kF\\
+        \ddot{G}=c^2kG
+    \end{cases}
 \end{equation*}
 \begin{align*}
     u(0,t)&=F(0)G(t)=u_0\mathrm{~}\forall t\geq0\quad\Rightarrow&\mathbf{F(0)}=\mathbf{u_0}\\
     u(L,t)&=F(L)G(t)=u_L\mathrm{~}\forall t\geq0\quad\Rightarrow&\mathbf{F(L)}=\mathbf{u_L}
 \end{align*}
-$F(x)$ and $G(t)$ can be found:
+By applying the \textbf{IC} to $F''(x)=kF(x)$, $F(x)$ can be found:
 \begin{align*}
-    \mathrm{F(x)}=&
+    F(x)=&
     \begin{cases}
         A_1e^{\sqrt{k}x}+A_2e^{-\sqrt{k}x}&k>0\\
         A_1\cos(\sqrt{|k|}x)+A_2\sin(\sqrt{|k|}x)&k<0\\
         A_1x+A_2&k=0\\
     \end{cases}\\
-    \mathrm{G(t)}=&
+\end{align*}
+Since $k$ is constant for both $F,G$, $G(t)$ can be obtained by:
+\begin{align*}
+    G(t)=&
     \begin{cases}
         B_1e^{\sqrt{k}t}+B_2e^{-\sqrt{k}t}&\;\,k>0\\
         B_1\cos(\sqrt{|k|}t)+B_2\sin(\sqrt{|k|}t)&\;\,k<0\\
@@ -141,7 +148,7 @@ $F(x)$ and $G(t)$ can be found:
 %
 %
 \subsubsection{(iii) Specific Solution}
-In general, the specific solution can be found by combining the boundary conditions BC 
+In general, the specific solution can be found by combining the boundary conditions \textbf{BC} 
 with the general solution found in (ii).\\\hbox{}\\
 If $\mathbf{u(0,t)=u(L,t)= 0}$ the \textbf{general solution} Ansatz:
 \begin{equation*}
