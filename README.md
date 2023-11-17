@@ -55,6 +55,11 @@ To enable the LaTeX checker ChkTeX:
 
 To get more information about the different warnings search for your warning code in the ChkTeX [documentation](https://mirror.init7.net/ctan/support/chktex/ChkTeX.pdf). If you want to disable a checker warning on a specific line you can add `% chktex ##` to the end of the line with the warning number you want to suppress.
 
+## Specialties when using macOS
+This repository is configured for Git [LFS](https://git-lfs.com/) (Large File Storage). If you don't already have it installed run `brew install git-lfs` or check the linked website to install it.
+
+To use the formatter by LaTeX Workshop install `brew install latexindent`.
+
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
