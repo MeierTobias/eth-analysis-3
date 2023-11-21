@@ -23,5 +23,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: compiled-pdf
-          path: ../build/*.pdf
+          path: build/*.pdf
           retention-days: 5
