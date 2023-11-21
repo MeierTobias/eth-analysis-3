@@ -263,6 +263,18 @@ This form shows, that for a given position $x_i$ and time $t_i$ the result is on
         \end{axis}
     \end{tikzpicture}
 \end{center}
+If the initial conditions $f(\cdot)$ and $g(\cdot)$ are only non zero on the interval $[a,b]$ the solution of the wave equation can be divided into the following six sectors ($I-VI$).
+\includegraphics[width=\linewidth]{../images/pde_dAlembert.png}
+where $u(x_i,t_i)$ is
+\begin{equation*}
+    \begin{cases}
+        0,                                                                        & \forall (x_i,t_i) \in I \cup III \\
+        \text{full d'Alembert equation}                                           & \forall (x_i,t_i) \in II \cup V  \\
+        \frac{1}{2}\left[f(x_i+ct_i)\right]+\frac{1}{2c}\int_{a}^{x_i+ct_i}g(s)ds & \forall (x_i,t_i) \in IV         \\
+        \frac{1}{2}\left[f(x_i-ct_i)\right]+\frac{1}{2c}\int_{x_i-ct_i}^{b}g(s)ds & \forall (x_i,t_i) \in VI
+    \end{cases}
+\end{equation*}
+
 
 \subsection{Normal form}
 With an appropriate change of coordinates a 2nd order linear PDE can be brought into the \textit{normal form}, that is
