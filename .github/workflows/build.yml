@@ -19,3 +19,9 @@ jobs:
           args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III -outdir=../build ./src/main.tex
       - name: reset flags
         run: sed 's/^/%/' -i src/headers/flags.tex
+      - name: Archive pdf's as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: compiled-pdf
+          path: build/*.pdf
+          retention-days: 5
