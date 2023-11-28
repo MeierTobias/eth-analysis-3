@@ -279,7 +279,53 @@ where $u(x_i,t_i)$ is
 \subsection{Normal form}
 With an appropriate change of coordinates a 2nd order linear PDE can be brought into the \textit{normal form}, that is
 \begin{align*}
-    u_{vw}          & = F^{*}(v,w,u,u_v,u_w) &  & \textit{hyperbolic} \\
-    u_{vv}          & = F^{*}(v,w,u,u_v,u_w) &  & \textit{parabolic}  \\
-    u_{vv} + u_{ww} & = F^{*}(v,w,u,u_v,u_w) &  & \textit{elliptic}
+    u_{vw}=F^{*}(v,w,u,u_{v},u_{w})        &  & \text{if hyperbolic} \\
+    u_{vv}=F^{*}(v,w,u,u_{v},u_{w})        &  & \text{if parabolic}  \\
+    u_{vv}+u_{ww}=F^{*}(v,w,u,u_{v},u_{w}) &  & \text{if elliptic}
 \end{align*}
+
+\subsubsection{Substitutions}
+\begin{align*}
+    v=\varphi(x,y)\quad\text{and}\quad w=\psi(x,y)                   &   & \text{if hyperbolic} \\
+    v=x\quad\text{and}\quad w=\psi(x,y)                              &   & \text{if parabolic}  \\
+    v=\frac{1}{2}\Bigl(\varphi(x,y)+\psi(x,y)\Bigr)                  &   & \text{if elliptic}   \\
+    \text{and}\quad w=\frac{1}{2i}\Bigl(\varphi(x,y)-\psi(x,y)\Bigr) &
+\end{align*}
+
+\subsubsection{Steps}
+\begin{enumerate}
+    \item Check if PDE is hyperbolic, parabolic or elliptic:
+          \begin{align*}
+              A(x,y)u_{xx}+2B(x,y)u_{xy}&+C(x,y)u_{yy}        \\ 
+              &=F(u,u_x,u_y,x,y)\\\\
+              B(x,y)-A(x,y)C(x,y)                     & \begin{cases}
+                                                            >0 & \text{hyperbolic} \\
+                                                            =0 & \text{parabolic}  \\
+                                                            <0 & \text{elliptic}
+                                                        \end{cases}
+          \end{align*}
+    \item Formulate the characteristic equation:
+          \begin{align*}
+              A(x,y)(y')^2-2B(x,y)y'+C(x,y)\overset{!}{=} 0
+          \end{align*}
+    \item Obtain $C_{1},C_{2}$ by solving the characteristic equation by setting
+          \begin{align*}
+              y'=\frac{\partial\, y}{\partial x}
+          \end{align*}
+    \item Perform change of variables:
+          \begin{align*}
+              v = C_{1} \quad w=C_{2}
+          \end{align*}
+    \item Calculate $v_{x},v_{y},w_{x},w_{y}$
+          and write $u_{x},u_{xx},u_{yx},u_{yy},F$ in terms of
+          $u_{v},u_{w},u_{vw},u_{vv},u_{ww}$ if applicable.
+    \item Obtain the \textit{normal form} $u_{v,w}$
+    \item Obtain $u(x,y)$ by integrating the \textit{normal form} $u(v,w)$
+          and re-substitution:
+          \begin{align*}
+              u(v,w) & =\iint u_{wv}\ dwdv         \\
+              u(x,y) & =u(v,w)|_{v=C_{1}, w=C_{2}}
+          \end{align*}
+\end{enumerate}
+
+
