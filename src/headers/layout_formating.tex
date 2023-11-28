@@ -1,73 +1,82 @@
 % colors
 \usepackage{color,xcolor}
-\definecolor{section}{HTML}{1c59c9}
-\definecolor{subsection}{HTML}{568ae8}
-\definecolor{subsubsection}{HTML}{87a9e8}
-\definecolor{titletext}{RGB}{255,255,255}
+\definecolor{sectionColor}{HTML}{1c59c9}
+\definecolor{subSectionColor}{HTML}{568ae8}
+\definecolor{subSubsectionColor}{HTML}{87a9e8}
+\definecolor{titleTextColor}{RGB}{255,255,255}
 
-% colored box for section
-\setkomafont{section}{\mysection}
-\newcommand{\mysection}[1]{%
-    \setlength{\fboxsep}{0cm}%already boxed
-    \colorbox{section}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{2pt}%Space before
-            \hspace{2pt}%left indent
-            \textcolor{titletext}{#1}
-            \vspace*{2pt}%Space after
-        \end{minipage}%
-    }}
-% colored box for subsection
-\setkomafont{subsection}{\mysubsection}
-\newcommand{\mysubsection}[1]{%
-    \setlength{\fboxsep}{0cm}%already boxed
-    \colorbox{subsection}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{2pt}%Space before
-            \hspace{2pt}%left indent
-            \textcolor{titletext}{#1}
-            \vspace*{2pt}%Space after
-        \end{minipage}%
-    }}
-% colored box for subsection
-\setkomafont{subsubsection}{\mysubsubsection}
-\newcommand{\mysubsubsection}[1]{%
-    \setlength{\fboxsep}{0cm}%already boxed
-    \colorbox{subsubsection}{%
-        \begin{minipage}{\linewidth}%
-            \vspace*{2pt}%Space before
-            \hspace{2pt}%left indent
-            \textcolor{titletext}{#1}
-            \vspace*{2pt}%Space after
-        \end{minipage}%
-    }}
+% set the size of a section
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 
-% decrease wasted space in title
-\RedeclareSectionCommand[
-  %runin=false,
-  afterindent=false,
-  beforeskip=.25\baselineskip,
-  afterskip=.25\baselineskip]{section}
-\RedeclareSectionCommand[
-  %runin=false,
-  afterindent=false,
-  beforeskip=.25\baselineskip,
-  afterskip=.25\baselineskip]{subsection}
-\RedeclareSectionCommand[
-  %runin=false,
-  afterindent=false,
-  beforeskip=.2\baselineskip,
-  afterskip=.25\baselineskip]{subsubsection}
-\RedeclareSectionCommand[
-  runin=true,
-  %afterindent=false,
-  beforeskip=.25\baselineskip,
-  afterskip=1em]{paragraph}
-\RedeclareSectionCommand[
-  runin=true,
-  %afterindent=false,
-  beforeskip=.5\baselineskip,
-  afterskip=1em]{subparagraph}
+% used for colored boxes
+\usepackage[many]{tcolorbox}
 
-% un-comment to hide the section numbering
-%\setcounter{secnumdepth}{0} 
+% customize the headers
+\usepackage[explicit]{titlesec}
+
+\titleformat{\section}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}
+{}
+{0pt}
+{\begin{tcolorbox}[
+      enhanced,
+      boxrule=0pt,
+      arc=0pt,
+      outer arc=0pt,
+      left=0pt,
+      right=0pt,
+      top=0pt,
+      bottom=0pt,
+      nobeforeafter,
+      interior code={\fill[overlay,sectionColor] (frame.north west) rectangle (frame.south east);},
+    ]\textcolor{titleTextColor}{\thesection\hspace{0.5em}#1}
+  \end{tcolorbox}}
+\titlespacing{\section}{0pt}{1pt}{0pt}
+
+\titleformat{\subsection}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}
+{}
+{0pt}
+{\begin{tcolorbox}[
+      enhanced,
+      boxrule=0pt,
+      arc=0pt,
+      outer arc=0pt,
+      left=0pt,
+      right=0pt,
+      top=0pt,
+      bottom=0pt,
+      nobeforeafter,
+      interior code={\fill[overlay,subSectionColor] (frame.north west) rectangle (frame.south east);},
+    ]\textcolor{titleTextColor}{\thesubsection\hspace{0.5em}#1}
+  \end{tcolorbox}}
+\titlespacing{\subsection}{0pt}{1pt}{0pt}
+
+\titleformat{\subsubsection}
+{\normalfont\bfseries\fontfamily{lmss}\selectfont}
+{}
+{0pt}
+{\begin{tcolorbox}[
+      enhanced,
+      boxrule=0pt,
+      arc=0pt,
+      outer arc=0pt,
+      left=0pt,
+      right=0pt,
+      top=0pt,
+      bottom=0pt,
+      nobeforeafter,
+      interior code={\fill[overlay,subSubsectionColor] (frame.north west) rectangle (frame.south east);},
+    ]\textcolor{titleTextColor}{\thesubsubsection\hspace{0.5em}#1}
+  \end{tcolorbox}}
+\titlespacing{\subsubsection}{0pt}{1pt}{0pt}
+
+% set the spacing above and below the equations
+\newlength{\eqSkipSize}  \setlength{\eqSkipSize}{6pt}
+\AtBeginDocument{%
+    \setlength\abovedisplayskip{\eqSkipSize}%
+    \setlength\belowdisplayskip{\eqSkipSize}%
+    \setlength\abovedisplayshortskip{\eqSkipSize-\baselineskip}%
+    \setlength\belowdisplayshortskip{\eqSkipSize}}
