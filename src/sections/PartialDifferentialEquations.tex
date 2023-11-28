@@ -276,7 +276,7 @@ where $u(x_i,t_i)$ is
 \end{equation*}
 
 
-\subsection{Normal form}
+\subsection{Normal Form}
 With an appropriate change of coordinates a 2nd order linear PDE can be brought into the \textit{normal form}, that is
 \begin{align*}
     u_{vw}=F^{*}(v,w,u,u_{v},u_{w})        &  & \text{if hyperbolic} \\
@@ -296,17 +296,17 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
 \begin{enumerate}
     \item Check if PDE is hyperbolic, parabolic or elliptic:
           \begin{align*}
-              A(x,y)u_{xx}+2B(x,y)u_{xy}&+C(x,y)u_{yy}        \\ 
-              &=F(u,u_x,u_y,x,y)\\\\
-              B(x,y)-A(x,y)C(x,y)                     & \begin{cases}
-                                                            >0 & \text{hyperbolic} \\
-                                                            =0 & \text{parabolic}  \\
-                                                            <0 & \text{elliptic}
-                                                        \end{cases}
+              A(x,y)u_{xx}+2B(x,y)u_{xy} & +C(x,y)u_{yy}          \\
+                                         & =F(u,u_x,u_y,x,y)      \\\\
+              B(x,y)-A(x,y)C(x,y)        & \begin{cases}
+                                               >0 & \text{hyperbolic} \\
+                                               =0 & \text{parabolic}  \\
+                                               <0 & \text{elliptic}
+                                           \end{cases}
           \end{align*}
     \item Formulate the characteristic equation:
           \begin{align*}
-              A(x,y)(y')^2-2B(x,y)y'+C(x,y)\overset{!}{=} 0
+              A(x,y){(y')}^2-2B(x,y)y'+C(x,y)\overset{!}{=} 0
           \end{align*}
     \item Obtain $C_{1},C_{2}$ by solving the characteristic equation by setting
           \begin{align*}
@@ -328,4 +328,81 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
           \end{align*}
 \end{enumerate}
 
+\subsection{1D Heat Equation - Finite Domain}
+\subsubsection{Boundary Condition $u(0,t), u(L,t)$}
+The PDE $u_t=c^2u_xx$ with boundary conditions $u(0,t)=u(L,t)=0$, $u(x,0)=f(x)$
+and $x\in[0,L]$ can be solved with the \textbf{Fourier Series Ansatz} resulting
+from separation of variables:
+\begin{align*}
+    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t}                                \\
+    B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx & \lambda_n, = \frac{cn\pi}{L}
+\end{align*}
 
+\subsubsection{Boundary Condition $u_{t}(0,t),u_{t}(L,t)$}
+The PDE $u_{t}=c^2u_{xx}$ with boundary conditions $u_t(0,t)=u(L,t)=0$, $u_t(x,0)=f(x)$
+and $x\in[0,L]$ can be solved by \textbf{separation of variables}:
+\begin{enumerate}
+    \item $u(x,t)=F(x)G(t)$
+    \item find $F(x),G(t)$ by inserting the boundary conditions $u_t$
+    \item use superposition:
+          \begin{equation*}
+              u(x,t)=\sum_{n=0}^{\infty} \underbrace{F_n(x)G_n(t)}_{u_n(x,t)}
+          \end{equation*}
+    \item use additional boundary conditions to find the coefficients for $u(x,t)$
+\end{enumerate}
+{\color{gray}\hrule}\, \\
+Alternatively, if $f(x)$ can be written as (e.g.\@ by setting $t = 0$)
+\begin{equation*}
+    u(x,t)=\sum_{n=0}^{\infty}a_n\cos(nx)e^{-c^2n^2t}
+\end{equation*}
+this general Ansatz can be used.
+\subsubsection{Time Dependent Heat Equation}
+If the heat equation is time dependent, for example if
+\begin{equation*}
+    u(x,t)=
+    \begin{cases}u_t=2tc^2u_{xx} & x\in[0,L],t\in[0,+\infty) \\% chktex 9
+             u(0,t)=0        & t\in[0,+\infty)           \\% chktex 9
+             0               & t\in[0,+\infty),            % chktex 9
+    \end{cases}
+\end{equation*}
+the separation of variables results in
+\begin{equation*}
+    \begin{cases}
+        F''     & =kF      \\
+        \dot{G} & =2kc^2tG
+    \end{cases}
+\end{equation*}
+and therefore the \textbf{Fourier Series Ansatz} only differs in $G_n(t)$.
+In this example, this results in
+\begin{equation*}
+    u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t^2}.
+\end{equation*}
+
+
+\subsection{1D Heat Equation - Infinite Domain}
+\subsection{Laplace Equation}
+The steady-state solution of the n-dimensional heat equation can be reduced
+to the laplace equation $\Delta u=0$, where $\Delta$ is the \textit{Laplacian operator}.\\
+Depending on the boundary conditions on $\partial R$ three distinct cases exist:
+\begin{itemize}
+    \item \textbf{Dirichlet BC}: For the \textit{Dirichlet problem} $u$ is prescribed on $\partial R$;
+    \item \textbf{Neumann BC}: For the \textit{Neumann problem} the normal parial derivative $u_n$ is prescribed on $\partial R$;
+    \item \textbf{Robin BC}: The \textit{Robin problem} is a combination of both aforementioned.
+\end{itemize}
+
+\subsubsection{2D Dirichlet Problem on a Rectangle}
+The two-dimensional steady-state solution with \textit{dirichlet BC}
+\begin{equation*}
+    \begin{cases}
+        u(0,y)=u(a,y)=0\\
+        u(x,0)=0\\
+        u(x,b)=f(x)
+    \end{cases}   
+\end{equation*}
+can be solved with the \textbf{Fourier Series Ansatz} obtained from separation of variables:
+\begin{align*}
+    u(x,y)=\sum_{n=1}^{\infty}A_{n}\sin(\frac{n\pi}ax)\sinh(\frac{n\pi}ay) \\
+    A_{n}=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^{a}f(x)\sin(\frac{n\pi}{a}x)dx
+\end{align*}
+\textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the 
+individual solutions for each boundary can be superpositioned.
