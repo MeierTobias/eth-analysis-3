@@ -362,7 +362,7 @@ If the heat equation is time dependent, for example if
     u(x,t)=
     \begin{cases}u_t=2tc^2u_{xx} & x\in[0,L],t\in[0,+\infty) \\% chktex 9
              u(0,t)=0        & t\in[0,+\infty)           \\% chktex 9
-             0               & t\in[0,+\infty),            % chktex 9
+             0               & t\in[0,+\infty),          % chktex 9
     \end{cases}
 \end{equation*}
 the separation of variables results in
@@ -378,8 +378,57 @@ In this example, this results in
     u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t^2}.
 \end{equation*}
 
-
 \subsection{1D Heat Equation - Infinite Domain}
+The heat equation on an infinite domain
+\begin{equation*}
+    \begin{cases}
+        u_t=c^2u_{xx} & x\in \mathbb{R} \\
+        u(x,0)=f(x)   & x\in \mathbb{R}
+    \end{cases}
+\end{equation*}
+can either be solved by using the \textbf{Fourier Integral} or \textbf{Fourier Transform}.
+In both cases, the solution can be found by:
+\begin{equation*}
+    u(x,t)=\frac{1}{2c\sqrt{\pi t}}\int_{-\infty}^{\infty}f(v)\exp\left[-\left(\frac{x-v}{2c\sqrt{t}}\right)^{2}\right]dv
+\end{equation*}
+
+
+\subsubsection{Fourier Integral}
+Separation of variables results in the following the Fourier integral:
+\begin{align*}
+    u(x,t) & =\int_0^\infty(A(p)\cos(px)+B(p)\sin(px))e^{-c^2p^2t}dp \\
+    A(p)   & =\frac1\pi\int_{-\infty}^\infty f(v)\cos(pv)dv          \\
+    B(p)   & =\frac1\pi\int_{-\infty}^\infty f(v)\sin(pv)dv
+\end{align*}
+\textbf{Hint!} $A(p)=0$ if $f(x)$ is odd and $B(p)=0$ if $f(x)$ is even.
+
+
+\subsubsection{Fourier Transform}
+\begin{enumerate}
+    \item By applying the \textbf{Fourier transform} with respect to $x$, the PDE can be
+          tranformed into an ODE:
+          \begin{align*}
+              \mathcal{F}_x\Bigl\{u_t(x,t)\Bigr\} & =\mathcal{F}_x\Bigl\{c^2u_{xx}(x,t)\Bigr\} \\
+              \hat{u}_t(w,t)                      & =-c^2w^2\hat{u}(w,t)
+          \end{align*}
+    \item Transform the initial conditions with respect to $x$. (Explicit calculation maybe not needed!)
+          \begin{equation*}
+              \widehat{f}(w)=\mathcal{F}_x\Bigl\{f(x)\Bigr\}
+          \end{equation*}
+    \item Solve the ODE with initial conditions
+          \begin{align*}
+              \hat{u}(w,t) & =C(w)e^{-c^2w^2t}                             \\
+              \hat{u}(w,0) & =\hat{f}(w)\;\Leftrightarrow\;\hat{f}(w)=C(w) \\
+              \hat{u}(w,t) & =\hat{f}(w)e^{-c^2w^2t}
+          \end{align*}
+    \item Obtain final solution by inverse FT (Check~\ref*{known_transforms}):
+          \begin{equation*}
+              u(x,t)=\mathcal{F}_x^{-1}\Bigl\{\widehat{u}(w,t)\Bigr\}
+          \end{equation*}
+\end{enumerate}
+
+
+
 \subsection{Laplace Equation}
 The steady-state solution of the n-dimensional heat equation can be reduced
 to the laplace equation $\Delta u=0$, where $\Delta$ is the \textit{Laplacian operator}.\\
@@ -394,15 +443,36 @@ Depending on the boundary conditions on $\partial R$ three distinct cases exist:
 The two-dimensional steady-state solution with \textit{dirichlet BC}
 \begin{equation*}
     \begin{cases}
-        u(0,y)=u(a,y)=0\\
-        u(x,0)=0\\
+        u(0,y)=u(a,y)=0 \\
+        u(x,0)=0        \\
         u(x,b)=f(x)
-    \end{cases}   
+    \end{cases}
 \end{equation*}
 can be solved with the \textbf{Fourier Series Ansatz} obtained from separation of variables:
 \begin{align*}
     u(x,y)=\sum_{n=1}^{\infty}A_{n}\sin(\frac{n\pi}ax)\sinh(\frac{n\pi}ay) \\
     A_{n}=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^{a}f(x)\sin(\frac{n\pi}{a}x)dx
 \end{align*}
-\textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the 
-individual solutions for each boundary can be superpositioned.
+\textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
+individual solutions for each boundary can be superpositioned. (See Appendix~\ref*{diri_superpos})
+
+\subsection{2D Wave Equation - Rectangular Membrane}
+For a homogeneous and flexible two-dimensional membrane with time-invariant tension per unit-length,
+the deflection $u(x,y,t)$ can be described by:
+\begin{align*}
+    \begin{cases}
+        u_{tt}=c^2\nabla^2u & \text{on }R=\{(x,y):x\in[0,a],y\in[0,b]\} \\
+        u=0                 & \text{on }\partial R                              \\
+        u(x,y,0)=f(x,y)                                                         \\
+        u_t(x,y,0)=g(x,y)
+    \end{cases}
+\end{align*}
+This PDE can be solved by:
+\begin{align*}
+    u(x,y,t)&=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
+    \\&\dots \sin\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)\\\\
+    f(x,y)&=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)\\
+    B_{mn}&= \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy\\\\
+    g(x,y)&=\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)\\
+    B_{mn}^{*}&=\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
+\end{align*}
