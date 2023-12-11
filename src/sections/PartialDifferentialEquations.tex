@@ -430,19 +430,20 @@ Separation of variables results in the following the Fourier integral:
 
 
 \subsection{Laplace Equation}
-The steady-state solution of the n-dimensional heat equation can be reduced
-to the laplace equation $\Delta u=0$, where $\Delta$ is the \textit{Laplacian operator}.\\
-Depending on the boundary conditions on $\partial R$ three distinct cases exist:
+The steady-state solution of the 2-dimensional heat equation can be reduced to the laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}.\\
+Depending on the boundary conditions on the region $R$ three distinct cases exist:
 \begin{itemize}
-    \item \textbf{Dirichlet BC}: For the \textit{Dirichlet problem} $u$ is prescribed on $\partial R$;
-    \item \textbf{Neumann BC}: For the \textit{Neumann problem} the normal parial derivative $u_n$ is prescribed on $\partial R$;
+    \item \textbf{Dirichlet BC}: For the \textit{Dirichlet problem} $u$ is prescribed on the boundary $\partial R$ of $R$;
+    \item \textbf{Neumann BC}: For the \textit{Neumann problem} the normal partial derivative $u_n$ is prescribed on $\partial R$;
     \item \textbf{Robin BC}: The \textit{Robin problem} is a combination of both aforementioned.
 \end{itemize}
 
-\subsubsection{2D Dirichlet Problem on a Rectangle}
-The two-dimensional steady-state solution with \textit{dirichlet BC}
+\subsubsection{2D Dirichlet Problem on a rectangle}
+The two-dimensional steady-state solution with \textit{Dirichlet BC} on a rectangle $R$
 \begin{equation*}
     \begin{cases}
+        \nabla^2 u=0 \\
+        R = \{(x,y) : 0 \leq x \leq a, 0 \leq y \leq b \} \\
         u(0,y)=u(a,y)=0 \\
         u(x,0)=0        \\
         u(x,b)=f(x)
