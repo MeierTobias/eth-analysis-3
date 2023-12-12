@@ -429,7 +429,7 @@ Separation of variables results in the following the Fourier integral:
 
 
 
-\subsection{Laplace Equation}
+\subsection{Laplace equation}
 The steady-state solution of the 2-dimensional heat equation can be reduced to the laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}.\\
 Depending on the boundary conditions on the region $R$ three distinct cases exist:
 \begin{itemize}
@@ -438,14 +438,14 @@ Depending on the boundary conditions on the region $R$ three distinct cases exis
     \item \textbf{Robin BC}: The \textit{Robin problem} is a combination of both aforementioned.
 \end{itemize}
 
-\subsubsection{2D Dirichlet Problem on a rectangle}
+\subsubsection{2D Dirichlet problem on a rectangle}
 The two-dimensional steady-state solution with \textit{Dirichlet BC} on a rectangle $R$
 \begin{equation*}
     \begin{cases}
-        \nabla^2 u=0 \\
+        \nabla^2 u=0                                      \\
         R = \{(x,y) : 0 \leq x \leq a, 0 \leq y \leq b \} \\
-        u(0,y)=u(a,y)=0 \\
-        u(x,0)=0        \\
+        u(0,y)=u(a,y)=0                                   \\
+        u(x,0)=0                                          \\
         u(x,b)=f(x)
     \end{cases}
 \end{equation*}
@@ -457,7 +457,57 @@ can be solved with the \textbf{Fourier Series Ansatz} obtained from separation o
 \textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
 individual solutions for each boundary can be superpositioned. (See Appendix~\ref{diri_superpos})
 
-\subsubsection{2D Dirichlet problem on a disc}
+\subsubsection{2D Dirichlet problem with radial symmetry}\label{pde/LaplaceEquation/2dDirichletRot}
+For a Laplace equation $\nabla^2 u=0$ on a disk $D$ with radius $R$ the solution to the Dirichlet problem (BC:\@$u(R,\theta)=f(\theta)$ on $\partial D$) is given by
+\begin{equation*}
+    u(r,\theta)=\sum_{n=0}^\infty r^n(A_n\cos(n\theta)+B_n\sin(n\theta))
+\end{equation*}
+with
+\begin{align}
+     & A_{0} =\frac{1}{2\pi}\int_0^{2\pi}f(\varphi)d\varphi                 \\
+     & A_{n} =\frac{1}{R^n\pi}\int_0^{2\pi}f(\varphi)\cos(n\varphi)d\varphi \\
+     & B_{n} =\frac{1}{R^n\pi}\int_0^{2\pi}f(\varphi)\sin(n\varphi)d\varphi
+\end{align}
+This can be further simplified to the \textit{Poisson integral form}
+\begin{equation*}
+    u(r,\theta)=\frac{1}{2\pi}\int_0^{2\pi}K(r,\theta,R,\varphi)f(\varphi)d\varphi
+\end{equation*}
+where $K(r,\theta,R,\varphi)$ is the \textit{Poisson integral kernel}
+\begin{equation*}
+    K(r,\theta,R,\varphi):=\frac{R^2-r^2}{R^2-2rR\cos(\theta-\varphi)+r^2}.
+\end{equation*}
+
+\textbf{Remark}
+To get to the given equation the following coordinate transform was applied:
+\begin{equation*}
+    \begin{cases}
+        x=r\cos\theta \\
+        y=r\sin\theta
+    \end{cases}
+    \:\Leftrightarrow\:
+    \begin{cases}
+        r=(x^2+y^2)^{1/2} \\
+        \theta=\arctan\frac yx.
+    \end{cases}
+\end{equation*}
+Which results in Laplace equation
+\begin{align*}
+     & \nabla^2 u = 0 \Leftrightarrow u_{xx} + u_{yy} = 0                    \\
+     & \Rightarrow u_{rr} + \frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r = 0
+\end{align*}
+
+\subsubsection{2D Neumann problem with radial symmetry}
+Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot}) the solution of the 2D Neumann problem with radial symmetry on a disk $D$ with the boundary condition $u_r(R,\theta)=f(\theta)$ on $\partial D$ is given by
+\begin{equation*}
+    u(r,\theta)=A_0+\sum_{n=1}^\infty r^n(A_n\cos(n\theta)+B_n\sin(n\theta))
+\end{equation*}
+with
+\begin{align}
+    A_n & =\frac{1}{nR^{n-1}\pi}\int_{-\pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
+    B_n & =\frac{1}{nR^{n-1}\pi}\int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
+    A_0 & = \text{undefined Konstant}
+\end{align}
+
 
 \subsubsection{Maximum principle}
 
@@ -467,17 +517,17 @@ the deflection $u(x,y,t)$ can be described by:
 \begin{align*}
     \begin{cases}
         u_{tt}=c^2\nabla^2u & \text{on }R=\{(x,y):x\in[0,a],y\in[0,b]\} \\
-        u=0                 & \text{on }\partial R                              \\
-        u(x,y,0)=f(x,y)                                                         \\
+        u=0                 & \text{on }\partial R                      \\
+        u(x,y,0)=f(x,y)                                                 \\
         u_t(x,y,0)=g(x,y)
     \end{cases}
 \end{align*}
 This PDE can be solved by:
 \begin{align*}
-    u(x,y,t)&=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
+    u(x,y,t)   & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
     \\&\dots \sin\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)\\\\
-    f(x,y)&=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)\\
-    B_{mn}&= \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy\\\\
-    g(x,y)&=\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)\\
-    B_{mn}^{*}&=\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
+    f(x,y)     & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)             \\
+    B_{mn}     & = \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy                  \\\\
+    g(x,y)     & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
+    B_{mn}^{*} & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
 \end{align*}
