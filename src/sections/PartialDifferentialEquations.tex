@@ -406,7 +406,7 @@ Separation of variables results in the following the Fourier integral:
 \subsubsection{Fourier Transform}
 \begin{enumerate}
     \item By applying the \textbf{Fourier transform} with respect to $x$, the PDE can be
-          tranformed into an ODE:
+          transformed into an ODE:
           \begin{align*}
               \mathcal{F}_x\Bigl\{u_t(x,t)\Bigr\} & =\mathcal{F}_x\Bigl\{c^2u_{xx}(x,t)\Bigr\} \\
               \hat{u}_t(w,t)                      & =-c^2w^2\hat{u}(w,t)
@@ -430,7 +430,7 @@ Separation of variables results in the following the Fourier integral:
 
 
 \subsection{Laplace equation}
-The steady-state solution of the 2-dimensional heat equation can be reduced to the laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}.\\
+The steady-state solution of the 2-dimensional heat equation can be reduced to the Laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}. Functions that satisfy the Laplace equation are called \textit{harmonic}. \\
 Depending on the boundary conditions on the region $R$ three distinct cases exist:
 \begin{itemize}
     \item \textbf{Dirichlet BC}: For the \textit{Dirichlet problem} $u$ is prescribed on the boundary $\partial R$ of $R$;
@@ -510,6 +510,16 @@ with
 
 
 \subsubsection{Maximum principle}
+Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{harmonic} functions. A harmonic function is equal at any point to the average of the values on \textit{any} circle centered at that point, hence
+\begin{equation*}
+    u(x_0, y_0)=\frac{1}{2\pi}\int_{0}^{2\pi}u(a,\varphi)d\varphi
+\end{equation*}
+\includegraphics*[width=\linewidth]{pde_harmonic_function.png}
+
+\textbf{Maximum principle}
+
+The above property demands: If a harmonic function $u$ takes its maximum values on the interior of the region $D$ where it is harmonic, then it must be \textbf{constant}.
+
 
 \subsection{2D Wave Equation - Rectangular Membrane}
 For a homogeneous and flexible two-dimensional membrane with time-invariant tension per unit-length,
