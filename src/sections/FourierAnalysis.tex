@@ -205,12 +205,13 @@ If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
 
 \subsection{Complex Fourier Series}
 If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
-\begin{align*}
-    f(x) & =c_0+\sum_{\overset{n=-\infty}{n\neq0}}^\infty c_n\cdot e^{\frac{i\pi n}Lx}
-\end{align*}
-\begin{align*}
-    c_0=\frac1{2L}\int_{-L}^L f(x)dx\quad\mid \quad & c_n=\frac1{2L}\int_{-L}^L f(x)\cdot e^{-\frac{i\pi n}Lx}
-\end{align*}
+\begin{equation*}
+    f(x)=c_0+\sum_{\overset{n=-\infty}{n\neq0}}^\infty c_n\cdot e^{\frac{i\pi n}Lx}
+\end{equation*}
+\begin{equation*}
+    c_0=\frac1{2L}\int_{-L}^L f(x)dx\quad\mid \quad c_n=\frac1{2L}\int_{-L}^L f(x)\cdot e^{-\frac{i\pi n}Lx}
+\end{equation*}
+
 Conversion from and to \textbf{real FS}:\\
 \begin{tabular}[h]{c|c|c} % chktex -2
     \multicolumn{2}{c}{$a_0=c_0$} & $e^{\pm ix}=\cos x\pm i\sin x$                             \\
@@ -263,7 +264,7 @@ then the \textbf{Fourier Transform} and its inverse exists:
 \end{align*}
 \subsubsection{Properties of FT}
 
-\begin{tabular}[h]{p{0.25\linewidth} p{0.74\linewidth}}
+\begin{tabular}[h]{p{0.25\linewidth} p{0.65\linewidth}}
     1. Linearity   & $\alpha f+\beta g\;\laplace\;\alpha\widehat{f}+\beta\widehat{g}$                                     \\
                    &                                                                                                      \\
                    &                                                                                                      \\
@@ -290,21 +291,25 @@ More properties:
     \frac x{{(2b)}^{3/2}}e^{-\frac{x^2}{4b}} & \;\laplace\; i\omega e^{-b\omega^2}                                                             \\
     \int_{\mathbb{R}}g(x)dx                  & = \sqrt{2\pi}\widehat{g}(0)
 \end{align*}
+
 \subsubsection{How to Choose}
+
 \def\arraystretch{1.2}
-\begin{tabular}[h]{p{0.4\linewidth}|p{0.09\linewidth}|p{0.09\linewidth}|p{0.04\linewidth}|p{0.05\linewidth}|p{0.05\linewidth}}
+
+\begin{tabular}[h]{p{0.4\linewidth}|p{0.09\linewidth}|p{0.09\linewidth}|p{0.04\linewidth}|p{0.05\linewidth}|p{0.05\linewidth}} % chktex 44
     Property                    & FS $\mathbb{R}$ & FS $\mathbb{C}$ & FI           & FT           & LT           \\
-    \hline
+    \hline % chktex -2
     Periodic                    & \checkmark{}    & \checkmark{}    & x            & x            & x            \\
     $L_1$                       & \checkmark{}    & \checkmark{}    & \checkmark{} & \checkmark{} & x            \\
     Piecewise cont.             & \checkmark{}    & \checkmark{}    & \checkmark{} &              &              \\
     Left/right deriv.\ at disc. & \checkmark{}    & \checkmark{}    & \checkmark{} &              &              \\
-    \hline
-    \hline
+    \hline % chktex -2
+    \hline % chktex -2
     Advantage                   &                 &                 &              &              &              \\
     Complex eigenfunctions      & x               & \checkmark{}    & x            & \checkmark{} & \checkmark{} \\
-    Odd / Even distinction      & \checkmark{}    & x               & \checkmark{} & x            & x            \\
+    Odd / Even distinction      & \checkmark{}    & x               & \checkmark{} & x            & x
 \end{tabular}
+
 \def\arraystretch{1}
 
 \subsection{Fourier transform table}

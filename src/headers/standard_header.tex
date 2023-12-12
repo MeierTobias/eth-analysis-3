@@ -39,9 +39,6 @@
 % table that supports equations
 \usepackage{tabularx}
 
-% hyperlinks (has to be after titlesec, else we get errors
-\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=black]{hyperref}
-
 % Example section environment
 \newenvironment{examplesection}[1][]
     {
@@ -57,3 +54,14 @@
 \ihead{Analysis III - \today}
 \chead{\pagemark}
 \ohead{\url{https://github.com/MeierTobias/eth-analysis-3}}
+
+% hyperlinks have to be included last
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    pdftitle={Analysis III}
+}
