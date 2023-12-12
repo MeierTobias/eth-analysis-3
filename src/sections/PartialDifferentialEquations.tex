@@ -329,8 +329,8 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
 \end{enumerate}
 
 \subsection{1D Heat Equation - Finite Domain}
-\subsubsection{Boundary Condition $u(0,t), u(L,t)$}
-The PDE $u_t=c^2u_xx$ with boundary conditions $u(0,t)=u(L,t)=0$, $u(x,0)=f(x)$
+\subsubsection{Boundary Condition \texorpdfstring{$u(0,t), u(L,t)$}{u (0,t), u (L,t)}}
+The PDE $u_t=c^2u_{xx}$ with boundary conditions $u(0,t)=u(L,t)=0$, $u(x,0)=f(x)$
 and $x\in[0,L]$ can be solved with the \textbf{Fourier Series Ansatz} resulting
 from separation of variables:
 \begin{align*}
@@ -338,7 +338,7 @@ from separation of variables:
     B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx & \lambda_n, = \frac{cn\pi}{L}
 \end{align*}
 
-\subsubsection{Boundary Condition $u_{t}(0,t),u_{t}(L,t)$}
+\subsubsection{Boundary Condition \texorpdfstring{$u_{t}(0,t),u_{t}(L,t)$}{ut (0,t), ut (L,t)}}
 The PDE $u_{t}=c^2u_{xx}$ with boundary conditions $u_t(0,t)=u(L,t)=0$, $u_t(x,0)=f(x)$
 and $x\in[0,L]$ can be solved by \textbf{separation of variables}:
 \begin{enumerate}
@@ -504,16 +504,16 @@ Which results in Laplace equation
         u(R,\theta)=f(\theta)                                     & \text{on } \partial D
     \end{cases}
 \end{equation*}
-\textbf{Hint!} If $u(R,\theta)=f(\theta)$ itself fulfils the Laplace equation $\nabla^2u=0$, its the solution 
+\textbf{Hint!} If $u(R,\theta)=f(\theta)$ itself fulfils the Laplace equation $\nabla^2u=0$, its the solution
 to the \textit{2D Dirichlet problem with radial symmetry}
 
 \subsubsection{2D Neumann Problem with Radial Symmetry}
-Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot}) 
-the solution of the 2D Neumann problem with radial symmetry on a disk $D$ 
+Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot})
+the solution of the 2D Neumann problem with radial symmetry on a disk $D$
 \begin{equation*}
     \begin{cases}
         u_{rr} + \frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r = 0 & \text{on } D          \\
-        u_r(R,\theta)=f(\theta)                                     & \text{on } \partial D
+        u_r(R,\theta)=f(\theta)                                   & \text{on } \partial D
     \end{cases}
 \end{equation*}
 is given by
