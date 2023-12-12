@@ -389,7 +389,7 @@ The heat equation on an infinite domain
 can either be solved by using the \textbf{Fourier Integral} or \textbf{Fourier Transform}.
 In both cases, the solution can be found by:
 \begin{equation*}
-    u(x,t)=\frac{1}{2c\sqrt{\pi t}}\int_{-\infty}^{\infty}f(v)\exp\left[-\left(\frac{x-v}{2c\sqrt{t}}\right)^{2}\right]dv
+    u(x,t)=\frac{1}{2c\sqrt{\pi t}}\int_{-\infty}^{\infty}f(v)\exp\left[-{\left(\frac{x-v}{2c\sqrt{t}}\right)}^{2}\right]dv
 \end{equation*}
 
 
@@ -426,10 +426,10 @@ Separation of variables results in the following the Fourier integral:
               u(x,t)=\mathcal{F}_x^{-1}\Bigl\{\widehat{u}(w,t)\Bigr\}
           \end{equation*}
 \end{enumerate}
+\textbf{Remark} This approach is not exclusive to the heat equation on an infinite domain, but can be used
+on any PDE.
 
-
-
-\subsection{Laplace equation}
+\subsection{Laplace Equation}
 The steady-state solution of the 2-dimensional heat equation can be reduced to the Laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}. Functions that satisfy the Laplace equation are called \textit{harmonic}. \\
 Depending on the boundary conditions on the region $R$ three distinct cases exist:
 \begin{itemize}
@@ -438,14 +438,14 @@ Depending on the boundary conditions on the region $R$ three distinct cases exis
     \item \textbf{Robin BC}: The \textit{Robin problem} is a combination of both aforementioned.
 \end{itemize}
 
-\subsubsection{2D Dirichlet problem on a rectangle}
+\subsubsection{2D Dirichlet Problem on a Rectangle}
 The two-dimensional steady-state solution with \textit{Dirichlet BC} on a rectangle $R$
 \begin{equation*}
     \begin{cases}
-        \nabla^2 u=0                                      \\
-        R = \{(x,y) : 0 \leq x \leq a, 0 \leq y \leq b \} \\
-        u(0,y)=u(a,y)=0                                   \\
-        u(x,0)=0                                          \\
+        \nabla^2 u=0 & R = \{(x,y) : x\in [0,a], y\in [0,b]\} \\
+        u(0,y)=0                                              \\
+        u(a,y)=0                                              \\
+        u(x,0)=0                                              \\
         u(x,b)=f(x)
     \end{cases}
 \end{equation*}
@@ -457,8 +457,15 @@ can be solved with the \textbf{Fourier Series Ansatz} obtained from separation o
 \textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
 individual solutions for each boundary can be superpositioned. (See Appendix~\ref{diri_superpos})
 
-\subsubsection{2D Dirichlet problem with radial symmetry}\label{pde/LaplaceEquation/2dDirichletRot}
-For a Laplace equation $\nabla^2 u=0$ on a disk $D$ with radius $R$ the solution to the Dirichlet problem (BC:\@$u(R,\theta)=f(\theta)$ on $\partial D$) is given by
+\subsubsection{2D Dirichlet Problem with Radial Symmetry}\label{pde/LaplaceEquation/2dDirichletRot}
+For a Laplace equation on a disk $D$ with radius $R$
+\begin{equation*}
+    \begin{cases}
+        \nabla^2 u=0, & D=\{(x,y): x^2+y^2 < R^2\}          \\
+        u(x,y)=f      & \partial D=\{(x,y): x^2+y^2 = R^2\} \\
+    \end{cases}
+\end{equation*}
+the solution to the Dirichlet problem given by
 \begin{equation*}
     u(r,\theta)=\sum_{n=0}^\infty r^n(A_n\cos(n\theta)+B_n\sin(n\theta))
 \end{equation*}
@@ -486,30 +493,42 @@ To get to the given equation the following coordinate transform was applied:
     \end{cases}
     \:\Leftrightarrow\:
     \begin{cases}
-        r=(x^2+y^2)^{1/2} \\
+        r={(x^2+y^2)}^{1/2} \\
         \theta=\arctan\frac yx.
     \end{cases}
 \end{equation*}
 Which results in Laplace equation
-\begin{align*}
-     & \nabla^2 u = 0 \Leftrightarrow u_{xx} + u_{yy} = 0                    \\
-     & \Rightarrow u_{rr} + \frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r = 0
-\end{align*}
+\begin{equation*}
+    \begin{cases}
+        u_{rr} + \frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r = 0 & \text{on } D          \\
+        u(R,\theta)=f(\theta)                                     & \text{on } \partial D
+    \end{cases}
+\end{equation*}
+\textbf{Hint!} If $u(R,\theta)=f(\theta)$ itself fulfils the Laplace equation $\nabla^2u=0$, its the solution 
+to the \textit{2D Dirichlet problem with radial symmetry}
 
-\subsubsection{2D Neumann problem with radial symmetry}
-Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot}) the solution of the 2D Neumann problem with radial symmetry on a disk $D$ with the boundary condition $u_r(R,\theta)=f(\theta)$ on $\partial D$ is given by
+\subsubsection{2D Neumann Problem with Radial Symmetry}
+Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot}) 
+the solution of the 2D Neumann problem with radial symmetry on a disk $D$ 
+\begin{equation*}
+    \begin{cases}
+        u_{rr} + \frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r = 0 & \text{on } D          \\
+        u_r(R,\theta)=f(\theta)                                     & \text{on } \partial D
+    \end{cases}
+\end{equation*}
+is given by
 \begin{equation*}
     u(r,\theta)=A_0+\sum_{n=1}^\infty r^n(A_n\cos(n\theta)+B_n\sin(n\theta))
 \end{equation*}
 with
 \begin{align}
-    A_n & =\frac{1}{nR^{n-1}\pi}\int_{-\pi}^{\pi}f(\xi)\cos(n\xi)d\xi \\
-    B_n & =\frac{1}{nR^{n-1}\pi}\int_{-\pi}^{\pi}f(\xi)\sin(n\xi)d\xi \\
-    A_0 & = \text{undefined Konstant}
+    A_n & =\frac{1}{nR^{n-1}\pi}\int_{0}^{2\pi}f(\xi)\cos(n\xi)d\xi \\
+    B_n & =\frac{1}{nR^{n-1}\pi}\int_{0}^{2\pi}f(\xi)\sin(n\xi)d\xi \\
+    A_0 & = \text{undefined constant}
 \end{align}
 
 
-\subsubsection{Maximum principle}
+\subsubsection{Maximum Principle}
 Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{harmonic} functions. A harmonic function is equal at any point to the average of the values on \textit{any} circle centered at that point, hence
 \begin{equation*}
     u(x_0, y_0)=\frac{1}{2\pi}\int_{0}^{2\pi}u(a,\varphi)d\varphi
