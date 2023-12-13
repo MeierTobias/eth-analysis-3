@@ -1,5 +1,20 @@
 \section{Partial Differential Equations}
 
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{0.98\linewidth}{@{}lllclp{0.28\linewidth}@{}}
+    \toprule
+            & \multicolumn{2}{c}{1D} & \phantom{.}            & \multicolumn{2}{c}{2D}                                                                                                                         \\ %chktex 2
+    \cmidrule{2-3} \cmidrule{5-6}
+            & finite                 & infinite               &                        & rectangle                    & disc                                                                                   \\%chktex 2
+    \cmidrule{1-6}
+    Wave    & \ref{ssec:1d_wave_FS}  & \ref{ssec:1d_wave_Al}  &                        & \ref{ssec:2d_wave_rect}                                                                                               \\%chktex 2
+    Heat    & \ref{ssec:1d_heat_fin} & \ref{ssec:1d_heat_inf} &                        &                                                                                                                       \\%chktex 2
+    Laplace &                        &                        &                        & \ref{sssec:laplace_dir_rect} & Dirichlet:~\ref{sssec:laplace_dir_radial}\newline Neumann:~\ref{sssec:laplace_neu_rad} \\%chktex 2
+    \bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+
 \subsection{Definition}
 A partial differential equation (PDE) is an equation involving an \textbf{unknown function} (in contrast to ODEs only one) and some of its \textbf{partial derivatives}.
 \begin{enumerate}
@@ -77,7 +92,7 @@ Remarks:
     \item The type of a PDE depends only on the terms of second order: \textbf{Poisson} equations are also \textbf{elliptic}.
 \end{itemize}
 
-\subsection{1D Wave Equation - Fourier Series}
+\subsection{1D Wave Equation - Fourier Series}\label{ssec:1d_wave_FS}
 To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0,L]$ with \textbf{initial} and
 \textbf{boundary} conditions:
 \begin{equation*}
@@ -210,7 +225,7 @@ subsequently, $v(x,t)$ has homogeneous BC.
     To satisfy the IVP we insert the initial value conditions $u(x,0)=f(x)$ and $u_t(x,0)=g(x)$ from which we obtain the formulas shown in Chapter~\ref{pde/1dwave/specificSolution}.
 \end{examplesection}
 
-\subsection{1D Wave Equation - d'Alembert}
+\subsection{1D Wave Equation - d'Alembert}\label{ssec:1d_wave_Al}
 The \textit{D'Alembert} solution $u(x,t) = \phi(x+ct)+\psi(x-ct)$ is the general solution of the 1D wave equation $u_{tt}=c^2u_{xx}$ for $x \in \mathbb{R}$ and $t>0$. With the initial conditions
 \begin{align*}
     u(x,0)   & = f(x) \\
@@ -328,7 +343,7 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
           \end{align*}
 \end{enumerate}
 
-\subsection{1D Heat Equation - Finite Domain}
+\subsection{1D Heat Equation - Finite Domain}\label{ssec:1d_heat_fin}
 \subsubsection{Boundary Condition \texorpdfstring{$u(0,t), u(L,t)$}{u (0,t), u (L,t)}}
 The PDE $u_t=c^2u_{xx}$ with boundary conditions $u(0,t)=u(L,t)=0$, $u(x,0)=f(x)$
 and $x\in[0,L]$ can be solved with the \textbf{Fourier Series Ansatz} resulting
@@ -378,7 +393,7 @@ In this example, this results in
     u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t^2}.
 \end{equation*}
 
-\subsection{1D Heat Equation - Infinite Domain}
+\subsection{1D Heat Equation - Infinite Domain}\label{ssec:1d_heat_inf}
 The heat equation on an infinite domain
 \begin{equation*}
     \begin{cases}
@@ -429,7 +444,7 @@ Separation of variables results in the following the Fourier integral:
 \textbf{Remark} This approach is not exclusive to the heat equation on an infinite domain, but can be used
 on any PDE.
 
-\subsection{Laplace Equation}
+\subsection{Laplace Equation}\label{ssec:laplace}
 The steady-state solution of the 2-dimensional heat equation can be reduced to the Laplace equation $\nabla^2 u=0$, where $\nabla^2$ is the \textit{Laplacian operator}. Functions that satisfy the Laplace equation are called \textit{harmonic}. \\
 Depending on the boundary conditions on the region $R$ three distinct cases exist:
 \begin{itemize}
@@ -438,7 +453,7 @@ Depending on the boundary conditions on the region $R$ three distinct cases exis
     \item \textbf{Robin BC}: The \textit{Robin problem} is a combination of both aforementioned.
 \end{itemize}
 
-\subsubsection{2D Dirichlet Problem on a Rectangle}
+\subsubsection{2D Dirichlet Problem on a Rectangle}\label{sssec:laplace_dir_rect}
 The two-dimensional steady-state solution with \textit{Dirichlet BC} on a rectangle $R$
 \begin{equation*}
     \begin{cases}
@@ -457,7 +472,7 @@ can be solved with the \textbf{Fourier Series Ansatz} obtained from separation o
 \textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
 individual solutions for each boundary can be superpositioned. (See Appendix~\ref{diri_superpos})
 
-\subsubsection{2D Dirichlet Problem with Radial Symmetry}\label{pde/LaplaceEquation/2dDirichletRot}
+\subsubsection{2D Dirichlet Problem with Radial Symmetry}\label{sssec:laplace_dir_radial}
 For a Laplace equation on a disk $D$ with radius $R$
 \begin{equation*}
     \begin{cases}
@@ -507,8 +522,8 @@ Which results in Laplace equation
 \textbf{Hint!} If $u(R,\theta)=f(\theta)$ itself fulfils the Laplace equation $\nabla^2u=0$, its the solution
 to the \textit{2D Dirichlet problem with radial symmetry}
 
-\subsubsection{2D Neumann Problem with Radial Symmetry}
-Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{pde/LaplaceEquation/2dDirichletRot})
+\subsubsection{2D Neumann Problem with Radial Symmetry}\label{sssec:laplace_neu_rad}
+Similar to the \textit{2D Dirichlet problem with radial symmetry} (\ref{sssec:laplace_dir_radial})
 the solution of the 2D Neumann problem with radial symmetry on a disk $D$
 \begin{equation*}
     \begin{cases}
@@ -540,7 +555,7 @@ Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{ha
 The above property demands: If a harmonic function $u$ takes its maximum values on the interior of the region $D$ where it is harmonic, then it must be \textbf{constant}.
 
 
-\subsection{2D Wave Equation - Rectangular Membrane}
+\subsection{2D Wave Equation - Rectangular Membrane}\label{ssec:2d_wave_rect}
 For a homogeneous and flexible two-dimensional membrane with time-invariant tension per unit-length,
 the deflection $u(x,y,t)$ can be described by:
 \begin{align*}
@@ -560,3 +575,10 @@ This PDE can be solved by:
     g(x,y)     & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
     B_{mn}^{*} & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
 \end{align*}
+
+\subsection{Visualizations}
+\includegraphics[width=0.85\linewidth]{../images/1d_wave.png}\\
+\includegraphics[width=0.85\linewidth]{../images/1d_wave_inhom.png}\\
+\includegraphics[width=0.85\linewidth]{../images/1d_wave_fs.png}\\
+\includegraphics[width=0.85\linewidth]{../images/1d_heat_fs.png}\\
+\includegraphics[width=0.85\linewidth]{../images/2d_laplace.png}
