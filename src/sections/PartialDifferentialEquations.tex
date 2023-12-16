@@ -542,6 +542,23 @@ with
     A_0 & = \text{undefined constant}
 \end{align*}
 
+\textbf{Checking if a Solution Exists}\\
+A solution of the \textit{2D Laplace equation with Neumann borders} 
+\begin{align*}
+    \begin{cases}
+        \nabla^2u=f& \text{in } R\\
+        \frac{\partial u}{\partial n} = g& \text{on } \partial R
+    \end{cases}
+\end{align*}
+only exists if 
+\begin{equation*}
+    \int_R f \;dA = \int_{\partial R} g \;dx
+\end{equation*}
+due to the Gauss/ divergence theorem (2D):
+\begin{align*}
+    \int_{\partial R} \underbrace{\frac{\partial u}{\partial n}}_{g}  \; dx
+    =\int_{\partial R} \nabla u\cdot\vec{n}\; dx \overset{\text{Gauss}}{=}& \int_R \underbrace{\text{div}(\nabla u)}_{\nabla^2 u}\; dA
+\end{align*}
 
 \subsubsection{Maximum Principle}
 Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{harmonic} functions. A harmonic function is equal at any point to the average of the values on \textit{any} circle centered at that point, hence
