@@ -60,6 +60,9 @@ This repository is configured for Git [LFS](https://git-lfs.com/) (Large File St
 
 To use the formatter by LaTeX Workshop install `brew install latexindent`.
 
+## Python scripts for PDE visualization
+Additional Python scripts used for the visualization of various PDEs can be found in [`python_scripts/pde_plot`](python_scripts/pde_plot/). The file [`pde_plot.py`](python_scripts/pde_plot/pde_plot.py) demonstrates how to use the visualization class.
+
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
