@@ -10,7 +10,7 @@ See `pde_plot.py` file for examples on how to use.
 ## `pde.separated_PDE`
 Function to plot a separated 1D-PDE on the finite interval $[0,L]$.
 $$
-u(x,t)=F(x)G(t)\;\;\; \forall x\in[0,L]
+u(x,t)=F(x)G(t)\quad \forall x\in[0,L]
 $$
 
 Parameters:
