@@ -10,3 +10,4 @@ src/indent.log
 # ignore pycache
 python_scripts/pde_plot/__pycache__/
 python_scripts/pde_plot/.DS_store
+python_scripts/.DS_Store

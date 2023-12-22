@@ -68,21 +68,46 @@ Helpful for removing factorials:
 \end{equation*}
 \textbf{Solution for A}
 \begin{align*}
-    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)            \\
+    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)              \\
     A_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_1(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for B}
 \begin{align*}
-    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)               \\
+    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                 \\
     B_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_2(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for C}
 \begin{align*}
-    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)            \\
+    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)              \\
     C_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_1(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 \textbf{Solution for D}
 \begin{align*}
-    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)               \\
+    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                 \\
     D_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_2(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
+
+\subsection*{Partial Fraction Decomposition}
+\subsubsection{General Method}
+Depending on the type and order of the fraction, solve one of the following by hand or by \textit{Gauss elimination}:
+\begin{align*}
+    \frac{px^2+qx+r}{(x-a)(x-b)(x-c)}     & \overset{!}{=} \frac{A}{x-a}+\frac{B}{x-b}+\frac{C}{x-c}     \\\\
+    \frac{px^2+qx+r}{{(x-a)}^2(x-b)}      & \overset{!}{=} \frac{A}{x-a}+\frac{B}{(x-a)^2}+\frac{C}{x-b} \\\\
+    \frac{px^{2}+qx+r}{(x-a)(x^{2}+bx+c)} & \overset{!}{=} \frac A{x-a}+\frac{Bx+C}{x^2+bx+c}
+\end{align*}
+
+\subsubsection{Residue Method}
+\textbf{Relative order $>0$}
+\begin{align*}
+    f(x) & =\frac{px+q}{(x-a)(x-b)} \overset{!}{=} \frac{A}{x-a}+\frac{B}{x-b} \\\\
+    A    & =(x-a)\cdot f(x)\Big|_{x=a}                                         \\
+    B    & =(x-b)\cdot f(x)\Big|_{x=b}
+\end{align*}\\
+\textbf{Relative order $=0$}
+\begin{align*}
+    f(x) & =\frac{px^2+qx+r}{(x-a)(x-b)} \overset{!}{=} A+\frac{B}{x-a}+\frac{C}{x-b} \\\\
+    B    & =(x-a)\cdot f(x)\Big|_{x=a}                                                \\
+    C    & =(x-b)\cdot f(x)\Big|_{x=b}                                                \\
+    A    & = f(x)-\frac{B}{x-a}+\frac{C}{x-b}
+\end{align*}\\
+These methods can be adapted to all of the types of fractions mentioned in the previous subsection.
