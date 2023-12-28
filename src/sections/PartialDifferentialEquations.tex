@@ -602,9 +602,123 @@ We say that a problem is \textit{well-posed} if it satisfies the following three
 \end{enumerate}
 The problem is \textit{ill-posed} if one of the above properties does not hold.
 
+\subsection{Numerical solution of PDEs}
+
+To solve PDEs numerically the continuous region $\mathcal{R}$ gets discretized into the mesh $\mathcal{M}$ in $\mathcal{R}$ where:
+
+\begin{tabular}{ m{0.6\linewidth}  m{0.2\linewidth} }
+    {
+        \begin{align*}
+            x_i & := x_0 + ih \\
+            y_i & := y_0 + jk \\
+        \end{align*}
+    }
+     &
+    {
+            \begin{align*}
+                x_0, y_0 & \in \mathbb{R}   \\
+                h, k     & \in \mathbb{R}   \\
+                i, j     & \in \mathbb{N}_0
+            \end{align*}
+        }
+\end{tabular}
+
+The PDE is replaced with a finite difference approximation where $u_{i,j}:=u(x_i,y_j)$:
+\begin{align*}
+    u_{x}(x_i,y_j)  & = \frac1h(u_{i+1,j}-u_{i,j})=\frac1h(u_{i,j}-u_{i-1,j})         \\
+    u_{y}(x_i,y_j)  & = \frac{1}{k}(u_{i,j+1}-u_{i,j})=\frac{1}{k}(u_{i,j}-u_{i,j-1}) \\
+    u_{xx}(x_i,y_j) & = \frac{1}{h^{2}}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})                 \\
+    u_{yy}(x_i,y_j) & = \frac{1}{k^{2}}(u_{i,j+1}-2u_{i,j}+u_{i,j-1})
+\end{align*}
+
+\subsubsection{Numerical 2D Laplace equation}
+Finite difference equation:
+\begin{gather*}
+    \nabla^2 u = 0 \quad \Leftrightarrow \\
+    u_{xx}(x_i,y_j) + u_{yy}(x_i,y_j) = 0 \quad \Leftrightarrow \\
+    \frac{1}{h^2}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})+\frac{1}{k^2}(u_{i,j+1}-2u_{i,j}+u_{i,j-1})=0
+\end{gather*}
+Choosing $h=k$ in the lattice, the equation becomes
+\begin{equation*}
+    u_{i,j}=\frac14(u_{i+1,j}+u_{i,j+1}+u_{i-1,j}+u_{i,j-1})
+\end{equation*}
+This means that the value of the function at any point on $\mathcal{M}$ equals the average of the function at the four adjacent points.
+
+\subsubsection{Numerical 1D heat equation}
+
+\begin{tabular}{ m{0.4\linewidth}  m{0.45\linewidth} }
+    {
+        \includegraphics*[width=\linewidth]{pde_numerical_1d_heat_eq.png}
+    }
+     &
+    {
+            \begin{equation*}
+                \begin{cases}
+                     & u_t=c^2u_{xx}   \\
+                     & u(0,t)=u(L,t)=0 \\
+                     & u(x,0)=f(x).
+                \end{cases}
+            \end{equation*}
+        }
+\end{tabular}
+
+The finite difference equation becomes:
+\begin{gather*}
+    \frac{c^2}{h^2}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})=\frac1k(u_{i,j+1}-u_{i,j}) \quad \Leftrightarrow \\
+    u_{i,j+1}=\frac{c^2k}{h}u_{i+1,j}+\left(1-\frac{2c^2k}{h}\right)u_{i,j}+\frac{c^2k}{h}u_{i-1,j}
+\end{gather*}
+Choosing the steps $h$ and $k$ so that $h=2c^2k$ so that $1-\frac{2c^2k}{h}=0$, the equation above simplifies into
+\begin{equation*}
+    u_{i,j+1}=\frac{1}{2}u_{i+1,j}+\frac{1}{2}u_{i-1,j}
+\end{equation*}
+In other words, the value at a point in the lattice is the average of the left and right neighbors of the previous row.
+
+The initial condition $u(x, 0) = f(x)$ defines the values on the bottom of the region. The boundary conditions $u(0, t)$ (resp. $u(L, t)$) defines the values on the left (resp.\ right) line bounding the region.
+
+\subsubsection{Numerical 1D wave equation}
+
+\begin{tabular}{ m{0.33\linewidth}  m{0.57\linewidth} }
+    {
+        \includegraphics*[width=\linewidth]{pde_numerical_1d_heat_eq.png}
+    }
+     &
+    {
+            \begin{equation*}
+                \begin{cases}
+                    u_{tt}=c^2u_{xx}                \\
+                    u(0,t)=u(L,t)=0 & t\geq0        \\
+                    u(x,0)=f(x)     & 0\leq x\leq L \\
+                    u_t(x,0)=g(x)   & 0\leq x\leq L
+                \end{cases}
+            \end{equation*}
+        }
+\end{tabular}
+
+The finite difference equation becomes:
+\begin{gather*}
+    \frac{c^2}{h^2}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})=\frac{1}{k^2}(u_{i,j+1}-2u_{i,j}+u_{i,j-1}) \; \Leftrightarrow \\
+    u_{i,j+1}=2\left(1-\frac{c^2k^2}{h^2}\right)u_{i,j}+\frac{c^2k^2}{h^2}(u_{i+1,j}+u_{i-1,j})-u_{i,j-1}
+\end{gather*}
+Choosing $h$ and $k$ in such a way that $h=ck$, so that $1 - \frac{v^2k^2}{h^2} = 0$, the equation simplifies to
+\begin{equation*}
+    u_{i,j+1}=u_{i+1,j}+u_{i-1,j}-u_{i,j-1}
+\end{equation*}
+In other words, the value at a point in the lattice depends only on the left and right neighbors of the previous row and the center value of the point two rows before.
+
+The initial condition $u(x, 0) = f(x)$ provides the points on the bottom of the region and $u(0, t) = 0$ (resp. $u(L, t) = 0$) gives the values on the left (resp.\ right) boundary of the region. The condition $u_t(x, 0) = g(x)$ allows the computation of the values on the second row.
+\begin{gather*}
+    g(x_i)=u_t(x_i,0)=\frac{1}{k}(u_{i,1}-u_{i,0}) \\
+    u_{i,1}=u_{i,0}+kg(x_i)
+\end{gather*}
+
 \subsection{Visualizations}
-\includegraphics[width=0.85\linewidth]{../images/1d_wave.png}\\
-\includegraphics[width=0.85\linewidth]{../images/1d_wave_inhom.png}\\
-\includegraphics[width=0.85\linewidth]{../images/1d_wave_fs.png}\\
-\includegraphics[width=0.85\linewidth]{../images/1d_heat_fs.png}\\
+
+\includegraphics[width=0.85\linewidth]{../images/1d_wave.png}
+
+\includegraphics[width=0.85\linewidth]{../images/1d_wave_inhom.png}
+
+\includegraphics[width=0.85\linewidth]{../images/1d_wave_fs.png}
+
+\includegraphics[width=0.85\linewidth]{../images/1d_heat_fs.png}
+
 \includegraphics[width=0.85\linewidth]{../images/2d_laplace.png}
