@@ -543,21 +543,21 @@ with
 \end{align*}
 
 \textbf{Checking if a Solution Exists}\\
-A solution of the \textit{2D Laplace equation with Neumann borders} 
+A solution of the \textit{2D Laplace equation with Neumann borders}
 \begin{align*}
     \begin{cases}
-        \nabla^2u=f& \text{in } R\\
-        \frac{\partial u}{\partial n} = g& \text{on } \partial R
+        \nabla^2u=f                       & \text{in } R          \\
+        \frac{\partial u}{\partial n} = g & \text{on } \partial R
     \end{cases}
 \end{align*}
-only exists if 
+only exists if
 \begin{equation*}
     \int_R f \;dA = \int_{\partial R} g \;dx
 \end{equation*}
 due to the Gauss/ divergence theorem (2D):
 \begin{align*}
     \int_{\partial R} \underbrace{\frac{\partial u}{\partial n}}_{g}  \; dx
-    =\int_{\partial R} \nabla u\cdot\vec{n}\; dx \overset{\text{Gauss}}{=}& \int_R \underbrace{\text{div}(\nabla u)}_{\nabla^2 u=f}\; dA
+    =\int_{\partial R} \nabla u\cdot\vec{n}\; dx \overset{\text{Gauss}}{=} & \int_R \underbrace{\text{div}(\nabla u)}_{\nabla^2 u=f}\; dA
 \end{align*}
 
 \subsubsection{Maximum Principle}
@@ -592,6 +592,15 @@ This PDE can be solved by:
     g(x,y)     & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
     B_{mn}^{*} & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
 \end{align*}
+
+\subsection{Well-posed and ill-posed problems}
+We say that a problem is \textit{well-posed} if it satisfies the following three conditions:
+\begin{enumerate}
+    \item \textit{Existence}: the problem has a solution.
+    \item \textit{Uniqueness}: the solution is unique.
+    \item \textit{Stability}: the solution depends continuously on the initial conditions and on the boundary conditions.
+\end{enumerate}
+The problem is \textit{ill-posed} if one of the above properties does not hold.
 
 \subsection{Visualizations}
 \includegraphics[width=0.85\linewidth]{../images/1d_wave.png}\\
