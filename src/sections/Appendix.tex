@@ -1,23 +1,26 @@
-%\vfill\null{}% prevents the columns content from using the full height
-%\columnbreak{}
 \section{Appendix}
 
 \createsectiontoc{}
 
 \subsection{Trigonometry}
+\subsubsection{Common angles}
+\begin{center}
+    \includegraphics*[width=0.7\linewidth]{unit_circle.png}
+\end{center}
+
 \subsubsection{Identities}
-Given: $n \in \mathbb{N}$
+Given: $n, j \in \mathbb{N}$
 \begin{align*}
-     & \sin(\pi n)                                                                      & = & 0                                                       \\
-     & \cos(\pi n)                                                                      & = & {(-1)}^n                                                \\
+     & \sin(\pi n)                                                                      & = & \: 0                                                    \\
+     & \cos(\pi n)                                                                      & = & \: {(-1)}^n                                             \\
      & \sin(\frac{\pi}{2}n) = \left(\frac{1 + {(-1)}^n}{2}\right){(-1)}^{\frac{n+2}{2}} & = & \begin{cases} 0, &n=2j \\ {(-1)}^j,&=2j+1 \end{cases}   \\
      & \cos(\frac{\pi}{2}n) = \left(\frac{1+{(-1)}^n}{2}\right){(-1)}^{\frac{n}{2}}     & = & \begin{cases} 0, &n=2j+1 \\ {(-1)}^j, &n=2j \end{cases} \\
      & \sin\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                & = & \pm \cos\left(\frac{n\pi}{2}\right)                     \\
      & \cos\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                & = & \mp \sin\left(\frac{n\pi}{2}\right)                     \\
-     & \sin(90^\circ\pm\alpha)                                                          & = & \cos(\alpha)                                            \\
-     & \cos(90^\circ\pm\alpha)                                                          & = & \mp\sin(\alpha)                                         \\
-     & \sin(180^\circ\pm\alpha)                                                         & = & \mp\sin(\alpha)                                         \\
-     & \cos(180^\circ\pm\alpha)                                                         & = & -\cos(\alpha)                                           \\
+     & \sin(90^\circ\pm\alpha) = \sin(\frac{\pi}{2} \pm \alpha)                         & = & \cos(\alpha)                                            \\
+     & \cos(90^\circ\pm\alpha) = \cos(\frac{\pi}{2} \pm \alpha)                         & = & \mp\sin(\alpha)                                         \\
+     & \sin(180^\circ\pm\alpha) = \sin(\pi \pm \alpha)                                  & = & \mp\sin(\alpha)                                         \\
+     & \cos(180^\circ\pm\alpha) = \cos(\pi \pm \alpha)                                  & = & -\cos(\alpha)                                           \\
      & \frac{1}{\sin^2 \alpha}                                                          & = & 1+\cot^2 (\alpha)                                       \\
      & \frac{1}{\cos^2 \alpha}                                                          & = & 1+\tan^2 (\alpha)                                       \\
 \end{align*}
@@ -43,13 +46,60 @@ Given: $n \in \mathbb{N}$
     \tan\left(\frac x2\right)      & =\frac{1-\cos(x)}{\sin(x)}=\frac{\sin(x)}{1+\cos(x)}
 \end{align*}
 \begin{align*}
-    \sin(x)\cos(y)    & =\frac12\Bigl[\sin(x+y)~+~\sin(x-y)\Bigr]   \\
-    \sin(x)\sin(y)    & =\frac12\Bigl[\cos(x-y)~-~\cos(x+y)\Bigr]   \\
-    \cos(x)\cos(y)    & =\frac12\Bigl[\cos(x+y)~+~\cos(x-y)\Bigr]   \\
-    \sin(x)\pm\sin(y) & =2\sin\frac{x\pm y}{2}\cos\frac{x \mp y}{2} \\
-    \cos(x)+\cos(y)   & =2\cos\frac{x+y}{2}\cos\frac{x-y}{2}        \\
-    \cos(x)-\cos(y)   & =-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}
+    \sin(x)\cos(y)      & =\frac12\Bigl[\sin(x+y)~+~\sin(x-y)\Bigr]   \\
+    \sin(x)\sin(y)      & =\frac12\Bigl[\cos(x-y)~-~\cos(x+y)\Bigr]   \\
+    \cos(x)\cos(y)      & =\frac12\Bigl[\cos(x+y)~+~\cos(x-y)\Bigr]   \\
+    \sin(x)\pm\sin(y)   & =2\sin\frac{x\pm y}{2}\cos\frac{x \mp y}{2} \\
+    \cos(x)+\cos(y)     & =2\cos\frac{x+y}{2}\cos\frac{x-y}{2}        \\
+    \cos(x)-\cos(y)     & =-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}       \\
+    \tan(x) \pm \tan(y) & = \frac{\sin(x\pm y)}{\cos(x)\cos(y)}
 \end{align*}
+
+\subsubsection{Transformations}
+\begin{tabular}{ m{0.15\linewidth} | m{0.22\linewidth} | m{0.23\linewidth} | m{0.2\linewidth} } % chktex -2
+                                                    & $\sin$                                         & $\cos$                                         & $\tan$                                         \\
+    \hline{} % chktex -2
+    $\sin(\alpha)=$                                 & -                                              & $\sqrt{1-\cos^2(\alpha)}$                      & $\frac{\tan(\alpha)}{\sqrt{1+\tan^2(\alpha)}}$ \\
+    \hline{} % chktex -2
+    $\cos(\alpha)=$                                 & $\sqrt{1-\sin^2(\alpha)}$                      & -                                              & $\frac{1}{\sqrt{1+\tan^2(\alpha)}}$            \\
+    \hline{} % chktex -2
+    $\tan(\alpha)=$ \newline $\alpha \neq 90^\circ$ & $\frac{\sin(\alpha)}{\sqrt{1-\sin^2(\alpha)}}$ & $\frac{\sqrt{1-\cos^2(\alpha)}}{\cos(\alpha)}$ & -
+\end{tabular}
+
+\subsubsection{Euler-Relation}
+\begin{align*}
+    \sin(x)    & =\frac{1}{2i}(e^{ix}-e^{-ix})             \\
+    \cos(x)    & =\frac{1}{2}(e^{ix}+e^{-ix})              \\
+    \tan(x)    & =\frac{e^{ix}-e^{-ix}}{i(e^{ix}+e^{-ix})} \\
+    \sinh(x)   & =\frac{1}{2}(e^{x}-e^{-x})                \\
+    \cosh(x)   & =\frac{1}{2}(e^{x}+e^{-x})                \\
+    \tanh(x)   & =\frac{e^{x}-e^{-x}}{(e^{x}+e^{-x})}      \\
+    e^{ix}     & = \cos(x) + i \cdot \sin(x)               \\
+    e^{k\pi i} & = \begin{cases}
+                       1  & k = 2n     \\
+                       -1 & k = 2n + 1
+                   \end{cases} \quad n \in \mathbb{N}      \\
+\end{align*}
+
+\subsubsection{Inverse functions}
+\begin{align*}
+    \sin(\arccos(x))         & = \sqrt{1-x^2}                                                 \\
+    \cos(\arcsin(x))         & =\sqrt{1-x^2}                                                  \\
+    \sin(\arctan(x))         & =\frac{x}{\sqrt{x^2+1}}                                        \\
+    \cos(\arctan(x))         & =\frac{1}{\sqrt{x^2+1}}                                        \\
+    \tan(\arcsin(x))         & =x \cdot {(1-x)}^{-\frac{1}{4}}                                \\
+    \tan(\arccos(x))         & =x^{-1} \cdot {(1-x)}^{\frac{1}{4}}                            \\
+    arsinh(x)                & =\ln(x+\sqrt{x^2+1})                                           \\
+    arcosh(x)                & =\ln(x+\sqrt{x^2-1})                                           \\
+    artanh(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{1-x}); \quad \vert x\vert < 1 \\
+    arcoth(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{x-1}); \quad \vert x\vert > 1 \\
+    \sinh(2 \cdot arsinh(x)) & =2x\sqrt{x^2-1}                                                \\
+    \sinh(arcosh(x))         & =\sqrt{x^2-1};\qquad x>0                                       \\
+    \cosh(arsinh(x))         & =\sqrt{x^2+1}
+\end{align*}
+
+
+\subsection{Integral calculus}
 
 \subsection{Gamma Functions}
 Helpful for removing factorials:
@@ -87,7 +137,7 @@ Helpful for removing factorials:
     D_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_2(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 
-\subsection*{Partial Fraction Decomposition}
+\subsection{Partial Fraction Decomposition}
 \subsubsection{General Method}
 Depending on the type and order of the fraction, solve one of the following by hand or by \textit{Gauss elimination}:
 \begin{align*}
