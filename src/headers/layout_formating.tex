@@ -15,6 +15,7 @@
 
 % customize the headers
 \usepackage[explicit]{titlesec}
+\usepackage{titletoc}
 
 \titleformat{\section}
 {\normalfont\bfseries\fontfamily{lmss}\selectfont}
@@ -32,7 +33,7 @@
       nobeforeafter,
       interior code={\fill[overlay,sectionColor] (frame.north west) rectangle (frame.south east);},
     ]\textcolor{titleTextColor}{\thesection\hspace{0.5em}#1}
-  \end{tcolorbox}}
+  \end{tcolorbox}}[{\startcontents[section]}]
 \titlespacing{\section}{0pt}{1pt}{0pt}
 
 \titleformat{\subsection}
@@ -73,10 +74,18 @@
   \end{tcolorbox}}
 \titlespacing{\subsubsection}{0pt}{1pt}{0pt}
 
+% Create a TOC for the current section
+\newcommand{\createsectiontoc}{
+  \printcontents[section]{p}{2}{}{}%
+}
+% Removes the page numbering from the sub- and subsub-section
+\titlecontents{subsection}[0em]{}{\thecontentslabel\hspace{1em}}{}{}[]
+\titlecontents{subsubsection}[2.4em]{}{\thecontentslabel\hspace{1em}}{}{}[]
+
 % set the spacing above and below the equations
 \newlength{\eqSkipSize}  \setlength{\eqSkipSize}{6pt}
 \AtBeginDocument{%
-    \setlength\abovedisplayskip{\eqSkipSize}%
-    \setlength\belowdisplayskip{\eqSkipSize}%
-    \setlength\abovedisplayshortskip{\eqSkipSize-\baselineskip}%
-    \setlength\belowdisplayshortskip{\eqSkipSize}}
+  \setlength\abovedisplayskip{\eqSkipSize}%
+  \setlength\belowdisplayskip{\eqSkipSize}%
+  \setlength\abovedisplayshortskip{\eqSkipSize-\baselineskip}%
+  \setlength\belowdisplayshortskip{\eqSkipSize}}
