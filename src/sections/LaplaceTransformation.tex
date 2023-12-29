@@ -8,8 +8,21 @@ Let $f:\mathbb{R}_{\geq 0} \rightarrow \mathbb{R}$ be a function.
 \end{equation*}
 Inverse Laplace transform:
 \begin{equation*}
-    F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)]
+    F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)](t)
 \end{equation*}
+\textbf{Remarks} 
+\begin{itemize}
+    \item Using the Laplace Transform solutions of IVP/BVP can be found at once without first searching for the general solution and then the particular solution. 
+    \item Two functions defined on $\mathbb{R}_{0^+}$ that have the same Laplace Transform can differ in single points but not on an interval.
+\end{itemize}
+
+\subsubsection{Growth Restriction}
+If $f$ is piecewise continuous and there exist $M, k\in \mathbb{R}_{0^+}$ such that 
+\begin{equation*}
+    \left|f(t)\right|\leq Me^{kt}
+\end{equation*}
+for all $t\geq 0, $ then $\mathcal{L}[f](s) $ exists on the interval $(k,\infty).$
+
 
 \subsection{Linearity}
 Let $f$ and $g$ be functions for which the Laplace transform exists. Then for all $a,b \in \mathbb{R}$
@@ -216,7 +229,8 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
 \subsection{t-shifting}
 \begin{align*}
     f(t-a)u(t-a) & \:\laplace\: e^{-as}F(s)                \\
-    f(t)u(t-a)   & \:\laplace\: e^{-as}\mathcal{L}[f(t+a)]
+    f(t)u(t-a)   & \:\laplace\: e^{-as}\mathcal{L}[f(t+a)] \\
+    f(t)u(t)   & \:\laplace\: \mathcal{L}[f]
 \end{align*}
 \begin{examplesection}[Example]
     \setlength{\abovedisplayskip}{0pt}
@@ -248,7 +262,7 @@ If the $\lim_{t\to 0^+}\frac{f(t)}{t}$ exists, then
 \subsection{Dirac's delta function}
 The \textit{Dirac delta} is the limit
 \begin{equation*}
-    \delta(t-a):=\lim_{h\to0}\delta_h(t-a)''=''
+    \delta(t-a):=\lim_{h\to0}\delta_h(t-a)\:\text{''}=\text{''}
     \begin{cases}
         \infty & t=a    \\
         0      & t\ne a
@@ -279,10 +293,22 @@ The Laplace transform is given by
 \end{align*}
 
 \subsection{Convolution}
+\textbf{General Form}\\
+The convolution
+\begin{equation*}
+    f*g(t):=\int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau
+\end{equation*}
+of $f$ and $g$ exists if $f,g\in L^1$ i. e.
+\begin{equation*}
+    \int_{-\infty}^{\infty}\left|f(x)\right|dx<\infty\quad\text{ and }\quad\int_{-\infty}^{\infty}\left|g(x)\right|dx<\infty
+\end{equation*}
+
+\textbf{Functions on $\mathbb{R}_{0^+}$}\\
+If $f,g=0$ for $t<0$ the convolution integral becomes
 \begin{equation*}
     f*g(t):=\int_{0}^{t}f(\tau)g(t-\tau)d\tau
 \end{equation*}
-Properties: Let $f,g$ and $h$ be functions.
+\textbf{Properties}: Let $f,g$ and $h$ be functions.
 \begin{align*}
     f*g =     & \ g*f                               \\
     f*(g+h) = & \ f*g+f*h                           \\
@@ -320,7 +346,8 @@ If the initial values are given like this $y(a),y'(a),\dots$:
     f(t)                            \;                      & \laplace\; F(s)                                                     \\
     1                               \;                      & \laplace\; \frac{1}{s}                                              \\
     t^{n}                           \;                      & \laplace\; \frac{n!}{s^{n+1}} \; with \; n \in \mathbb{N}_0         \\
-    e^{at}                          \;                      & \laplace\; \frac{1}{s-a}                                            \\
+    t^{p}                           \;                      & \laplace\; \frac{\Gamma(p+1)}{s^{p+1}} \; with \; p > -1            \\
+    e^{at}                          \;                      & \laplace\; \frac{1}{s-a} \; if \; s>a \;                            \\
     e^{at}f(t)                      \;                      & \laplace\; F(s-a)                                                   \\
     u(t-a)                          \;                      & \laplace\; \frac{1}{s}e^{-as}                                       \\
     f(t-a)u(t-a)                    \;                      & \laplace\; e^{-as}F(s)                                              \\
@@ -334,7 +361,7 @@ If the initial values are given like this $y(a),y'(a),\dots$:
     \ln(at)                         \;                      & \laplace\; -\frac{1}{s}\left(\ln\left(\frac sa\right)+\gamma\right) \\
     \frac{e^{at}-e^{bt}}{a-b}       \;                      & \laplace\; \frac{1}{(s-a)(s-b)}                                     \\
     \frac{ae^{at}-be^{at}}{a-b}     \;                      & \laplace\; \frac{s}{(s-a)(s-b)}                                     \\
-    te^{at}                         \;                      & \laplace\; \frac{1}{{(s-a)}^2}                                        \\
+    te^{at}                         \;                      & \laplace\; \frac{1}{{(s-a)}^2}                                      \\
     t^{n}e^{at}                     \;                      & \laplace\; \frac{n!}{{(s-a)}^{n+1}}                                 \\
     -tf(t)                          \;                      & \laplace\; F^{\prime}(s)                                            \\
     t^{2}f(t)                       \;                      & \laplace\; F^{\prime\prime}(s)                                      \\

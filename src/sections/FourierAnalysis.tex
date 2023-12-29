@@ -6,14 +6,40 @@ A function $f(x)$ is called periodic if it is defined for “most” $x \in \mat
     f(t+p)=f(t),\quad                                                  & p>0             \\
     \sin\biggl( \underbrace{\frac{2\pi}{L}}_{\frac{2\pi}{p}}nt \biggr) & \rightarrow p=L \\
 \end{align*}
+\subsubsection{Properties of Periodic Functions}
+\textbf{Periodicity}\\
+Let $f(x)=f(x+P),\; g(x)=g(x+Q),\; h(x)=h(x+Q)$ be periodic functions.
+\begin{enumerate}
+    \item $f(x+nP)=f(x),\; n\in\mathbb{Z}$
+    \item $f$ is $nP$ periodic too
+    \item $f(a\cdot x)$ is $\frac{P}{a}$ periodic, $a \in \mathbb{R}$
+    \item $a\cdot g(x)+b\cdot h(x)=a\cdot g(x+Q)+b\cdot h(x+Q)$ \\is $Q$ periodic, $a, b \in \mathbb{R}$
+    \item $f(x+P)+g(x+Q)$ is periodic for the LCM (KGV) of $P$ and $Q$\\ 
+    - the LCM is called fundamental period \\ 
+    - the sum is only periodic if $\frac{P}{Q}\in \mathbb{R}$
+    \item if $f'(x)=f'(x+P)$ then $f(x)=f(x+P)$ 
+\end{enumerate}
+\textbf{Boundedness}\\
+Let $f(x)$ be a function.
+\begin{enumerate}
+    \item if $f$ is $periodic$ and $continuous$: $f$ is $bounded$ 
+    \item if $f$ is $periodic$ and $smooth$: $f$ and $f^{(n)}$ are $bounded$\\ 
+    - smooth means no kinks ("Knicks"), meaning it is infinitely differentiable\\ 
+    - if $f$ or one of its derivatives is not bounded, we know that $f$ is either not periodic or not smooth.
+\end{enumerate}
 
-\subsection{Trigonometric Properties}
+\subsection{Trigonometric System}
+The collection
+\begin{equation}
+    \left\{\sin\left(\frac{n\pi}Lx\right),\cos\left(\frac{n\pi}Lx\right):n\in\mathbb{Z},n\geq0\right\}
+\end{equation}
+is called the $trigonometric$ $system$. The functions in the trigonometric system are $2L$ periodic. A series constructed from these functions is $2L$ periodic too if it converges.
+\subsubsection{Orthogonality Properties}
 \begin{align*}
-    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\cos\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0\\2&Ln=m=0.\end{cases} \\
+    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\cos\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0\\2L&n=m=0.\end{cases} \\
     \int_{-L}^L\sin\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0.\end{cases}           \\
     \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=0,\text{ for every }n,m.
 \end{align*}
-
 \subsection{Fourier Series}
 For the Fourier series to exist and for it to converge to $f(t)$, $f(t)$ has to be defined and $2L$-periodic on $[-L,L]$.
 For every discontinuity, the \textbf{Dirichlet Theorem} has to hold. $a_0,a_n,b_b\in \mathbb{R}$
@@ -56,8 +82,27 @@ Functions are odd if $f(x)=-f(-x)$ and due to symmetry:
     b_n  & =\dfrac{2}{L}\int_0^L f(x)\sin\left(\dfrac{n\pi}{L}x\right)dx
 \end{align*}
 
+\subsubsection{Properties of Even and Odd Functions}
+For functions $f_1, f_2$ (even) and $g_1, g_2$ (odd):\\
+\textbf{Multiplication}
+\begin{enumerate}
+    \item $f_1\cdot f_2$ is even
+    \item $g_1\cdot g_2$ is even
+    \item $f\cdot g$ is odd
+\end{enumerate}
+\textbf{Addition}
+\begin{enumerate}
+    \item $f_1+f_2$ is even
+    \item $g_1+g_2$ is odd
+\end{enumerate}
+\textbf{Differentiation}
+\begin{enumerate}
+    \item $f'$ is odd
+    \item $g'$ is even
+\end{enumerate}
+
 \subsubsection{Expansion of FS}
-If $f(t)$ is defined on $[0,L]$:\vspace*{8pt}\\
+If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This method can be used to solve PDEs. \vspace*{8pt}\\
 \begin{minipage}[t]{0.18\textwidth}
     \textbf{Copy-paste} exp.\\
     \begin{tikzpicture}
@@ -215,7 +260,7 @@ If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
 Conversion from and to \textbf{real FS}:\\
 \begin{tabular}[h]{c|c|c} % chktex -2
     \multicolumn{2}{c}{$a_0=c_0$} & $e^{\pm ix}=\cos x\pm i\sin x$                             \\
-    $a_n=c_n+c_{-2}$              & $c_n = \frac{1}{2}(a_n-ib_n)$  & $e^{ix}-e^{-ix}=2i\sin x$ \\
+    $a_n=c_n+\overline{c_n}$              & $c_n = \frac{1}{2}(a_n-ib_n)$  & $e^{ix}-e^{-ix}=2i\sin x$ \\
     $b_n=i(c_n-\overline{c_n})$   & $c_{-n}=\overline{c_n}$        & $e^{ix}+e^{-ix}=2\cos x$
 \end{tabular}
 
@@ -232,14 +277,15 @@ $f(t)$ is absolutely integrable if:
     \int_{-\infty}^{\infty}\left|f(x)\right|dx<\infty ,\quad f\in L_1
 \end{align*}
 \subsection{Fourier Integral}
-The \textbf{Fourier Integral} is defined if $f$ is piecewise linear, has left/right derivatives at
+The \textbf{Fourier Integral} is defined if $f$ is piecewise continuous, has left/right derivatives at
 discontinuities and is absolutely Integrable:
 \begin{align*}
     f(t) & =\int_0^\infty[A(w)\cos(wx)+B(w)\sin(wx)]dw     \\\\
     A(w) & =\frac1\pi\int_{-\infty}^{\infty}f(v)\cos(wv)dv \\
     B(w) & =\frac1\pi\int_{-\infty}^{\infty}f(v)\sin(wv)dv
 \end{align*}
-
+\textbf{Remark}\\
+The convergence properties and behaviour at discontinuities are analogous to the fourier series.
 \subsubsection{Even FI}
 If $f(t)$ is even, i.e. $f(t)=f(-t)$, the FI simplifies to:
 \begin{align*}
@@ -255,9 +301,9 @@ If $f(t)$ is odd, i.e. $f(t)=-f(-t)$, the FI simplifies to:
     B(w) & =\frac2\pi\int_0^\infty f(v)\sin(wv)dv
 \end{align*}
 
-\subsection{Fourier Transformation}
-If $f$ is absolutely integrable (non-periodic), and piecewise continuous on finite integrals,
-then the \textbf{Fourier Transform} and its inverse exists:
+\subsection{Fourier Transform}
+If $f$ is absolutely integrable (non-periodic), and piecewise continuous on finite interval,
+then the \textbf{Fourier Transform} and its inverse exist:
 \begin{align*}
     \mathcal{F}(f)(w)=\widehat{f}(w)      & :=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(v)e^{-iwv}dv          \\\\
     \mathcal{F}^{-1}(\widehat{f})(x)=f(x) & :=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\widehat{f}(w)e^{iwx}dw \\
