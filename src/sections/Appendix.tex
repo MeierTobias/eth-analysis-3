@@ -22,7 +22,9 @@ Given: $n, j \in \mathbb{N}$
      & \sin(180^\circ\pm\alpha) = \sin(\pi \pm \alpha)                                  & = & \mp\sin(\alpha)                                         \\
      & \cos(180^\circ\pm\alpha) = \cos(\pi \pm \alpha)                                  & = & -\cos(\alpha)                                           \\
      & \frac{1}{\sin^2 \alpha}                                                          & = & 1+\cot^2 (\alpha)                                       \\
-     & \frac{1}{\cos^2 \alpha}                                                          & = & 1+\tan^2 (\alpha)
+     & \frac{1}{\cos^2 \alpha}                                                          & = & 1+\tan^2 (\alpha)                                       \\
+     & {(-1)}^n+{(-1)}^{-n}=e^{in\pi}+e^{-in\pi}                                        & = & 2\cos(\pi n)                                            \\
+     & {(-1)}^n-{(-1)}^{-n}=e^{in\pi}-e^{-in\pi}                                        & = & 2i\sin(\pi n)
 \end{align*}
 
 \subsubsection{Goniometry}
@@ -137,6 +139,7 @@ Given: $n, j \in \mathbb{N}$
          & \int \frac{1}{\cos(x)}dx       &  & = \ln\left| \tan\left(\frac{x}{2}+\frac{\pi}{4}\right)\right|+C \\
          & \int \frac{2}{\tan(x)}dx       &  & = \ln\vert \sin\; x\vert +C                                     \\
          & \int \frac{1}{\sin^2(x)}dx     &  & = -\cot(x)+C                                                    \\
+         & \int \frac{1}{\cos^2(x)}dx     &  & = \tan(x)+C                                                     \\
          & \int \tan(ax) dx               &  & = -\frac{1}{a} \cdot \ln{\mid \cos(ax) \mid }+C                 \\
          & \int \arcsin (x) dx            &  & = x \cdot \arcsin(x)+\sqrt{1-x^2}+C                             \\
          & \int \arccos (x) dx            &  & = x \cdot \arccos(x)-\sqrt{1-x^2}+C                             \\
@@ -254,8 +257,10 @@ Given: $n, j \in \mathbb{N}$
          & \int \log_a\vert x \vert dx           &  & =x(\log_a\vert x\vert -\log_a e)+C                                                \\
          & \int x \cdot \ln(x) dx                &  & =\frac 1 2 \cdot x^2(\ln(x)-\frac{1}{2})+C                                        \\
          & \int x^k \ln\; x \;dx                 &  & =\frac{x^{k+1}}{k+1}\left(\ln\; x-\frac{1}{k+1}\right)+C,\quad k\neq -1           \\
+         & \int c\ln(a)a^{cx}                    &  & = a^{cx} + C                                                                      \\
          & \int x^{-1}\ln\; x \; dx              &  & =\frac{1}{2}{(\ln\; x)}^2+C                                                       \\
          & \int \frac{{(\ln(x))}^n}{x}dx         &  & =\frac{{(\ln(x))}^{n+1}}{x+1}+C                                                   \\
+         & \int \frac{1}{x\ln(a)}                &  & = \log_a|x| +C                                                                    \\
          & \int \frac{f'(x)}{f(x)}dx             &  & =\ln\vert f(x) \vert +C                                                           \\
          & \int f'(x) \cdot f(x) dx              &  & = \frac{1}{2}(f^2(x))+C
     \end{align*}
@@ -266,7 +271,31 @@ Given: $n, j \in \mathbb{N}$
      & \int_{-\infty}^{\infty}\frac{1}{1+x^2}dx &  & =\pi
 \end{align*}
 
-\subsection{Gamma Functions}
+\subsection{Various functions and their properties}
+\subsubsection{even and odd functions}
+\begin{gather*}
+    even \cdot even\;\widehat{=}\; odd \cdot odd \;\widehat{=}\; even \\
+    even \cdot odd \;\widehat{=}\; odd \\
+    \int\limits_{-L}^L even=2\int\limits_0^L even \\
+    \int\limits_{-L}^L odd = 0 \\
+    f=f_{even}+f_{odd} \\
+    f_{even}=\frac{f(x)+f(-x)}{2} \\
+    f_{odd}=\frac{f(x)-f(-x)}{2}
+\end{gather*}
+
+\subsubsection{Lograithm}
+\begin{align*}
+    \ln(uv)                     & =\ln(u)+\ln(v) \\
+    \ln\left(\frac{u}{v}\right) & =\ln(u)-\ln(v) \\
+    \ln\left(\frac{1}{v}\right) & =-\ln(v)       \\
+    \ln(u^r)                    & =r\cdot \ln(u) \\
+    \ln |y|\cdot C              & = \ln |y^C|    \\
+    - \ln |r|                   & = \ln|r^{-1}|  \\
+    \ln(1)                      & = \log(1) = 0
+\end{align*}
+
+
+\subsubsection{Gamma functions}
 Helpful for removing factorials:
 \begin{align*}
     \Gamma(\alpha)             & =\int\limits_{0}^{+\infty}x^{\alpha-1}e^{-x}dx,\quad\alpha>0. \\
@@ -274,6 +303,46 @@ Helpful for removing factorials:
     \Gamma(\alpha+1)           & =\alpha\Gamma(\alpha),\quad \Gamma(1)=1                       \\ \\
     \Gamma(n)                  & =(n-1)!
 \end{align*}
+
+\subsubsection{Body properties}
+\begin{align*}
+    \text{Sphere volume V }  & = \frac{4}{3}\pi r^3 \\
+    \text{Sphere surface A } & = 4\pi r^2           \\
+\end{align*}
+
+\subsubsection{Complex numbers}
+
+\renewcommand{\arraystretch}{1.4}
+
+\begin{tabular}{ m{2.4cm}  m{6cm} }
+    Normal form: & $z=x+iy$                                                                                               \\
+    Polar form:  & $z=r(\cos(\varphi)+ i\; \sin(\varphi))=r\;cis(\varphi)$                                                \\
+                 & $r=\sqrt{x^2+y^2}$                                                                                     \\
+                 & $\varphi=\arccos\left(\frac{x}{r}\right)=\arcsin\left(\frac{y}{r}\right)=\tan\left(\frac{y}{x}\right)$ \\
+    Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
+                 & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
+\end{tabular}
+
+\textbf{Operations}
+
+\begin{tabular}{ m{3cm}  m{5.4cm} }
+    Normal form                                        &                                                                        \\
+    $z_1+z_2$                                          & $(x_1+x_2)+i(y_1+y_2)$                                                 \\
+    $z_1z_2$                                           & $(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)$                                     \\
+    $z^{-1}=\frac{1}{z}$                               & $\frac{x}{x^2+y^2}-i\frac{y}{x^2+y^2}$                                 \\
+    $\frac{z_1}{z_2}$                                  & $\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}+i\frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}$ \\
+    Polar form                                         &                                                                        \\
+    $z_1z_2$                                           & $r_1r_2e^{i(\varphi_1+\varphi_2)}$                                     \\
+    $z^{-1}=\frac{1}{z}$                               & $r^{-1}e^{-i\varphi}$                                                  \\
+    $\frac{z_1}{z_2}$                                  & $\frac{r_1}{r_2}e^{i(\varphi_1-\varphi_2)}$                            \\
+    $z^n,\; n\in \mathbb{Z}$                           & $r^n e^{in\varphi}$ {\tiny(DE MOIVRE)}                                 \\
+    Magnitude                                          &                                                                        \\
+    $r=\vert z \vert \geq 0$                           & $\vert z \vert =\sqrt{x^2+y^2}$                                        \\
+    $\vert z \; w \vert =\vert z \vert \;\vert w\vert$ & $\big\vert \frac{z}{w}\big\vert=\frac{\vert z\vert}{\vert w\vert}$     \\
+    $\vert z+ w\vert \leq \vert z \vert + \vert w \vert$                                                                        \\
+\end{tabular}
+
+\renewcommand{\arraystretch}{1}
 
 \subsection{Dirichlet Superposition}\label{diri_superpos}
 \includegraphics*[width = 0.8\linewidth]{dirichlet_superposition.png}\\
