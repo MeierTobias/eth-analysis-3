@@ -100,7 +100,6 @@ Given: $n, j \in \mathbb{N}$
 
 
 \subsection{Integral calculus}
-\subsubsection{Intergation of power, rational, exponential and logarithmic functions}
 
 \subsubsection{Integration of trigonometric functions}
 \begin{small}
@@ -179,10 +178,11 @@ Given: $n, j \in \mathbb{N}$
     x\sin(nx)\Big|_0^{2\pi} & =0 &  & x\cos(nx)\Big|_0^{2\pi}=2\pi\neq0
 \end{align*}
 \begin{align*}
-     & \int_0^{\infty} \frac{\sin(ax)}{x} dx &  & =\frac{\pi}{2};\quad a>0                                    \\
-     & \int_0^{\infty} \sin(x^2) dx          &  & =\int_0^{\infty}\cos(x^2)dx=\frac{1}{2}\sqrt{\frac{\pi}{2}} \\
-     & \int_0^{\infty} e^{-ax}x^n dx         &  & =\frac{n!}{a^{n+1}},\quad a>0                               \\
-     & \int_0^{\infty} e^{-ax^2} dx          &  & =\frac{1}{2}\sqrt{\frac{\pi}{a}},\quad a>0
+     & \int_0^{\infty} \frac{\sin(ax)}{x} dx &  & =\frac{\pi}{2};\quad a>0                                                 \\
+     & \int_0^{\infty} \sin(x^2) dx          &  & =\int_0^{\infty}\cos(x^2)dx=\frac{1}{2}\sqrt{\frac{\pi}{2}}              \\
+     & \int_0^{\infty} e^{-ax}x^n dx         &  & =\frac{n!}{a^{n+1}},\quad a>0                                            \\
+     & \int_0^{\infty} e^{-ax^2} dx          &  & =\frac{1}{2}\sqrt{\frac{\pi}{a}},\quad a>0                               \\
+     & \int_{-\pi}^{\pi} e^{ijx} \text{d}x   &  & = \begin{cases}2\pi & \text{if } j=0\\ 0 & \text{if } j\neq 0\end{cases}
 \end{align*}
 
 \renewcommand{\arraystretch}{1.4}
@@ -203,6 +203,68 @@ Given: $n, j \in \mathbb{N}$
 \end{tabular}
 
 \renewcommand{\arraystretch}{1}
+
+\subsubsection{Intergation of power, rational, exponential and logarithmic functions}
+\begin{footnotesize}
+    \begin{align*}
+         & \int {(ax+b)}^n dx                    &  & =\frac{{(ax+b)}^{n+1}}{(n+1)a}+C                                                  \\
+         & \int x{(ax+b)}^n dx                   &  & =\frac{{(ax+b)}^{n+2}}{(n+2)a^2}-\frac{b{(ax+b)}^{n+1}}{(n+1)a^2}+C               \\
+         & \int x^2{(ax+b)}^n dx                 &  & =\frac{{(ax+b)}^{n+3}}{(n+3)a^3}-\frac{2b{(ax+b)}^{n+2}}{(n+2)a^3} \dots          \\
+         &                                       &  & \qquad +\frac{b^2{(ax+b)}^{n+1}}{(n+1)a^3}+C                                      \\
+         & \int \frac{1}{ax+b}dx                 &  & =\frac{1}{a}\ln\vert ax+b \vert +C                                                \\
+         & \int \frac{ax+b}{cx+d}dx              &  & =\frac{ax}{c}-\frac{ad-bc}{c^2}\ln\vert cx+d \vert +C                             \\
+         & \int \frac{1}{x^2+a^2}dx              &  & =\frac{1}{a}\arctan\left(\frac{x}{a}\right) +C                                    \\
+         & \int \frac{1}{x^2-a^2}dx              &  & =\frac{1}{2a}\ln\big\vert \frac{x-a}{x+a}\big\vert +C                             \\
+         & \int \frac{x}{{(ax+b)}^n}dx           &  & =-\frac{1}{(n-2)a^2{(ax+b)}^{n-2}} \dots                                          \\
+         &                                       &  & \qquad +\frac{b}{(n-1)a^2{(ax+b)}^{n-1}}+C                                        \\
+         & \int \frac{x}{x^2+a}dx                &  & =\frac{1}{2}\ln\vert x^2+a \vert+C                                                \\
+         & \int \frac{x}{ax^2+b}dx               &  & =\frac{1}{2a}\ln \vert ax^2+b \vert+C                                             \\
+         & \int \frac{1}{x^2-a^2}dx              &  & =\frac{1}{2a}\ln \vert \frac{x-a}{x+a}\vert+C                                     \\
+         & \int \frac{1}{x^2+a^2}dx              &  & =\frac{1}{a}\arctan(\frac{x}{a})+C                                                \\
+         & \int \frac{x}{{(x^2+a^2)}^n}dx        &  & =-\frac{1}{2(n-1){(a^2+x^2)}^{n-1}}+C                                             \\
+         & \int \frac{x}{{(a^2-x^2)}^n}dx        &  & =\frac{1}{2(n-1){(a^2-x^2)}^{n-1}}+C                                              \\
+         & \int \frac{x^2-a^2}{x^2+a^2}dx        &  & =\frac{a}{x^2+a^2}+C                                                              \\
+         & \int {(ax^p+b)}^s x^{p-1}dx           &  & =\frac{{(ax^p+b)}^{s+1}}{ap(s+1)}+C,\quad s\neq -1,\; a, p\neq 0                  \\
+         & \int {(ax^p+b)}^{-1}x^{p-1}dx         &  & =\frac{1}{ap}\ln\vert ax^p+b\vert +C,\quad a\neq 0,\; p\neq 0                     \\
+         & \int \sqrt{a^2+x^2}dx                 &  & =\frac{x}{2}\sqrt{a^2+x^2}+\frac{a^2}{2}\ln(x+\sqrt{a^2+x^2})+C                   \\
+         & \int \sqrt{a^2-x^2}dx                 &  & =\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{\vert a \vert}+C          \\
+         & \int \sqrt{x^2-a^2}dx                 &  & =\frac{x}{2}\sqrt{x^2-a^2}-\frac{a^2}{2}\ln\big\vert x+\sqrt{x^2-a^2}\big\vert +C \\
+         & \int \frac{1}{\sqrt{x^2+a^2}}dx       &  & =\ln(x+\sqrt{a^2+x^2})+C                                                          \\
+         & \int \frac{2}{\sqrt{x^2-a^2}}dx       &  & =\ln\vert x+\sqrt{x^2-a^2}\vert +C                                                \\
+         & \int \frac{1}{\sqrt{a^2-x^2}}dx       &  & =\arcsin\frac{x}{\vert a\vert }+C                                                 \\
+         & \int \frac{1}{x^2+x}dx                &  & =\ln(x)-\ln(x+1)+C                                                                \\
+         & \int \frac{1}{ax^2+bx+c}dx            &  & =\frac{2\arctan(\frac{2ax+b}{\sqrt{4ac-b^2}})}{\sqrt{4ac-b^2}}+C                  \\
+         & \int \frac{1}{\sqrt{1-x^2}}dx         &  & =\arcsin(x)+C                                                                     \\
+         & \int \frac{-1}{\sqrt{1-x^2}}dx        &  & =\arccos(x)+C                                                                     \\
+         & \int \frac{1}{1-x^2}dx                &  & =artanh(x)=\log(\sqrt{\frac{1+x}{1-x}})+C, \vert x \vert < 1                      \\
+         & \int \frac{1}{\sqrt{x^2+1}}dx         &  & =arsinh(x)=\log(x+\sqrt{x^2+1})+C                                                 \\
+         & \int \frac{1}{\sqrt{x^2-1}}dx         &  & =arcosh(x)=\log(x+\sqrt{x^2-1})+C, 1 \leq x                                       \\
+         & \int e^{kx}dx                         &  & =\frac{1}{k}e^{kx}+C                                                              \\
+         & \int a^{kx}dx                         &  & =\frac{1}{k\cdot \ln(a)}a^{kx}+C                                                  \\
+         & \int e^{kx}\sin(ax+b)dx               &  & =\frac{e^{kx}}{a^2+k^2}\left(k\sin(ax+b)-a\cos(ax+b)\right)+C                     \\
+         & \int e^{kx}\cos(ax+b)dx               &  & =\frac{e^{kx}}{a^2+k^2}\left(k\cos(ax+b)+a\sin(ax+b)\right)+C                     \\
+         & \int x \cdot e^{ax}dx                 &  & =(\frac{ax-1}{a^2})\cdot e^{ax}+C                                                 \\
+         & \int x^2 \cdot e^{ax}dx               &  & =(\frac{a^2x^2-2ax+2}{a^3})\cdot e^{ax}                                           \\
+         & \int x\cdot e^{x^2}dx                 &  & =\frac{1}{2}\cdot e^{x^2}+C                                                       \\
+         & \int \frac{1}{e^x+a}dx                &  & =\frac{x-\ln(a+e^x)}{a}+C                                                         \\
+         & \int \frac{1}{e^x-a}dx                &  & =\frac{\ln(e^x-a)-x}{a}+C                                                         \\
+         & \int \frac{1}{p+q\cdot e^{ax}}dx      &  & =\frac{x}{p}-\frac{1}{ap}\cdot \ln\vert p+q\cdot e^{ax}\vert+C                    \\
+         & \int \frac{e^{ax}}{p+q\cdot e^{ax}}dx &  & =\frac{1}{ap}\cdot \ln\vert p+q\cdot e^{ax}\vert                                  \\
+         & \int \ln\vert x\vert dx               &  & =x(\ln\vert x \vert -1)+C                                                         \\
+         & \int \log_a\vert x \vert dx           &  & =x(\log_a\vert x\vert -\log_a e)+C                                                \\
+         & \int x \cdot \ln(x) dx                &  & =\frac 1 2 \cdot x^2(\ln(x)-\frac{1}{2})+C                                        \\
+         & \int x^k \ln\; x \;dx                 &  & =\frac{x^{k+1}}{k+1}\left(\ln\; x-\frac{1}{k+1}\right)+C,\quad k\neq -1           \\
+         & \int x^{-1}\ln\; x \; dx              &  & =\frac{1}{2}{(\ln\; x)}^2+C                                                       \\
+         & \int \frac{{(\ln(x))}^n}{x}dx         &  & =\frac{{(\ln(x))}^{n+1}}{x+1}+C                                                   \\
+         & \int \frac{f'(x)}{f(x)}dx             &  & =\ln\vert f(x) \vert +C                                                           \\
+         & \int f'(x) \cdot f(x) dx              &  & = \frac{1}{2}(f^2(x))+C
+    \end{align*}
+\end{footnotesize}
+
+\subsubsection{Integration over special intervals}
+\begin{align*}
+     & \int_{-\infty}^{\infty}\frac{1}{1+x^2}dx &  & =\pi
+\end{align*}
 
 \subsection{Gamma Functions}
 Helpful for removing factorials:
