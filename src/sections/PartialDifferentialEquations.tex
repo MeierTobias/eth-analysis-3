@@ -700,7 +700,7 @@ The finite difference equation becomes:
     \frac{c^2}{h^2}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})=\frac{1}{k^2}(u_{i,j+1}-2u_{i,j}+u_{i,j-1}) \; \Leftrightarrow \\
     u_{i,j+1}=2\left(1-\frac{c^2k^2}{h^2}\right)u_{i,j}+\frac{c^2k^2}{h^2}(u_{i+1,j}+u_{i-1,j})-u_{i,j-1}
 \end{gather*}
-Choosing $h$ and $k$ in such a way that $h=ck$, so that $1 - \frac{v^2k^2}{h^2} = 0$, the equation simplifies to
+Choosing $h$ and $k$ in such a way that $h=ck$, so that $1 - \frac{c^2k^2}{h^2} = 0$, the equation simplifies to
 \begin{equation*}
     u_{i,j+1}=u_{i+1,j}+u_{i-1,j}-u_{i,j-1}
 \end{equation*}
