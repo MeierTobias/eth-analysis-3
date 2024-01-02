@@ -48,9 +48,9 @@ Given: $n, j \in \mathbb{N}$
     \tan\left(\frac x2\right)      & =\frac{1-\cos(x)}{\sin(x)}=\frac{\sin(x)}{1+\cos(x)}
 \end{align*}
 \begin{align*}
-    \sin(x)\cos(y)      & =\frac12\Bigl[\sin(x+y)~+~\sin(x-y)\Bigr]   \\
-    \sin(x)\sin(y)      & =\frac12\Bigl[\cos(x-y)~-~\cos(x+y)\Bigr]   \\
-    \cos(x)\cos(y)      & =\frac12\Bigl[\cos(x+y)~+~\cos(x-y)\Bigr]   \\
+    \sin(x)\cos(y)      & =\frac12\Bigl[\sin(x+y)\;+\;\sin(x-y)\Bigr]   \\
+    \sin(x)\sin(y)      & =\frac12\Bigl[\cos(x-y)\;-\;\cos(x+y)\Bigr]   \\
+    \cos(x)\cos(y)      & =\frac12\Bigl[\cos(x+y)\;+\;\cos(x-y)\Bigr]   \\
     \sin(x)\pm\sin(y)   & =2\sin\frac{x\pm y}{2}\cos\frac{x \mp y}{2} \\
     \cos(x)+\cos(y)     & =2\cos\frac{x+y}{2}\cos\frac{x-y}{2}        \\
     \cos(x)-\cos(y)     & =-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}       \\
@@ -91,20 +91,21 @@ Given: $n, j \in \mathbb{N}$
     \cos(\arctan(x))         & =\frac{1}{\sqrt{x^2+1}}                                        \\
     \tan(\arcsin(x))         & =x \cdot {(1-x)}^{-\frac{1}{4}}                                \\
     \tan(\arccos(x))         & =x^{-1} \cdot {(1-x)}^{\frac{1}{4}}                            \\
-    arsinh(x)                & =\ln(x+\sqrt{x^2+1})                                           \\
-    arcosh(x)                & =\ln(x+\sqrt{x^2-1})                                           \\
-    artanh(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{1-x}); \quad \vert x\vert < 1 \\
-    arcoth(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{x-1}); \quad \vert x\vert > 1 \\
-    \sinh(2 \cdot arsinh(x)) & =2x\sqrt{x^2-1}                                                \\
-    \sinh(arcosh(x))         & =\sqrt{x^2-1};\qquad x>0                                       \\
-    \cosh(arsinh(x))         & =\sqrt{x^2+1}
+    \operatorname{arcsinh}(x)                & =\ln(x+\sqrt{x^2+1})                                           \\
+    \operatorname{arccosh}(x)                & =\ln(x+\sqrt{x^2-1})                                           \\
+    \operatorname{arctanh}(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{1-x}); \quad \vert x\vert < 1 \\
+    \operatorname{arccoth}(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{x-1}); \quad \vert x\vert > 1 \\
+    \sinh(2 \cdot \operatorname{arcsinh}(x)) & =2x\sqrt{x^2-1}                                                \\
+    \sinh(\operatorname{arccosh}(x))         & =\sqrt{x^2-1};\qquad x>0                                       \\
+    \cosh(\operatorname{arcsinh}(x))         & =\sqrt{x^2+1}
 \end{align*}
 
 \subsection{Derivatives}
+
 \textbf{Sums and Constants}
 \begin{align*}
     (f\pm g)'             & =f'\pm g'                                  \\
-    {(k\cdot f)}^{\prime} & =k\cdot f^{\prime}\quad(c\text{ constant})
+    {(c\cdot f)}^{\prime} & =c\cdot f^{\prime}\quad(c\text{ constant})
 \end{align*}
 
 \textbf{Product/ Quotient Rule}
@@ -127,26 +128,69 @@ Given: $n, j \in \mathbb{N}$
 
 \subsubsection{Common Derivatives}
 \begin{align*}
-     & \frac{d}{dx}x^n                       &  & =nx^{n-1}                                            \\
-     & \frac{d}{dx}e^x                       &  & =e^x                                                 \\
-     & \frac{d}{dx}a^x                       &  & =a^x\ln(a),\quad a>0                                 \\
-     & \frac{d}{dx}\ln(x)                    &  & =\frac1x                                             \\
-     & \frac{d}{dx}\log_a(x)                 &  & =\frac1{x\ln(a)}                                     \\
-     & \frac{d}{dx}\sin(x)                   &  & =\cos(x)                                             \\
-     & \frac{d}{dx}\cos(x)                   &  & =-\sin(x)                                            \\
-     & \frac{d}{dx}\tan(x)                   &  & =\frac1{\cos^2(x)}=1+\tan^2(x)                       \\
-     & \frac{d}{dx}\arcsin(x)                &  & =\frac1{\sqrt{1-x^2}}                                \\
-     & \frac{d}{dx}\arccos(x)                &  & =-\frac1{\sqrt{1-x^2}}                               \\
-     & \frac{d}{dx}\arctan(x)                &  & =\frac1{1+x^2}                                       \\
-     & \frac{d}{dx}\sinh(x)                  &  & =\cosh(x)                                            \\
-     & \frac{d}{dx}\cosh(x)                  &  & =\sinh(x)                                            \\
+     & \frac{d}{dx}x^n                       &  & =nx^{n-1}                              \\
+     & \frac{d}{dx}e^x                       &  & =e^x                                   \\
+     & \frac{d}{dx}a^x                       &  & =a^x\ln(a),\quad a>0                   \\
+     & \frac{d}{dx}\ln(x)                    &  & =\frac1x                               \\
+     & \frac{d}{dx}\log_a(x)                 &  & =\frac1{x\ln(a)}                       \\
+     & \frac{d}{dx}\sin(x)                   &  & =\cos(x)                               \\
+     & \frac{d}{dx}\cos(x)                   &  & =-\sin(x)                              \\
+     & \frac{d}{dx}\tan(x)                   &  & =\frac1{\cos^2(x)}=1+\tan^2(x)         \\
+     & \frac{d}{dx}\arcsin(x)                &  & =\frac1{\sqrt{1-x^2}}                  \\
+     & \frac{d}{dx}\arccos(x)                &  & =-\frac1{\sqrt{1-x^2}}                 \\
+     & \frac{d}{dx}\arctan(x)                &  & =\frac1{1+x^2}                         \\
+     & \frac{d}{dx}\sinh(x)                  &  & =\cosh(x)                              \\
+     & \frac{d}{dx}\cosh(x)                  &  & =\sinh(x)                              \\
      & \frac{d}{dx}\tanh(x)                  &  & =\frac{1}{\cosh^{2}(x)}=1-\tanh^{2}(x) \\
-     & \frac{d}{dx}\sinh(x)                  &  & =\frac1{\sqrt{x^2+1}}                                \\
-     & \frac{d}{dx}\operatorname{arccosh}(x) &  & =\frac1{\sqrt{x^2-1}}                                \\
+     & \frac{d}{dx}\sinh(x)                  &  & =\frac1{\sqrt{x^2+1}}                  \\
+     & \frac{d}{dx}\operatorname{arccosh}(x) &  & =\frac1{\sqrt{x^2-1}}                  \\
      & \frac{d}{dx}\operatorname{arctanh}(x) &  & =\frac1{1-x^2}
 \end{align*}
 
 \subsection{Integral calculus}
+\textbf{Hauptsatz}
+\begin{align*}
+    F^{\prime}(x) & =f(x)\Longrightarrow\int_a^b f(x)dx=F(b)-F(a)
+\end{align*}
+
+\textbf{Sums and Constants}
+\begin{align*}
+    \int_a^b\left(f\pm g\right)dx & =\int_a^b f\;dx\pm\int_a^b g\;dx        \\
+    \int_a^b c\cdot f\;dx          & =c\int_a^b f\;dx\quad(c\text{ constant})
+\end{align*}
+
+\textbf{Partial Integration}
+\begin{align*}
+     & \int_a^b f'\cdot g\left.dx=(f\cdot g)\right|_a^b-\int_a^b f\cdot g'\;dx         \\
+     & \int_a^b f\cdot g\left.dx=(F\cdot g)\right|_a^b-\int_a^b F\cdot g^{\prime}\;dx
+\end{align*}
+
+\textbf{Substitution}
+\begin{align*}
+     & \text{Substitution }u=g(x){:}                                           \\
+     & \int_a^b f(g(x))g^{\prime}(x)\;dx=\int_{g(a)}^{g(b)}f(u)\;du            \\\\
+     & \text{Substitution }x=g(y){:}                                           \\
+     & \int_a^b f(x)\;dx=\int_{g^{-1}(a)}^{g^{-1}(b)}f(g(y))g^{\prime}(y)\;dy
+\end{align*}
+\textbf{Common Substitutions}:\par
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{}lll@{}}
+    Integral               & Subst.                        & Comment                                    \\
+    \cmidrule{1-3}
+    $f(ax+b)$              & $t=ax+b$                      &                                            \\
+    $f(g(x))g^{\prime}(x)$ & $g(x)=t$                      & $=\int f(t)dt$                             \\
+    $f(x,\sqrt{ax+b})$     & $x=\frac{t^2-b}{a}$           & $t\geq0$                                   \\
+    $f(x,\sqrt{a^2-x^2})$  & $x=\arcsin(t)$                & $\sqrt{a^2-x^2}=\operatorname{arccosh}(t)$ \\
+    $f(x,\sqrt{x^2-a^2})$  & $x=\operatorname{arccosh}(t)$ & $\sqrt{x^2-a^2}=\operatorname{arcsinh}(t)$ \\
+    $f(\sin(x),\cos(x))$   & $t=\tan(\frac {x}{2})$        & $\sin(x)=\frac{2t}{1+t^2}$                 \\
+                           &                               & $\cos(x)=\frac{1-t^2}{1+t^2}$              \\
+                           &                               & $dx=\frac{2dt}{1+t^2}$                     \\
+    $f(e^x,\sinh,\cosh)$   & $t=e^x$                       & $\sinh(x)=\frac{t^2-1}{2t}$                \\
+    \bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+
 
 \subsubsection{Integration of trigonometric functions}
 \begin{small}
@@ -193,9 +237,9 @@ Given: $n, j \in \mathbb{N}$
          & \int \cosh(x)dx                &  & = \sinh(x)+C                                                    \\
          & \int \tanh(x)dx                &  & = \ln(\cosh(x)) +C                                              \\
          & \int \coth(x)dx                &  & = \ln(\sinh(x))+C                                               \\
-         & \int arsinh(x)dx               &  & = x \cdot arsinh(x) - \sqrt{x^2+1}+C                            \\
-         & \int arcosh(x)dx               &  & = x \cdot arcosh(x) - \sqrt{x^2-1}+C                            \\
-         & \int artanh(x)dx               &  & = x \cdot artanh(x) +\frac{1}{2}\ln(1-x^2)+C
+         & \int \operatorname{arcsinh}(x)dx               &  & = x \cdot \operatorname{arcsinh}(x) - \sqrt{x^2+1}+C                            \\
+         & \int \operatorname{arccosh}(x)dx               &  & = x \cdot \operatorname{arccosh}(x) - \sqrt{x^2-1}+C                            \\
+         & \int \operatorname{arctanh}(x)dx               &  & = x \cdot \operatorname{arctanh}(x) +\frac{1}{2}\ln(1-x^2)+C
     \end{align*}
     \begin{align*}
          & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                  \\
@@ -284,9 +328,9 @@ Given: $n, j \in \mathbb{N}$
          & \int \frac{1}{ax^2+bx+c}dx            &  & =\frac{2\arctan(\frac{2ax+b}{\sqrt{4ac-b^2}})}{\sqrt{4ac-b^2}}+C                  \\
          & \int \frac{1}{\sqrt{1-x^2}}dx         &  & =\arcsin(x)+C                                                                     \\
          & \int \frac{-1}{\sqrt{1-x^2}}dx        &  & =\arccos(x)+C                                                                     \\
-         & \int \frac{1}{1-x^2}dx                &  & =artanh(x)=\log(\sqrt{\frac{1+x}{1-x}})+C, \vert x \vert < 1                      \\
-         & \int \frac{1}{\sqrt{x^2+1}}dx         &  & =arsinh(x)=\log(x+\sqrt{x^2+1})+C                                                 \\
-         & \int \frac{1}{\sqrt{x^2-1}}dx         &  & =arcosh(x)=\log(x+\sqrt{x^2-1})+C, 1 \leq x                                       \\
+         & \int \frac{1}{1-x^2}dx                &  & =\operatorname{arctanh}(x)=\log(\sqrt{\frac{1+x}{1-x}})+C, \vert x \vert < 1                      \\
+         & \int \frac{1}{\sqrt{x^2+1}}dx         &  & =\operatorname{arcsinh}(x)=\log(x+\sqrt{x^2+1})+C                                                 \\
+         & \int \frac{1}{\sqrt{x^2-1}}dx         &  & =\operatorname{arccosh}(x)=\log(x+\sqrt{x^2-1})+C, 1 \leq x                                       \\
          & \int e^{kx}dx                         &  & =\frac{1}{k}e^{kx}+C                                                              \\
          & \int a^{kx}dx                         &  & =\frac{1}{k\cdot \ln(a)}a^{kx}+C                                                  \\
          & \int e^{kx}\sin(ax+b)dx               &  & =\frac{e^{kx}}{a^2+k^2}\left(k\sin(ax+b)-a\cos(ax+b)\right)+C                     \\
@@ -367,6 +411,17 @@ Helpful for removing factorials:
     Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
                  & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
