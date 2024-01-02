@@ -78,7 +78,7 @@ Given: $n, j \in \mathbb{N}$
     \tanh(x)   & =\frac{e^{x}-e^{-x}}{(e^{x}+e^{-x})}      \\
     e^{ix}     & = \cos(x) + i \cdot \sin(x)               \\
     e^{k\pi i} & = \begin{cases}
-                       1  & k = 2n     \\
+                       1  & k = 2n      \\
                        -1 & k = 2n + 1
                    \end{cases} \quad n \in \mathbb{N}
 \end{align*}
@@ -100,6 +100,51 @@ Given: $n, j \in \mathbb{N}$
     \cosh(arsinh(x))         & =\sqrt{x^2+1}
 \end{align*}
 
+\subsection{Derivatives}
+\textbf{Sums and Constants}
+\begin{align*}
+    (f\pm g)'             & =f'\pm g'                                  \\
+    {(k\cdot f)}^{\prime} & =k\cdot f^{\prime}\quad(c\text{ constant})
+\end{align*}
+
+\textbf{Product/ Quotient Rule}
+\begin{align*}
+    (f\cdot g)'                      & =f'\cdot g+f\cdot g'                             \\
+    {\left(\frac fg\right)}^{\prime} & =\frac{f^{\prime}\cdot g-f\cdot g^{\prime}}{g^2}
+\end{align*}
+
+\textbf{Reciprocal Rule}
+\begin{align*}
+    {\left(\frac{1}{f}\right)}^{\prime} & = -\frac{f^{\prime}}{f^2}
+\end{align*}
+
+\textbf{Chain Rule}
+\begin{align*}
+    {[f(g(x))]}^{\prime}          & =f^{\prime}(g(x))\cdot g^{\prime}(x)                         \\
+    F'(t)                         & =f_x(x(t),y(t))\cdot\dot{x}(t)+f_y(x(t),y(t))\cdot\dot{y}(t) \\
+    \frac{\partial y}{\partial x} & = \frac{\partial y}{\partial u}\frac{\partial u}{\partial x}
+\end{align*}
+
+\subsubsection{Common Derivatives}
+\begin{align*}
+     & \frac{d}{dx}x^n                       &  & =nx^{n-1}                                            \\
+     & \frac{d}{dx}e^x                       &  & =e^x                                                 \\
+     & \frac{d}{dx}a^x                       &  & =a^x\ln(a),\quad a>0                                 \\
+     & \frac{d}{dx}\ln(x)                    &  & =\frac1x                                             \\
+     & \frac{d}{dx}\log_a(x)                 &  & =\frac1{x\ln(a)}                                     \\
+     & \frac{d}{dx}\sin(x)                   &  & =\cos(x)                                             \\
+     & \frac{d}{dx}\cos(x)                   &  & =-\sin(x)                                            \\
+     & \frac{d}{dx}\tan(x)                   &  & =\frac1{\cos^2(x)}=1+\tan^2(x)                       \\
+     & \frac{d}{dx}\arcsin(x)                &  & =\frac1{\sqrt{1-x^2}}                                \\
+     & \frac{d}{dx}\arccos(x)                &  & =-\frac1{\sqrt{1-x^2}}                               \\
+     & \frac{d}{dx}\arctan(x)                &  & =\frac1{1+x^2}                                       \\
+     & \frac{d}{dx}\sinh(x)                  &  & =\cosh(x)                                            \\
+     & \frac{d}{dx}\cosh(x)                  &  & =\sinh(x)                                            \\
+     & \frac{d}{dx}\tanh(x)                  &  & =\frac{1}{\cosh^{2}(x)}=1-\tanh^{2}(x) \\
+     & \frac{d}{dx}\sinh(x)                  &  & =\frac1{\sqrt{x^2+1}}                                \\
+     & \frac{d}{dx}\operatorname{arccosh}(x) &  & =\frac1{\sqrt{x^2-1}}                                \\
+     & \frac{d}{dx}\operatorname{arctanh}(x) &  & =\frac1{1-x^2}
+\end{align*}
 
 \subsection{Integral calculus}
 
@@ -153,12 +198,12 @@ Given: $n, j \in \mathbb{N}$
          & \int artanh(x)dx               &  & = x \cdot artanh(x) +\frac{1}{2}\ln(1-x^2)+C
     \end{align*}
     \begin{align*}
-         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                 \\
-         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                    \\
-         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                   \\
-         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C               \\
-         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C           \\
-         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C          \\
+         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                  \\
+         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                     \\
+         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                    \\
+         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C                \\
+         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C            \\
+         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C           \\
          & \int \frac{\cos(ax)}{\sin^n(ax)}dx &  & = -\frac{1}{(n-1)a \cdot \sin^{n-1}(ax)}+C
     \end{align*}
 \end{small}
@@ -169,15 +214,15 @@ Given: $n, j \in \mathbb{N}$
                                                                                                    0  & \text{if } n\neq m \\
                                                                                                    L  & \text{if } n=m     \\
                                                                                                    2L & \text{if } n=m=0
-                                                                                               \end{cases}  \\
+                                                                                               \end{cases}   \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \sin\left(\frac{m\pi x}{L}\right) dx & =\begin{cases}
-                                                                                                   0 & \text{if }n\neq m    \\
+                                                                                                   0 & \text{if }n\neq m     \\
                                                                                                    L & \text{if } n=m\neq 0
                                                                                                \end{cases} \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \cos\left(\frac{m\pi x}{L}\right) dx & =0\;\;\forall\; n,m
 \end{align*}
 \begin{align*}
-    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0          \\
+    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0           \\
     x\sin(nx)\Big|_0^{2\pi} & =0 &  & x\cos(nx)\Big|_0^{2\pi}=2\pi\neq0
 \end{align*}
 \begin{align*}
@@ -283,7 +328,7 @@ Given: $n, j \in \mathbb{N}$
     f_{odd}=\frac{f(x)-f(-x)}{2}
 \end{gather*}
 
-\subsubsection{Lograithm}
+\subsubsection{Logarithms}
 \begin{align*}
     \ln(uv)                     & =\ln(u)+\ln(v) \\
     \ln\left(\frac{u}{v}\right) & =\ln(u)-\ln(v) \\
@@ -321,6 +366,18 @@ Helpful for removing factorials:
                  & $\varphi=\arccos\left(\frac{x}{r}\right)=\arcsin\left(\frac{y}{r}\right)=\tan\left(\frac{y}{x}\right)$ \\
     Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
                  & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 \end{tabular}
 
 \textbf{Operations}
@@ -352,22 +409,22 @@ Helpful for removing factorials:
 \end{equation*}
 \textbf{Solution for A}
 \begin{align*}
-    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)             \\
+    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)              \\
     A_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_1(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for B}
 \begin{align*}
-    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                \\
+    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                 \\
     B_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_2(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for C}
 \begin{align*}
-    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)             \\
+    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)              \\
     C_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_1(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 \textbf{Solution for D}
 \begin{align*}
-    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                \\
+    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                 \\
     D_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_2(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 
