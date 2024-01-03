@@ -585,12 +585,13 @@ the deflection $u(x,y,t)$ can be described by:
 \end{align*}
 This PDE can be solved by:
 \begin{align*}
-    u(x,y,t)   & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
+    u(x,y,t)     & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
     \\&\dots \sin\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)\\\\
-    f(x,y)     & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)             \\
-    B_{mn}     & = \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy                  \\\\
-    g(x,y)     & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
-    B_{mn}^{*} & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy
+    f(x,y)       & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)             \\
+    B_{mn}       & = \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy                  \\\\
+    g(x,y)       & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
+    B_{mn}^{*}   & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy \\
+    \lambda_{mn} & = c\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}
 \end{align*}
 
 \subsection{Well-posed and ill-posed problems}
@@ -699,7 +700,7 @@ The finite difference equation becomes:
     \frac{c^2}{h^2}(u_{i+1,j}-2u_{i,j}+u_{i-1,j})=\frac{1}{k^2}(u_{i,j+1}-2u_{i,j}+u_{i,j-1}) \; \Leftrightarrow \\
     u_{i,j+1}=2\left(1-\frac{c^2k^2}{h^2}\right)u_{i,j}+\frac{c^2k^2}{h^2}(u_{i+1,j}+u_{i-1,j})-u_{i,j-1}
 \end{gather*}
-Choosing $h$ and $k$ in such a way that $h=ck$, so that $1 - \frac{v^2k^2}{h^2} = 0$, the equation simplifies to
+Choosing $h$ and $k$ in such a way that $h=ck$, so that $1 - \frac{c^2k^2}{h^2} = 0$, the equation simplifies to
 \begin{equation*}
     u_{i,j+1}=u_{i+1,j}+u_{i-1,j}-u_{i,j-1}
 \end{equation*}
