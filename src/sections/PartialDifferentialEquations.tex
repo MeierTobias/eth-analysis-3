@@ -187,7 +187,7 @@ To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting sub
 \begin{align*}
      & v(x,t):= u(x,t) -w(x) \\
      & \begin{cases}
-           v_{tt}=c^2v_{xx}-w_x \\
+           v_{tt}=c^2v_{xx}     \\
            v(0,t)=u(0,t)-w(0)=0 \\
            v(L,t)=u(L,t)-w(L)=0 \\
            v(x,0)=u(x,0)-w(x)   \\
@@ -226,11 +226,14 @@ subsequently, $v(x,t)$ has homogeneous BC.
 \end{examplesection}
 
 \subsection{1D Wave Equation - d'Alembert}\label{ssec:1d_wave_Al}
-The \textit{D'Alembert} solution $u(x,t) = \phi(x+ct)+\psi(x-ct)$ is the general solution of the 1D wave equation $u_{tt}=c^2u_{xx}$ for $x \in \mathbb{R}$ and $t>0$. With the initial conditions
-\begin{align*}
-    u(x,0)   & = f(x) \\
-    u_t(x,0) & = g(x) \\
-\end{align*}
+The \textit{D'Alembert} solution $u(x,t) = \phi(x+ct)+\psi(x-ct)$ is the general solution to the 1D wave equation IVP.
+\begin{equation*}
+    \begin{cases}
+        u_{tt} = c^2u_{xx} & x \in \mathbb{R}, t \geq 0 \\
+        u(x,0) = f(x)      & x \in \mathbb{R}           \\
+        u_t(x,0) = g(x)    & x \in \mathbb{R}
+    \end{cases}
+\end{equation*}
 the \textit{D'Alembert} solution can be rewritten as following:
 \begin{equation*}
     u(x,t)=\frac{1}{2}\left[f(x+ct)+f(x-ct)\right]+\frac{1}{2c}\int_{x-ct}^{x+ct}g(s)ds
@@ -284,7 +287,8 @@ where $u(x_i,t_i)$ is
 \begin{equation*}
     \begin{cases}
         0,                                                                        & \forall (x_i,t_i) \in I \cup III \\
-        \text{full d'Alembert equation}                                           & \forall (x_i,t_i) \in II \cup V  \\
+        \text{full d'Alembert equation}                                           & \forall (x_i,t_i) \in II         \\
+        \frac{1}{2c}\int_{a}^{b}g(s)ds                                            & \forall (x_i,t_i) \in V          \\
         \frac{1}{2}\left[f(x_i+ct_i)\right]+\frac{1}{2c}\int_{a}^{x_i+ct_i}g(s)ds & \forall (x_i,t_i) \in IV         \\
         \frac{1}{2}\left[f(x_i-ct_i)\right]+\frac{1}{2c}\int_{x_i-ct_i}^{b}g(s)ds & \forall (x_i,t_i) \in VI
     \end{cases}
@@ -469,7 +473,7 @@ can be solved with the \textbf{Fourier Series Ansatz} obtained from separation o
     u(x,y)=\sum_{n=1}^{\infty}A_{n}\sin(\frac{n\pi}ax)\sinh(\frac{n\pi}ay) \\
     A_{n}=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^{a}f(x)\sin(\frac{n\pi}{a}x)dx
 \end{align*}
-\textbf{Hint:} If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
+\textbf{Hints:} If the prescribed boundary condition is given on an edge other than $u(x,b)$, a variable transform is necessary. If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
 individual solutions for each boundary can be superpositioned. (See Appendix~\ref{diri_superpos})
 
 \subsubsection{2D Dirichlet Problem with Radial Symmetry}\label{sssec:laplace_dir_radial}

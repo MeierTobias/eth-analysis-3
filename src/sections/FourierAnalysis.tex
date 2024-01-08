@@ -16,7 +16,7 @@ Let $f(x)=f(x+P),\; g(x)=g(x+Q),\; h(x)=h(x+Q)$ be periodic functions.
     \item $a\cdot g(x)+b\cdot h(x)=a\cdot g(x+Q)+b\cdot h(x+Q)$ \\is $Q$ periodic, $a, b \in \mathbb{R}$
     \item $f(x+P)+g(x+Q)$ is periodic for the LCM (KGV) of $P$ and $Q$\\ 
     - the LCM is called fundamental period \\ 
-    - the sum is only periodic if $\frac{P}{Q}\in \mathbb{R}$
+    - the sum is only periodic if $\frac{P}{Q}\in \mathbb{Q}$
     \item if $f'(x)=f'(x+P)$ then $f(x)=f(x+P)$ 
 \end{enumerate}
 \textbf{Boundedness}\\
@@ -30,9 +30,9 @@ Let $f(x)$ be a function.
 
 \subsection{Trigonometric System}
 The collection
-\begin{equation}
+\begin{equation*}
     \left\{\sin\left(\frac{n\pi}Lx\right),\cos\left(\frac{n\pi}Lx\right):n\in\mathbb{Z},n\geq0\right\}
-\end{equation}
+\end{equation*}
 is called the $trigonometric$ $system$. The functions in the trigonometric system are $2L$ periodic. A series constructed from these functions is $2L$ periodic too if it converges.
 \subsubsection{Orthogonality Properties}
 \begin{align*}
@@ -42,7 +42,7 @@ is called the $trigonometric$ $system$. The functions in the trigonometric syste
 \end{align*}
 \subsection{Fourier Series}
 For the Fourier series to exist and for it to converge to $f(t)$, $f(t)$ has to be defined and $2L$-periodic on $[-L,L]$.
-For every discontinuity, the \textbf{Dirichlet Theorem} has to hold. $a_0,a_n,b_b\in \mathbb{R}$
+For every discontinuity, the \textbf{Dirichlet Theorem} has to hold. If a function $f(t)$ has only a discrete set of discontinuities and the Dirichlet Theorem holds for these points, $f(t)$ is called well behaved. $a_0,a_n,b_b\in \mathbb{R}$
 \begin{align*}
     f(x)  & =a_0+\sum_{n=1}^\infty\left(a_n\cos\left(\frac{n\pi}Lx\right)+b_n\sin\left(\frac{n\pi}Lx\right)\right) \\ \\
     a_{0} & =\frac{1}{2L}\int_{-L}^{L}f(x)dx                                                                       \\ \\
