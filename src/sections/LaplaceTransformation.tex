@@ -10,14 +10,14 @@ Inverse Laplace transform:
 \begin{equation*}
     F(s)\:\Laplace\:f(t)=\mathcal{L}^{-1}[F(s)](t)
 \end{equation*}
-\textbf{Remarks} 
+\textbf{Remarks}
 \begin{itemize}
-    \item Using the Laplace Transform solutions of IVP/BVP can be found at once without first searching for the general solution and then the particular solution. 
+    \item The Laplace Transform is a useful tool to solve ODE's with given initial conditions (IVP). See Section~\ref{ssec:laplaceDiff}.
     \item Two functions defined on $\mathbb{R}_{0^+}$ that have the same Laplace Transform can differ in single points but not on an interval.
 \end{itemize}
 
 \subsubsection{Growth Restriction}
-If $f$ is piecewise continuous and there exist $M, k\in \mathbb{R}_{0^+}$ such that 
+If $f$ is piecewise continuous and there exist $M, k\in \mathbb{R}_{0^+}$ such that
 \begin{equation*}
     \left|f(t)\right|\leq Me^{kt}
 \end{equation*}
@@ -65,7 +65,7 @@ Moreover
     \end{equation*}
 \end{examplesection}
 
-\subsection{Differentiation}
+\subsection{Differentiation}\label{ssec:laplaceDiff}
 Let $f, f', \dots, f^{(n-1)}$ be continuous functions for all $t \geq 0$. Assume that $f^{(n)}$ is piecewise continuous on every finite subinterval in $[0;1)$. Then % chktex 9
 \begin{equation*}
     \mathcal{L}[f^{(n)}](s)=s^n\mathcal{L}[f](s)-\sum_{j=0}^{n-1}s^{n-1-j}f^{(j)}(0),\text{ for every }n\geq1
@@ -230,7 +230,7 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
 \begin{align*}
     f(t-a)u(t-a) & \:\laplace\: e^{-as}F(s)                \\
     f(t)u(t-a)   & \:\laplace\: e^{-as}\mathcal{L}[f(t+a)] \\
-    f(t)u(t)   & \:\laplace\: \mathcal{L}[f]
+    f(t)u(t)     & \:\laplace\: \mathcal{L}[f]
 \end{align*}
 \begin{examplesection}[Example]
     \setlength{\abovedisplayskip}{0pt}
@@ -376,15 +376,15 @@ If the initial values are given like this $y(a),y'(a),\dots$:
     \cos^{2}(kt)                    \;                      & \laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}                             \\
     \sinh(kt)                       \;                      & \laplace\; \frac{k}{s^2-k^2}                                        \\
     \cosh(kt)                       \;                      & \laplace\; \frac{s}{s^2-k^2}                                        \\
-    e^{at}\sin(kt)                  \;                      & \laplace\; \frac{k}{{(s-a)}^2+k^2}                                    \\
-    e^{at}\cos(kt)                  \;                      & \laplace\; \frac{s-a}{{(s-a)}^2+k^2}                                  \\
-    e^{at}\sinh(kt)                 \;                      & \laplace\; \frac{k}{{(s-a)}^2-k^2}                                    \\
-    e^{at}\cosh(kt)                 \;                      & \laplace\; \frac{{(s-a)}}{{(s-a)}^2-k^2}                                \\
-    t\cdot \sin(kt)                 \;                      & \laplace\; \frac{2ks}{{(s^2+k^2)}^2}                                  \\
-    t\cdot \cos(kt)                 \;                      & \laplace\; \frac{s^2-k^2}{{(s^2+k^2)}^2}                              \\
-    t\cdot \sin(t)\cos(t)           \;                      & \laplace\; \frac{2s}{{(s^2+4)}^2}                                     \\
-    t\cdot \sinh(kt)                \;                      & \laplace\; \frac{2ks}{{(s^2-k^2)}^2}                                  \\
-    t\cdot \cosh(kt)                \;                      & \laplace\; \frac{s^2-k^2}{{(s^2-k^2)}^2}                              \\
+    e^{at}\sin(kt)                  \;                      & \laplace\; \frac{k}{{(s-a)}^2+k^2}                                  \\
+    e^{at}\cos(kt)                  \;                      & \laplace\; \frac{s-a}{{(s-a)}^2+k^2}                                \\
+    e^{at}\sinh(kt)                 \;                      & \laplace\; \frac{k}{{(s-a)}^2-k^2}                                  \\
+    e^{at}\cosh(kt)                 \;                      & \laplace\; \frac{{(s-a)}}{{(s-a)}^2-k^2}                            \\
+    t\cdot \sin(kt)                 \;                      & \laplace\; \frac{2ks}{{(s^2+k^2)}^2}                                \\
+    t\cdot \cos(kt)                 \;                      & \laplace\; \frac{s^2-k^2}{{(s^2+k^2)}^2}                            \\
+    t\cdot \sin(t)\cos(t)           \;                      & \laplace\; \frac{2s}{{(s^2+4)}^2}                                   \\
+    t\cdot \sinh(kt)                \;                      & \laplace\; \frac{2ks}{{(s^2-k^2)}^2}                                \\
+    t\cdot \cosh(kt)                \;                      & \laplace\; \frac{s^2-k^2}{{(s^2-k^2)}^2}                            \\
     \sin(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia))                       \\
     \cos(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia))                        \\
     \sinh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a))                          \\
