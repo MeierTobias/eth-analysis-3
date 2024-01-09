@@ -507,3 +507,47 @@ Depending on the type and order of the fraction, solve one of the following by h
     A    & = f(x)-\frac{B}{x-a}+\frac{C}{x-b}
 \end{align*}\\
 These methods can be adapted to all of the types of fractions mentioned in the previous subsection.
+
+\subsection{Ordinary Differential Equations (ODEs)}
+\subsubsection{Inhomogeneous Linear 1st Order ODE}
+The inhomogeneous linear 1st order ODE
+\begin{align*}
+    u'(x) & =a(x) \cdot u(x) + p(x)
+\end{align*}\\
+has the homogeneous Solution
+\begin{align*}
+    u_h(x) & = Ce^{A(x)} \\
+    A(x)   & = \int a(x) \,dx 
+\end{align*}\\
+and the particular Solution
+\begin{align*}
+    u_p(x) & = C(x) \cdot e^{A(x)} \\
+    C(x) & = \int p(x)\cdot e^{-A(x)} \,dx 
+\end{align*}
+
+\subsubsection{Homogeneous Linear 2nd Order ODE with Constant Coefficients}
+For the ODE
+\begin{align*}
+    a_2u''(x)+a_1u'(x)+a_0u(x)=0
+\end{align*}\\
+the characteristical polynomial is given by
+\begin{align*}
+    p(\lambda)=a_2\lambda^2+a_1\lambda+a_0
+\end{align*}\\
+\textbf{Solutions}\\
+Depending on the zeros of the characteristical polynomial the solution Ansatz varies:\\
+Two distinct real zeros $\lambda_1, \lambda_2$
+\begin{align*}
+    u(x)&=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}
+\end{align*}\\
+One 2nd order zero $\lambda$
+\begin{align*}
+    u(x)&=\left(C_1+xC_2\right)e^{\lambda x}
+\end{align*}\\
+Two complex conjugated zeros $\lambda=\sigma\pm i\omega$
+\begin{align*}
+    u(x)&=e^{\sigma x}\left(C_1\cos(\omega x)+C_2\sin(\omega x)\right)
+\end{align*}
+
+
+
