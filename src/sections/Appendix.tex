@@ -48,9 +48,9 @@ Given: $n, j \in \mathbb{N}$
     \tan\left(\frac x2\right)      & =\frac{1-\cos(x)}{\sin(x)}=\frac{\sin(x)}{1+\cos(x)}
 \end{align*}
 \begin{align*}
-    \sin(x)\cos(y)      & =\frac12\Bigl[\sin(x+y)\;+\;\sin(x-y)\Bigr]   \\
-    \sin(x)\sin(y)      & =\frac12\Bigl[\cos(x-y)\;-\;\cos(x+y)\Bigr]   \\
-    \cos(x)\cos(y)      & =\frac12\Bigl[\cos(x+y)\;+\;\cos(x-y)\Bigr]   \\
+    \sin(x)\cos(y)      & =\frac12\Bigl[\sin(x+y)\;+\;\sin(x-y)\Bigr] \\
+    \sin(x)\sin(y)      & =\frac12\Bigl[\cos(x-y)\;-\;\cos(x+y)\Bigr] \\
+    \cos(x)\cos(y)      & =\frac12\Bigl[\cos(x+y)\;+\;\cos(x-y)\Bigr] \\
     \sin(x)\pm\sin(y)   & =2\sin\frac{x\pm y}{2}\cos\frac{x \mp y}{2} \\
     \cos(x)+\cos(y)     & =2\cos\frac{x+y}{2}\cos\frac{x-y}{2}        \\
     \cos(x)-\cos(y)     & =-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}       \\
@@ -78,19 +78,19 @@ Given: $n, j \in \mathbb{N}$
     \tanh(x)   & =\frac{e^{x}-e^{-x}}{(e^{x}+e^{-x})}      \\
     e^{ix}     & = \cos(x) + i \cdot \sin(x)               \\
     e^{k\pi i} & = \begin{cases}
-                       1  & k = 2n      \\
+                       1  & k = 2n     \\
                        -1 & k = 2n + 1
                    \end{cases} \quad n \in \mathbb{N}
 \end{align*}
 
 \subsubsection{Inverse functions}
 \begin{align*}
-    \sin(\arccos(x))         & = \sqrt{1-x^2}                                                 \\
-    \cos(\arcsin(x))         & =\sqrt{1-x^2}                                                  \\
-    \sin(\arctan(x))         & =\frac{x}{\sqrt{x^2+1}}                                        \\
-    \cos(\arctan(x))         & =\frac{1}{\sqrt{x^2+1}}                                        \\
-    \tan(\arcsin(x))         & =x \cdot {(1-x)}^{-\frac{1}{4}}                                \\
-    \tan(\arccos(x))         & =x^{-1} \cdot {(1-x)}^{\frac{1}{4}}                            \\
+    \sin(\arccos(x))                         & = \sqrt{1-x^2}                                                 \\
+    \cos(\arcsin(x))                         & =\sqrt{1-x^2}                                                  \\
+    \sin(\arctan(x))                         & =\frac{x}{\sqrt{x^2+1}}                                        \\
+    \cos(\arctan(x))                         & =\frac{1}{\sqrt{x^2+1}}                                        \\
+    \tan(\arcsin(x))                         & =x \cdot {(1-x)}^{-\frac{1}{4}}                                \\
+    \tan(\arccos(x))                         & =x^{-1} \cdot {(1-x)}^{\frac{1}{4}}                            \\
     \operatorname{arcsinh}(x)                & =\ln(x+\sqrt{x^2+1})                                           \\
     \operatorname{arccosh}(x)                & =\ln(x+\sqrt{x^2-1})                                           \\
     \operatorname{arctanh}(x)                & =\frac{1}{2}\cdot \ln(\frac{1+x}{1-x}); \quad \vert x\vert < 1 \\
@@ -155,21 +155,21 @@ Given: $n, j \in \mathbb{N}$
 
 \textbf{Sums and Constants}
 \begin{align*}
-    \int_a^b\left(f\pm g\right)dx & =\int_a^b f\;dx\pm\int_a^b g\;dx        \\
-    \int_a^b c\cdot f\;dx          & =c\int_a^b f\;dx\quad(c\text{ constant})
+    \int_a^b\left(f\pm g\right)dx & =\int_a^b f\;dx\pm\int_a^b g\;dx         \\
+    \int_a^b c\cdot f\;dx         & =c\int_a^b f\;dx\quad(c\text{ constant})
 \end{align*}
 
 \textbf{Partial Integration}
 \begin{align*}
-     & \int_a^b f'\cdot g\left.dx=(f\cdot g)\right|_a^b-\int_a^b f\cdot g'\;dx         \\
+     & \int_a^b f'\cdot g\left.dx=(f\cdot g)\right|_a^b-\int_a^b f\cdot g'\;dx        \\
      & \int_a^b f\cdot g\left.dx=(F\cdot g)\right|_a^b-\int_a^b F\cdot g^{\prime}\;dx
 \end{align*}
 
 \textbf{Substitution}
 \begin{align*}
-     & \text{Substitution }u=g(x){:}                                           \\
-     & \int_a^b f(g(x))g^{\prime}(x)\;dx=\int_{g(a)}^{g(b)}f(u)\;du            \\\\
-     & \text{Substitution }x=g(y){:}                                           \\
+     & \text{Substitution }u=g(x){:}                                          \\
+     & \int_a^b f(g(x))g^{\prime}(x)\;dx=\int_{g(a)}^{g(b)}f(u)\;du           \\\\
+     & \text{Substitution }x=g(y){:}                                          \\
      & \int_a^b f(x)\;dx=\int_{g^{-1}(a)}^{g^{-1}(b)}f(g(y))g^{\prime}(y)\;dy
 \end{align*}
 \textbf{Common Substitutions}:\par
@@ -194,59 +194,59 @@ Given: $n, j \in \mathbb{N}$
 \subsubsection{Integration of trigonometric functions}
 \begin{small}
     \begin{align*}
-         & \int \sin(x) dx                &  & = -\cos(x) + C                                                  \\
-         & \int \cos(x) dx                &  & = \sin(x) + C                                                   \\
-         & \int \tan(x) dx                &  & = -\ln\vert\cos(x)\vert +C                                      \\
-         & \int \cot(x)dx                 &  & = \ln\vert\sin(x)\vert +C                                       \\
-         & \int \sin^2(ax) dx             &  & = \frac{x}{2}-\frac{\sin(2ax)}{4a}+C                            \\
-         & \int \cos^2(ax) dx             &  & = \frac{x}{2}+\frac{\sin(2ax)}{4a}+C                            \\
-         & \int \tan^2(ax) dx             &  & = \frac{1}{a}(-ax+\tan(ax))+C                                   \\
-         & \int \sin^3(x)dx               &  & = \frac{1}{12}(\cos(3x)-9\cos(x))+C                             \\
-         & \int \cos^3(x)dx               &  & = \frac{1}{12}(9\sin(x)+\sin(3x))+C                             \\
-         & \int \tan^3(x)dx               &  & = \frac{\sec^2(x)}{2}+\ln(\cos(x))+C                            \\
-         & \int \sin^4(x)dx               &  & = \frac{1}{32}(12x-8\sin(2x)+\sin(4x))+C                        \\
-         & \int \cos^4(x)dx               &  & = \frac{1}{32}(12x+8\sin(2x)+\sin(4x))+C                        \\
-         & \int \tan^4(x)dx               &  & = x+\frac{1}{3}\tan(x)(\sec^2(x)-4)+C                           \\
-         & \int \sin^n(x) dx              &  & = -\frac{1}{n}\sin^{n-1}(x)\cos(x) \dots                        \\
-         &                                &  & \qquad +\frac{n-1}{n}\int \sin^{n-2}(x) dx; \quad n\geq 2       \\
-         & \int \cos^n(x) dx              &  & = \frac{1}{n}\sin(x)\cos^{n-1}(x) \dots                         \\
-         &                                &  & \qquad +\frac{n-1}{n}\int \cos^{n-2}(x) dx; \quad n\geq 2       \\
-         & \int \sin^{\frac{3}{2}}(2x) dx &  & = -\frac{1}{2}\cos(2x)+C                                        \\
-         & \int \cos^{\frac{3}{2}}(2x) dx &  & = \sin(x)\cos(x)+C                                              \\
-         & \int x \cdot \sin(ax) dx       &  & = \frac{\sin(ax)}{a^2}-\frac{x \cdot \cos(ax)}{a}+C             \\
-         & \int x \cdot \cos(ax) dx       &  & = \frac{\cos(ax)}{a^2}+\frac{x \cdot \sin(ax)}{a}+C             \\
-         & \int x^2 \sin(ax) dx           &  & = \frac{1}{a^3} [-a^2x^2\cos(ax) + 2 \cdot \cos(ax) \dots       \\
-         &                                &  & \qquad + 2 ax \sin(ax)]+C                                       \\
-         & \int x^2 \cos(ax) dx           &  & = \frac{1}{a^3} [a^2x^2\sin(ax) - 2 \cdot \sin(ax) \dots        \\
-         &                                &  & \qquad + 2ax \cos(ax)]+C                                        \\
-         & \int e^x \sin(x) dx            &  & = \frac{e^x}{2}(\sin(x) - \cos(x))+C                            \\
-         & \int e^x \cos(x) dx            &  & = \frac{e^x}{2}(\sin(x) + \cos(x))+C                            \\
-         & \int e^{ax} \sin(bx)dx         &  & = \frac{e^{ax}}{a^2+b^2}[a\cdot \sin(bx)+b\cdot \cos(bx)]+C     \\
-         & \int e^{ax} \cos(bx)dx         &  & = \frac{e^{ax}}{a^2+b^2}[a\cdot \cos(bx)+b\cdot \sin(bx)]+C     \\
-         & \int \frac{1}{\sin(x)}dx       &  & = \ln\left| \tan\frac{x}{2}\right| +C                           \\
-         & \int \frac{1}{\cos(x)}dx       &  & = \ln\left| \tan\left(\frac{x}{2}+\frac{\pi}{4}\right)\right|+C \\
-         & \int \frac{2}{\tan(x)}dx       &  & = \ln\vert \sin\; x\vert +C                                     \\
-         & \int \frac{1}{\sin^2(x)}dx     &  & = -\cot(x)+C                                                    \\
-         & \int \frac{1}{\cos^2(x)}dx     &  & = \tan(x)+C                                                     \\
-         & \int \tan(ax) dx               &  & = -\frac{1}{a} \cdot \ln{\mid \cos(ax) \mid }+C                 \\
-         & \int \arcsin (x) dx            &  & = x \cdot \arcsin(x)+\sqrt{1-x^2}+C                             \\
-         & \int \arccos (x) dx            &  & = x \cdot \arccos(x)-\sqrt{1-x^2}+C                             \\
-         & \int \arctan (x) dx            &  & = x \cdot \arctan(x)-\frac{1}{2} \cdot \ln(1+x^2)+C             \\
-         & \int \sinh(x)dx                &  & = \cosh(x)+C                                                    \\
-         & \int \cosh(x)dx                &  & = \sinh(x)+C                                                    \\
-         & \int \tanh(x)dx                &  & = \ln(\cosh(x)) +C                                              \\
-         & \int \coth(x)dx                &  & = \ln(\sinh(x))+C                                               \\
-         & \int \operatorname{arcsinh}(x)dx               &  & = x \cdot \operatorname{arcsinh}(x) - \sqrt{x^2+1}+C                            \\
-         & \int \operatorname{arccosh}(x)dx               &  & = x \cdot \operatorname{arccosh}(x) - \sqrt{x^2-1}+C                            \\
-         & \int \operatorname{arctanh}(x)dx               &  & = x \cdot \operatorname{arctanh}(x) +\frac{1}{2}\ln(1-x^2)+C
+         & \int \sin(x) dx                  &  & = -\cos(x) + C                                                  \\
+         & \int \cos(x) dx                  &  & = \sin(x) + C                                                   \\
+         & \int \tan(x) dx                  &  & = -\ln\vert\cos(x)\vert +C                                      \\
+         & \int \cot(x)dx                   &  & = \ln\vert\sin(x)\vert +C                                       \\
+         & \int \sin^2(ax) dx               &  & = \frac{x}{2}-\frac{\sin(2ax)}{4a}+C                            \\
+         & \int \cos^2(ax) dx               &  & = \frac{x}{2}+\frac{\sin(2ax)}{4a}+C                            \\
+         & \int \tan^2(ax) dx               &  & = \frac{1}{a}(-ax+\tan(ax))+C                                   \\
+         & \int \sin^3(x)dx                 &  & = \frac{1}{12}(\cos(3x)-9\cos(x))+C                             \\
+         & \int \cos^3(x)dx                 &  & = \frac{1}{12}(9\sin(x)+\sin(3x))+C                             \\
+         & \int \tan^3(x)dx                 &  & = \frac{\sec^2(x)}{2}+\ln(\cos(x))+C                            \\
+         & \int \sin^4(x)dx                 &  & = \frac{1}{32}(12x-8\sin(2x)+\sin(4x))+C                        \\
+         & \int \cos^4(x)dx                 &  & = \frac{1}{32}(12x+8\sin(2x)+\sin(4x))+C                        \\
+         & \int \tan^4(x)dx                 &  & = x+\frac{1}{3}\tan(x)(\sec^2(x)-4)+C                           \\
+         & \int \sin^n(x) dx                &  & = -\frac{1}{n}\sin^{n-1}(x)\cos(x) \dots                        \\
+         &                                  &  & \qquad +\frac{n-1}{n}\int \sin^{n-2}(x) dx; \quad n\geq 2       \\
+         & \int \cos^n(x) dx                &  & = \frac{1}{n}\sin(x)\cos^{n-1}(x) \dots                         \\
+         &                                  &  & \qquad +\frac{n-1}{n}\int \cos^{n-2}(x) dx; \quad n\geq 2       \\
+         & \int \sin^{\frac{3}{2}}(2x) dx   &  & = -\frac{1}{2}\cos(2x)+C                                        \\
+         & \int \cos^{\frac{3}{2}}(2x) dx   &  & = \sin(x)\cos(x)+C                                              \\
+         & \int x \cdot \sin(ax) dx         &  & = \frac{\sin(ax)}{a^2}-\frac{x \cdot \cos(ax)}{a}+C             \\
+         & \int x \cdot \cos(ax) dx         &  & = \frac{\cos(ax)}{a^2}+\frac{x \cdot \sin(ax)}{a}+C             \\
+         & \int x^2 \sin(ax) dx             &  & = \frac{1}{a^3} [-a^2x^2\cos(ax) + 2 \cdot \cos(ax) \dots       \\
+         &                                  &  & \qquad + 2 ax \sin(ax)]+C                                       \\
+         & \int x^2 \cos(ax) dx             &  & = \frac{1}{a^3} [a^2x^2\sin(ax) - 2 \cdot \sin(ax) \dots        \\
+         &                                  &  & \qquad + 2ax \cos(ax)]+C                                        \\
+         & \int e^x \sin(x) dx              &  & = \frac{e^x}{2}(\sin(x) - \cos(x))+C                            \\
+         & \int e^x \cos(x) dx              &  & = \frac{e^x}{2}(\sin(x) + \cos(x))+C                            \\
+         & \int e^{ax} \sin(bx)dx           &  & = \frac{e^{ax}}{a^2+b^2}[a\cdot \sin(bx)+b\cdot \cos(bx)]+C     \\
+         & \int e^{ax} \cos(bx)dx           &  & = \frac{e^{ax}}{a^2+b^2}[a\cdot \cos(bx)+b\cdot \sin(bx)]+C     \\
+         & \int \frac{1}{\sin(x)}dx         &  & = \ln\left| \tan\frac{x}{2}\right| +C                           \\
+         & \int \frac{1}{\cos(x)}dx         &  & = \ln\left| \tan\left(\frac{x}{2}+\frac{\pi}{4}\right)\right|+C \\
+         & \int \frac{2}{\tan(x)}dx         &  & = \ln\vert \sin\; x\vert +C                                     \\
+         & \int \frac{1}{\sin^2(x)}dx       &  & = -\cot(x)+C                                                    \\
+         & \int \frac{1}{\cos^2(x)}dx       &  & = \tan(x)+C                                                     \\
+         & \int \tan(ax) dx                 &  & = -\frac{1}{a} \cdot \ln{\mid \cos(ax) \mid }+C                 \\
+         & \int \arcsin (x) dx              &  & = x \cdot \arcsin(x)+\sqrt{1-x^2}+C                             \\
+         & \int \arccos (x) dx              &  & = x \cdot \arccos(x)-\sqrt{1-x^2}+C                             \\
+         & \int \arctan (x) dx              &  & = x \cdot \arctan(x)-\frac{1}{2} \cdot \ln(1+x^2)+C             \\
+         & \int \sinh(x)dx                  &  & = \cosh(x)+C                                                    \\
+         & \int \cosh(x)dx                  &  & = \sinh(x)+C                                                    \\
+         & \int \tanh(x)dx                  &  & = \ln(\cosh(x)) +C                                              \\
+         & \int \coth(x)dx                  &  & = \ln(\sinh(x))+C                                               \\
+         & \int \operatorname{arcsinh}(x)dx &  & = x \cdot \operatorname{arcsinh}(x) - \sqrt{x^2+1}+C            \\
+         & \int \operatorname{arccosh}(x)dx &  & = x \cdot \operatorname{arccosh}(x) - \sqrt{x^2-1}+C            \\
+         & \int \operatorname{arctanh}(x)dx &  & = x \cdot \operatorname{arctanh}(x) +\frac{1}{2}\ln(1-x^2)+C
     \end{align*}
     \begin{align*}
-         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                  \\
-         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                     \\
-         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                    \\
-         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C                \\
-         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C            \\
-         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C           \\
+         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                 \\
+         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                    \\
+         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                   \\
+         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C               \\
+         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C           \\
+         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C          \\
          & \int \frac{\cos(ax)}{\sin^n(ax)}dx &  & = -\frac{1}{(n-1)a \cdot \sin^{n-1}(ax)}+C
     \end{align*}
 \end{small}
@@ -257,15 +257,15 @@ Given: $n, j \in \mathbb{N}$
                                                                                                    0  & \text{if } n\neq m \\
                                                                                                    L  & \text{if } n=m     \\
                                                                                                    2L & \text{if } n=m=0
-                                                                                               \end{cases}   \\
+                                                                                               \end{cases}  \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \sin\left(\frac{m\pi x}{L}\right) dx & =\begin{cases}
-                                                                                                   0 & \text{if }n\neq m     \\
+                                                                                                   0 & \text{if }n\neq m    \\
                                                                                                    L & \text{if } n=m\neq 0
                                                                                                \end{cases} \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \cos\left(\frac{m\pi x}{L}\right) dx & =0\;\;\forall\; n,m
 \end{align*}
 \begin{align*}
-    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0           \\
+    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0          \\
     x\sin(nx)\Big|_0^{2\pi} & =0 &  & x\cos(nx)\Big|_0^{2\pi}=2\pi\neq0
 \end{align*}
 \begin{align*}
@@ -327,9 +327,9 @@ Given: $n, j \in \mathbb{N}$
          & \int \frac{1}{ax^2+bx+c}dx            &  & =\frac{2\arctan(\frac{2ax+b}{\sqrt{4ac-b^2}})}{\sqrt{4ac-b^2}}+C                  \\
          & \int \frac{1}{\sqrt{1-x^2}}dx         &  & =\arcsin(x)+C                                                                     \\
          & \int \frac{-1}{\sqrt{1-x^2}}dx        &  & =\arccos(x)+C                                                                     \\
-         & \int \frac{1}{1-x^2}dx                &  & =\operatorname{arctanh}(x)=\log(\sqrt{\frac{1+x}{1-x}})+C, \vert x \vert < 1                      \\
-         & \int \frac{1}{\sqrt{x^2+1}}dx         &  & =\operatorname{arcsinh}(x)=\log(x+\sqrt{x^2+1})+C                                                 \\
-         & \int \frac{1}{\sqrt{x^2-1}}dx         &  & =\operatorname{arccosh}(x)=\log(x+\sqrt{x^2-1})+C, 1 \leq x                                       \\
+         & \int \frac{1}{1-x^2}dx                &  & =\operatorname{arctanh}(x)=\log(\sqrt{\frac{1+x}{1-x}})+C, \vert x \vert < 1      \\
+         & \int \frac{1}{\sqrt{x^2+1}}dx         &  & =\operatorname{arcsinh}(x)=\log(x+\sqrt{x^2+1})+C                                 \\
+         & \int \frac{1}{\sqrt{x^2-1}}dx         &  & =\operatorname{arccosh}(x)=\log(x+\sqrt{x^2-1})+C, 1 \leq x                       \\
          & \int e^{kx}dx                         &  & =\frac{1}{k}e^{kx}+C                                                              \\
          & \int a^{kx}dx                         &  & =\frac{1}{k\cdot \ln(a)}a^{kx}+C                                                  \\
          & \int e^{kx}\sin(ax+b)dx               &  & =\frac{e^{kx}}{a^2+k^2}\left(k\sin(ax+b)-a\cos(ax+b)\right)+C                     \\
@@ -409,29 +409,6 @@ Helpful for removing factorials:
                  & $\varphi=\arccos\left(\frac{x}{r}\right)=\arcsin\left(\frac{y}{r}\right)=\tan\left(\frac{y}{x}\right)$ \\
     Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
                  & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 \end{tabular}
 
 \textbf{Operations}
@@ -464,22 +441,22 @@ Source: Summary PDEs by Steivan Claglüna 2018, csteivan@ethz.ch\\
 \end{equation*}
 \textbf{Solution for A}
 \begin{align*}
-    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)              \\
+    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)             \\
     A_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_1(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for B}
 \begin{align*}
-    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                 \\
+    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                \\
     B_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_2(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for C}
 \begin{align*}
-    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)              \\
+    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)             \\
     C_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_1(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 \textbf{Solution for D}
 \begin{align*}
-    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                 \\
+    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                \\
     D_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_2(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 
@@ -507,3 +484,221 @@ Depending on the type and order of the fraction, solve one of the following by h
     A    & = f(x)-\frac{B}{x-a}+\frac{C}{x-b}
 \end{align*}\\
 These methods can be adapted to all of the types of fractions mentioned in the previous subsection.
+
+\subsection{Ordinary Differential Equations (ODEs)}
+\subsubsection{Inhomogeneous Linear 1st Order ODE}
+The solution to an inhomogeneous linear 1st order ODE
+\begin{align*}
+    u'(x) & =a(x) \cdot u(x) + s(x)
+\end{align*}
+can be found by superposition of the homogeneous $u_h$ and particular $u_p$ solution.
+\begin{equation*}
+    u(x) = u_h(x) + u_p(x)
+\end{equation*}
+with
+\begin{align*}
+    u_h(x) & = Ce^{A(x)} \qquad C \in \mathbb{R} \\
+    A(x)   & = \int a(x) \,dx
+\end{align*}
+and
+\begin{align*}
+    u_p(x) & = S(x) \cdot e^{A(x)}           \\
+    S(x)   & = \int s(x)\cdot e^{-A(x)} \,dx
+\end{align*}
+
+\hrule{}
+
+Solutions to some common linear 1st order ODEs
+\begin{align*}
+    u'(x) & = a \cdot u(x)     & \Rightarrow & \quad u(x)=Ce^{ax}             &  & \\
+    u'(x) & = a \cdot u(x) + b & \Rightarrow & \quad u(x)=Ce^{ax}-\frac{b}{a} &  & \\
+    u'(x) & = f(x) \cdot u(x)  & \Rightarrow & \quad u(x) = Ce^{F(x)}         &  &
+\end{align*}
+with
+\begin{equation*}
+    a,b,C \in \mathbb{R} \quad \text{and} \quad F(x) = \int f(x)dx
+\end{equation*}
+
+\begin{align*}
+    u'(x) = -a\cdot u(x) & + \sin(\omega x)                                                                    \\
+                         & \Rightarrow \: u(x)=Ce^{-ax}+\frac{1}{\sqrt{a^2 + \omega^2}}\sin(\omega x + \delta)
+\end{align*}
+with
+\begin{equation*}
+    a, C \in \mathbb{R} \quad \text{and} \quad  \delta = \arctan\left(\frac{-\omega}{a}\right)
+\end{equation*}
+
+
+\subsubsection{Homogeneous Linear n-th Order ODE with Constant Coefficients}\label{ssec:homLinNODE}
+To solve an ODE of the structure
+\begin{equation*}
+    a_n \frac{d^n}{dx^n} u(x) + a_{n-1} \frac{d^{n-1}}{dx^{n-1}} u(x) + \cdots + a_1 \frac{d}{dx} u(x) + a_0 u(x) = 0
+\end{equation*}
+\begin{enumerate}
+    \item Find the roots ($\lambda$'s) of the characteristic polynomial
+          \begin{equation*}
+              a_n\lambda^n + a_{n-1}\lambda^{n-1} + \cdots + a_1\lambda + a_0 = 0
+          \end{equation*}
+    \item For each root determine the fundamental system (i - iii)
+          \begin{equation*}
+              \{u_1(x), u_2(x), \ldots , u_n(x)\}
+          \end{equation*}
+          \begin{enumerate}[label= (\roman*)]
+              \item \textbf{Single real root}
+                    \begin{equation*}
+                        \text{FS: } \{u_1(x)=e^{\lambda_1 x}\}
+                    \end{equation*}
+              \item \textbf{Multiple real root}
+                    \begin{gather*}
+                        \lambda_1 = \lambda_2 = \cdots = \lambda_m = a \\
+                        \text{FS: } \{u_1(x)=e^{ax}, u_2(x)=xe^{ax}, u_3(x)=x^2e^{ax}, \ldots \\
+                        u_m(x) = x^{m-1} e^{ax} \}
+                    \end{gather*}
+              \item \textbf{Complex root}
+                    \begin{gather*}
+                        \lambda_1 = a \pm b i \\
+                        \text{FS: } \{u_1(x)=e^{ax}\cos(bx), u_2(x)=e^{ax}\sin(bx)\}
+                    \end{gather*}
+          \end{enumerate}
+    \item Superposition of general solution
+          \begin{equation*}
+              u(x) = C_1 u_1(x) + C_2 u_2(x) + \cdots + C_n u_n(x)
+          \end{equation*}
+\end{enumerate}
+
+\begin{examplesection}[Example: n-th order homogeneous ODE]
+    4-th order ODE
+    \begin{equation*}
+        u^{(4)} - 6u''' + 12u'' -10u' + 3u = 0 % chktex 23
+    \end{equation*}
+    \begin{enumerate}
+        \item Roots of the characteristic polynomial
+              \begin{gather*}
+                  \lambda^4 - 6\lambda^3 + 12\lambda^2 - 10\lambda + 3 = 0\\
+                  \text{roots: }\{ \lambda_{1,2,3} = 1, \lambda_4 = 3\}
+              \end{gather*}
+        \item Fundamental system
+              \begin{equation*}
+                  \text{FS: } \{e^x, xe^x, x^2e^x, e^{3x}\}
+              \end{equation*}
+        \item General solution
+              \begin{equation*}
+                  u(x) = C_1e^x + C_2xe^x + C_3x^2e^x + C_4e^{3x}
+              \end{equation*}
+    \end{enumerate}
+
+    \hrule
+
+    4-th order ODE with complex roots
+
+    \begin{equation*}
+        u^{(4)} + 3u'' - 4u = 0
+    \end{equation*}
+    \begin{enumerate}
+        \item Roots of the characteristic polynomial
+              \begin{gather*}
+                  \lambda^4 + 3\lambda^2 - 4 = 0\\
+                  \text{roots: }\{ \lambda_1 = -1, \lambda_2 = 1, \lambda_{3,4} = \pm 2i\}
+              \end{gather*}
+        \item Fundamental system
+              \begin{equation*}
+                  \text{FS: } \{e^{-x}, e^x, \sin(2x), \cos(2x)\}
+              \end{equation*}
+        \item General solution
+              \begin{equation*}
+                  u(x) = C_1e^{-x} + C_2e^x + C_3\sin(2x) + C_4\cos(2x)
+              \end{equation*}
+    \end{enumerate}
+\end{examplesection}
+
+\subsubsection{Inhomogeneous linear n-th order ODE with constant coefficients}
+To solve an ODE of the structure
+\begin{equation*}
+    a_n \frac{d^n}{dx^n} u(x) + a_{n-1} \frac{d^{n-1}}{dx^{n-1}} u(x) + \cdots + a_1 \frac{d}{dx} u(x) + a_0 u(x) = s(x)
+\end{equation*}
+\begin{enumerate}
+    \item Solve the homogeneous part $u_h(x)$ like shown in Section~\ref{ssec:homLinNODE}.
+    \item Determine the type of the particular solution $u_p$ (i-iii).
+          \begin{enumerate}[label= (\roman*)]
+              \item \textbf{Exponential}
+                    \begin{align*}
+                        s(x)   & = e^{cx}                          \\
+                        u_p(x) & = Ae^{cx} \qquad A \in \mathbb{R}
+                    \end{align*}
+                    Special case:
+                    If one of the $\lambda_i = c$ a $r$-fold solution of the characteristic polynomial is (see~\ref{ssec:homLinNODE}) the particular solution becomes:
+                    \begin{equation*}
+                        u_p(x) = A\textcolor{red}{x^r}e^{cx}
+                    \end{equation*}
+              \item \textbf{Polynomial}
+                    \begin{align*}
+                        s(x)   & = p_m(x)                            \\
+                        u_p(x) & = q_m(x) = Ax^m + Bx^{m-1} + \ldots
+                    \end{align*}
+                    Special case:
+                    If one of the $\lambda_i = 0$ a $r$-fold solution of the characteristic polynomial is (see~\ref{ssec:homLinNODE}) the particular solution becomes:
+                    \begin{equation*}
+                        u_p(x)= \textcolor{red}{x^r}q_m(x) = \textcolor{red}{x^r}(Ax^m + Bx^{m-1} + \ldots)
+                    \end{equation*}
+              \item \textbf{Sinusoidal}
+                    \begin{align*}
+                        s(x)   & = \sin(\omega x + \varphi) = \sin(\omega x) + \cos(\omega x)  \\
+                        u_p(x) & =A\sin(\omega x) + B\cos(\omega x) \qquad  A,B \in \mathbb{R}
+                    \end{align*}
+                    Special case:
+                    If one of the $\lambda_i = \pm \omega i$ a $r$-fold solution of the characteristic polynomial is (see~\ref{ssec:homLinNODE}) the particular solution becomes:
+                    \begin{equation*}
+                        u_p(x) = \textcolor{red}{x}(A\sin(\omega x) + B\cos(\omega x))
+                    \end{equation*}
+          \end{enumerate}
+    \item Differentiate $u_p(x)$ n-times with respect to $x$.
+    \item Substitute the differentiated $u_p$'s into the inhomogeneous ODE.
+    \item Calculate the remaining parameters (i.e. $A, B, \ldots$) by comparing the coefficients.\\
+          Mismatch in solution = wrong type
+    \item Superposition of general solution
+          \begin{equation*}
+              u(x) = u_h(x) + u_p(x)
+          \end{equation*}
+\end{enumerate}
+
+\begin{examplesection}[Example: n-th order inhomogeneous ODE]
+    ODE:
+    \begin{equation*}
+        u'' - 4u' + 4u = e^{-x}
+    \end{equation*}
+    \begin{enumerate}
+        \item Homogeneous solution
+              \begin{gather*}
+                  u'' - 4u' + 4u = 0 \\
+                  \lambda^2 -4\lambda+4 = 0\\
+                  \lambda_{1,2}=2 \\
+                  u_h(x) = C_1e^{2x}+C_2xe^{2x}
+              \end{gather*}
+        \item Input type = exponential
+              \begin{gather*}
+                  s(x) = e^{-x} \\
+                  c=-1 \qquad \lambda_i \neq c \\
+                  u_p(x) = Ae^{cx} = Ae^{-x}
+              \end{gather*}
+        \item Differentiate
+              \begin{align*}
+                  u_p'  & = -Ae^{-x} \\
+                  u_p'' & = Ae^{-x}
+              \end{align*}
+        \item Substitute
+              \begin{gather*}
+                  u'' - 4u' + 4u = e^{-x} \\
+                  Ae^{-x} + 4Ae^{-x} + 4Ae^{-x} = e^{-x}
+              \end{gather*}
+        \item Determine coefficients
+              \begin{gather*}
+                  9Ae^{-x} = e^{-x} \; \Leftrightarrow \; A =\frac{1}{9} \\
+                  u_p(x) = \frac{1}{9}e^{-x}
+              \end{gather*}
+              \item General solution
+              \begin{gather*}
+                u(x) = u_h(x) + u_p(x) \\
+                u(x) = (C_1 + C_2x)e^{2x} + \frac{1}{9}e^{-x}
+              \end{gather*}
+    \end{enumerate}
+\end{examplesection}
