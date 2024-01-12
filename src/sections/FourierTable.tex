@@ -1,4 +1,13 @@
 \subsection{Fourier Transform Table}
+\subsubsection{Known Transforms}\label{known_transforms}
+\begin{align*}
+    e^{-ax^2}                                & \;\laplace\; \frac1{\sqrt{2a}}e^{\frac{-w^2}{4a}}                                               \\
+    xe^{-ax^2}                               & \;\laplace\; \frac{i\omega}{{(2a)}^{3/2}}e^{-\frac{\omega^2}{4a}}                               \\
+    x^2e^{-ax^2}                             & \;\laplace\; \left( 1-\frac{\omega^2}{2a} \right) \frac{1}{\sqrt{8a^3}}e^{-\frac{\omega^2}{4a}} \\
+    \frac x{{(2b)}^{3/2}}e^{-\frac{x^2}{4b}} & \;\laplace\; i\omega e^{-b\omega^2}                                                             \\
+    \int_{\mathbb{R}}g(x)dx                  & = \sqrt{2\pi}\widehat{g}(0)
+\end{align*}
+
 \subsubsection{Fourier transform of time continuous signals}
 \begin{align*}
     x(t-t_{0})  \;                           & \laplace\;    e^{-2\pi ift_{0}}\hat{x}(f)                                \\
