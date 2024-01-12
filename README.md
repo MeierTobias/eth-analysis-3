@@ -7,8 +7,10 @@ It was originally created by Benno Kaeslin, Linard Furck, Sandro Christen, Marku
 
 A pre-build pdf file can be downloaded here:
 
-- [Analysis_III_full.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full.pdf)
-- [Analysis_III.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III.pdf)
+- [Analysis_III_full.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full_portrait.pdf)
+- [Analysis_III.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III_portrait.pdf)
+- [Analysis_III_full_landscape.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full_landscape.pdf)
+- [Analysis_III_landscape.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III_landscape.pdf)
 
 ## Getting-Started
 
