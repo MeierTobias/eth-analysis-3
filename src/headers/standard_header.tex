@@ -1,5 +1,5 @@
 % document setup
-\usepackage[left=7mm,right=7mm,top=7mm,bottom=7mm,portrait]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
+\usepackage[left=7mm,right=7mm,top=20mm,bottom=7mm,\udorientationmode]{geometry} % margin = .. total={280mm,190 mm} % in geometry for defined size/ratio
 \usepackage{multicol,multirow}
 \usepackage[utf8]{inputenc} % not strictly necessary, but sets utf8
 
@@ -42,12 +42,16 @@
 
 % Example section environment
 \newenvironment{examplesection}[1][]
-    {
-        \subsubsection{#1}
-        \color{blue}
-    }
-    {
-    }
+{
+    \subsubsection{#1}
+    \color{blue}
+}
+{
+}
+
+\if 0\udexamples
+    \excludecomment{examplesection}
+\fi
 
 % define header style
 \usepackage[headsepline]{scrlayer-scrpage}
@@ -55,6 +59,7 @@
 \ihead{Analysis III - \today}
 \chead{\pagemark}
 \ohead{\url{https://github.com/MeierTobias/eth-analysis-3}}
+\setlength{\headsep}{5pt}
 
 % hyperlinks have to be included last
 \usepackage{hyperref}
