@@ -7,18 +7,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: build latex pdfs
+      - name: build latex pdf (portrait/with examples)
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full -outdir=../build ./src/main.tex
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full_portrait -outdir=../build ./src/main.tex
       - name: change flags
-        run: sed 's/^.\{1\}//g' -i src/headers/flags.tex
-      - name: build without examples
+        run: sed '0,/{1}/s//{0}/' -i src/headers/flags.tex ;
+      - name: build latex pdf (landscape/with examples)
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III -outdir=../build ./src/main.tex
-      - name: reset flags
-        run: sed 's/^/%/' -i src/headers/flags.tex
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full_landscape -outdir=../build ./src/main.tex
+      - name: change flags
+        run: sed '0,/{1}/s//{0}/' -i src/headers/flags.tex ;
+      - name: build latex pdf (landscape/without examples)
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_landscape -outdir=../build ./src/main.tex
+      - name: change flags
+        run: sed '0,/{0}/s//{1}/' -i src/headers/flags.tex ;
+      - name: build latex pdf (portrait/without examples)
+        uses: docker://texlive/texlive:latest
+        with:
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_portrait -outdir=../build ./src/main.tex
+      - name: change flags
+        run: sed '0,/{0}/s//{1}/' -i src/headers/flags.tex ;
       - name: Archive pdf's as artifacts
         uses: actions/upload-artifact@v3
         with:

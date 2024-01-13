@@ -1,10 +1,12 @@
-\documentclass[a4paper,10pt,landscape]{article}
+\input{headers/flags}
+\input{headers/conditional_formatting.tex}
+
+\documentclass[\udpapersize,\udfontsize]{extarticle}
 
 \input{headers/standard_header}
 \input{headers/layout_formating}
 \input{headers/code_header}
 \input{headers/math_header}
-\input{headers/flags}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -19,6 +21,9 @@
 
 
     \input{sections/LaplaceTransformation.tex}
+    \newpage
+    \input{sections/LaplaceTable.tex}
+    \input{sections/FourierTable.tex}
     \newpage
     \input{sections/FourierAnalysis.tex}
     \newpage
