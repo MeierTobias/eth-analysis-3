@@ -54,10 +54,10 @@ jobs:
         run: sed '0,/{0}/s//{1}/' -i src/headers/flags.tex ;
       - name: Copy output
         run: |
-          cp ./build/analysis_III_full.pdf ./pages/analysis_III_full_portrait.pdf
-          cp ./build/analysis_III_full.pdf ./pages/analysis_III_full_landscape.pdf
-          cp ./build/analysis_III.pdf ./pages/analysis_III_portrait.pdf
-          cp ./build/analysis_III.pdf ./pages/analysis_III_landscape.pdf
+          cp ./build/analysis_III_full_portrait.pdf ./pages/analysis_III_full_portrait.pdf
+          cp ./build/analysis_III_full_landscape.pdf ./pages/analysis_III_full_landscape.pdf
+          cp ./build/analysis_III_portrait.pdf ./pages/analysis_III_portrait.pdf
+          cp ./build/analysis_III_landscape.pdf ./pages/analysis_III_landscape.pdf
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
