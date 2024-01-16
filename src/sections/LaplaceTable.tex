@@ -1,51 +1,57 @@
 \subsection{Laplace Transform Table}
 \begin{align*}
-    f(t)                            \;                      & \laplace\; F(s)                                                     \\
-    1                               \;                      & \laplace\; \frac{1}{s}                                              \\
-    t^{n}                           \;                      & \laplace\; \frac{n!}{s^{n+1}} \; with \; n \in \mathbb{N}_0         \\
-    t^{p}                           \;                      & \laplace\; \frac{\Gamma(p+1)}{s^{p+1}} \; with \; p > -1            \\
-    e^{at}                          \;                      & \laplace\; \frac{1}{s-a} \; if \; s>a \;                            \\
-    e^{at}f(t)                      \;                      & \laplace\; F(s-a)                                                   \\
-    u(t-a)                          \;                      & \laplace\; \frac{1}{s}e^{-as}                                       \\
-    f(t-a)u(t-a)                    \;                      & \laplace\; e^{-as}F(s)                                              \\
-    \delta(t)                       \;                      & \laplace\; 1                                                        \\
-    \delta(t-t_{0})                 \;                      & \laplace\; e^{-st_{0}}                                              \\
-    \frac{d^{n}}{dt^{n}}\delta(t)   \;                      & \laplace\; s^{n}                                                    \\
-    t^{n}f(t)                       \;                      & \laplace\; {(-1)}^n \frac{d^{n}F(s)}{ds^n}                          \\
-    f^{\prime}\left(t\right)        \;                      & \laplace\; \begin{aligned}sF(s)-f(0)\end{aligned}                   \\
-    f^{n}(t)                        \; \laplace\; s^{n}F(s) & -s^{n-1}f(0)-\cdots-f^{n-1}(0)                                      \\
-    f(t)*g(t)                       \;                      & \laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}               \\
-    \ln(at)                         \;                      & \laplace\; -\frac{1}{s}\left(\ln\left(\frac sa\right)+\gamma\right) \\
-    \frac{e^{at}-e^{bt}}{a-b}       \;                      & \laplace\; \frac{1}{(s-a)(s-b)}                                     \\
-    \frac{ae^{at}-be^{at}}{a-b}     \;                      & \laplace\; \frac{s}{(s-a)(s-b)}                                     \\
-    te^{at}                         \;                      & \laplace\; \frac{1}{{(s-a)}^2}                                      \\
-    t^{n}e^{at}                     \;                      & \laplace\; \frac{n!}{{(s-a)}^{n+1}}                                 \\
-    -tf(t)                          \;                      & \laplace\; F^{\prime}(s)                                            \\
-    t^{2}f(t)                       \;                      & \laplace\; F^{\prime\prime}(s)                                      \\
-    {(-t)}^n f(t)                   \;                      & \laplace\; F^{(n)}(s)                                               \\
-    \int_{0}^{t}f(u)du              \;                      & \laplace\; \frac{1}{s}F(s)                                          \\
-    \int_{0}^{t}\frac{{(t-q)}^{n-1}f(q)}{(n-1)!}dq,         & n \leq 1 \;\laplace\; \frac{1}{s^n}F(s),n \geq 1                    \\
-    \frac{1}{t}f(t)                 \;                      & \laplace\; \int_{s}^{\infty}F(u)du                                  \\
-    1-e^{-at}                       \;                      & \laplace\; \frac{a}{s(s+a)}                                         \\
-    \sin(kt)                        \;                      & \laplace\; \frac{k}{s^2+k^2}                                        \\
-    \cos(kt)                        \;                      & \laplace\; \frac{s}{s^2+k^2}                                        \\
-    \sin^{2}(kt)                    \;                      & \laplace\; \frac{2k^2}{s(s^2+4k^2)}                                 \\
-    \cos^{2}(kt)                    \;                      & \laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}                             \\
-    \sinh(kt)                       \;                      & \laplace\; \frac{k}{s^2-k^2}                                        \\
-    \cosh(kt)                       \;                      & \laplace\; \frac{s}{s^2-k^2}                                        \\
-    e^{at}\sin(kt)                  \;                      & \laplace\; \frac{k}{{(s-a)}^2+k^2}                                    \\
-    e^{at}\cos(kt)                  \;                      & \laplace\; \frac{s-a}{{(s-a)}^2+k^2}                                  \\
-    e^{at}\sinh(kt)                 \;                      & \laplace\; \frac{k}{{(s-a)}^2-k^2}                                    \\
-    e^{at}\cosh(kt)                 \;                      & \laplace\; \frac{{(s-a)}}{{(s-a)}^2-k^2}                                \\
-    t\cdot \sin(kt)                 \;                      & \laplace\; \frac{2ks}{{(s^2+k^2)}^2}                                  \\
-    t\cdot \cos(kt)                 \;                      & \laplace\; \frac{s^2-k^2}{{(s^2+k^2)}^2}                              \\
-    t\cdot \sin(t)\cos(t)           \;                      & \laplace\; \frac{2s}{{(s^2+4)}^2}                                     \\
-    t\cdot \sinh(kt)                \;                      & \laplace\; \frac{2ks}{{(s^2-k^2)}^2}                                  \\
-    t\cdot \cosh(kt)                \;                      & \laplace\; \frac{s^2-k^2}{{(s^2-k^2)}^2}                              \\
-    \sin(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia))                       \\
-    \cos(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia))                        \\
-    \sinh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a))                          \\
-    \cosh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)+F(s+a))                          \\
-    \frac{1}{\sqrt{\pi t}e^{\frac{-a^2}{4t}}} \;            & \laplace\; \frac{e^{-a\sqrt{s}}}{\sqrt{s}}                          \\
+    f(t)                            \;                      & \laplace\; F(s)                                                               \\
+    1                               \;                      & \laplace\; \frac{1}{s}                                                        \\
+    u(t-a)                          \;                      & \laplace\; \frac{1}{s}e^{-as}                                                 \\
+    f(t-a)u(t-a)                    \;                      & \laplace\; e^{-as}F(s)                                                        \\
+    f(t)u(t-a)                      \;                      & \laplace\; e^{-as}\mathcal{L}\{f(t+a)\}                                       \\
+    e^{at}                          \;                      & \laplace\; \frac{1}{s-a} \quad \text{if} \quad s>a \;                         \\
+    e^{at}f(t)                      \;                      & \laplace\; F(s-a)                                                             \\
+    1-e^{-at}                       \;                      & \laplace\; \frac{a}{s(s+a)}                                                   \\
+    te^{at}                         \;                      & \laplace\; \frac{1}{{(s-a)}^2}                                                \\
+    t^{n}e^{at}                     \;                      & \laplace\; \frac{n!}{{(s-a)}^{n+1}}                                           \\
+    t^{n}                           \;                      & \laplace\; \frac{n!}{s^{n+1}} \quad \text{with} \quad n \in \mathbb{N}_0      \\
+    t^{p}                           \;                      & \laplace\; \frac{\Gamma(p+1)}{s^{p+1}} \quad \text{with} \quad p > -1         \\
+    \sqrt{t}                        \;                      & \laplace\; \frac{\sqrt{\pi}}{2{s}^{3/2}}                                      \\
+    t^{n-1/2}                       \;                      & \laplace\; \frac{1\cdot3\cdot5\cdots(2n-1)\cdot\sqrt{\pi}}{2^n\cdots^{n+1/2}} \\
+    t^{n}f(t)                       \;                      & \laplace\; {(-1)}^n \frac{d^{n}F(s)}{ds^n}                                    \\
+    tf(t)                           \;                      & \laplace\; -F^{\prime}(s)                                                     \\
+    t^{2}f(t)                       \;                      & \laplace\; F^{\prime\prime}(s)                                                \\
+    \frac{1}{t}f(t)                 \;                      & \laplace\; \int_{s}^{\infty}F(u)du                                            \\
+    f(at)                           \;                      & \laplace\; \frac{1}{a}F\left(\frac{s}{a}\right)                               \\
+    {(-t)}^n f(t)                   \;                      & \laplace\; F^{(n)}(s)                                                         \\
+    \delta(t)                       \;                      & \laplace\; 1                                                                  \\
+    \delta(t-t_{0})                 \;                      & \laplace\; e^{-st_{0}}                                                        \\
+    \frac{d^{n}}{dt^{n}}\delta(t)   \;                      & \laplace\; s^{n}                                                              \\
+    f^{\prime}\left(t\right)        \;                      & \laplace\; \begin{aligned}sF(s)-f(0)\end{aligned}                             \\
+    f^{n}(t)                        \; \laplace\; s^{n}F(s) & -s^{n-1}f(0)-\cdots-f^{n-1}(0)                                                \\
+    f(t)*g(t)                       \;                      & \laplace\; \begin{aligned}F(s)\cdot G(s)\end{aligned}                         \\
+    \ln(at)                         \;                      & \laplace\; -\frac{1}{s}\left(\ln\left(\frac sa\right)+\gamma\right)           \\
+    \frac{e^{at}-e^{bt}}{a-b}       \;                      & \laplace\; \frac{1}{(s-a)(s-b)}                                               \\
+    \frac{ae^{at}-be^{at}}{a-b}     \;                      & \laplace\; \frac{s}{(s-a)(s-b)}                                               \\
+    \int_{0}^{t}f(u)du              \;                      & \laplace\; \frac{1}{s}F(s)                                                    \\
+    \int_{0}^{t}\frac{{(t-q)}^{n-1}f(q)}{(n-1)!}dq,         & n \leq 1 \;\laplace\; \frac{1}{s^n}F(s),n \geq 1                              \\
+    \sin(kt)                        \;                      & \laplace\; \frac{k}{s^2+k^2}                                                  \\
+    \cos(kt)                        \;                      & \laplace\; \frac{s}{s^2+k^2}                                                  \\
+    \sin(kt+a)                      \;                      & \laplace\; \frac{s \sin(a)+k\cos(a)}{s^2+k^2}                                 \\
+    \cos(kt+a)                      \;                      & \laplace\; \frac{s \cos(a)-k\sin(a)}{s^2+k^2}                                 \\
+    \sin^{2}(kt)                    \;                      & \laplace\; \frac{2k^2}{s(s^2+4k^2)}                                           \\
+    \cos^{2}(kt)                    \;                      & \laplace\; \frac{s^2+2k^2}{s(s^2+4k^2)}                                       \\
+    \sinh(kt)                       \;                      & \laplace\; \frac{k}{s^2-k^2}                                                  \\
+    \cosh(kt)                       \;                      & \laplace\; \frac{s}{s^2-k^2}                                                  \\
+    e^{at}\sin(kt)                  \;                      & \laplace\; \frac{k}{{(s-a)}^2+k^2}                                            \\
+    e^{at}\cos(kt)                  \;                      & \laplace\; \frac{s-a}{{(s-a)}^2+k^2}                                          \\
+    e^{at}\sinh(kt)                 \;                      & \laplace\; \frac{k}{{(s-a)}^2-k^2}                                            \\
+    e^{at}\cosh(kt)                 \;                      & \laplace\; \frac{{(s-a)}}{{(s-a)}^2-k^2}                                      \\
+    t\cdot \sin(kt)                 \;                      & \laplace\; \frac{2ks}{{(s^2+k^2)}^2}                                          \\
+    t\cdot \cos(kt)                 \;                      & \laplace\; \frac{s^2-k^2}{{(s^2+k^2)}^2}                                      \\
+    t\cdot \sin(t)\cos(t)           \;                      & \laplace\; \frac{2s}{{(s^2+4)}^2}                                             \\
+    t\cdot \sinh(kt)                \;                      & \laplace\; \frac{2ks}{{(s^2-k^2)}^2}                                          \\
+    t\cdot \cosh(kt)                \;                      & \laplace\; \frac{s^2-k^2}{{(s^2-k^2)}^2}                                      \\
+    \sin(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2i}\cdot(F(s-ia)-F(s+ia))                                 \\
+    \cos(at)\cdot f(t)              \;                      & \laplace\; \frac{1}{2}\cdot(F(s-ia)+F(s+ia))                                  \\
+    \sinh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)-F(s+a))                                    \\
+    \cosh(at)\cdot f(t)             \;                      & \laplace\; \frac{1}{2}\cdot(F(s-a)+F(s+a))                                    \\
+    \frac{1}{\sqrt{\pi t}e^{\frac{-a^2}{4t}}} \;            & \laplace\; \frac{e^{-a\sqrt{s}}}{\sqrt{s}}                                    \\
     \frac{a}{2\sqrt{\pi t^3}}e^{\frac{-a^2}{4t}} \;         & \laplace\; e^{-a\sqrt{s}}
 \end{align*}
