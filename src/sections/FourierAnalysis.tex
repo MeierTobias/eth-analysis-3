@@ -14,19 +14,30 @@ Let $f(x)=f(x+P),\; g(x)=g(x+Q),\; h(x)=h(x+Q)$ be periodic functions.
     \item $f$ is $nP$ periodic too
     \item $f(a\cdot x)$ is $\frac{P}{a}$ periodic, $a \in \mathbb{R}$
     \item $a\cdot g(x)+b\cdot h(x)=a\cdot g(x+Q)+b\cdot h(x+Q)$ \\is $Q$ periodic, $a, b \in \mathbb{R}$
-    \item $f(x+P)+g(x+Q)$ is periodic for the LCM (KGV) of $P$ and $Q$\\ 
-    - the LCM is called fundamental period \\ 
-    - the sum is only periodic if $\frac{P}{Q}\in \mathbb{Q}$
-    \item if $f'(x)=f'(x+P)$ then $f(x)=f(x+P)$ 
+    \item $f(x+P)+g(x+Q)$ is periodic for the LCM (KGV) of $P$ and $Q$\\
+          - the LCM is called fundamental period \\
+          - the sum is only periodic if $\frac{P}{Q}\in \mathbb{Q}$
+    \item if $f'(x)=f'(x+P)$ then $f(x)=f(x+P)$
 \end{enumerate}
 \textbf{Boundedness}\\
 Let $f(x)$ be a function.
 \begin{enumerate}
-    \item if $f$ is $periodic$ and $continuous$: $f$ is $bounded$ 
-    \item if $f$ is $periodic$ and $smooth$: $f$ and $f^{(n)}$ are $bounded$\\ 
-    - smooth means no kinks ("Knicks"), meaning it is infinitely differentiable\\ 
-    - if $f$ or one of its derivatives is not bounded, we know that $f$ is either not periodic or not smooth.
+    \item if $f$ is $periodic$ and $continuous$: $f$ is $bounded$
+    \item if $f$ is $periodic$ and $smooth$: $f$ and $f^{(n)}$ are $bounded$\\
+          - smooth means no kinks ("Knicks"), meaning it is infinitely differentiable\\
+          - if $f$ or one of its derivatives is not bounded, we know that $f$ is either not periodic or not smooth.
 \end{enumerate}
+
+\begin{examplesection}[Example of periodic functions]
+    \begin{gather*}
+        f(x) = \cos(3x) \qquad g(x) = \cos(4x) \\
+        h(x) = f(x) + g(x) \\\\
+        f(x) \text{ is } \frac{2\pi}{3}=P_1 \text{ periodic} \\
+        g(x) \text{ is } \frac{2\pi}{4}=P_2 \text{ periodic} \\
+        h(x) \text{ is LCM} (P_1, P_2)=P \text{ periodic} \\
+        P=\text{LCM}(\frac{2\pi}{3}, \frac{2\pi}{4}) = \text{LCM}(4,3)\cdot\frac{\pi}{6} = \frac{12}{6}\pi = 2\pi
+    \end{gather*}
+\end{examplesection}
 
 \subsection{Trigonometric System}
 The collection
@@ -254,13 +265,13 @@ If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
     f(x)=c_0+\sum_{\overset{n=-\infty}{n\neq0}}^\infty c_n\cdot e^{\frac{i\pi n}Lx}
 \end{equation*}
 \begin{equation*}
-    c_0=\frac1{2L}\int_{-L}^L f(x)dx\quad\mid \quad c_n=\frac1{2L}\int_{-L}^L f(x)\cdot e^{-\frac{i\pi n}Lx}
+    c_0=\frac1{2L}\int_{-L}^L f(x)dx\quad\mid \quad c_n=\frac1{2L}\int_{-L}^L f(x)\cdot e^{-\frac{i\pi n}Lx}dx
 \end{equation*}
 
 Conversion from and to \textbf{real FS}:\\
 \begin{tabular}[h]{c|c|c} % chktex -2
     \multicolumn{2}{c}{$a_0=c_0$} & $e^{\pm ix}=\cos x\pm i\sin x$                             \\
-    $a_n=c_n+\overline{c_n}$              & $c_n = \frac{1}{2}(a_n-ib_n)$  & $e^{ix}-e^{-ix}=2i\sin x$ \\
+    $a_n=c_n+\overline{c_n}$      & $c_n = \frac{1}{2}(a_n-ib_n)$  & $e^{ix}-e^{-ix}=2i\sin x$ \\
     $b_n=i(c_n-\overline{c_n})$   & $c_{-n}=\overline{c_n}$        & $e^{ix}+e^{-ix}=2\cos x$
 \end{tabular}
 
