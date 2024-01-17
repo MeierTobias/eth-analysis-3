@@ -344,19 +344,20 @@ More properties:
 
 \subsubsection{How to Choose}
 
-\def\arraystretch{1.2}
-
-\begin{tabular}[h]{p{0.4\linewidth}|p{0.09\linewidth}|p{0.09\linewidth}|p{0.04\linewidth}|p{0.05\linewidth}|p{0.05\linewidth}} % chktex 44
+\renewcommand{\arraystretch}{1.3}
+\setlength\tabcolsep{6pt} % default value: 6pt
+\begin{tabularx}{\linewidth}{@{}p{0.4\linewidth}lllll@{}}
     Property                    & FS $\mathbb{R}$ & FS $\mathbb{C}$ & FI           & FT           & LT           \\
-    \hline % chktex -2
+    \cmidrule{1-6}
     Periodic                    & \checkmark{}    & \checkmark{}    & x            & x            & x            \\
     $L_1$                       & \checkmark{}    & \checkmark{}    & \checkmark{} & \checkmark{} & x            \\
     Piecewise cont.             & \checkmark{}    & \checkmark{}    & \checkmark{} &              &              \\
     Left/right deriv.\ at disc. & \checkmark{}    & \checkmark{}    & \checkmark{} &              &              \\
-    \hline % chktex -2
-    \hline % chktex -2
+    \cmidrule{1-6}
+    \morecmidrules\cmidrule{1-6}
     Advantage                   &                 &                 &              &              &              \\
     Complex eigenfunctions      & x               & \checkmark{}    & x            & \checkmark{} & \checkmark{} \\
     Odd / Even distinction      & \checkmark{}    & x               & \checkmark{} & x            & x
-\end{tabular}
-\def\arraystretch{1}
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{6pt} % default value: 6pt
