@@ -11,20 +11,22 @@
 \subsubsection{Identities}
 Given: $n, j \in \mathbb{N}$
 \begin{align*}
-     & \sin(\pi n)                                                                      & = & \: 0                                                    \\
-     & \cos(\pi n)                                                                      & = & \: {(-1)}^n                                             \\
-     & \sin(\frac{\pi}{2}n) = \left(\frac{1 + {(-1)}^n}{2}\right){(-1)}^{\frac{n+2}{2}} & = & \begin{cases} 0, &n=2j \\ {(-1)}^j,&n=2j+1 \end{cases}  \\
-     & \cos(\frac{\pi}{2}n) = \left(\frac{1+{(-1)}^n}{2}\right){(-1)}^{\frac{n}{2}}     & = & \begin{cases} 0, &n=2j+1 \\ {(-1)}^j, &n=2j \end{cases} \\
-     & \sin\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                & = & \pm \cos\left(\frac{n\pi}{2}\right)                     \\
-     & \cos\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                & = & \mp \sin\left(\frac{n\pi}{2}\right)                     \\
-     & \sin(90^\circ\pm\alpha) = \sin(\frac{\pi}{2} \pm \alpha)                         & = & \cos(\alpha)                                            \\
-     & \cos(90^\circ\pm\alpha) = \cos(\frac{\pi}{2} \pm \alpha)                         & = & \mp\sin(\alpha)                                         \\
-     & \sin(180^\circ\pm\alpha) = \sin(\pi \pm \alpha)                                  & = & \mp\sin(\alpha)                                         \\
-     & \cos(180^\circ\pm\alpha) = \cos(\pi \pm \alpha)                                  & = & -\cos(\alpha)                                           \\
-     & \frac{1}{\sin^2 \alpha}                                                          & = & 1+\cot^2 (\alpha)                                       \\
-     & \frac{1}{\cos^2 \alpha}                                                          & = & 1+\tan^2 (\alpha)                                       \\
-     & {(-1)}^n+{(-1)}^{-n}=e^{in\pi}+e^{-in\pi}                                        & = & 2\cos(\pi n)                                            \\
-     & {(-1)}^n-{(-1)}^{-n}=e^{in\pi}-e^{-in\pi}                                        & = & 2i\sin(\pi n)
+     & \sin(\pi n)                                                                                 & = & \: 0                                                       \\
+     & \cos(\pi n)                                                                                 & = & \: {(-1)}^n                                                \\
+     & \sin\left(\frac{\pi}{2}n\right) = \left(\frac{1 + {(-1)}^n}{2}\right){(-1)}^{\frac{n+2}{2}} & = & \begin{cases} 0 &n=2j \\ {(-1)}^j&n=2j+1 \end{cases}       \\
+     & \sin\left(\frac{3\pi}{2}n\right)                                                            & = & \begin{cases} 0 &n=2j \\ {(-1)}^{j+1}&n:\, odd \end{cases} \\
+     & \cos\left(\frac{\pi}{2}n\right) = \left(\frac{1+{(-1)}^n}{2}\right){(-1)}^{\frac{n}{2}}     & = & \begin{cases} {(-1)}^j &n=2j \\ 0 &n=2j+1 \end{cases}      \\
+     & \cos\left(\frac{3\pi}{2}n\right)                                                            & = & \begin{cases} {(-1)}^{j} &n=2j \\ 0 &n=2j+1 \end{cases}    \\
+     & \sin\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                           & = & \pm \cos\left(\frac{n\pi}{2}\right)                        \\
+     & \cos\left(\left(n\pm 1\right)\frac{\pi}{2}\right)                                           & = & \mp \sin\left(\frac{n\pi}{2}\right)                        \\
+     & \sin(90^\circ\pm\alpha) = \sin(\frac{\pi}{2} \pm \alpha)                                    & = & \cos(\alpha)                                               \\
+     & \cos(90^\circ\pm\alpha) = \cos(\frac{\pi}{2} \pm \alpha)                                    & = & \mp\sin(\alpha)                                            \\
+     & \sin(180^\circ\pm\alpha) = \sin(\pi \pm \alpha)                                             & = & \mp\sin(\alpha)                                            \\
+     & \cos(180^\circ\pm\alpha) = \cos(\pi \pm \alpha)                                             & = & -\cos(\alpha)                                              \\
+     & \frac{1}{\sin^2 \alpha}                                                                     & = & 1+\cot^2 (\alpha)                                          \\
+     & \frac{1}{\cos^2 \alpha}                                                                     & = & 1+\tan^2 (\alpha)                                          \\
+     & {(-1)}^n+{(-1)}^{-n}=e^{in\pi}+e^{-in\pi}                                                   & = & 2\cos(\pi n)                                               \\
+     & {(-1)}^n-{(-1)}^{-n}=e^{in\pi}-e^{-in\pi}                                                   & = & 2i\sin(\pi n)
 \end{align*}
 
 \subsubsection{Goniometry}
@@ -58,15 +60,17 @@ Given: $n, j \in \mathbb{N}$
 \end{align*}
 
 \subsubsection{Transformations}
-\begin{tabular}{ m{0.15\linewidth} | m{0.22\linewidth} | m{0.23\linewidth} | m{0.2\linewidth} } % chktex -2
+\renewcommand{\arraystretch}{1.3}
+\setlength\tabcolsep{6pt} % default value: 6pt
+\begin{tabularx}{\linewidth}{@{}p{0.15\linewidth}ccc@{}}
                                                     & $\sin$                                         & $\cos$                                         & $\tan$                                         \\
-    \hline{} % chktex -2
-    $\sin(\alpha)=$                                 & -                                              & $\sqrt{1-\cos^2(\alpha)}$                      & $\frac{\tan(\alpha)}{\sqrt{1+\tan^2(\alpha)}}$ \\
-    \hline{} % chktex -2
-    $\cos(\alpha)=$                                 & $\sqrt{1-\sin^2(\alpha)}$                      & -                                              & $\frac{1}{\sqrt{1+\tan^2(\alpha)}}$            \\
-    \hline{} % chktex -2
-    $\tan(\alpha)=$ \newline $\alpha \neq 90^\circ$ & $\frac{\sin(\alpha)}{\sqrt{1-\sin^2(\alpha)}}$ & $\frac{\sqrt{1-\cos^2(\alpha)}}{\cos(\alpha)}$ & -
-\end{tabular}
+    \cmidrule{2-4}
+    $\sin(\alpha)=$                                 &                                                & $\sqrt{1-\cos^2(\alpha)}$                      & $\frac{\tan(\alpha)}{\sqrt{1+\tan^2(\alpha)}}$ \\
+    $\cos(\alpha)=$                                 & $\sqrt{1-\sin^2(\alpha)}$                      &                                                & $\frac{1}{\sqrt{1+\tan^2(\alpha)}}$            \\
+    $\tan(\alpha)=$ \newline $\alpha \neq 90^\circ$ & $\frac{\sin(\alpha)}{\sqrt{1-\sin^2(\alpha)}}$ & $\frac{\sqrt{1-\cos^2(\alpha)}}{\cos(\alpha)}$ & 
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{6pt} % default value: 6pt
 
 \subsubsection{Euler-Relation}
 \begin{align*}
@@ -78,7 +82,7 @@ Given: $n, j \in \mathbb{N}$
     \tanh(x)   & =\frac{e^{x}-e^{-x}}{(e^{x}+e^{-x})}      \\
     e^{ix}     & = \cos(x) + i \cdot \sin(x)               \\
     e^{k\pi i} & = \begin{cases}
-                       1  & k = 2n     \\
+                       1  & k = 2n      \\
                        -1 & k = 2n + 1
                    \end{cases} \quad n \in \mathbb{N}
 \end{align*}
@@ -161,15 +165,15 @@ Given: $n, j \in \mathbb{N}$
 
 \textbf{Partial Integration}
 \begin{align*}
-     & \int_a^b f'\cdot g\left.dx=(f\cdot g)\right|_a^b-\int_a^b f\cdot g'\;dx        \\
+     & \int_a^b f'\cdot g\left.dx=(f\cdot g)\right|_a^b-\int_a^b f\cdot g'\;dx         \\
      & \int_a^b f\cdot g\left.dx=(F\cdot g)\right|_a^b-\int_a^b F\cdot g^{\prime}\;dx
 \end{align*}
 
 \textbf{Substitution}
 \begin{align*}
-     & \text{Substitution }u=g(x){:}                                          \\
-     & \int_a^b f(g(x))g^{\prime}(x)\;dx=\int_{g(a)}^{g(b)}f(u)\;du           \\\\
-     & \text{Substitution }x=g(y){:}                                          \\
+     & \text{Substitution }u=g(x){:}                                           \\
+     & \int_a^b f(g(x))g^{\prime}(x)\;dx=\int_{g(a)}^{g(b)}f(u)\;du            \\\\
+     & \text{Substitution }x=g(y){:}                                           \\
      & \int_a^b f(x)\;dx=\int_{g^{-1}(a)}^{g^{-1}(b)}f(g(y))g^{\prime}(y)\;dy
 \end{align*}
 \textbf{Common Substitutions}:\par
@@ -241,12 +245,12 @@ Given: $n, j \in \mathbb{N}$
          & \int \operatorname{arctanh}(x)dx &  & = x \cdot \operatorname{arctanh}(x) +\frac{1}{2}\ln(1-x^2)+C
     \end{align*}
     \begin{align*}
-         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                 \\
-         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                    \\
-         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                   \\
-         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C               \\
-         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C           \\
-         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C          \\
+         & \int \sin(ax)\cos(ax) dx           &  & = -\frac{\cos^2(ax)}{2a}+C                  \\
+         & \int \sin^2(x)\cos(x)dx            &  & =\frac{1}{3}\sin^3(x)+C                     \\
+         & \int \sin(x)\cos^2(x)dx            &  & =-\frac{1}{3}\cos^3(x)+C                    \\
+         & \int \sin^2(x)\cos^2(x)dx          &  & =\frac{1}{32}(4x-\sin(4x))+C                \\
+         & \int \sin^n(ax)\cdot \cos(ax)dx    &  & =\frac{\sin^{n+1}(ax)}{(n+1)a}+C            \\
+         & \int \sin(ax)\cdot \cos^n(ax)dx    &  & =-\frac{\cos^{n+1}(ax)}{(n+1)a}+C           \\
          & \int \frac{\cos(ax)}{\sin^n(ax)}dx &  & = -\frac{1}{(n-1)a \cdot \sin^{n-1}(ax)}+C
     \end{align*}
 \end{small}
@@ -257,15 +261,15 @@ Given: $n, j \in \mathbb{N}$
                                                                                                    0  & \text{if } n\neq m \\
                                                                                                    L  & \text{if } n=m     \\
                                                                                                    2L & \text{if } n=m=0
-                                                                                               \end{cases}  \\
+                                                                                               \end{cases}   \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \sin\left(\frac{m\pi x}{L}\right) dx & =\begin{cases}
-                                                                                                   0 & \text{if }n\neq m    \\
+                                                                                                   0 & \text{if }n\neq m     \\
                                                                                                    L & \text{if } n=m\neq 0
                                                                                                \end{cases} \\
     \int_{-L}^L \sin\left(\frac{n\pi x}{L}\right)\cdot \cos\left(\frac{m\pi x}{L}\right) dx & =0\;\;\forall\; n,m
 \end{align*}
 \begin{align*}
-    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0          \\
+    \sin(nx)\Big|_0^{2\pi}  & =0 &  & \cos(nx)\Big|_0^{2\pi}=0           \\
     x\sin(nx)\Big|_0^{2\pi} & =0 &  & x\cos(nx)\Big|_0^{2\pi}=2\pi\neq0
 \end{align*}
 \begin{align*}
@@ -276,24 +280,27 @@ Given: $n, j \in \mathbb{N}$
      & \int_{-\pi}^{\pi} e^{ijx} \text{d}x   &  & = \begin{cases}2\pi & \text{if } j=0\\ 0 & \text{if } j\neq 0\end{cases}
 \end{align*}
 
-\renewcommand{\arraystretch}{1.4}
 
-\begin{tabular}{p{1.3cm}|p{1cm}|p{0.55cm}|p{0.55cm}|p{0.55cm}|p{0.8cm}|p{0.55cm}|p{0.5cm}} % chktex -2
-                        & $\int\limits_0^{\frac{\pi}{4}} $ & $\int\limits_0^{\frac{\pi}{2}}$ & $\int\limits_0^{\pi}$ & $\int\limits_0^{2\pi}$ & $\int\limits_{-\frac{\pi}{4}}^{\frac{\pi}{4}} $ & $\int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}} $ & $\int\limits_{-\pi}^{\pi}$ \\ \hline % chktex -2
-    $\sin$              & $\frac{\sqrt{2}-1}{\sqrt{2}}$    & 1                               & 2                     & 0                      & 0                                               & 0                                               & 0                          \\ \hline % chktex -2
-    $\sin^2$            & $\frac{\pi-2}{8}$                & $\frac{\pi}{4}$                 & $\frac{\pi}{2}$       & $\pi$                  & $\frac{\pi-2}{4}$                               & $\frac{\pi}{2}$                                 & $\pi$                      \\ \hline % chktex -2
-    $\sin^3$            & $\frac{8-5\sqrt{2}}{12}$         & $\frac{2}{3}$                   & $\frac{4}{3}$         & 0                      & 0                                               & 0                                               & 0                          \\ \hline % chktex -2
-    $\sin^4$            & $\frac{3\pi-8}{32}$              & $\frac{3\pi}{16}$               & $\frac{3\pi}{8}$      & $\frac{3\pi}{4}$       & $\frac{3\pi-8}{16}$                             & $\frac{3\pi}{8}$                                & $\frac{3\pi}{4}$           \\ \hline % chktex -2
-    $\cos$              & $ \frac{1}{\sqrt{2}}$            & 1                               & 0                     & 0                      & $\sqrt{2}$                                      & 2                                               & 0                          \\ \hline % chktex -2
-    $\cos^2$            & $\frac{2+\pi}{8}$                & $\frac{\pi}{4}$                 & $\frac{\pi}{2}$       & $\pi$                  & $\frac{2+\pi}{4}$                               & $\frac{\pi}{2}$                                 & $\pi$                      \\ \hline % chktex -2
-    $\cos^3$            & $\frac{5}{6\sqrt{2}}$            & $\frac{2}{3}$                   & 0                     & 0                      & $\frac{5}{3\sqrt{2}}$                           & $\frac{4}{3}$                                   & 0                          \\ \hline % chktex -2
-    $\cos^4$            & $\frac{8+3\pi}{32}$              & $\frac{3\pi}{16}$               & $\frac{3\pi}{8}$      & $\frac{3\pi}{4}$       & $\frac{8+3\pi}{16}$                             & $\frac{3\pi}{8}$                                & $\frac{3\pi}{4}$           \\ \hline % chktex -2
-    $\sin \cdot \cos$   & $\frac{1}{4}$                    & $\frac{1}{2}$                   & 0                     & 0                      & 0                                               & 0                                               & 0                          \\ \hline % chktex -2
-    $\sin^2 \cdot \cos$ & $\frac{1}{6\sqrt{2}}$            & $\frac{1}{3}$                   & 0                     & 0                      & $\frac{1}{3\sqrt{2}}$                           & $\frac{2}{3}$                                   & 0                          \\ \hline % chktex -2
-    $\sin \cdot \cos^2$ & $\frac{4-\sqrt{2}}{12}$          & $\frac{1}{3}$                   & $\frac{2}{3}$         & 0                      & 0                                               & 0                                               & 0                          \\ \hline % chktex -2
-\end{tabular}
-
+\renewcommand{\arraystretch}{1.5}
+\setlength\tabcolsep{10pt} % default value: 6pt
+\begin{tabularx}{\linewidth}{@{}lccccccc@{}}
+                        & $\int\limits_0^{\frac{\pi}{4}} $ & $\int\limits_0^{\frac{\pi}{2}}$ & $\int\limits_0^{\pi}$ & $\int\limits_0^{2\pi}$ & $\int\limits_{-\frac{\pi}{4}}^{\frac{\pi}{4}} $ & $\int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}} $ & $\int\limits_{-\pi}^{\pi}$ \\ 
+    \cmidrule{2-7}
+    $\sin$              & $\frac{\sqrt{2}-1}{\sqrt{2}}$    & 1                               & 2                     & 0                      & 0                                               & 0                                               & 0                          \\ 
+    $\sin^2$            & $\frac{\pi-2}{8}$                & $\frac{\pi}{4}$                 & $\frac{\pi}{2}$       & $\pi$                  & $\frac{\pi-2}{4}$                               & $\frac{\pi}{2}$                                 & $\pi$                      \\
+    $\sin^3$            & $\frac{8-5\sqrt{2}}{12}$         & $\frac{2}{3}$                   & $\frac{4}{3}$         & 0                      & 0                                               & 0                                               & 0                          \\
+    $\sin^4$            & $\frac{3\pi-8}{32}$              & $\frac{3\pi}{16}$               & $\frac{3\pi}{8}$      & $\frac{3\pi}{4}$       & $\frac{3\pi-8}{16}$                             & $\frac{3\pi}{8}$                                & $\frac{3\pi}{4}$           \\
+    $\cos$              & $ \frac{1}{\sqrt{2}}$            & 1                               & 0                     & 0                      & $\sqrt{2}$                                      & 2                                               & 0                          \\
+    $\cos^2$            & $\frac{2+\pi}{8}$                & $\frac{\pi}{4}$                 & $\frac{\pi}{2}$       & $\pi$                  & $\frac{2+\pi}{4}$                               & $\frac{\pi}{2}$                                 & $\pi$                      \\
+    $\cos^3$            & $\frac{5}{6\sqrt{2}}$            & $\frac{2}{3}$                   & 0                     & 0                      & $\frac{5}{3\sqrt{2}}$                           & $\frac{4}{3}$                                   & 0                          \\
+    $\cos^4$            & $\frac{8+3\pi}{32}$              & $\frac{3\pi}{16}$               & $\frac{3\pi}{8}$      & $\frac{3\pi}{4}$       & $\frac{8+3\pi}{16}$                             & $\frac{3\pi}{8}$                                & $\frac{3\pi}{4}$           \\
+    $\sin \cdot \cos$   & $\frac{1}{4}$                    & $\frac{1}{2}$                   & 0                     & 0                      & 0                                               & 0                                               & 0                          \\
+    $\sin^2 \cdot \cos$ & $\frac{1}{6\sqrt{2}}$            & $\frac{1}{3}$                   & 0                     & 0                      & $\frac{1}{3\sqrt{2}}$                           & $\frac{2}{3}$                                   & 0                          \\
+    $\sin \cdot \cos^2$ & $\frac{4-\sqrt{2}}{12}$          & $\frac{1}{3}$                   & $\frac{2}{3}$         & 0                      & 0                                               & 0                                               & 0                          \\
+    
+\end{tabularx}
 \renewcommand{\arraystretch}{1}
+\setlength\tabcolsep{6pt} % default value: 6pt
 
 \subsubsection{Intergation of power, rational, exponential and logarithmic functions}
 \begin{footnotesize}
@@ -409,6 +416,18 @@ Helpful for removing factorials:
                  & $\varphi=\arccos\left(\frac{x}{r}\right)=\arcsin\left(\frac{y}{r}\right)=\tan\left(\frac{y}{x}\right)$ \\
     Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
                  & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 \end{tabular}
 
 \textbf{Operations}
@@ -441,22 +460,22 @@ Source: Summary PDEs by Steivan Claglüna 2018, csteivan@ethz.ch\\
 \end{equation*}
 \textbf{Solution for A}
 \begin{align*}
-    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)             \\
+    u_1(x,y) & =\sum_{n=1}^\infty A_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi(b-y)}a\right)              \\
     A_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_1(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for B}
 \begin{align*}
-    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                \\
+    u_2(x,y) & =\sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}a\right)\sinh\left(\frac{n\pi y}a\right)                 \\
     B_n      & =\frac2{a\sinh\left(\frac{n\pi b}a\right)}\int_0^{a}f_2(x)\sin\left(\frac{n\pi x}a\right)\mathrm{d}x
 \end{align*}
 \textbf{Solution for C}
 \begin{align*}
-    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)             \\
+    u_3(x,y) & =\sum_{n=1}^\infty C_n\sinh\left(\frac{n\pi(a-x)}a\right)\sin\left(\frac{n\pi y}b\right)              \\
     C_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_1(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 \textbf{Solution for D}
 \begin{align*}
-    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                \\
+    u_4(x,y) & =\sum_{n=1}^\infty D_n\sinh\left(\frac{n\pi x}b\right)\sin\left(\frac{n\pi y}b\right)                 \\
     D_n      & =\frac2{b\sinh\left(\frac{n\pi a}b\right)}\int_0^{b}g_2(y)\sin\left(\frac{n\pi y}b\right)\mathrm{d}y
 \end{align*}
 
@@ -502,7 +521,7 @@ with
 \end{align*}
 and
 \begin{align*}
-    u_p(x) & = S(x) \cdot e^{A(x)}           \\
+    u_p(x) & = S(x) \cdot e^{A(x)}            \\
     S(x)   & = \int s(x)\cdot e^{-A(x)} \,dx
 \end{align*}
 
@@ -510,9 +529,9 @@ and
 
 Solutions to some common linear 1st order ODEs
 \begin{align*}
-    u'(x) & = a \cdot u(x)     & \Rightarrow & \quad u(x)=Ce^{ax}             &  & \\
-    u'(x) & = a \cdot u(x) + b & \Rightarrow & \quad u(x)=Ce^{ax}-\frac{b}{a} &  & \\
-    u'(x) & = f(x) \cdot u(x)  & \Rightarrow & \quad u(x) = Ce^{F(x)}         &  &
+    u'(x) & = a \cdot u(x)     & \Rightarrow & \quad u(x)=Ce^{ax}             &  &   \\
+    u'(x) & = a \cdot u(x) + b & \Rightarrow & \quad u(x)=Ce^{ax}-\frac{b}{a} &  &   \\
+    u'(x) & = f(x) \cdot u(x)  & \Rightarrow & \quad u(x) = Ce^{F(x)}         &  & 
 \end{align*}
 with
 \begin{equation*}
@@ -586,11 +605,11 @@ To solve an ODE of the structure
                   u(x) = C_1e^x + C_2xe^x + C_3x^2e^x + C_4e^{3x}
               \end{equation*}
     \end{enumerate}
-
+    
     \hrule
-
+    
     4-th order ODE with complex roots
-
+    
     \begin{equation*}
         u^{(4)} + 3u'' - 4u = 0
     \end{equation*}
@@ -632,7 +651,7 @@ To solve an ODE of the structure
                     \end{equation*}
               \item \textbf{Polynomial}
                     \begin{align*}
-                        s(x)   & = p_m(x)                            \\
+                        s(x)   & = p_m(x)                             \\
                         u_p(x) & = q_m(x) = Ax^m + Bx^{m-1} + \ldots
                     \end{align*}
                     Special case:
@@ -664,7 +683,7 @@ To solve an ODE of the structure
 \begin{examplesection}[Example: n-th order inhomogeneous ODE]
     ODE:
     \begin{equation*}
-        u'' - 4u' + 4u = e^{-x}
+        u'' - 4u' + 4u = \underbrace{e^{-x}}_{s(x)}
     \end{equation*}
     \begin{enumerate}
         \item Homogeneous solution
@@ -695,10 +714,10 @@ To solve an ODE of the structure
                   9Ae^{-x} = e^{-x} \; \Leftrightarrow \; A =\frac{1}{9} \\
                   u_p(x) = \frac{1}{9}e^{-x}
               \end{gather*}
-              \item General solution
+        \item General solution
               \begin{gather*}
-                u(x) = u_h(x) + u_p(x) \\
-                u(x) = (C_1 + C_2x)e^{2x} + \frac{1}{9}e^{-x}
+                  u(x) = u_h(x) + u_p(x) \\
+                  u(x) = (C_1 + C_2x)e^{2x} + \frac{1}{9}e^{-x}
               \end{gather*}
     \end{enumerate}
 \end{examplesection}

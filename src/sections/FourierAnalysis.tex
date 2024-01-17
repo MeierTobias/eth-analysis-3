@@ -45,12 +45,14 @@ The collection
     \left\{\sin\left(\frac{n\pi}Lx\right),\cos\left(\frac{n\pi}Lx\right):n\in\mathbb{Z},n\geq0\right\}
 \end{equation*}
 is called the $trigonometric$ $system$. The functions in the trigonometric system are $2L$ periodic. A series constructed from these functions is $2L$ periodic too if it converges.
+
 \subsubsection{Orthogonality Properties}
 \begin{align*}
-    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\cos\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0\\2L&n=m=0.\end{cases} \\
-    \int_{-L}^L\sin\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=\begin{cases}0&n\neq m\\L&n=m\neq0.\end{cases}           \\
-    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx=0,\text{ for every }n,m.
+    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\cos\left(\frac{m\pi}Lx\right)dx&=\begin{cases}0&n\neq m\\L&n=m\neq0\\2L&n=m=0.\end{cases} \\
+    \int_{-L}^L\sin\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx&=\begin{cases}0&n\neq m\\L&n=m\neq0.\end{cases}           \\
+    \int_{-L}^L\cos\left(\frac{n\pi}Lx\right)\sin\left(\frac{m\pi}Lx\right)dx&=0,\text{ for every }n,m.
 \end{align*}
+
 \subsection{Fourier Series}
 For the Fourier series to exist and for it to converge to $f(t)$, $f(t)$ has to be defined and $2L$-periodic on $[-L,L]$.
 For every discontinuity, the \textbf{Dirichlet Theorem} has to hold. If a function $f(t)$ has only a discrete set of discontinuities and the Dirichlet Theorem holds for these points, $f(t)$ is called well behaved. $a_0,a_n,b_b\in \mathbb{R}$
@@ -115,7 +117,7 @@ For functions $f_1, f_2$ (even) and $g_1, g_2$ (odd):\\
 \subsubsection{Expansion of FS}
 If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This method can be used to solve PDEs. \vspace*{8pt}\\
 \begin{minipage}[t]{0.18\textwidth}
-    \textbf{Copy-paste} exp.\\
+    \textbf{Copy-paste} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
                 width=\linewidth,
@@ -291,7 +293,7 @@ $f(t)$ is absolutely integrable if:
 The \textbf{Fourier Integral} is defined if $f$ is piecewise continuous, has left/right derivatives at
 discontinuities and is absolutely Integrable:
 \begin{align*}
-    f(t) & =\int_0^\infty[A(w)\cos(wx)+B(w)\sin(wx)]dw     \\\\
+    f(x) & =\int_0^\infty[A(w)\cos(wx)+B(w)\sin(wx)]dw     \\\\
     A(w) & =\frac1\pi\int_{-\infty}^{\infty}f(v)\cos(wv)dv \\
     B(w) & =\frac1\pi\int_{-\infty}^{\infty}f(v)\sin(wv)dv
 \end{align*}

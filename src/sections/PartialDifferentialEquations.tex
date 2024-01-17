@@ -105,11 +105,11 @@ To find $u(x,t)$ satisfying the \textbf{homogeneous} 1D wave equation on $x\in[0
     \end{cases}
 \end{equation*}\\
 three steps have to be taken:
-\begin{itemize}
-    \item[(i)] Separation of variables
-    \item[(ii)] Finding the ``many'' solution
-    \item[(iii)] Finding one solution satisfying IC \& BC
-\end{itemize}
+\begin{enumerate}[label=\roman*]
+    \item Separation of variables
+    \item Finding the ``many'' solution
+    \item Finding one solution satisfying IC \& BC
+\end{enumerate}
 
 \subsubsection{(i) Separation of Variables}
 \begin{align*}
@@ -180,7 +180,7 @@ can be used, and the \textbf{specific solution} by \textbf{FS} is given by:
     f(x)      & =\sum\limits_{n=1}^{\infty} B_n \sin(\frac{n\;\pi}{L}x)              \\
     g(x)      & =\sum\limits_{n=1}^{\infty} B_n^* \lambda_n \sin(\frac{n\;\pi}{L}x)  \\
 \end{align*}
-\text{Useful tricks:}
+\textbf{Remark}
 \begin{itemize}
     \item If $f(x),g(x)$ can be written in terms of $\sin(\frac{n\;\pi}{L}x)$, $B_n, B_n^*$
           can be calculated directly
@@ -200,7 +200,7 @@ To solve a linear homogeneous 2nd order PDE with inhomogeneous BC, a fitting sub
 \end{align*}
 subsequently, $v(x,t)$ has homogeneous BC.
 
-\begin{examplesection}[Example]
+\begin{examplesection}[Example Separation of Variables]
     For the given Problem
     \[ u_{tt}=c^2u_{xx}\]
     we make the Ansatz
@@ -321,10 +321,10 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
           \begin{align*}
               A(x,y)u_{xx}+2B(x,y)u_{xy} & +C(x,y)u_{yy}          \\
                                          & =F(u,u_x,u_y,x,y)      \\\\
-              B(x,y)-A(x,y)C(x,y)        & \begin{cases}
-                                               >0 & \text{hyperbolic} \\
+              A(x,y)C(x,y)-{B(x,y)}^2      & \begin{cases}
+                                               <0 & \text{hyperbolic} \\
                                                =0 & \text{parabolic}  \\
-                                               <0 & \text{elliptic}
+                                               >0 & \text{elliptic}
                                            \end{cases}
           \end{align*}
     \item Formulate the characteristic equation:
@@ -353,17 +353,37 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
 
 \subsection{1D Heat Equation - Finite Domain}\label{ssec:1d_heat_fin}
 \subsubsection{Boundary Condition \texorpdfstring{$u(0,t), u(L,t)$}{u (0,t), u (L,t)}}
-The PDE $u_t=c^2u_{xx}$ with boundary conditions $u(0,t)=u(L,t)=0$, $u(x,0)=f(x)$
-and $x\in[0,L]$ can be solved with the \textbf{Fourier Series Ansatz} resulting
+The heat equation PDE with boundary conditions
+\begin{align*}
+    \begin{cases}
+        u_t=c^2u_{xx} & x\in[0,L] \\
+        u(0,t)=u(L,t)=0           \\
+        u(x,0)=f(x)
+    \end{cases}
+\end{align*}
+can be solved with the \textbf{Fourier Series Ansatz} resulting
 from separation of variables:
 \begin{align*}
     u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t}                                \\
     B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx & \lambda_n, = \frac{cn\pi}{L}
 \end{align*}
 
+\textbf{Remark} If the PDE is of the form $u_t=a(t)t_{xx}$, use the more common Ansatz:
+\begin{align*}
+    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-n^2\pi^2A(t)} 
+\end{align*}
+where $A(t)=\int a(s)\;ds$.
+
 \subsubsection{Boundary Condition \texorpdfstring{$u_{t}(0,t),u_{t}(L,t)$}{ut (0,t), ut (L,t)}}
-The PDE $u_{t}=c^2u_{xx}$ with boundary conditions $u_t(0,t)=u(L,t)=0$, $u_t(x,0)=f(x)$
-and $x\in[0,L]$ can be solved by \textbf{separation of variables}:
+The heat equation PDE with boundary conditions
+\begin{align*}
+    \begin{cases}
+        u_t=c^2u_{xx} & x\in[0,L] \\
+        u(0,t)=u(L,t)=0           \\
+        u_t(x,0)=f(x)
+    \end{cases}
+\end{align*}
+can be solved by \textbf{separation of variables}:
 \begin{enumerate}
     \item $u(x,t)=F(x)G(t)$
     \item find $F(x),G(t)$ by inserting the boundary conditions $u_t$
@@ -374,7 +394,7 @@ and $x\in[0,L]$ can be solved by \textbf{separation of variables}:
     \item use additional boundary conditions to find the coefficients for $u(x,t)$
 \end{enumerate}
 {\color{gray}\hrule}\, \\
-Alternatively, if $f(x)$ can be written as (e.g.\@ by setting $t = 0$)
+Alternatively, if $f(x)$ can be written as a sum of cosines (e.g.\@ by setting $t = 0$)
 \begin{equation*}
     u(x,t)=\sum_{n=0}^{\infty}a_n\cos(nx)e^{-c^2n^2t}
 \end{equation*}
@@ -475,7 +495,7 @@ The two-dimensional steady-state solution with \textit{Dirichlet BC} on a rectan
 can be solved with the \textbf{Fourier Series Ansatz} obtained from separation of variables:
 \begin{align*}
     u(x,y)=\sum_{n=1}^{\infty}A_{n}\sin(\frac{n\pi}ax)\sinh(\frac{n\pi}ay) \\
-    A_{n}=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^{a}f(x)\sin(\frac{n\pi}{a}x)dx
+    A_{n}=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^{a}_0f(x)\sin(\frac{n\pi}{a}x)dx
 \end{align*}
 \textbf{Hints:} If the prescribed boundary condition is given on an edge other than $u(x,b)$, a variable transform is necessary. If more than one boundary has a prescribed function $\widetilde{f}\neq0$, the
 individual solutions for each boundary can be superpositioned. (See Appendix~\ref{diri_superpos})
@@ -567,6 +587,8 @@ due to the Gauss/ divergence theorem (2D):
     \int_{\partial R} \underbrace{\frac{\partial u}{\partial n}}_{g}  \; dx
     =\int_{\partial R} \nabla u\cdot\vec{n}\; dx \overset{\text{Gauss}}{=} & \int_R \underbrace{\text{div}(\nabla u)}_{\nabla^2 u=f}\; dA
 \end{align*}
+\textbf{Remark} These steps can only be used to check if one or more solutions exist. 
+However, no conclusion about the number of solutions can be made. 
 
 \subsubsection{Maximum Principle}
 Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{harmonic} functions. A harmonic function is equal at any point to the average of the values on \textit{any} circle centered at that point, hence
