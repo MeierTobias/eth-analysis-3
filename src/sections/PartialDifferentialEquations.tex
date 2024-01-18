@@ -321,7 +321,7 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
           \begin{align*}
               A(x,y)u_{xx}+2B(x,y)u_{xy} & +C(x,y)u_{yy}          \\
                                          & =F(u,u_x,u_y,x,y)      \\\\
-              A(x,y)C(x,y)-{B(x,y)}^2      & \begin{cases}
+              A(x,y)C(x,y)-{B(x,y)}^2    & \begin{cases}
                                                <0 & \text{hyperbolic} \\
                                                =0 & \text{parabolic}  \\
                                                >0 & \text{elliptic}
@@ -364,15 +364,22 @@ The heat equation PDE with boundary conditions
 can be solved with the \textbf{Fourier Series Ansatz} resulting
 from separation of variables:
 \begin{align*}
-    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t}                                \\
-    B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx & \lambda_n, = \frac{cn\pi}{L}
+    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t}& \lambda_n = \frac{cn\pi}{L}                                \\
+    B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx 
 \end{align*}
 
-\textbf{Remark} If the PDE is of the form $u_t=a(t)t_{xx}$, use the more common Ansatz:
+\textbf{Remark} If the PDE is of the form $u_t=a(t)t_{xx}$, use the more general Ansatz:
 \begin{align*}
-    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-n^2\pi^2A(t)} 
+    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-n^2\pi^2A(t)}
 \end{align*}
-where $A(t)=\int a(s)\;ds$.
+where $A(t)=\int a(s)\;ds$.\\
+
+\textbf{Remark} If only $u_x(x,0)=h(x)$ is given, derivate the Fourier Series Ansatz for x, and set $t=0$:
+\begin{align*}
+    u_x(x,t) & =\sum_{n=1}^\infty B_n \frac{n\pi}L\cos(\frac{n\pi}Lx)e^{-\lambda_n^2t}& \lambda_n = \frac{cn\pi}{L}                                \\
+    B_n      & =\dfrac{2}{n\pi}\int\limits_0^{L}h(x)\cos(\dfrac{n\pi}{L}x)dx          
+\end{align*}
+Assuming $h(x)$ fulfils $\int_{0}^{L}h(x)\;dx = 0$ in order for a solution to exist (see Section \ref{sssec:laplace_neu_rad})
 
 \subsubsection{Boundary Condition \texorpdfstring{$u_{t}(0,t),u_{t}(L,t)$}{ut (0,t), ut (L,t)}}
 The heat equation PDE with boundary conditions
@@ -587,8 +594,8 @@ due to the Gauss/ divergence theorem (2D):
     \int_{\partial R} \underbrace{\frac{\partial u}{\partial n}}_{g}  \; dx
     =\int_{\partial R} \nabla u\cdot\vec{n}\; dx \overset{\text{Gauss}}{=} & \int_R \underbrace{\text{div}(\nabla u)}_{\nabla^2 u=f}\; dA
 \end{align*}
-\textbf{Remark} These steps can only be used to check if one or more solutions exist. 
-However, no conclusion about the number of solutions can be made. 
+\textbf{Remark} These steps can only be used to check if one or more solutions exist.
+However, no conclusion about the number of solutions can be made.
 
 \subsubsection{Maximum Principle}
 Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{harmonic} functions. A harmonic function is equal at any point to the average of the values on \textit{any} circle centered at that point, hence
@@ -600,7 +607,12 @@ Functions that satisfy the Laplace equation $\nabla^2 u=0$ are called \textit{ha
 \textbf{Maximum principle}
 
 The above property demands: If a harmonic function $u$ takes its maximum values on the interior of the region $D$ where it is harmonic, then it must be \textbf{constant}.
-
+If the harmonic function is not constant, it fulfils
+\begin{align*}
+    \max_{(x,y)\in D_R} u(r,\varphi) & = \max_{\varphi\in[0,2\pi]} u(R,\varphi) \\
+    \min_{(x,y)\in D_R} u(r,\varphi) & = \min_{\varphi\in[0,2\pi]} u(R,\varphi)
+\end{align*}
+i.e. the maximum of the border $\partial D$ of $D$ is also the maximum of the whole region $D$.
 
 \subsection{2D Wave Equation - Rectangular Membrane}\label{ssec:2d_wave_rect}
 For a homogeneous and flexible two-dimensional membrane with time-invariant tension per unit-length,
