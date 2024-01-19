@@ -2,14 +2,20 @@
 \subsubsection{Known Transforms}\label{known_transforms}
 \begin{align*}
     e^{-ax^2}                                & \;\laplace\; \frac1{\sqrt{2a}}e^{\frac{-w^2}{4a}}                                               \\
-    xe^{-ax^2}                               & \;\laplace\; \frac{i\omega}{{(2a)}^{3/2}}e^{-\frac{\omega^2}{4a}}                               \\
+    xe^{-ax^2}                               & \;\laplace\; -\frac{i\omega}{{(2a)}^{3/2}}e^{-\frac{\omega^2}{4a}}                               \\
     x^2e^{-ax^2}                             & \;\laplace\; \left( 1-\frac{\omega^2}{2a} \right) \frac{1}{\sqrt{8a^3}}e^{-\frac{\omega^2}{4a}} \\
     \frac x{{(2b)}^{3/2}}e^{-\frac{x^2}{4b}} & \;\laplace\; i\omega e^{-b\omega^2}                                                             \\
     \int_{\mathbb{R}}g(x)dx                  & = \sqrt{2\pi}\widehat{g}(0)
 \end{align*}
 
 \subsubsection{Fourier transform of time continuous signals}
+{\footnotesize \textbf{Remark} The following fourier transformations are taken from \textit{Formelsammlung Signal- und Systemtheorie I} by Prof. Dr. Helmut Bölskei, 
+where the Fourier Transform is defined without the factor $\frac{1}{\sqrt{2\pi}}$.}
+\begin{equation*}
+    \widehat{x}(f) =\int_{-\infty}^{\infty} x(t) e^{-2\pi ift}\; dt
+\end{equation*}
 \begin{align*}
+    {\color{red} \omega}\;                   & {\color{red} =2\pi f}                                                    \\
     x(t-t_{0})  \;                           & \laplace\;    e^{-2\pi ift_{0}}\hat{x}(f)                                \\
     e^{2\pi if_0t}x(t)  \;                   & \laplace\;    \hat{x}(f-f_0)                                             \\
     x^{*}(t)  \;                             & \laplace\;    \hat{x}^{*}(-f)                                            \\
@@ -23,11 +29,12 @@
     i\mathfrak{Im}\{x(t)\}  \;               & \laplace\;    \hat{x}_{o}(f) =\frac12(\hat{x}(f)-\hat{x}^*(-f))          \\
     t^{n}x(t)  \;                            & \laplace\;    {\left(\frac i{2\pi}\right)}^n\frac{d^n\hat{x}(f)}{df^n}   \\
     \frac{d^n x(t)}{dt^n}  \;                & \laplace\;    {(2\pi if)}^n\hat{x}(f)                                    \\
-    \int_{-\infty}^t x(\tau)d\tau \;         & \laplace\;    \frac{1}{2\pi if}\hat{x}(f)+\frac{1}{2}\hat{x}(0)\delta(f)
+    \int_{-\infty}^t x(\tau)d\tau \;         & \laplace\;    \frac{1}{2\pi if}\hat{x}(f)+\frac{1}{2}\hat{x}(0)\delta(f) \\
 \end{align*}
 
-\subsubsection{Some Fourier Transformation Pairs}
+\textbf{Some Fourier Transformation Pairs}
 \begin{align*}
+    {\color{red} \omega}\;                                                    & {\color{red} =2\pi f}                                                                  \\
     \delta(t-t_0) \;                                                          & \laplace\;  e^{-2\pi ift_{0}}                                                          \\
     e^{2\pi if_0t} \;                                                         & \laplace\;  \delta(f-f_{0})                                                            \\
     \cos(2\pi f_0t) \;                                                        & \laplace\;  \frac{1}{2}\left(\delta(f+f_0)+\delta(f-f_0)\right)                        \\
