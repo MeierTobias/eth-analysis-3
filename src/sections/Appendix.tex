@@ -275,17 +275,15 @@ Given: $n, j \in \mathbb{N}$
 \begin{align*}
      & \int_0^{\infty} \frac{\sin(ax)}{x} dx &  & =\frac{\pi}{2};\quad a>0                                                 \\
      & \int_0^{\infty} \sin(x^2) dx          &  & =\int_0^{\infty}\cos(x^2)dx=\frac{1}{2}\sqrt{\frac{\pi}{2}}              \\
-     & \int_0^{\infty} e^{-ax}x^n dx         &  & =\frac{n!}{a^{n+1}},\quad a>0                                            \\
-     & \int_0^{\infty} e^{-ax^2} dx          &  & =\frac{1}{2}\sqrt{\frac{\pi}{a}},\quad a>0                               \\
      & \int_{-\pi}^{\pi} e^{ijx} \text{d}x   &  & = \begin{cases}2\pi & \text{if } j=0\\ 0 & \text{if } j\neq 0\end{cases}
 \end{align*}
 
 
 \renewcommand{\arraystretch}{1.5}
-\setlength\tabcolsep{10pt} % default value: 6pt
+\setlength\tabcolsep{8pt} % default value: 6pt
 \begin{tabularx}{\linewidth}{@{}lccccccc@{}}
                         & $\int\limits_0^{\frac{\pi}{4}} $ & $\int\limits_0^{\frac{\pi}{2}}$ & $\int\limits_0^{\pi}$ & $\int\limits_0^{2\pi}$ & $\int\limits_{-\frac{\pi}{4}}^{\frac{\pi}{4}} $ & $\int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}} $ & $\int\limits_{-\pi}^{\pi}$ \\ 
-    \cmidrule{2-7}
+    \cmidrule{2-8}
     $\sin$              & $\frac{\sqrt{2}-1}{\sqrt{2}}$    & 1                               & 2                     & 0                      & 0                                               & 0                                               & 0                          \\ 
     $\sin^2$            & $\frac{\pi-2}{8}$                & $\frac{\pi}{4}$                 & $\frac{\pi}{2}$       & $\pi$                  & $\frac{\pi-2}{4}$                               & $\frac{\pi}{2}$                                 & $\pi$                      \\
     $\sin^3$            & $\frac{8-5\sqrt{2}}{12}$         & $\frac{2}{3}$                   & $\frac{4}{3}$         & 0                      & 0                                               & 0                                               & 0                          \\
@@ -311,8 +309,6 @@ Given: $n, j \in \mathbb{N}$
          &                                       &  & \qquad +\frac{b^2{(ax+b)}^{n+1}}{(n+1)a^3}+C                                      \\
          & \int \frac{1}{ax+b}dx                 &  & =\frac{1}{a}\ln\vert ax+b \vert +C                                                \\
          & \int \frac{ax+b}{cx+d}dx              &  & =\frac{ax}{c}-\frac{ad-bc}{c^2}\ln\vert cx+d \vert +C                             \\
-         & \int \frac{1}{x^2+a^2}dx              &  & =\frac{1}{a}\arctan\left(\frac{x}{a}\right) +C                                    \\
-         & \int \frac{1}{x^2-a^2}dx              &  & =\frac{1}{2a}\ln\big\vert \frac{x-a}{x+a}\big\vert +C                             \\
          & \int \frac{x}{{(ax+b)}^n}dx           &  & =-\frac{1}{(n-2)a^2{(ax+b)}^{n-2}} \dots                                          \\
          &                                       &  & \qquad +\frac{b}{(n-1)a^2{(ax+b)}^{n-1}}+C                                        \\
          & \int \frac{x}{x^2+a}dx                &  & =\frac{1}{2}\ln\vert x^2+a \vert+C                                                \\
@@ -363,7 +359,12 @@ Given: $n, j \in \mathbb{N}$
 
 \subsubsection{Integration over special intervals}
 \begin{align*}
-     & \int_{-\infty}^{\infty}\frac{1}{1+x^2}dx &  & =\pi
+     & \int_{-\infty}^{\infty}\frac{1}{1+x^2}dx    &  & = \pi                                      \\
+     & \int_0^{\infty} e^{-ax}x^n dx               &  & =\frac{n!}{a^{n+1}},\quad a>0              \\
+     & \int_0^{\infty} e^{-ax^2} dx                &  & =\frac{1}{2}\sqrt{\frac{\pi}{a}},\quad a>0 \\
+     & \int_{-\infty}^{\infty} e^{-ax^2} dx        &  & =\sqrt{\frac{\pi}{a}},\quad a>0            \\
+     & \int_{-\infty}^{\infty}e^{-ax^2}e^{-iwx} dx &  & = \sqrt{\frac{\pi}{a}}e^{\frac{w^2}{4a}}   \\
+     & \int_{-\infty}^{\infty}e^{-(ax^2+bx+c)}dx   &  & = \sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}-c} \\
 \end{align*}
 
 \subsection{Various functions and their properties}
@@ -417,6 +418,7 @@ Helpful for removing factorials:
     Exp.\ form:  & $z=r\; e^{i\varphi}$                                                                                   \\
                  & $e^{i\; \varphi}=\cos(\varphi)+i\; \sin(\varphi)$
 
+    
     
     
     
