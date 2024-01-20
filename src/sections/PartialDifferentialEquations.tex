@@ -368,12 +368,6 @@ from separation of variables:
     B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx
 \end{align*}
 
-\textbf{Remark} If the PDE is of the form $u_t=a(t)t_{xx}$, use the more general Ansatz:
-\begin{align*}
-    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-n^2\pi^2A(t)}
-\end{align*}
-where $A(t)=\int a(s)\;ds$.\\
-
 \textbf{Remark} If only $u_x(x,0)=h(x)$ is given, derivate the Fourier Series Ansatz for x, and set $t=0$:
 \begin{align*}
     u_x(x,t) & =\sum_{n=1}^\infty B_n \frac{n\pi}L\cos(\frac{n\pi}Lx)e^{-\lambda_n^2t} & \lambda_n = \frac{cn\pi}{L} \\
@@ -407,7 +401,13 @@ Alternatively, if $f(x)$ can be written as a sum of cosines (e.g.\@ by setting $
 \end{equation*}
 this general Ansatz can be used.
 \subsubsection{Time Dependent Heat Equation}
-If the heat equation is time dependent, for example if
+If the PDE is of the form $u_t=a(t) c^2 u_{xx}$, use the more general Ansatz:
+\begin{gather*}
+    u(x,t) =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2 A(t)} \\
+    A(t)=\int a(s)\;ds
+\end{gather*}
+
+For example if
 \begin{equation*}
     u(x,t)=
     \begin{cases}u_t=2tc^2u_{xx} & x\in[0,L],t\in[0,+\infty) \\% chktex 9
