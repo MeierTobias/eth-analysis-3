@@ -364,8 +364,8 @@ The heat equation PDE with boundary conditions
 can be solved with the \textbf{Fourier Series Ansatz} resulting
 from separation of variables:
 \begin{align*}
-    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t}& \lambda_n = \frac{cn\pi}{L}                                \\
-    B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx 
+    u(x,t) & =\sum_{n=1}^\infty B_n\sin(\frac{n\pi}Lx)e^{-\lambda_n^2t} & \lambda_n = \frac{cn\pi}{L} \\
+    B_n    & =\dfrac{2}{L}\int\limits_0^{L}f(x)\sin(\dfrac{n\pi}{L}x)dx
 \end{align*}
 
 \textbf{Remark} If the PDE is of the form $u_t=a(t)t_{xx}$, use the more general Ansatz:
@@ -376,8 +376,8 @@ where $A(t)=\int a(s)\;ds$.\\
 
 \textbf{Remark} If only $u_x(x,0)=h(x)$ is given, derivate the Fourier Series Ansatz for x, and set $t=0$:
 \begin{align*}
-    u_x(x,t) & =\sum_{n=1}^\infty B_n \frac{n\pi}L\cos(\frac{n\pi}Lx)e^{-\lambda_n^2t}& \lambda_n = \frac{cn\pi}{L}                                \\
-    B_n      & =\dfrac{2}{n\pi}\int\limits_0^{L}h(x)\cos(\dfrac{n\pi}{L}x)dx          
+    u_x(x,t) & =\sum_{n=1}^\infty B_n \frac{n\pi}L\cos(\frac{n\pi}Lx)e^{-\lambda_n^2t} & \lambda_n = \frac{cn\pi}{L} \\
+    B_n      & =\dfrac{2}{n\pi}\int\limits_0^{L}h(x)\cos(\dfrac{n\pi}{L}x)dx
 \end{align*}
 Assuming $h(x)$ fulfils $\int_{0}^{L}h(x)\;dx = 0$ in order for a solution to exist (see Section \ref{sssec:laplace_neu_rad})
 
@@ -686,12 +686,15 @@ Choosing $h=k$ in the lattice, the equation becomes
     u_{i,j}=\frac14(u_{i+1,j}+u_{i,j+1}+u_{i-1,j}+u_{i,j-1})
 \end{equation*}
 This means that the value of the function at any point on $\mathcal{M}$ equals the average of the function at the four adjacent points.
+\begin{center}
+    \includegraphics*[width=0.33\linewidth]{pde_numerical_methods_2d_laplace.png}
+\end{center}
 
 \subsubsection{Numerical 1D heat equation}
 
-\begin{tabular}{ m{0.4\linewidth}  m{0.45\linewidth} }
+\begin{tabular}{ m{0.33\linewidth}  m{0.45\linewidth} }
     {
-        \includegraphics*[width=\linewidth]{pde_numerical_1d_heat_eq.png}
+        \includegraphics*[width=\linewidth]{pde_numerical_methods_1d_heat.png}
     }
      &
     {
@@ -722,7 +725,7 @@ The initial condition $u(x, 0) = f(x)$ defines the values on the bottom of the r
 
 \begin{tabular}{ m{0.33\linewidth}  m{0.57\linewidth} }
     {
-        \includegraphics*[width=\linewidth]{pde_numerical_1d_heat_eq.png}
+        \includegraphics*[width=\linewidth]{pde_numerical_methods_1d_wave.png}
     }
      &
     {
