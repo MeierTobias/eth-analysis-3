@@ -46,15 +46,14 @@ Moreover
     \end{equation*}
     \hrule{}
     Let $F(s)=\frac{a}{bs+c}; a,b,c \in \mathbb{R}$, then
-    \begin{equation*}
-        F(s)=\frac{a}{bs+c}=\frac{\frac{a}{b}}{s+c/b}=\frac{\frac{a}{b}}{s-(-\frac{c}{b})}
-    \end{equation*}
-    \begin{equation*}
+    \begin{gather*}
+        F(s)=\frac{a}{bs+c}=\frac{\frac{a}{b}}{s+c/b}=\frac{\frac{a}{b}}{s-(-\frac{c}{b})} \\
         f(t)=\mathcal{L}^{-1}[F(s)]=\frac{a}{b}\mathcal{L}^{-1}\left[\frac{1}{s-(-\frac{c}{b})}\right]=\frac{a}{b}e^{-\frac{c}{b}t}
-    \end{equation*}
+    \end{gather*}
 \end{examplesection}
 
 \subsection{s-shifting}
+\noindent
 \begin{equation*}
     e^{at}\cdot f(t)\:\laplace\:F(s-a)
 \end{equation*}
@@ -76,6 +75,27 @@ For n = 1, n=2 and n=3
     \mathcal{L}[f''](s)  & =s^2\mathcal{L}[f](s)-sf(0)-f'(0)           \\
     \mathcal{L}[f'''](s) & =s^3\mathcal{L}[f](s)-s^2f(0)-sf'(0)-f''(0) % chktex 23
 \end{align*}
+
+\subsection{Solving initial value problems}
+\begin{enumerate}
+    \item Transform the ODE to the s-domain ($\mathcal{L}[y]=Y$)\\
+          $\Rightarrow$ Insert initial conditions\\
+          $\quad\qquad y''+ay'+by=r(t)$\\
+          $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
+    \item Solve the equation for $Y$ \\
+          $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
+    \item Transform the equation back to the time-domain $y=\mathcal{L}^{-1}[Y]$
+\end{enumerate}
+Special case:\\
+If the initial values are given like this $y(a),y'(a),\dots$:
+\begin{enumerate}[label=\alph*]
+    \item Substitute: $t=\tilde{t}+a$
+    \item $y''+ay'+by=r(t) \Rightarrow \tilde{y}''+a\tilde{y}'+b\tilde{y}=r(\tilde{t}+a)$\\
+          $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),\dots$
+    \item Solve the ODE as described above $\Rightarrow \tilde{Y} \rightarrow \tilde{y}(\tilde{t})$
+    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$
+\end{enumerate}
+
 \begin{examplesection}[Example]
     Give the ODE $y''-y'+y=0,\;y(0)=0,\;y'(0)=1$
     \begin{align*}
@@ -89,23 +109,21 @@ For n = 1, n=2 and n=3
 
 \subsection{Differentiation of transforms}
 Let $f$ be a piecewise continuous function that satisfies the growth condition. Then
-\begin{equation*}
-    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{L}[t f(t)]
-\end{equation*}
-\begin{equation*}
+\begin{gather*}
+    \mathcal{L}'[f(t)] = \frac{d}{ds}\mathcal{L}[f(t)] = -\mathcal{L}[t f(t)] \\
     \mathcal{L}^{-1}[F'(s)] = -tf(t)
-\end{equation*}
+\end{gather*}
 
 \subsection{Heaviside function}
 \begin{tabular}{ m{5cm}  m{3.4cm} }
     \begin{equation*}
         u(t):=
         \begin{cases}
-            1 & \text{if}\;t>0  \\
+            1 & \text{if}\;t>0 \\
             0 & \text{if}\;t<0
         \end{cases}
     \end{equation*}
-     & 
+     &
     \begin{tikzpicture}
         \begin{axis}[
                 width=\linewidth,
@@ -139,11 +157,11 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
     \begin{equation*}
         u(t-a):=
         \begin{cases}
-            1 & \text{if}\;t>a  \\
+            1 & \text{if}\;t>a \\
             0 & \text{if}\;t<a
         \end{cases}
     \end{equation*}
-     & 
+     &
     \begin{tikzpicture}
         \begin{axis}[
                 width=\linewidth,
@@ -186,7 +204,7 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
     \begin{equation*}
         f(t)=u(t-a)-u(t-b)
     \end{equation*}
-     & 
+     &
     \begin{tikzpicture}
         \begin{axis}[
                 width=\linewidth,
@@ -227,6 +245,7 @@ Let $f$ be a piecewise continuous function that satisfies the growth condition. 
 \end{tabular}
 
 \subsection{t-shifting}
+\noindent
 \begin{align*}
     f(t-a)u(t-a) & \:\laplace\: e^{-as}F(s)                \\
     f(t)u(t-a)   & \:\laplace\: e^{-as}\mathcal{L}[f(t+a)] \\
@@ -264,7 +283,7 @@ The \textit{Dirac delta} is the limit
 \begin{equation*}
     \delta(t-a):=\lim_{h\to0}\delta_h(t-a)\:\text{''}=\text{''}
     \begin{cases}
-        \infty & t=a     \\
+        \infty & t=a    \\
         0      & t\ne a
     \end{cases}
 \end{equation*}
@@ -273,15 +292,11 @@ and
     \int_{-\infty}^{\infty}\delta(t-a)dt=1
 \end{equation*}
 Let $a \in \mathbb{R}, a \ne 0$. Then
-\begin{equation*}
-    \delta(at)=\frac1{|a|}\delta(t)
-\end{equation*}
-\begin{equation*}
-    \int_{0}^{\infty} g(t)\delta(t-a)dt=g(a)
-\end{equation*}
-\begin{equation*}
+\begin{gather*}
+    \delta(at)=\frac1{|a|}\delta(t) \\
+    \int_{0}^{\infty} g(t)\delta(t-a)dt=g(a) \\
     u(t)=\int_{-\infty}^{t}\delta(r)dr
-\end{equation*}
+\end{gather*}
 Let $f(t)$ be a differentiable function with continuous derivative and with zeros $t_1,\dots,t_n$. Then
 \begin{equation*}
     \delta(f(t))=\sum_{j=1}^n\frac{\delta(t-t_j)}{|f'(t_j)|}
@@ -320,23 +335,3 @@ If $f,g=0$ for $t<0$ the convolution integral becomes
 \begin{equation*}
     f(t)*g(t) \:\laplace\: F(s)\cdot G(s)
 \end{equation*}
-
-\subsection{Solving initial value problems}
-\begin{enumerate}
-    \item Transform the ODE to the s-domain ($\mathcal{L}[y]=Y$)\\
-          $\Rightarrow$ Insert initial conditions\\
-          $\quad\qquad y''+ay'+by=r(t)$\\
-          $\quad\qquad(s^2Y-sy(0)-y'(0))+a(sY-y(0))+bY=R(s)$
-    \item Solve the equation for $Y$ \\
-          $\quad\qquad (s^2+as+b)Y=R(s)+sy(0)+y'(0)+ay(0)$
-    \item Transform the equation back to the time-domain $y=\mathcal{L}^{-1}[Y]$
-\end{enumerate}
-Special case:\\
-If the initial values are given like this $y(a),y'(a),\dots$:
-\begin{enumerate}[label=\alph*]
-    \item Substitute: $t=\tilde{t}+a$
-    \item $y''+ay'+by=r(t) \Rightarrow \tilde{y}''+a\tilde{y}'+b\tilde{y}=r(\tilde{t}+a)$\\
-          $\tilde{y}(0)=y(a),\:\tilde{y}'(0)=y'(a),\dots$
-    \item Solve the ODE as described above $\Rightarrow \tilde{Y} \rightarrow \tilde{y}(\tilde{t})$
-    \item Resubstitute: $\tilde{t}=t-a$; $\tilde{y}(\tilde{t})\rightarrow y(t)$
-\end{enumerate}
