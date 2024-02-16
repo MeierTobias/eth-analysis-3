@@ -7,12 +7,12 @@ It was originally created by Benno Kaeslin, Linard Furck, Sandro Christen, Marku
 
 A pre-build pdf file can be downloaded here:
 
-- [Analysis_III_full.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full_portrait.pdf)
-- [Analysis_III.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III_portrait.pdf)
-- [Analysis_III_full_landscape.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full_landscape.pdf)
-- [Analysis_III_landscape.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III_landscape.pdf)
+- [Analysis_III_full.pdf](https://meiertobias.github.io/eth-analysis-3/analysis_III_full.pdf)
+- [Analysis_III.pdf (without examples)](https://meiertobias.github.io/eth-analysis-3/analysis_III.pdf)
 
 ## Getting-Started
+
+To clone this repo and the necessary submodules add the `--recurse-submodules` flag to your `git clone` command. If you forgot to add the `--recurse-submodules` flag when you cloned the repo you can pull the submodules by running `git submodule init` and then `git submodule update` in the root directory of repository.
 
 After you cloned this repo there are two options to build the LaTeX files ether you [use the Docker Container](#docker-recommended) or build it with your [native installed LaTeX compile](#native-latex-compiler) of choice.
 If you want a hassle-free way to work with our LaTeX project, we recommend using Docker.
@@ -42,9 +42,6 @@ Remove unnecessary build files:
 "latex-workshop.latex.clean.fileTypes" : [ "*.aux", "*.fls", "*.synctex.gz", "*.out", "*.log", "*.fdb_latexmk" ],
 "latex-workshop.latex.autoClean.run": "onBuilt",
 "latex-workshop.latex.clean.method": "glob",
-
-// if using subfolder
-"latex-workshop.latex.outDir": "../build",
 "latex-workshop.latex.clean.subfolder.enabled": true,
 ```
 
@@ -57,21 +54,23 @@ To enable the LaTeX checker ChkTeX:
 
 To get more information about the different warnings search for your warning code in the ChkTeX [documentation](https://mirror.init7.net/ctan/support/chktex/ChkTeX.pdf). If you want to disable a checker warning on a specific line you can add `% chktex ##` to the end of the line with the warning number you want to suppress.
 
-## Setup on macOS
-This repository is configured for Git [LFS](https://git-lfs.com/) (Large File Storage). If you don't already have it installed run `brew install git-lfs` or check the linked website to install it.
+## Prerequisites
 
-To use the formatter by LaTeX Workshop install `brew install latexindent`.
+The images and other compressed files are managed by git-lfs. Therefor you need to [install git-lfs](https://git-lfs.com/) fist.
+
+All LaTeX files are autoformatted with `latexindent` which comes within the TexLive installation. If you haven't already install it simply run `brew install latexindent`.
 
 ## Python scripts for PDE visualization
+
 Additional Python scripts used for the visualization of various PDEs can be found in [`python_scripts/pde_plot`](python_scripts/pde_plot/). The file [`pde_plot.py`](python_scripts/pde_plot/pde_plot.py) demonstrates how to use the visualization class.
 
 ## Contributing
 
 Feel free to fork this repository and create a pull request to integrate your corrections and extensions.
 
-## Acknowledgements
+## Template
 
-Thanks to *S.* for creating this wonderful AMIV/ETHZ summaries LaTeX template which can be downloaded [here](https://de.overleaf.com/latex/templates/amiv-slash-ethz-summaries-template-landscape/trggddjtjhqr).
+The LaTeX template of this summary can be found [here](https://github.com/MeierTobias/eth-summary-template).
 
 ## License
 
