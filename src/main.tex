@@ -1,24 +1,17 @@
-\input{headers/flags}
-\input{headers/conditional_formatting.tex}
+% Define all the needed variable like it is shown in the var.tex.example 
+% (Just copy the var.tex.example file and remove the ".example" from the filename.)
+\input{var.tex}
 
-\documentclass[\udpapersize,\udfontsize]{extarticle}
+\documentclass[\papersize,\fontheight]{extarticle}
 
-\input{headers/standard_header}
-\input{headers/layout_formating}
-\input{headers/code_header}
-\input{headers/math_header}
+% load the template headers
+\input{\templatePath/summary_headers.tex} % ChkTex 27
 
 \begin{document}
 \begin{multicols*}{3}
 
-    \begin{center}
-        \huge{Analysis III \par}
-        \large{HS23 ETHZ\par}
-
-        \normalsize{Juri Pfammatter, Daniel Schweizer, Tobias Meier, Benno Kaeslin, Linard Furck, Sandro Christen, Markus Fuchs, Andre Jauch}
-    \end{center}
-    This PDF, the source code as well as the disclaimer can be found in the GitHub repository \url{https://github.com/MeierTobias/eth-analysis-3}.
-
+    % create the title section
+    \input{\templatePath/summary_title.tex} % ChkTex 27
 
     \input{sections/LaplaceTransformation.tex}
     \newpage
@@ -30,12 +23,6 @@
     \input{sections/PartialDifferentialEquations.tex}
     \newpage
     \input{sections/Appendix.tex}
-
-    % a model columnbreak
-    % \vfill\null % prevents the columns content from using the full height
-    % \columnbreak
-    %
-
+    
 \end{multicols*}
-
-\end{document} % chktex 17
+\end{document}
