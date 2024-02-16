@@ -24,7 +24,7 @@ Let $f(x)$ be a function.
 \begin{enumerate}
     \item if $f$ is $periodic$ and $continuous$: $f$ is $bounded$
     \item if $f$ is $periodic$ and $smooth$: $f$ and $f^{(n)}$ are $bounded$\\
-          - smooth means no kinks ("Knicks"), meaning it is infinitely differentiable\\
+          - smooth means no kinks (Knicks), meaning it is infinitely differentiable\\
           - if $f$ or one of its derivatives is not bounded, we know that $f$ is either not periodic or not smooth.
 \end{enumerate}
 
@@ -65,7 +65,7 @@ For every discontinuity, the \textbf{Dirichlet Theorem} has to hold. If a functi
     b_{m} & =\frac{1}{L}\int_{-L}^{L}f(x)\sin\left(\frac{m\pi}{L}x\right)dx,\text{ if }m>0
 \end{align*}
 \subsubsection{Dirichlet Theorem - Convergenve}
-For discontinuities $f(x^-)\neq f(x^+)$ the fourier series converges to:
+For discontinuities $f(x^-)\neq f(x^+)$ the Fourier series converges to:
 \begin{align*}
     F(x_0) & =\frac12(f(x_0^-)+f(x_0^+))
 \end{align*}
@@ -117,8 +117,11 @@ For functions $f_1, f_2$ (even) and $g_1, g_2$ (odd):\\
 \end{enumerate}
 
 \subsubsection{Expansion of FS}
-If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This method can be used to solve PDEs. \vspace*{8pt}\\
-\begin{minipage}[t]{0.18\textwidth}
+If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This method can be used to solve PDEs.
+
+\vspace*{8pt}
+
+\begin{minipage}[t]{0.49\linewidth}
     \textbf{Copy-paste} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
@@ -166,7 +169,7 @@ If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This met
         \end{axis}
     \end{tikzpicture}
 \end{minipage}
-\begin{minipage}[t]{0.18\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
     \textbf{Even} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
@@ -214,7 +217,7 @@ If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This met
         \end{axis}
     \end{tikzpicture}
 \end{minipage}
-\begin{minipage}[t]{0.18\textwidth}
+\begin{minipage}[t]{0.49\linewidth}
     \textbf{Odd} expansion\\
     \begin{tikzpicture}
         \begin{axis}[
@@ -264,7 +267,7 @@ If $f(t)$ is defined on $[0,L]$ the expanded function is $2L$ periodic. This met
 \end{minipage}
 
 \subsection{Complex Fourier Series}
-If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
+If $f(t)$ is $2L$-periodic, the \textbf{complex Fourier series} is given by:
 \begin{equation*}
     f(x)=c_0+\sum_{\overset{n=-\infty}{n\neq0}}^\infty c_n\cdot e^{\frac{i\pi n}Lx}
 \end{equation*}
@@ -272,7 +275,8 @@ If $f(t)$ is $2L$-periodic, the \textbf{complex fourier series} is given by:
     c_0=\frac1{2L}\int_{-L}^L f(x)dx\quad\mid \quad c_n=\frac1{2L}\int_{-L}^L f(x)\cdot e^{-\frac{i\pi n}Lx}dx
 \end{equation*}
 
-Conversion from and to \textbf{real FS}:\\
+Conversion from and to \textbf{real FS}:
+
 \begin{tabular}[h]{c|c|c} % chktex -2
     \multicolumn{2}{c}{$a_0=c_0$} & $e^{\pm ix}=\cos x\pm i\sin x$                             \\
     $a_n=c_n+\overline{c_n}$      & $c_n = \frac{1}{2}(a_n-ib_n)$  & $e^{ix}-e^{-ix}=2i\sin x$ \\
@@ -300,7 +304,7 @@ discontinuities and is absolutely Integrable:
     B(w) & =\frac1\pi\int_{-\infty}^{\infty}f(v)\sin(wv)dv
 \end{align*}
 \textbf{Remark}\\
-The convergence properties and behaviour at discontinuities are analogous to the fourier series.
+The convergence properties and behavior at discontinuities are analogous to the Fourier series.
 \subsubsection{Even FI}
 If $f(t)$ is even, i.e. $f(t)=f(-t)$, the FI simplifies to:
 \begin{align*}
