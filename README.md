@@ -36,7 +36,7 @@ Specify an output directory:
 "latex-workshop.latex.outDir": "../build",
 ```
 
-Remove unnecessary build files:
+Remove unnecessary build files (slows down compilation time):
 
 ```json
 "latex-workshop.latex.clean.fileTypes" : [ "*.aux", "*.fls", "*.synctex.gz", "*.out", "*.log", "*.fdb_latexmk" ],
@@ -56,9 +56,9 @@ To get more information about the different warnings search for your warning cod
 
 ## Prerequisites
 
-The images and other compressed files are managed by git-lfs. Therefor you need to [install git-lfs](https://git-lfs.com/) fist.
+The images and other compressed files are managed by git-lfs. Therefor you need to [install git-lfs](https://git-lfs.com/) fist (`brew install git-lfs` on MacOS).
 
-All LaTeX files are autoformatted with `latexindent` which comes within the TexLive installation. If you haven't already install it simply run `brew install latexindent`.
+All LaTeX files are autoformatted with `latexindent` which comes within the TexLive installation. To install on MacOS simply run `brew install latexindent`.
 
 ## Python scripts for PDE visualization
 
