@@ -28,36 +28,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: build latex pdf (portrait/with examples)
+        with:
+          submodules: recursive
+          lfs: true
+      - name: build latex pdf (with examples)
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full_portrait -outdir=../build ./src/main.tex
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full -outdir=../build ./src/main.tex
       - name: change flags
-        run: sed '0,/{1}/s//{0}/' -i src/headers/flags.tex ;
-      - name: build latex pdf (landscape/with examples)
+        run: sed '0,/{1}/s//{0}/' -i src/var.tex ;
+      - name: build latex pdf (without examples)
         uses: docker://texlive/texlive:latest
         with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_full_landscape -outdir=../build ./src/main.tex
-      - name: change flags
-        run: sed '0,/{1}/s//{0}/' -i src/headers/flags.tex ;
-      - name: build latex pdf (landscape/without examples)
-        uses: docker://texlive/texlive:latest
-        with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_landscape -outdir=../build ./src/main.tex
-      - name: change flags
-        run: sed '0,/{0}/s//{1}/' -i src/headers/flags.tex ;
-      - name: build latex pdf (portrait/without examples)
-        uses: docker://texlive/texlive:latest
-        with:
-          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III_portrait -outdir=../build ./src/main.tex
-      - name: change flags
-        run: sed '0,/{0}/s//{1}/' -i src/headers/flags.tex ;
+          args: latexmk -pdf -cd -interaction=nonstopmode -file-line-error -jobname=analysis_III -outdir=../build ./src/main.tex
       - name: Copy output
         run: |
-          cp ./build/analysis_III_full_portrait.pdf ./pages/analysis_III_full_portrait.pdf
-          cp ./build/analysis_III_full_landscape.pdf ./pages/analysis_III_full_landscape.pdf
-          cp ./build/analysis_III_portrait.pdf ./pages/analysis_III_portrait.pdf
-          cp ./build/analysis_III_landscape.pdf ./pages/analysis_III_landscape.pdf
+          cp ./build/analysis_III_full.pdf ./pages/analysis_III_full.pdf
+          cp ./build/analysis_III.pdf ./pages/analysis_III.pdf
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

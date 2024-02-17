@@ -83,7 +83,7 @@ A 2nd order linear PDE has the discriminant $AC-B^2$ and is called
 \begin{enumerate}
     \item \textbf{hyperbolic} (wave), if $AC-B^2<0$
     \item \textbf{parabolic} (heat), if $AC-B^2=0$
-    \item \textbf{elliptic} (laplace), if $AC-B^2>0$
+    \item \textbf{elliptic} (Laplace), if $AC-B^2>0$
 \end{enumerate}
 \vspace{5pt}
 Remarks:
@@ -112,6 +112,7 @@ three steps have to be taken:
 \end{enumerate}
 
 \subsubsection{(i) Separation of Variables}
+\noindent
 \begin{align*}
     u(x,t)                          & =F(x)G(t)                                               \\
     \underbrace{F\ddot{G}}_{u_{tt}} & =c^2\underbrace{F''G}_{u_{xx}}                          \\
@@ -221,7 +222,7 @@ subsequently, $v(x,t)$ has homogeneous BC.
     Inserting $F_n$ and $G_n$ into $u(x,t)=F(x)G(t)$ we obtain a family of solutions for our initial problem of the form
     \[u_n (x, t) = (B_n \cos{(\lambda_{n} t)} + B_n^* \sin{(\lambda_{n}t)})\sin{\left( \frac{n \pi}{L} x \right) } \]
     where $u_n (x, t)$ are called Eigenfunctions and $\lambda_n$ the spectrum.\\
-    Using fourier series we can generate a general solution for all $n$ of the form
+    Using Fourier series we can generate a general solution for all $n$ of the form
     \[u(x,t)=\sum\limits_{n=1}^{\infty}\begin{pmatrix}
             B_n \cos(\lambda _n t)+B_n^* \sin(\lambda_n t)
         \end{pmatrix} \sin\left(\frac{n \pi}{L}x \right) \]
@@ -286,7 +287,7 @@ This form shows, that for a given position $x_i$ and time $t_i$ the result is on
     \end{tikzpicture}
 \end{center}
 If the initial conditions $f(\cdot)$ and $g(\cdot)$ are only non zero on the interval $[a,b]$ the solution of the wave equation can be divided into the following six sectors ($I-VI$).
-\includegraphics[width=\linewidth]{../images/pde_dAlembert.png}
+\includegraphics[width=\linewidth]{pde_dAlembert.png}
 where $u(x_i,t_i)$ is
 \begin{equation*}
     \begin{cases}
@@ -308,6 +309,7 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
 \end{align*}
 
 \subsubsection{Substitutions}
+\noindent
 \begin{align*}
     v=\varphi(x,y)\quad\text{and}\quad w=\psi(x,y)                   &   & \text{if hyperbolic} \\
     v=x\quad\text{and}\quad w=\psi(x,y)                              &   & \text{if parabolic}  \\
@@ -346,7 +348,7 @@ With an appropriate change of coordinates a 2nd order linear PDE can be brought 
     \item Obtain $u(x,y)$ by integrating the \textit{normal form} $u(v,w)$
           and re-substitution:
           \begin{align*}
-              u(v,w) & =\iint u_{wv}\ dwdv         \\
+              u(v,w) & =\iint u_{wv}\ dw dv        \\
               u(x,y) & =u(v,w)|_{v=C_{1}, w=C_{2}}
           \end{align*}
 \end{enumerate}
@@ -373,7 +375,7 @@ from separation of variables:
     u_x(x,t) & =\sum_{n=1}^\infty B_n \frac{n\pi}L\cos(\frac{n\pi}Lx)e^{-\lambda_n^2t} & \lambda_n = \frac{cn\pi}{L} \\
     B_n      & =\dfrac{2}{n\pi}\int\limits_0^{L}h(x)\cos(\dfrac{n\pi}{L}x)dx
 \end{align*}
-Assuming $h(x)$ fulfils $\int_{0}^{L}h(x)\;dx = 0$ in order for a solution to exist (see Section \ref{sssec:laplace_neu_rad})
+Assuming $h(x)$ fulfils $\int_{0}^{L}h(x)\;dx = 0$ in order for a solution to exist (see Section~\ref{sssec:laplace_neu_rad})
 
 \subsubsection{Boundary Condition \texorpdfstring{$u_{t}(0,t),u_{t}(L,t)$}{ut (0,t), ut (L,t)}}
 The heat equation PDE with boundary conditions
@@ -612,7 +614,7 @@ If the harmonic function is not constant, it fulfils
     \max_{(x,y)\in D_R} u(r,\varphi) & = \max_{\varphi\in[0,2\pi]} u(R,\varphi) \\
     \min_{(x,y)\in D_R} u(r,\varphi) & = \min_{\varphi\in[0,2\pi]} u(R,\varphi)
 \end{align*}
-i.e. the maximum of the border $\partial D$ of $D$ is also the maximum of the whole region $D$.
+i.e.\ the maximum of the border $\partial D$ of $D$ is also the maximum of the whole region $D$.
 
 \subsection{2D Wave Equation - Rectangular Membrane}\label{ssec:2d_wave_rect}
 For a homogeneous and flexible two-dimensional membrane with time-invariant tension per unit-length,
@@ -629,10 +631,10 @@ This PDE can be solved by:
 \begin{align*}
     u(x,y,t)     & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left[B_{mn}\cos(\lambda_{mn}t)+B_{mn}^{*}\sin(\lambda_{mn}t)\right]\dots
     \\&\dots \sin\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)\\\\
-    f(x,y)       & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)             \\
-    B_{mn}       & = \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy                  \\\\
-    g(x,y)       & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right) \\
-    B_{mn}^{*}   & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dxdy \\
+    f(x,y)       & =\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B_{mn}\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)              \\
+    B_{mn}       & = \frac4{ab}\int_0^b\int_0^{a}f(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dx dy                  \\\\
+    g(x,y)       & =\sum_{m=1}^\infty\sum_{n=1}^\infty B_{mn}^*\lambda_{mn}t\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)  \\
+    B_{mn}^{*}   & =\frac4{ab\lambda_{mn}}\int_{0}^{b}\int_{0}^{a}g(x,y)\sin\left(\frac{m\pi x}a\right)\sin\left(\frac{n\pi y}b\right)dx dy \\
     \lambda_{mn} & = c\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}
 \end{align*}
 
@@ -759,12 +761,12 @@ The initial condition $u(x, 0) = f(x)$ provides the points on the bottom of the 
 
 \subsection{Visualizations}
 
-\includegraphics[width=0.85\linewidth]{../images/1d_wave.png}
+\includegraphics[width=0.85\linewidth]{1d_wave.png}
 
-\includegraphics[width=0.85\linewidth]{../images/1d_wave_inhom.png}
+\includegraphics[width=0.85\linewidth]{1d_wave_inhom.png}
 
-\includegraphics[width=0.85\linewidth]{../images/1d_wave_fs.png}
+\includegraphics[width=0.85\linewidth]{1d_wave_fs.png}
 
-\includegraphics[width=0.85\linewidth]{../images/1d_heat_fs.png}
+\includegraphics[width=0.85\linewidth]{1d_heat_fs.png}
 
-\includegraphics[width=0.85\linewidth]{../images/2d_laplace.png}
+\includegraphics[width=0.85\linewidth]{2d_laplace.png}
