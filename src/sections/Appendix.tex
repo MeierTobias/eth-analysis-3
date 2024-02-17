@@ -5,7 +5,35 @@
 \subsection{Trigonometry}
 \subsubsection{Common angles}
 \begin{center}
-    \includegraphics*[width=0.7\linewidth]{unit_circle.png}
+    \begin{tikzpicture}
+        \begin{axis}[
+                width=0.8\linewidth,
+                unit vector ratio={1 1},
+                axis x line=left,
+                axis y line=left,
+                xmin=0,
+                xmax=1.25,
+                ymin=0,
+                ymax=1.25,
+                xlabel={$x$},
+                ylabel={$y$},
+                xtick={0, 1},
+                ytick={0, 1},
+                mark=none,
+            ]
+            \draw[thick] (0,0) circle(1);
+
+            \draw[gray] \foreach \i in {30,45,60} {(0,0) -- ({cos(\i)},{sin(\i)})};
+            \filldraw[black] \foreach \i in {30,45,60} {(\i:1) circle(0.01)};
+            \draw \foreach \i in {30,45,60} {(\i:0.6) node[fill=white] {$\i^\circ$}};
+            \draw \foreach \i/\itext in {30/\frac{\pi}{6},45/\frac{\pi}{4},60/\frac{\pi}{3}} {(\i:0.85) node[fill=white] {$\itext$}};
+
+            \draw \foreach \i/\itext/\y in {
+                    30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+                    45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+                    60/\frac{1}{2}/\frac{\sqrt{3}}{2}} {(\i:1.25) node[fill=white] {$\left(\itext,\y\right)$}};
+        \end{axis}
+    \end{tikzpicture}
 \end{center}
 
 \subsubsection{Identities}
